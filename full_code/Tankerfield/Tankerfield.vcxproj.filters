@@ -88,9 +88,6 @@
     <ClCompile Include="UI_InGameElement.cpp">
       <Filter>UI</Filter>
     </ClCompile>
-    <ClCompile Include="Obj_PickUp.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
     <ClCompile Include="M_AnimationBank.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
@@ -103,7 +100,10 @@
     <ClCompile Include="UI_Quad.cpp">
       <Filter>UI</Filter>
     </ClCompile>
-    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Minimap.cpp" />
+    <ClCompile Include="Camera.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h">
@@ -211,9 +211,6 @@
     <ClInclude Include="Rect.h">
       <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Obj_PickUp.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
     <ClInclude Include="M_AnimationBank.h">
       <Filter>Modules</Filter>
     </ClInclude>
@@ -229,7 +226,10 @@
     <ClInclude Include="UI_Quad.h">
       <Filter>UI</Filter>
     </ClInclude>
-    <ClInclude Include="Camera.h" />
+    <ClInclude Include="Minimap.h" />
+    <ClInclude Include="Camera.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Tools">
@@ -258,6 +258,9 @@
     </Filter>
     <Filter Include="Tools\QuadTree">
       <UniqueIdentifier>{39b4a6ff-f872-44ca-a2da-c501ec67afb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Camera">
+      <UniqueIdentifier>{c8f231be-8558-4903-a4af-d147904638f7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

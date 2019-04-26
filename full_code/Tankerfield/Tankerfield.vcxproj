@@ -128,10 +128,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Minimap.cpp" />
     <ClCompile Include="M_AnimationBank.cpp" />
     <ClCompile Include="MathUtils.cpp" />
     <ClCompile Include="M_Collision.cpp" />
-    <ClCompile Include="Obj_PickUp.cpp" />
     <ClCompile Include="Obj_Building.cpp" />
     <ClCompile Include="Quadtree_Map.cpp" />
     <ClCompile Include="Quadtree_Points.cpp" />
@@ -166,11 +166,11 @@
   <ItemGroup>
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Minimap.h" />
     <ClInclude Include="M_AnimationBank.h" />
     <ClInclude Include="Circle.h" />
     <ClInclude Include="MathUtils.h" />
     <ClInclude Include="M_Collision.h" />
-    <ClInclude Include="Obj_PickUp.h" />
     <ClInclude Include="Obj_Building.h" />
     <ClInclude Include="Quadtree.h" />
     <ClInclude Include="Quadtree_Map.h" />

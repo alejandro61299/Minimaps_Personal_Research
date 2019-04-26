@@ -13,14 +13,17 @@ Camera::Camera()
 
 void Camera::FollowPlayer(float dt, Obj_Tank * player)
 {
-	fPoint source_pos((float)rect.x, (float)rect.y);
+	fPoint source_pos(camera_pos);
 
-	fPoint target_pos( app->map->MapToScreenF(player->pos_map).x - rect.w * 0.5f, app->map->MapToScreenF(player->pos_map).y - rect.h * 0.5f);
+	fPoint target_pos( app->map->MapToScreenF(player->pos_map).x - (float)rect.w * 0.5f, app->map->MapToScreenF(player->pos_map).y - (float)rect.h * 0.5f);
 
 	fPoint lerp_pos = lerp(source_pos, target_pos, dt * lerp_factor);
 
-	rect.x = lerp_pos.x;
-	rect.y = lerp_pos.y;
+	camera_pos = lerp_pos;
+
+	rect.x = (float)camera_pos.x;
+	rect.y = (float)camera_pos.y;
+
 }
 
 void Camera::AddTrauma(float value)
@@ -37,26 +40,27 @@ void Camera::AddTrauma(float value)
 
 void Camera::ResetCamera()
 {
-	rect.x = unaltered_pos.x;
-	rect.y = unaltered_pos.y;
+	//camera_pos = (fPoint)unaltered_pos;
+	//rect.x = unaltered_pos.x;
+	//rect.y = unaltered_pos.y;
 }
 
 void Camera::ShakeCamera(float dt)
 {
-	//Keep the original position
-	unaltered_pos.x = rect.x;
-	unaltered_pos.y = rect.y;
+	////Keep the original position
+	//unaltered_pos.x = rect.x;
+	//unaltered_pos.y = rect.y;
 
-	//Apply the camera shake
-	if (trauma > 0.f)
-	{
-		float shake = GetShakeAmount();
-		rect.x += max_shake_offset * shake * GetRandomValue(-1.f, 1.f);
-		rect.y += max_shake_offset * shake * GetRandomValue(-1.f, 1.f);
+	////Apply the camera shake
+	//if (trauma > 0.f)
+	//{
+	//	float shake = GetShakeAmount();
+	//	rect.x += max_shake_offset * shake * GetRandomValue(-1.f, 1.f);
+	//	rect.y += max_shake_offset * shake * GetRandomValue(-1.f, 1.f);
 
-		//Reduce trauma
-		trauma -= trauma_decay * dt;
-	}
+	//	//Reduce trauma
+	//	trauma -= trauma_decay * dt;
+	//}
 }
 
 //Shake amout is based on trauma

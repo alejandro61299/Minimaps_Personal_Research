@@ -6,12 +6,14 @@
 
 class Obj_Tank;
 class Object;
+class Minimap;
 
 class M_Scene : public Module
 {
 public:
 
 	Obj_Tank * player = nullptr;
+	Minimap * minimap = nullptr;
 
 public:
 

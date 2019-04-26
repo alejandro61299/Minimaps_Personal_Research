@@ -23,7 +23,6 @@
 #include "Obj_Tank.h"
 #include "M_Map.h"
 #include "Brofiler/Brofiler.h"
-#include "Obj_PickUp.h"
 #include "Camera.h"
 
 M_ObjManager::M_ObjManager()
@@ -222,12 +221,8 @@ Object* M_ObjManager::CreateObject(ObjectType type, fPoint pos)
 		ret->type = ObjectType::TANK;
 		obj_tanks.push_back((Obj_Tank*)ret);
 		break;
-	case ObjectType::PICK_UP:
-		ret = new Obj_PickUp(pos);
-		ret->type = ObjectType::PICK_UP;
-		break;
 	}
-  
+
 	if (ret != nullptr)
 	{
 		ret->Start();

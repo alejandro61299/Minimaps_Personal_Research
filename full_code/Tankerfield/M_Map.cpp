@@ -664,8 +664,8 @@ fPoint M_Map::MapToScreenF(const fPoint & map_pos)
 		screen_pos.y = map_pos.y * data.tile_height;
 		break;
 	case MapTypes::MAPTYPE_ISOMETRIC:
-		screen_pos.x = (map_pos.x - map_pos.y) * (data.tile_width * 0.5f);
-		screen_pos.y = (map_pos.x + map_pos.y) * (data.tile_height * 0.5f);
+		screen_pos.x = (map_pos.x - map_pos.y) * ((float)data.tile_width * 0.5f);
+		screen_pos.y = (map_pos.x + map_pos.y) *((float)data.tile_height * 0.5f);
 		break;
 	default:
 		LOG("ERROR: Map type not identified.");

@@ -26,6 +26,7 @@ private:
 	float GetShakeAmount() const;
 
 public:
+	fPoint                  camera_pos = { 0.f, 0.f };
 	iPoint unaltered_pos	= { 0, 0 };//The real position of the camera. Without adding the screen shake.
 	SDL_Rect rect			= { 0, 0, 0, 0 };//The actual camera coordinates in the world
 	SDL_Rect screen_section	= { 0, 0, 0, 0 };//The section on the screen it covers (ex. player one gets 0, 0, w/2, h/2)

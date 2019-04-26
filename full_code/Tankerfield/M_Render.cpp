@@ -69,7 +69,7 @@ bool M_Render::Awake(pugi::xml_node& config)
 		camera_aux->rect.h = app->win->screen_surface->h;
 		fPoint tank_1_pos_screen = app->map->MapToScreenF(app->scene->player->pos_map);
 		camera_aux->rect.x = tank_1_pos_screen.x - camera_aux->rect.w*0.5f; //Magic numbres to pos the camera with the player in center
-		camera_aux->rect.y = tank_1_pos_screen.y + camera_aux->rect.h*0.5f; //Magic numbres to pos the camera with the player in center
+		camera_aux->rect.y = tank_1_pos_screen.y + camera_aux->rect.h + 40; //Magic numbres to pos the camera with the player in center
 		camera_aux->screen_section = {
 			0,
 			0,

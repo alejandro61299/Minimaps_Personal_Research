@@ -24,6 +24,7 @@
 #include "PerfTimer.h"
 #include "Obj_Tank.h"
 #include "Object.h"
+#include "Minimap.h"
 
 
 M_Scene::M_Scene() : Module()
@@ -45,7 +46,9 @@ bool M_Scene::Awake(pugi::xml_node& config)
 bool M_Scene::Start()
 {
 	app->map->Load("maps/Map.tmx");
-	player = (Obj_Tank*)app->objectmanager->CreateObject(ObjectType::TANK, { 0.F,0.F });
+	player = (Obj_Tank*)app->objectmanager->CreateObject(ObjectType::TANK, { 50.F,50.F });
+	minimap = new Minimap();
+	minimap->LoadTextureFromMap();
 	return true;
 }
 
@@ -63,8 +66,9 @@ bool M_Scene::PreUpdate()
 // Called each loop iteration
 bool M_Scene::Update(float dt)
 {
-	BROFILER_CATEGORY("M_SceneUpdate", Profiler::Color::Blue)
-	
+	BROFILER_CATEGORY("M_SceneUpdate", Profiler::Color::Blue);
+
+
 
 	return true;
 }
@@ -72,6 +76,7 @@ bool M_Scene::Update(float dt)
 // Called each loop iteration
 bool M_Scene::PostUpdate(float dt)
 {
+	minimap->PostUpdate();
 	return true;
 }
 
