@@ -59,6 +59,8 @@ public:
 
 	SDL_Texture       * CreateStreamingTexture(const int texture_width, const int texture_height);
 
+	SDL_Texture       * CreateTargetTexture(const int width, const int height);
+
 
 private:
 

@@ -5,6 +5,7 @@
 #include "M_Window.h"
 #include "M_Render.h"
 #include <list>
+#include "Object.h"
 
 Minimap::Minimap()
 {
@@ -20,45 +21,54 @@ bool Minimap::PostUpdate()
 {
 	SDL_Rect draw_rect = { 0, 0, texture_width , texture_height };
 	app->render->BlitUI(minimap_texture, 0, 0, &draw_rect, (*app->render->cameras.begin()));
+
+	SDL_Rect sprite_rect = { 0,0,0,0 };
+
+	for (std::list<Object*>::iterator iter = pointed_objects.begin(); iter != pointed_objects.end(); ++iter)
+	{
+		iPoint object_pos = MapToMinimap((*iter)->pos_map.x, (*iter)->pos_map.y);
+		sprite_rect = { 1, 0, 9, 9 };
+		app->render->BlitUI(minimap_atlas, object_pos.x + print_x_offset - sprite_rect.w * .5f, object_pos.y - sprite_rect.h * .5f, &sprite_rect);
+	}
 	return true;
+}
+
+void Minimap::AddPonintedObject(Object * object_to_point)
+{
+	pointed_objects.push_back(object_to_point);
 }
 
 bool Minimap::LoadTextureFromMap()
 {
-	texture_width = 0;
-	texture_height = 0;
 
-	int minimap_tile_width = 10;
-	int minimap_tile_height = 10;
+	minimap_tile_width = 1;
+	minimap_tile_height = 1;
 
 	// Search the widest & highest layer in order to obtain new texture size
 
-	for (std::list<MapLayer*>::iterator iter = app->map->data.map_layers.begin(); iter != app->map->data.map_layers.end(); ++iter)
-	{
-		if ((*iter)->columns > texture_width)
-		{
-			texture_width = (*iter)->columns;
-		}
-		if ((*iter)->rows > texture_height)
-		{
-			texture_height = (*iter)->rows;
-		}
-	}
-
-	// Multiply by tile 
+	texture_width = app->map->data.columns;
+	texture_height = app->map->data.rows;
 
 	texture_width *= minimap_tile_width;
 	texture_height *= minimap_tile_height;
 
+	print_x_offset = texture_width * 0.5f;
+
 	// Finaly we create the streaming texture
 
-	minimap_texture = app->tex->CreateStreamingTexture(texture_width, texture_height);
 	SDL_SetRenderDrawBlendMode(app->render->renderer, SDL_BLENDMODE_BLEND);
-	int print_x_offset = (texture_height - 1) * .5f;
 	SDL_Rect sprite_rect = { 0,0,0,0 };
 	SDL_Rect section_to_print = { 0,0,0,0 };
 	iPoint minimap_tile_pos = { 0,0 };
 	uint id = 0;
+
+	// changes render to target texture
+
+	minimap_texture = app->tex->CreateTargetTexture( texture_width, texture_height);
+
+	SDL_SetRenderTarget(app->render->renderer, minimap_texture);
+
+	// search throght layers and decide what minimap tex correspons to a specific map id
 
 	for (std::list<MapLayer*>::iterator iter = app->map->data.map_layers.begin(); iter != app->map->data.map_layers.end(); ++iter)
 	{
@@ -66,29 +76,38 @@ bool Minimap::LoadTextureFromMap()
 		{
 			for (int x = 0; x < (*iter)->columns; ++x)
 			{
-				id = (*iter)->Get(x, y);
-	
-				if (id >= 119 && id <= 126)
+				id = (*iter)->Get(x, y) - 1;
+
+				if (id == 119)
 				{
-					sprite_rect = { 0,0 ,10,10 };
+					sprite_rect = { 0,0 ,1,1 };
 				}
-				else if (id >= 135 && id <= 139)
+				else if (id == 135)
 				{
-					sprite_rect = { 0,10 ,10,10 };
+					sprite_rect = { 0,1 ,1,1 };
 				}
-	
+				else
+				{
+					continue;
+				}
+
 				minimap_tile_pos = MapToMinimap(x, y);
-	
+
 				section_to_print.x = print_x_offset + minimap_tile_pos.x;
 				section_to_print.y = minimap_tile_pos.y;
 				section_to_print.w = minimap_tile_width;
 				section_to_print.h = minimap_tile_height;
-	
-				app->tex->CopyTextureOn(minimap_texture, minimap_atlas, { section_to_print.x, section_to_print.y }, { sprite_rect.x, sprite_rect.y } , section_to_print.w, section_to_print.h);
+
+				// render the desired texture to texture
+
+				SDL_RenderCopy(app->render->renderer, minimap_atlas, &sprite_rect, &section_to_print);
 			}
 		}
 	}
-	
+
+	//Reset render target 
+	SDL_SetRenderTarget(app->render->renderer, NULL);
+
 	if (minimap_texture == nullptr)
 	{
 		LOG("Cannot Create Minimap Texture, Error: %s", SDL_GetError());
@@ -101,74 +120,14 @@ bool Minimap::LoadTextureFromMap()
 	}
 }
 
-iPoint Minimap::MapToMinimap( const int x , const int y)
+
+iPoint Minimap::MapToMinimap(const int x, const int y)
 {
-	return iPoint((x - y) * 10 * 0.5f, (x + y) * 10 * 0.5f);
+	return iPoint((x - y) * minimap_tile_width * 0.5f, (x + y) * minimap_tile_height * 0.5f);
 }
 
-//texture_width = 0;
-//texture_height = 0;
-//
-//int minimap_tile_width = 10;
-//int minimap_tile_height = 10;
-//
-//// Search the widest & highest layer in order to obtain new texture size
-//
-//for (std::list<MapLayer*>::iterator iter = app->map->data.map_layers.begin(); iter != app->map->data.map_layers.end(); ++iter)
-//{
-//	if ((*iter)->columns > texture_width)
-//	{
-//		texture_width = (*iter)->columns;
-//	}
-//	if ((*iter)->rows > texture_height)
-//	{
-//		texture_height = (*iter)->rows;
-//	}
-//}
-//
-//// Multiply by tile 
-//
-//texture_width *= minimap_tile_width;
-//texture_height *= minimap_tile_height;
-//
-//int print_x_offset = (texture_height - 1) * .5f;
-//SDL_Rect sprite_rect = { 0,0,0,0 };
-//SDL_Rect section_to_print = { 0,0,0,0 };
-//iPoint minimap_tile_pos = { 0,0 };
-//uint id = 0;
-//
-//SDL_SetRenderDrawBlendMode(app->render->renderer, SDL_BLENDMODE_BLEND);
-//for (std::list<MapLayer*>::iterator iter = app->map->data.map_layers.begin(); iter != app->map->data.map_layers.end(); ++iter)
-//{
-//	for (int y = 0; y < (*iter)->rows; ++y)
-//	{
-//		for (int x = 0; x < (*iter)->columns; ++x)
-//		{
-//			id = (*iter)->Get(x, y);
-//
-//			if (id >= 119 && id <= 126)
-//			{
-//				sprite_rect = { 0,0 ,10,10 };
-//			}
-//			else if (id >= 135 && id <= 139)
-//			{
-//				sprite_rect = { 0,10 ,10,10 };
-//			}
-//
-//			minimap_tile_pos = MapToMinimap(x, y);
-//
-//			section_to_print.x = print_x_offset + minimap_tile_pos.x;
-//			section_to_print.y = minimap_tile_pos.y;
-//			section_to_print.w = minimap_tile_width;
-//			section_to_print.h = minimap_tile_height;
-//
-//			SDL_RenderCopy(app->render->renderer, minimap_atlas, &sprite_rect, &section_to_print);
-//
-//		}
-//	}
-//}
-//
-//SDL_RenderPresent(app->render->renderer);
-//
-//minimap_texture = SDL_CreateTexture(app->render->renderer, SDL_PIXELFORMAT_RGBA8888, NULL, texture_width, texture_height);
-//SDL_RenderClear(app->render->renderer);
+void Minimap::Draw()
+{
+
+
+}

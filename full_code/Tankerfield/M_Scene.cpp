@@ -49,6 +49,7 @@ bool M_Scene::Start()
 	player = (Obj_Tank*)app->objectmanager->CreateObject(ObjectType::TANK, { 50.F,50.F });
 	minimap = new Minimap();
 	minimap->LoadTextureFromMap();
+	minimap->AddPonintedObject(player);
 	return true;
 }
 
@@ -77,6 +78,7 @@ bool M_Scene::Update(float dt)
 bool M_Scene::PostUpdate(float dt)
 {
 	minimap->PostUpdate();
+
 	return true;
 }
 

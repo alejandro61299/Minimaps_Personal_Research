@@ -101,6 +101,7 @@ struct TileSet
 
 	inline SDL_Rect GetTileRect(int id) const;
 
+
 	std::string			name;
 	int					firstgid = NULL;
 	int					margin = NULL;
@@ -145,7 +146,7 @@ struct MapLayer
 
 	inline uint Get(int x, int y) const
 	{
-		return data[(y*columns) + x];
+		return data[(y * columns) + x];
 	}
 
 	inline fPoint GetTilePos(int id) const

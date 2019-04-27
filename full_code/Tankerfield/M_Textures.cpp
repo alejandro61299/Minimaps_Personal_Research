@@ -219,12 +219,10 @@ SDL_Texture* M_Textures::LoadStreamingTex(const char* path)
 				int mWidth;
 				int mHeight;
 
-				SDL_SetTextureBlendMode((SDL_Texture *)newTex, SDL_BLENDMODE_NONE);
-
+				SDL_SetTextureBlendMode((SDL_Texture *)newTex, SDL_BLENDMODE_BLEND);
 
 				// lock texture for manipulation
 				SDL_LockTexture(newTex, NULL, &mPixels, &mPitch);
-				//LOG("pitch %i", mPitch);
 
 				// copy loaded/formatted surface pixels
 				memcpy(mPixels, formattedSurface->pixels, formattedSurface->pitch * formattedSurface->h);
@@ -287,17 +285,18 @@ void M_Textures::CopyTextureOn(SDL_Texture* target_texture, SDL_Texture* source_
 	// Get pixel data in editable format ==================
 
 	// Texture 1 
-
 	Uint32* pixels_trg = (Uint32*)pixel_data_trg;
-
+	int pixel_count_trg = w  * h;
 	// Texture 2
 
 	Uint32* pixels_src = (Uint32*)pixel_data_src;
 
 	// Navigate throught pixel data ========================
 
-	//SDL_UpdateTexture(target_texture, &trg_rect, pixels_trg, pitch_trg);
-	memcpy(pixels_trg, pixels_src, h * w);
+	for (int i = 0; i < pixel_count_trg; ++i)
+	{
+		pixels_trg[i] = pixels_src[i];
+	}
 
 	UnlockTexture(target_texture);
 	UnlockTexture(source_texture);
@@ -309,4 +308,30 @@ SDL_Texture* M_Textures::CreateStreamingTexture( const int texture_width, const 
 	new_streaming_tex = SDL_CreateTexture(app->render->renderer, pixel_format, SDL_TEXTUREACCESS_STREAMING, texture_width, texture_height);
 	streaming_textures.push_back(new_streaming_tex);
 	return new_streaming_tex;
+}
+
+SDL_Texture* M_Textures::CreateTargetTexture(const int width, const int height)
+{
+	SDL_Texture* ret = nullptr;
+
+	SDL_Surface* newSurface = nullptr;
+
+	newSurface = SDL_CreateRGBSurface(0, width, height, 32, 0, 0, 0, 0);
+
+	if (SDL_SetSurfaceBlendMode(newSurface, SDL_BLENDMODE_BLEND) < 0)
+	{
+		LOG("Failed to create blend mode for new surface");
+	}
+	else
+		LOG("Succesfully changed blend mode for new surface");
+
+	newSurface = SDL_ConvertSurfaceFormat(newSurface, SDL_PIXELFORMAT_ARGB8888, NULL);
+
+	ret = SDL_CreateTexture(app->render->renderer, SDL_PIXELFORMAT_ARGB8888, SDL_TEXTUREACCESS_TARGET, newSurface->w, newSurface->h);
+
+	if (ret != NULL)
+		return ret;
+
+	return nullptr;
+
 }
