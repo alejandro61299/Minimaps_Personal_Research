@@ -211,6 +211,7 @@ private:
 
 public:
 	Camera* camera_player = nullptr;
+	bool    camera_follow = true;
 };
 
 #endif

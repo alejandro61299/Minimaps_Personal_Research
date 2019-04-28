@@ -45,11 +45,22 @@ bool M_Scene::Awake(pugi::xml_node& config)
 // Called before the first frame
 bool M_Scene::Start()
 {
+	// Load Map
 	app->map->Load("maps/Map.tmx");
+
+	// Create Entity / Object
+
 	player = (Obj_Tank*)app->objectmanager->CreateObject(ObjectType::TANK, { 50.F,50.F });
+	player->camera_follow = false;
+	// Create Minimap & Load 
+
 	minimap = new Minimap();
-	minimap->LoadTextureFromMap();
+	minimap->LoadTextureFromMap( 400, 200 );
+
+	// Add pointing units
+
 	minimap->AddPonintedObject(player);
+
 	return true;
 }
 
@@ -60,6 +71,26 @@ bool M_Scene::PreUpdate()
 	{
 		return false;
 	}
+
+	if (app->input->GetMouseButton(1) == KEY_REPEAT)
+	{
+		int x = 0, y = 0;
+		app->input->GetMousePosition(x, y);
+
+		//iPoint camera_pos = minimap->WorldToMinimap( x,y );
+		//fPoint camera_pos_f = app->map->ScreenToMapF (camera_pos.x, camera_pos.y);
+
+		fPoint camera_pos =  minimap->MinimapToMap( x , y);
+		LOG("%f ,  %f", camera_pos.x, camera_pos.y);
+
+		camera_pos = app->map->MapToScreenF(camera_pos);
+
+		(*app->render->cameras.begin())->camera_pos = (fPoint)camera_pos;
+		(*app->render->cameras.begin())->rect.x = camera_pos.x;
+		(*app->render->cameras.begin())->rect.y = camera_pos.y;
+	}
+
+
 
 	return true;
 }

@@ -21,13 +21,20 @@ public:
 
 	void AddPonintedObject(Object* object_to_point);
 
-	bool LoadTextureFromMap();
+	bool LoadTextureFromMap (const int width, const int height);
 
-	iPoint MapToMinimap(const int x, const int y);
+
+	// Mesures transformations methods ==========================
+
+	fPoint MapToMinimap(const float x, const float y);
+
+	fPoint MinimapToMap(const float x, const float y);
 
 	iPoint WorldToMinimap(const int x, const int y);
 
-	void Draw();
+	iPoint MinimapToWorld(const int x, const int y);
+
+
 
 private:
 

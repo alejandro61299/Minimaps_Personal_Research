@@ -253,7 +253,11 @@ bool Obj_Tank::Update(float dt)
 {
 	Movement(dt);
 	Shoot(dt);
-	CameraMovement(dt);//Camera moves after the player
+
+	if (camera_follow == true)
+	{
+		CameraMovement(dt);//Camera moves after the player
+	}
 
 	return true;
 }

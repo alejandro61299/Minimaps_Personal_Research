@@ -52,16 +52,22 @@ void Minimap::AddPonintedObject(Object * object_to_point)
 	pointed_objects.push_back(object_to_point);
 }
 
-bool Minimap::LoadTextureFromMap()
+bool Minimap::LoadTextureFromMap(const int width, const int height)
 {
+	// Set Minimap Values =============================
 
-	minimap_tile_width = 2;
-	minimap_tile_height = 1;
+	//minimap_tile_width = 1.2f;
+	//minimap_tile_height = 0.6f;
 
-	// Search the widest & highest layer in order to obtain new texture size
+	//texture_width = app->map->data.columns * minimap_tile_width;
+	//texture_height = app->map->data.rows * minimap_tile_height;
 
-	texture_width = app->map->data.columns * minimap_tile_width;
-	texture_height = app->map->data.rows * minimap_tile_height;
+
+	texture_width = width;
+	texture_height = height;
+
+	minimap_tile_width = texture_width / app->map->data.columns;
+	minimap_tile_height = texture_height / app->map->data.rows;
 
 	aspect_ratio_x = (float)texture_width / (float)(app->map->data.tile_width * app->map->data.rows);
 	aspect_ratio_y = (float)texture_height / (float)(app->map->data.tile_height * app->map->data.columns);
@@ -72,8 +78,7 @@ bool Minimap::LoadTextureFromMap()
 
 	SDL_Rect sprite_rect = { 0,0,0,0 };
 	SDL_Rect section_to_print = { 0,0,0,0 };
-	iPoint minimap_tile_pos = { 0,0 };
-	uint id = 0;
+	fPoint minimap_tile_pos = { 0,0 };
 
 	// changes render to target texture
 
@@ -93,35 +98,43 @@ bool Minimap::LoadTextureFromMap()
 
 				minimap_tile_pos = MapToMinimap(x, y);
 
-				section_to_print = { (int)minimap_tile_pos.x, (int)minimap_tile_pos.y, (int)minimap_tile_width, (int)minimap_tile_height };
+				if (minimap_tile_width > 1.f && minimap_tile_height > 1.f)
+				{
+					section_to_print = { (int)minimap_tile_pos.x, (int)minimap_tile_pos.y, (int)minimap_tile_width, (int)minimap_tile_height };
+				}
+				else
+				{
+					section_to_print = { (int)minimap_tile_pos.x, (int)minimap_tile_pos.y, 1, 1};
+				}
 
 				SDL_RenderCopy(app->render->renderer, (*app->map->data.tilesets.begin())->texture , &sprite_rect, &section_to_print);
 			}
 		}
 	}
 
-	// Apply alpha mask 
-	section_to_print = { 0, 0, 400, 400 };
-	sprite_rect = { 0,0,400,400 };
-
-	////SDL_BlendMode mode = SDL_ComposeCustomBlendMode(SDL_BLENDFACTOR_SRC_COLOR, SDL_BLENDFACTOR_DST_COLOR, SDL_BLENDOPERATION_ADD, SDL_BLENDFACTOR_SRC_ALPHA, SDL_BLENDFACTOR_DST_ALPHA, SDL_BLENDOPERATION_SUBTRACT);
-	//SDL_BlendMode mode = SDL_ComposeCustomBlendMode(SDL_BLENDFACTOR_ONE, SDL_BLENDFACTOR_ONE, SDL_BLENDOPERATION_ADD, SDL_BLENDFACTOR_ONE, SDL_BLENDFACTOR_ONE, SDL_BLENDOPERATION_REV_SUBTRACT);
-	//SDL_SetTextureBlendMode(circle_mask, SDL_BLENDMODE_NONE);
-	//SDL_SetTextureBlendMode(minimap_texture, mode);
-	//LOG("%s", SDL_GetError() );
-	////SDL_RenderCopy(app->render->renderer, circle_mask, &sprite_rect, &section_to_print);
-	//SDL_SetTextureBlendMode(minimap_texture, SDL_BLENDMODE_BLEND);
-	//SD
-	// Reset render target 
-
 	SDL_SetRenderTarget(app->render->renderer, NULL);
 
 	return true;
 }
 
-iPoint Minimap::MapToMinimap(const int x, const int y)
+fPoint Minimap::MapToMinimap(const float x, const float y)
 {
-	return iPoint((x - y) * minimap_tile_width * 0.5f + print_x_offset, (x + y) * minimap_tile_height * 0.5f);
+	return fPoint((x - y) * minimap_tile_width * 0.5f + print_x_offset, (x + y) * minimap_tile_height * 0.5f);
+}
+
+fPoint Minimap::MinimapToMap(const float x, const float y)
+{
+	fPoint ret = { 0.f, 0.f };
+
+	float half_width = minimap_tile_width * 0.5f;
+	float half_height = minimap_tile_height * 0.5f;
+
+	float x_mod = x - print_x_offset;
+
+	ret.x = (x_mod / half_width + y / half_height) * 0.5f;
+	ret.y = (y / half_height - x_mod / half_width) * 0.5f;
+
+	return ret;
 }
 
 iPoint Minimap::WorldToMinimap(const int x, const int y)
@@ -129,8 +142,8 @@ iPoint Minimap::WorldToMinimap(const int x, const int y)
 	return iPoint(x * aspect_ratio_x + print_x_offset, y * aspect_ratio_y);
 }
 
-void Minimap::Draw()
+iPoint Minimap::MinimapToWorld(const int x, const int y)
 {
-
-
+	return iPoint(   (float)(x - print_x_offset ) / aspect_ratio_x , (float)y / aspect_ratio_y);
 }
+
