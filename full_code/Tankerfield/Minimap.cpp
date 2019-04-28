@@ -7,7 +7,7 @@
 #include <list>
 #include "Object.h"
 
-Minimap::Minimap()
+Minimap::Minimap(const fPoint position): position(position)
 {
 	minimap_atlas = app->tex->LoadStreamingTex("maps/minimap_atlas.png");
 	circle_mask = app->tex->Load("maps/circle_mask.png");

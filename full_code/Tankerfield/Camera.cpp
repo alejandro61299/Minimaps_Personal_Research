@@ -8,7 +8,7 @@ Camera::Camera()
 	trauma_decay = 0.9f;
 	random_generator.seed(random_device());
 	aim_distance = 2.5f;
-	lerp_factor = 3.f;
+	lerp_factor = 6.f;
 }
 
 void Camera::FollowPlayer(float dt, Obj_Tank * player)
@@ -23,8 +23,23 @@ void Camera::FollowPlayer(float dt, Obj_Tank * player)
 
 	rect.x = (float)camera_pos.x;
 	rect.y = (float)camera_pos.y;
-
 }
+
+
+void Camera::MoveToScreenPoint(float dt, fPoint point)
+{
+	fPoint source_pos = camera_pos;
+
+	fPoint target_pos = point;
+
+	fPoint lerp_pos = lerp(source_pos, target_pos, dt * lerp_factor);
+
+	camera_pos = lerp_pos;
+
+	rect.x = (float)camera_pos.x;
+	rect.y = (float)camera_pos.y;
+}
+
 
 void Camera::AddTrauma(float value)
 {

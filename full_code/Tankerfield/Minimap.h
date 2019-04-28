@@ -11,7 +11,7 @@ class Minimap
 {
 public:
 
-	Minimap();
+	Minimap(const fPoint position);
 
 	bool Update();
 

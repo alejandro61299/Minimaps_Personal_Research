@@ -54,7 +54,7 @@ bool M_Scene::Start()
 	player->camera_follow = false;
 	// Create Minimap & Load 
 
-	minimap = new Minimap();
+	minimap = new Minimap( fPoint( 300.f,300.f));
 	minimap->LoadTextureFromMap( 400, 200 );
 
 	// Add pointing units
@@ -77,17 +77,9 @@ bool M_Scene::PreUpdate()
 		int x = 0, y = 0;
 		app->input->GetMousePosition(x, y);
 
-		//iPoint camera_pos = minimap->WorldToMinimap( x,y );
-		//fPoint camera_pos_f = app->map->ScreenToMapF (camera_pos.x, camera_pos.y);
-
-		fPoint camera_pos =  minimap->MinimapToMap( x , y);
-		LOG("%f ,  %f", camera_pos.x, camera_pos.y);
-
-		camera_pos = app->map->MapToScreenF(camera_pos);
-
-		(*app->render->cameras.begin())->camera_pos = (fPoint)camera_pos;
-		(*app->render->cameras.begin())->rect.x = camera_pos.x;
-		(*app->render->cameras.begin())->rect.y = camera_pos.y;
+		Camera* camera = (*app->render->cameras.begin());
+		camera_target_pos =  minimap->MinimapToMap( x , y);
+		camera_target_pos = app->map->MapToScreenF(camera_target_pos);
 	}
 
 
@@ -99,8 +91,8 @@ bool M_Scene::PreUpdate()
 bool M_Scene::Update(float dt)
 {
 	BROFILER_CATEGORY("M_SceneUpdate", Profiler::Color::Blue);
-
-
+	Camera* camera = (*app->render->cameras.begin());
+	camera->MoveToScreenPoint(dt, camera_target_pos);
 
 	return true;
 }

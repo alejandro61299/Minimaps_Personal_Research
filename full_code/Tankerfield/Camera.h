@@ -14,6 +14,7 @@ public:
 
 	//Camera shake
 	void AddTrauma(float value);
+	void MoveToScreenPoint(float dt, fPoint point);
 
 private:
 
