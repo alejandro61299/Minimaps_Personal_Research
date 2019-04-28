@@ -3,6 +3,7 @@
 
 #include <list>
 #include "Point.h"
+#include "SDL/include/SDL_rect.h"
 
 class Object;
 struct SDL_Texture;
@@ -36,11 +37,15 @@ public:
 
 
 
+public:
+
+	fPoint               position = { 0.f,0.f };
+	SDL_Rect             minimap_rect = { 0, 0, 0,0 };
+
 private:
 
 	// General ===================================
 
-	fPoint               position = { 0.f,0.f };
 	std::list<Object*>   pointed_objects;
 
 	// Info ======================================

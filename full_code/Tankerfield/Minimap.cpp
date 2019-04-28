@@ -9,6 +9,9 @@
 
 Minimap::Minimap(const fPoint position): position(position)
 {
+	minimap_rect.x = position.x;
+	minimap_rect.y = position.y;
+
 	minimap_atlas = app->tex->LoadStreamingTex("maps/minimap_atlas.png");
 	circle_mask = app->tex->Load("maps/circle_mask.png");
 }
@@ -23,7 +26,7 @@ bool Minimap::PostUpdate()
 	// Draw minimap texture  ==========================================
 
 	Camera* camera = (*app->render->cameras.begin());
-	app->render->BlitUI(minimap_texture, 0, 0, NULL, camera);
+	app->render->BlitUI(minimap_texture, position.x, position.y , NULL, camera);
 
 	// Draw pointed objects  ==========================================
 
@@ -38,11 +41,13 @@ bool Minimap::PostUpdate()
 
 	// Draw minimap camera  ==========================================
 
-	iPoint pos = WorldToMinimap(camera->camera_pos.x, camera->camera_pos.y);
+	iPoint pos = WorldToMinimap(camera->camera_pos.x, camera->camera_pos.y) + (iPoint)position;
 
 	SDL_Rect camera_rect = { pos.x , pos.y, camera->screen_section.w * aspect_ratio_x ,  camera->screen_section.h * aspect_ratio_y};
 
  	app->render->DrawQuad(camera_rect,255,255,255,255, false, false);
+
+	app->render->DrawQuad(minimap_rect, 255, 255, 255, 255, false, false);
 
 	return true;
 }
@@ -56,15 +61,10 @@ bool Minimap::LoadTextureFromMap(const int width, const int height)
 {
 	// Set Minimap Values =============================
 
-	//minimap_tile_width = 1.2f;
-	//minimap_tile_height = 0.6f;
-
-	//texture_width = app->map->data.columns * minimap_tile_width;
-	//texture_height = app->map->data.rows * minimap_tile_height;
+	minimap_rect.w = texture_width = width;
+	minimap_rect.h = texture_height = height;
 
 
-	texture_width = width;
-	texture_height = height;
 
 	minimap_tile_width = texture_width / app->map->data.columns;
 	minimap_tile_height = texture_height / app->map->data.rows;
@@ -119,7 +119,7 @@ bool Minimap::LoadTextureFromMap(const int width, const int height)
 
 fPoint Minimap::MapToMinimap(const float x, const float y)
 {
-	return fPoint((x - y) * minimap_tile_width * 0.5f + print_x_offset, (x + y) * minimap_tile_height * 0.5f);
+	return fPoint((x - y) * minimap_tile_width * 0.5f + print_x_offset , (x + y) * minimap_tile_height * 0.5f);
 }
 
 fPoint Minimap::MinimapToMap(const float x, const float y)
@@ -129,10 +129,11 @@ fPoint Minimap::MinimapToMap(const float x, const float y)
 	float half_width = minimap_tile_width * 0.5f;
 	float half_height = minimap_tile_height * 0.5f;
 
-	float x_mod = x - print_x_offset;
+	float x_mod = x - print_x_offset - position.x;
+	float y_mod = y - position.y;
 
-	ret.x = (x_mod / half_width + y / half_height) * 0.5f;
-	ret.y = (y / half_height - x_mod / half_width) * 0.5f;
+	ret.x = (x_mod / half_width + y_mod / half_height) * 0.5f;
+	ret.y = (y_mod / half_height - x_mod / half_width) * 0.5f;
 
 	return ret;
 }

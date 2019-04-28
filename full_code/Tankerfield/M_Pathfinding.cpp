@@ -278,11 +278,9 @@ int M_Pathfinding::CreatePath(const iPoint& origin, const iPoint& destination)
 			}
 			open.list.erase(it);
 
-			// TODO 5: Fill a list of all adjancent nodes
 			PathList childs;
 			close.list.back().FindWalkableAdjacents(childs);
 
-			// TODO 6: Iterate adjancent nodes:					
 			std::list<PathNode>::iterator child_node = childs.list.begin();
 			while (child_node != childs.list.end())
 			{

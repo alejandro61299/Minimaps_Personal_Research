@@ -117,7 +117,7 @@ private:
 
 
 
-	float cos_45 = 0.f;//TODO: Create a macro with its value directly
+	float cos_45 = 0.f;
 	float sin_45 = 0.f;
 	float base_angle_lerp_factor = 0.f;
 	//-- Move tutorial

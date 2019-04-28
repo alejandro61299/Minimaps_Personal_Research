@@ -96,7 +96,7 @@ bool UI_Button::PreUpdate()
 {
 	if (hover_state == HoverState::ENTER && app->ui->GetSelectedElement() != this)
 	{
-		// TODO 1: Add SFX  
+
 	}
 	
 	return true;

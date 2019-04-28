@@ -8,7 +8,7 @@ Camera::Camera()
 	trauma_decay = 0.9f;
 	random_generator.seed(random_device());
 	aim_distance = 2.5f;
-	lerp_factor = 6.f;
+	lerp_factor = 7.f;
 }
 
 void Camera::FollowPlayer(float dt, Obj_Tank * player)

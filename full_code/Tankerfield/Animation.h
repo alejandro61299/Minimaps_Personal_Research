@@ -65,8 +65,6 @@ public:
 		return true;
 	}
 
-	//TODO: Assert if there is a different number of frames in each direction
-
 	//Used before loading rects
 	//Resizes the std::2Dvector frames so that it doesn't need to change size when rects are loaded00
 	void Resize(uint directions, uint frames_per_direction)
