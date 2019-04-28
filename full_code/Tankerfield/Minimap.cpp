@@ -10,6 +10,7 @@
 Minimap::Minimap()
 {
 	minimap_atlas = app->tex->LoadStreamingTex("maps/minimap_atlas.png");
+	circle_mask = app->tex->Load("maps/circle_mask.png");
 }
 
 bool Minimap::Update()
@@ -19,17 +20,30 @@ bool Minimap::Update()
 
 bool Minimap::PostUpdate()
 {
-	SDL_Rect draw_rect = { 0, 0, texture_width , texture_height };
-	app->render->BlitUI(minimap_texture, 0, 0, &draw_rect, (*app->render->cameras.begin()));
+	// Draw minimap texture  ==========================================
 
-	SDL_Rect sprite_rect = { 0,0,0,0 };
+	Camera* camera = (*app->render->cameras.begin());
+	app->render->BlitUI(minimap_texture, 0, 0, NULL, camera);
 
-	for (std::list<Object*>::iterator iter = pointed_objects.begin(); iter != pointed_objects.end(); ++iter)
-	{
-		iPoint object_pos = MapToMinimap((*iter)->pos_map.x, (*iter)->pos_map.y);
-		sprite_rect = { 1, 0, 9, 9 };
-		app->render->BlitUI(minimap_atlas, object_pos.x + print_x_offset - sprite_rect.w * .5f, object_pos.y - sprite_rect.h * .5f, &sprite_rect);
-	}
+	// Draw pointed objects  ==========================================
+
+	//SDL_Rect sprite_rect = { 0,0,0,0 };
+
+	//for (std::list<Object*>::iterator iter = pointed_objects.begin(); iter != pointed_objects.end(); ++iter)
+	//{
+	//	iPoint object_pos = MapToMinimap((*iter)->pos_map.x, (*iter)->pos_map.y);
+	//	sprite_rect = { 1, 0, 9, 9 };
+	//	app->render->BlitUI(minimap_atlas, object_pos.x - sprite_rect.w * .5f, object_pos.y - sprite_rect.h * .5f, &sprite_rect);
+	//}
+
+	// Draw minimap camera  ==========================================
+
+	iPoint pos = WorldToMinimap(camera->camera_pos.x, camera->camera_pos.y);
+
+	SDL_Rect camera_rect = { pos.x , pos.y, camera->screen_section.w * aspect_ratio_x ,  camera->screen_section.h * aspect_ratio_y};
+
+ 	app->render->DrawQuad(camera_rect,255,255,255,255, false, false);
+
 	return true;
 }
 
@@ -41,22 +55,21 @@ void Minimap::AddPonintedObject(Object * object_to_point)
 bool Minimap::LoadTextureFromMap()
 {
 
-	minimap_tile_width = 1;
+	minimap_tile_width = 2;
 	minimap_tile_height = 1;
 
 	// Search the widest & highest layer in order to obtain new texture size
 
-	texture_width = app->map->data.columns;
-	texture_height = app->map->data.rows;
+	texture_width = app->map->data.columns * minimap_tile_width;
+	texture_height = app->map->data.rows * minimap_tile_height;
 
-	texture_width *= minimap_tile_width;
-	texture_height *= minimap_tile_height;
+	aspect_ratio_x = (float)texture_width / (float)(app->map->data.tile_width * app->map->data.rows);
+	aspect_ratio_y = (float)texture_height / (float)(app->map->data.tile_height * app->map->data.columns);
 
 	print_x_offset = texture_width * 0.5f;
 
 	// Finaly we create the streaming texture
 
-	SDL_SetRenderDrawBlendMode(app->render->renderer, SDL_BLENDMODE_BLEND);
 	SDL_Rect sprite_rect = { 0,0,0,0 };
 	SDL_Rect section_to_print = { 0,0,0,0 };
 	iPoint minimap_tile_pos = { 0,0 };
@@ -65,10 +78,10 @@ bool Minimap::LoadTextureFromMap()
 	// changes render to target texture
 
 	minimap_texture = app->tex->CreateTargetTexture( texture_width, texture_height);
-
+	SDL_SetTextureBlendMode(minimap_texture, SDL_BLENDMODE_BLEND);
 	SDL_SetRenderTarget(app->render->renderer, minimap_texture);
 
-	// search throght layers and decide what minimap tex correspons to a specific map id
+	 //search throght layers and decide what minimap tex correspons to a specific map id
 
 	for (std::list<MapLayer*>::iterator iter = app->map->data.map_layers.begin(); iter != app->map->data.map_layers.end(); ++iter)
 	{
@@ -76,54 +89,44 @@ bool Minimap::LoadTextureFromMap()
 		{
 			for (int x = 0; x < (*iter)->columns; ++x)
 			{
-				id = (*iter)->Get(x, y) - 1;
-
-				if (id == 119)
-				{
-					sprite_rect = { 0,0 ,1,1 };
-				}
-				else if (id == 135)
-				{
-					sprite_rect = { 0,1 ,1,1 };
-				}
-				else
-				{
-					continue;
-				}
+				sprite_rect = (*app->map->data.tilesets.begin())->GetTileRect((*iter)->Get(x, y));
 
 				minimap_tile_pos = MapToMinimap(x, y);
 
-				section_to_print.x = print_x_offset + minimap_tile_pos.x;
-				section_to_print.y = minimap_tile_pos.y;
-				section_to_print.w = minimap_tile_width;
-				section_to_print.h = minimap_tile_height;
+				section_to_print = { (int)minimap_tile_pos.x, (int)minimap_tile_pos.y, (int)minimap_tile_width, (int)minimap_tile_height };
 
-				// render the desired texture to texture
-
-				SDL_RenderCopy(app->render->renderer, minimap_atlas, &sprite_rect, &section_to_print);
+				SDL_RenderCopy(app->render->renderer, (*app->map->data.tilesets.begin())->texture , &sprite_rect, &section_to_print);
 			}
 		}
 	}
 
-	//Reset render target 
+	// Apply alpha mask 
+	section_to_print = { 0, 0, 400, 400 };
+	sprite_rect = { 0,0,400,400 };
+
+	////SDL_BlendMode mode = SDL_ComposeCustomBlendMode(SDL_BLENDFACTOR_SRC_COLOR, SDL_BLENDFACTOR_DST_COLOR, SDL_BLENDOPERATION_ADD, SDL_BLENDFACTOR_SRC_ALPHA, SDL_BLENDFACTOR_DST_ALPHA, SDL_BLENDOPERATION_SUBTRACT);
+	//SDL_BlendMode mode = SDL_ComposeCustomBlendMode(SDL_BLENDFACTOR_ONE, SDL_BLENDFACTOR_ONE, SDL_BLENDOPERATION_ADD, SDL_BLENDFACTOR_ONE, SDL_BLENDFACTOR_ONE, SDL_BLENDOPERATION_REV_SUBTRACT);
+	//SDL_SetTextureBlendMode(circle_mask, SDL_BLENDMODE_NONE);
+	//SDL_SetTextureBlendMode(minimap_texture, mode);
+	//LOG("%s", SDL_GetError() );
+	////SDL_RenderCopy(app->render->renderer, circle_mask, &sprite_rect, &section_to_print);
+	//SDL_SetTextureBlendMode(minimap_texture, SDL_BLENDMODE_BLEND);
+	//SD
+	// Reset render target 
+
 	SDL_SetRenderTarget(app->render->renderer, NULL);
 
-	if (minimap_texture == nullptr)
-	{
-		LOG("Cannot Create Minimap Texture, Error: %s", SDL_GetError());
-		return false;
-	}
-	else
-	{
-		LOG("Created minimap texture");
-		return true;
-	}
+	return true;
 }
-
 
 iPoint Minimap::MapToMinimap(const int x, const int y)
 {
-	return iPoint((x - y) * minimap_tile_width * 0.5f, (x + y) * minimap_tile_height * 0.5f);
+	return iPoint((x - y) * minimap_tile_width * 0.5f + print_x_offset, (x + y) * minimap_tile_height * 0.5f);
+}
+
+iPoint Minimap::WorldToMinimap(const int x, const int y)
+{
+	return iPoint(x * aspect_ratio_x + print_x_offset, y * aspect_ratio_y);
 }
 
 void Minimap::Draw()

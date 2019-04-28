@@ -46,10 +46,12 @@ bool M_Render::Awake(pugi::xml_node& config)
 	bool ret = true;
 	// load flags
 	Uint32 flags = SDL_RENDERER_ACCELERATED;
+	flags |= SDL_RENDERER_TARGETTEXTURE;
 
 	if (config.child("vsync").attribute("value").as_bool(true) == true)
 	{
 		flags |= SDL_RENDERER_PRESENTVSYNC;
+
 		LOG("Using vsync");
 	}
 
@@ -230,6 +232,7 @@ void M_Render::BlitScaled(SDL_Texture* texture, const int screen_x, const int sc
 		ret = false;
 	}
 }
+
 void M_Render::BlitUI(SDL_Texture* texture, int screen_x, int screen_y, const SDL_Rect* section,  Camera* camera, const int alpha) const
 {
 	if (alpha == 0.f)
@@ -272,7 +275,6 @@ void M_Render::BlitUI(SDL_Texture* texture, int screen_x, int screen_y, const SD
 	{
 		SDL_SetTextureAlphaMod(texture, 255);
 	}
-
 }
 
 bool M_Render::DrawQuad(const SDL_Rect& rect, Uint8 r, Uint8 g, Uint8 b, Uint8 a, bool filled, bool use_camera) const
@@ -328,7 +330,6 @@ bool M_Render::DrawQuadUI( const SDL_Rect section, Camera* camera, const SDL_Col
 	SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
 	SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
 
-	SDL_RenderFillRect(renderer, &rect);
 	SDL_RenderFillRect(renderer, &rect);
 
 	if (camera != nullptr)

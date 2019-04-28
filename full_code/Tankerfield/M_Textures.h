@@ -61,6 +61,7 @@ public:
 
 	SDL_Texture       * CreateTargetTexture(const int width, const int height);
 
+	void ApplyMaskTexture(SDL_Texture * dst, SDL_Texture * mask);
 
 private:
 

@@ -265,69 +265,10 @@ bool M_Textures::UnlockTexture(SDL_Texture* tex)
 	return true;
 }
 
-// Both textures need to be streaming textures
-
-void M_Textures::CopyTextureOn(SDL_Texture* target_texture, SDL_Texture* source_texture,const  iPoint trg_pos , const iPoint src_pos, const int w, const int h)
-{
-	SDL_Rect src_rect = { src_pos.x, src_pos.y, w, h };
-	SDL_Rect trg_rect = { trg_pos.x, trg_pos.y , w, h};
-
-	// Get texture 1 data ===============================
-
-	void* pixel_data_trg;
-	int pitch_trg;
-	SDL_LockTexture(target_texture, &trg_rect, &pixel_data_trg, &pitch_trg);
-	// Get texture 1 data ===============================
-
-	void* pixel_data_src;
-	int pitch_src; 
-	SDL_LockTexture(source_texture, &src_rect, &pixel_data_src, &pitch_src); // this is filled in with a pointer to the locked pixels, appropriately offset by the locked area 
-	// Get pixel data in editable format ==================
-
-	// Texture 1 
-	Uint32* pixels_trg = (Uint32*)pixel_data_trg;
-	int pixel_count_trg = w  * h;
-	// Texture 2
-
-	Uint32* pixels_src = (Uint32*)pixel_data_src;
-
-	// Navigate throught pixel data ========================
-
-	for (int i = 0; i < pixel_count_trg; ++i)
-	{
-		pixels_trg[i] = pixels_src[i];
-	}
-
-	UnlockTexture(target_texture);
-	UnlockTexture(source_texture);
-}
-
-SDL_Texture* M_Textures::CreateStreamingTexture( const int texture_width, const int texture_height)
-{
-	SDL_Texture* new_streaming_tex = nullptr;
-	new_streaming_tex = SDL_CreateTexture(app->render->renderer, pixel_format, SDL_TEXTUREACCESS_STREAMING, texture_width, texture_height);
-	streaming_textures.push_back(new_streaming_tex);
-	return new_streaming_tex;
-}
-
 SDL_Texture* M_Textures::CreateTargetTexture(const int width, const int height)
 {
 	SDL_Texture* ret = nullptr;
-
-	SDL_Surface* newSurface = nullptr;
-
-	newSurface = SDL_CreateRGBSurface(0, width, height, 32, 0, 0, 0, 0);
-
-	if (SDL_SetSurfaceBlendMode(newSurface, SDL_BLENDMODE_BLEND) < 0)
-	{
-		LOG("Failed to create blend mode for new surface");
-	}
-	else
-		LOG("Succesfully changed blend mode for new surface");
-
-	newSurface = SDL_ConvertSurfaceFormat(newSurface, SDL_PIXELFORMAT_ARGB8888, NULL);
-
-	ret = SDL_CreateTexture(app->render->renderer, SDL_PIXELFORMAT_ARGB8888, SDL_TEXTUREACCESS_TARGET, newSurface->w, newSurface->h);
+	ret = SDL_CreateTexture(app->render->renderer, pixel_format, SDL_TEXTUREACCESS_TARGET, width, height);
 
 	if (ret != NULL)
 		return ret;
@@ -335,3 +276,4 @@ SDL_Texture* M_Textures::CreateTargetTexture(const int width, const int height)
 	return nullptr;
 
 }
+

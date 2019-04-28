@@ -25,6 +25,8 @@ public:
 
 	iPoint MapToMinimap(const int x, const int y);
 
+	iPoint WorldToMinimap(const int x, const int y);
+
 	void Draw();
 
 private:
@@ -36,13 +38,20 @@ private:
 
 	// Info ======================================
 
-	int                  print_x_offset = 0;
+	float                print_x_offset = 0;
+
+	// Texture info ==============================
+
 	SDL_Texture*         minimap_texture = nullptr;
 	SDL_Texture*         minimap_atlas = nullptr;
-	int                  texture_width = 0;
-	int                  texture_height = 0;
-	int                  minimap_tile_width = 10;
-	int                  minimap_tile_height = 10;
+	SDL_Texture*         circle_mask = nullptr;
+	
+	float                aspect_ratio_x;
+	float                aspect_ratio_y;
+	float                texture_width = 0;
+	float                texture_height = 0;
+	float                minimap_tile_width = 10;
+	float                minimap_tile_height = 10;
 };
 
 #endif // !_MINI_MAP_H__
