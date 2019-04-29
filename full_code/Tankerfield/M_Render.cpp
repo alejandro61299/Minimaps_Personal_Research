@@ -65,7 +65,7 @@ bool M_Render::Awake(pugi::xml_node& config)
 	}
 	
 
-	renderer = SDL_CreateRenderer(app->win->window, -1, flags);
+	renderer = SDL_CreateRenderer(app->win->window, 2, flags);
 
 	if (renderer == NULL)
 	{

@@ -14,8 +14,6 @@ public:
 
 	Obj_Tank * player = nullptr;
 	Minimap * minimap = nullptr;
-	fPoint camera_target_pos = { 0,0 };
-	bool  allow_interaction = false;
 
 public:
 

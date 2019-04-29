@@ -255,7 +255,7 @@ bool M_UI::PostUpdate(float dt)
 
 	// Draw all UI elements ====================================
 
-	DrawUI(main_ui_element);
+	//DrawUI(main_ui_element);
 
 	// Debug Positions  =======================================
 

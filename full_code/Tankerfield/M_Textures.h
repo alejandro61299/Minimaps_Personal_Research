@@ -22,7 +22,7 @@ enum class TEXTURE_TYPE
 {
 	NORMAL,
 	TEXT,
-	STREAMING
+	STREAMING_OR_TARGET
 };
 
 class M_Textures : public Module
@@ -72,7 +72,7 @@ public:
 			//Path		  //Texture pointer
 	std::map<std::string, SDL_Texture *> textures;
 
-	std::list<SDL_Texture*> streaming_textures;
+	std::list<SDL_Texture*> streaming_or_target_textures;
 
 	std::list<SDL_Texture*> text_textures;
 };

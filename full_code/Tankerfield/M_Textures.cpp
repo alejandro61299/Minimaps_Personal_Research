@@ -120,14 +120,14 @@ bool M_Textures::UnLoad(SDL_Texture* texture, TEXTURE_TYPE type )
 			}
 		}
 	}
-	else if (type == TEXTURE_TYPE::STREAMING)
+	else if (type == TEXTURE_TYPE::STREAMING_OR_TARGET)
 	{
-		std::list<SDL_Texture*>::iterator texture_found = std::find(streaming_textures.begin(), streaming_textures.end(), texture);
+		std::list<SDL_Texture*>::iterator texture_found = std::find(streaming_or_target_textures.begin(), streaming_or_target_textures.end(), texture);
 
-		if (texture_found != text_textures.end())
+		if (texture_found != streaming_or_target_textures.end())
 		{
 			SDL_DestroyTexture(*texture_found);
-			text_textures.erase(texture_found);
+			streaming_or_target_textures.erase(texture_found);
 		}
 	}
 	else if (type == TEXTURE_TYPE::TEXT)
@@ -231,7 +231,7 @@ SDL_Texture* M_Textures::LoadStreamingTex(const char* path)
 				SDL_UnlockTexture(newTex);
 				mPixels = nullptr;
 
-				streaming_textures.push_back(newTex);
+				streaming_or_target_textures.push_back(newTex);
 
 				SDL_FreeSurface(loadedSurface);
 				SDL_FreeSurface(formattedSurface);
@@ -270,8 +270,11 @@ SDL_Texture* M_Textures::CreateTargetTexture(const int width, const int height)
 	SDL_Texture* ret = nullptr;
 	ret = SDL_CreateTexture(app->render->renderer, pixel_format, SDL_TEXTUREACCESS_TARGET, width, height);
 
-	if (ret != NULL)
+	if (ret != nullptr)
+	{
+		streaming_or_target_textures.push_back(ret);
 		return ret;
+	}
 
 	return nullptr;
 
