@@ -55,6 +55,16 @@ bool M_Render::Awake(pugi::xml_node& config)
 		LOG("Using vsync");
 	}
 
+	SDL_RendererInfo info;
+		
+
+	for (int i = 0; i < SDL_GetNumRenderDrivers(); ++i)
+	{
+		SDL_GetRenderDriverInfo(i, &info);
+		LOG("%s", info.name);
+	}
+	
+
 	renderer = SDL_CreateRenderer(app->win->window, -1, flags);
 
 	if (renderer == NULL)
