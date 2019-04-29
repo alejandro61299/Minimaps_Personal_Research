@@ -90,10 +90,6 @@ bool Obj_Tank::Start()
 	cycle_bar_anim.frames = app->anim_bank->LoadFrames(app->anim_bank->animations_xml_node.child("cycle-progress-bar"));
 
 	//sfx -------------------------------------------------------------------------------------------------------
-	shot_sound = app->audio->LoadFx(tank_node.child("sounds").child("basic_shot").attribute("sound").as_string());
-	movement_sfx = app->audio->LoadFx("audio/Fx/vlanstab.wav");
-	revive_sfx = app->audio->LoadFx("audio/Fx/tank/revivir.wav");
-	die_sfx = app->audio->LoadFx("audio/Fx/tank/death-sfx.wav");
 
 	switch (tank_num) {
 	case 0:

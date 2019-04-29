@@ -112,7 +112,6 @@ private:
 	float velocity_recoil_speed_max = 0.f;
 	float velocity_recoil_speed_max_charged = 0.f;
 	float lerp_factor_recoil = 0.f;
-	uint movement_sfx = 0;
 	Timer movement_timer;
 
 
@@ -144,7 +143,6 @@ private:
 	UI_IG_Helper * tutorial_revive = nullptr;
 	bool reviving_tank[4] = { false };//Is this tank reviving [?] tank?
 	Timer revive_timer[4];					//Time that you've been reviving other tanks
-	uint revive_sfx = 0u;
 
 
 
@@ -152,7 +150,6 @@ private:
 	PerfTimer shot_timer;
 	PerfTimer charged_timer;
 	float charge_time = 0.f;//Charge time in ms
-	uint shot_sound = 0u;
 	bool show_crosshairs = false;
 
 	//- Items
@@ -207,7 +204,6 @@ private:
 	bool draw_revive_cycle_bar = false;
 
 	//sfx 
-	uint die_sfx = 0u;
 
 public:
 	Camera* camera_player = nullptr;

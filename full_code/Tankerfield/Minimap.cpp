@@ -30,23 +30,25 @@ bool Minimap::PostUpdate()
 
 	// Draw pointed objects  ==========================================
 
-	//SDL_Rect sprite_rect = { 0,0,0,0 };
+	SDL_Rect sprite_rect = { 0,0,0,0 };
 
-	//for (std::list<Object*>::iterator iter = pointed_objects.begin(); iter != pointed_objects.end(); ++iter)
-	//{
-	//	iPoint object_pos = MapToMinimap((*iter)->pos_map.x, (*iter)->pos_map.y);
-	//	sprite_rect = { 1, 0, 9, 9 };
-	//	app->render->BlitUI(minimap_atlas, object_pos.x - sprite_rect.w * .5f, object_pos.y - sprite_rect.h * .5f, &sprite_rect);
-	//}
+	for (std::list<Object*>::iterator iter = pointed_objects.begin(); iter != pointed_objects.end(); ++iter)
+	{
+		fPoint object_pos = MapToMinimap((*iter)->pos_map.x, (*iter)->pos_map.y) + (fPoint)position;
+		sprite_rect = { (int)object_pos.x -3,(int)object_pos.y -3,6, 6 };
+		app->render->DrawQuad(sprite_rect, 255, 0, 0, 255, true, false);
+	}
 
 	// Draw minimap camera  ==========================================
 
+	app->render->DrawLineSplitScreen(minimap_rect.x + minimap_rect.w* .5f, minimap_rect.y, minimap_rect.x + minimap_rect.w, minimap_rect.y + minimap_rect.h *0.5f,						0, 0, 0, 255);
+	app->render->DrawLineSplitScreen(minimap_rect.x + minimap_rect.w , minimap_rect.y + minimap_rect.h *0.5f , minimap_rect.x + minimap_rect.w* .5f, minimap_rect.y + minimap_rect.h ,	0, 0, 0, 255);
+	app->render->DrawLineSplitScreen(minimap_rect.x + minimap_rect.w* .5f, minimap_rect.y + minimap_rect.h, minimap_rect.x, minimap_rect.y + minimap_rect.h *0.5f,						0, 0, 0, 255);
+	app->render->DrawLineSplitScreen(minimap_rect.x, minimap_rect.y + minimap_rect.h *0.5f, minimap_rect.x + minimap_rect.w* .5f, minimap_rect.y ,										0, 0, 0, 255);
+	
 	iPoint pos = WorldToMinimap(camera->camera_pos.x, camera->camera_pos.y) + (iPoint)position;
-
-	SDL_Rect camera_rect = { pos.x , pos.y, camera->screen_section.w * aspect_ratio_x ,  camera->screen_section.h * aspect_ratio_y};
-
- 	app->render->DrawQuad(camera_rect,255,255,255,255, false, false);
-
+	SDL_Rect camera_rect = { pos.x , pos.y, camera->screen_section.w * aspect_ratio_x ,  camera->screen_section.h * aspect_ratio_y };
+	app->render->DrawQuad(camera_rect, 255, 255, 255, 255, false, false);
 	app->render->DrawQuad(minimap_rect, 255, 255, 255, 255, false, false);
 
 	return true;
