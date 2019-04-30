@@ -300,7 +300,7 @@ bool M_Render::DrawQuad(const SDL_Rect& rect, Uint8 r, Uint8 g, Uint8 b, Uint8 a
     std::vector<Camera*>::iterator item_cam;
 	for (item_cam = app->render->cameras.begin(); item_cam != app->render->cameras.end(); ++item_cam)
 	{
-		SDL_RenderSetClipRect(app->render->renderer, &(*item_cam)->screen_section);
+		/*SDL_RenderSetClipRect(app->render->renderer, &(*item_cam)->screen_section);*/
 		if (use_camera)
 		{
 			rec.x = (int)(-(*item_cam)->rect.x + rect.x * scale);
@@ -318,7 +318,7 @@ bool M_Render::DrawQuad(const SDL_Rect& rect, Uint8 r, Uint8 g, Uint8 b, Uint8 a
 		}
 	}
 
-	SDL_RenderSetClipRect(app->render->renderer, nullptr);
+	//SDL_RenderSetClipRect(app->render->renderer, nullptr);
 
 	return ret;
 }

@@ -121,8 +121,8 @@ bool Minimap::Update(float dt)
 
 	// Camera movement =========================================
 
-	Camera* camera = (*app->render->cameras.begin());
-	camera->MoveToScreenPoint(dt, camera_target_pos);
+	//Camera* camera = (*app->render->cameras.begin());
+	//camera->MoveToScreenPoint(dt, camera_target_pos);
 
 	// Update texture rect =====================================
 
@@ -208,22 +208,21 @@ bool Minimap::LoadMinimapData()
 
 	float tiles_amount = (float)(app->map->data.columns + app->map->data.rows)* 0.5f;
 
-	// We also find a constant to transform from pixels in the world to pixels in the minimap  ==========
-
-	aspect_ratio_x = texture_width / (tile_width * tiles_amount);
-
 	// We found texture height from the width with a rule of 3  ===================================
 
 	if (projection_type == PROJECTION_TYPE::ORTHOGONAL)
 	{
 		texture_height = texture_width;
-		aspect_ratio_y = aspect_ratio_x;
 	}
 	else
 	{
 		texture_height = (texture_width * (tiles_amount * tile_height)) / (tiles_amount* tile_width);
-		aspect_ratio_y = texture_height / (tile_height *tiles_amount);
 	}
+
+	// We also find a constant to transform from pixels in the world to pixels in the minimap  ====
+
+	aspect_ratio_x = texture_width / (tile_width * tiles_amount);
+	aspect_ratio_y = texture_height / (tile_height *tiles_amount);
 
 	// Now we have enough information to know the size of minimap tiles ===========================
 
