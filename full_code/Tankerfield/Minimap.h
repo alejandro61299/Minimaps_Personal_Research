@@ -84,7 +84,7 @@ private:
 
 	// General info ======================================
 
-	fPoint				minimap_pos = { 0.f, 0.f };
+	fPoint				texture_pos = { 0.f, 0.f };
 	SDL_Rect            minimap_rect = { 0, 0, 0,0 };
 	bool                minimap_loaded = false;
 	PROJECTION_TYPE		projection_type = PROJECTION_TYPE::ISOMETRIC;

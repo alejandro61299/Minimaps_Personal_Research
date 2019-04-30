@@ -61,9 +61,8 @@ bool Minimap::PreUpdate()
 
 	if (app->input->GetMouseButton(1) == KEY_DOWN)
 	{
-	
 		SDL_Point mouse_point = { x, y };
-	
+
 		if (SDL_PointInRect(&mouse_point, &minimap_rect))
 		{
 			allow_interaction = true;
@@ -76,31 +75,39 @@ bool Minimap::PreUpdate()
 		if (allow_interaction)
 		{
 			Camera* camera = (*app->render->cameras.begin());
-			camera_target_pos = MinimapToMap(x, y);
-			camera_target_pos = app->map->MapToScreenF(camera_target_pos);
-			camera_target_pos -= { camera->rect.w * 0.5f, camera->rect.h * 0.5f};
+			camera_target_pos = (fPoint) MinimapToWorld(x /*- texture_pos.x*/, y/* - texture_pos.y*/);
+			//camera_target_pos += fPoint(texture_pos.x, texture_pos.y);
+
+			//Camera* camera = (*app->render->cameras.begin());
+			//camera_target_pos = MinimapToMap(x - minimap_pos.x, y - minimap_pos.y);
+			//camera_target_pos = app->map->MapToScreenF(camera_target_pos);
+			//camera_target_pos -= { camera->rect.w * 0.5f, camera->rect.h * 0.5f};
+			//
+	/*		camera_target_pos = app->map->MapToScreenF(camera_target_pos);*/
+			//camera_target_pos -= { camera->rect.w * 0.5f, camera->rect.h * 0.5f};
 	
-			if (camera_target_pos.x < -app->map->data.tile_width* .5f * app->map->data.rows)
-			{
-				camera_target_pos.x = -app->map->data.tile_width* .5f * app->map->data.rows;
-			}
-			
-			if  (camera_target_pos.x + camera->rect.w > app->map->data.tile_width* .5f * app->map->data.rows)
-			{
-				camera_target_pos.x = app->map->data.tile_width* .5f * app->map->data.rows - camera->rect.w;
-			}
+			//if (camera_target_pos.x < -app->map->data.tile_width* .5f * app->map->data.rows)
+			//{
+			//	camera_target_pos.x = -app->map->data.tile_width* .5f * app->map->data.rows;
+			//}
+			//
+			//if  (camera_target_pos.x + camera->rect.w > app->map->data.tile_width* .5f * app->map->data.rows)
+			//{
+			//	camera_target_pos.x = app->map->data.tile_width* .5f * app->map->data.rows - camera->rect.w;
+			//}
 	
-			if (camera_target_pos.y < 0.f)
-			{
-				camera_target_pos.y = 0.f;
-			}
+			//if (camera_target_pos.y < 0.f)
+			//{
+			//	camera_target_pos.y = 0.f;
+			//}
 	
-			if (camera_target_pos.y + camera->rect.h > app->map->data.tile_height * app->map->data.columns)
-			{
-				camera_target_pos.y = app->map->data.tile_height * app->map->data.columns - camera->rect.h;
-			}
+			//if (camera_target_pos.y + camera->rect.h > app->map->data.tile_height * app->map->data.columns)
+			//{
+			//	camera_target_pos.y = app->map->data.tile_height * app->map->data.columns - camera->rect.h;
+			//}
 		}
 	}
+
 	if (app->input->GetMouseButton(1) == KEY_UP)
 	{
 		allow_interaction = false;
@@ -122,11 +129,11 @@ bool Minimap::Update(float dt)
 	if (interaction_type == INTERACTION_TYPE::FOLLOW_TARGET)
 	{
 		fPoint offset = MapToMinimap(target_to_follow->pos_map.x, target_to_follow->pos_map.y);
-		minimap_pos = { minimap_rect.x + minimap_rect.w* .5f - offset.x, minimap_rect.y + minimap_rect.h* .5f - offset.y };
+		texture_pos = { minimap_rect.x + minimap_rect.w* .5f - offset.x, minimap_rect.y + minimap_rect.h* .5f - offset.y };
 	}
 	else
 	{
-		minimap_pos = { minimap_rect.x + minimap_rect.w* .5f - texture_width* .5f , minimap_rect.y + minimap_rect.h* .5f - texture_height* .5f};
+		texture_pos = { minimap_rect.x + minimap_rect.w* .5f - texture_width* .5f , minimap_rect.y + minimap_rect.h* .5f - texture_height* .5f};
 	}
 
 	return false;
@@ -148,7 +155,7 @@ bool Minimap::PostUpdate()
 
 	for (std::list<Object*>::iterator iter = indicators_list.begin(); iter != indicators_list.end(); ++iter)
 	{
-		fPoint object_pos = MapToMinimap((*iter)->pos_map.x, (*iter)->pos_map.y) + (fPoint)minimap_pos;
+		fPoint object_pos = MapToMinimap((*iter)->pos_map.x, (*iter)->pos_map.y) + (fPoint)texture_pos;
 		sprite_rect = { (int)object_pos.x - 3,(int)object_pos.y - 3,6, 6 };
 		app->render->DrawQuad(sprite_rect, 255, 0, 0, 255, true, false);
 	}
@@ -157,7 +164,7 @@ bool Minimap::PostUpdate()
 
 	// Draw minimap camera  ==========================================
 
-	iPoint pos = WorldToMinimap(camera->camera_pos.x, camera->camera_pos.y) + (iPoint)minimap_pos;
+	iPoint pos = WorldToMinimap(camera->camera_pos.x, camera->camera_pos.y);
 	SDL_Rect camera_rect = { pos.x , pos.y, camera->screen_section.w * aspect_ratio_x ,  camera->screen_section.h * aspect_ratio_y };
 	app->render->DrawQuad(camera_rect, 255, 255, 255, 255, false, false);
 	app->render->DrawQuad(minimap_rect, 255, 255, 255, 255, false, false);
@@ -339,16 +346,16 @@ fPoint Minimap::MinimapToMap(const float x, const float y)
 	return ret;
 }
 
-// - Pixels Minimap Coordinate to World/Screen Pixel Coordinates
+// - World/Screen Pixel Coordinates to Pixels Minimap Coordinate 
 iPoint Minimap::WorldToMinimap(const int x, const int y)
 {
-	return iPoint(x * aspect_ratio_x + x_offset, y * aspect_ratio_y);
+	return iPoint(x * aspect_ratio_x + x_offset + texture_pos.x, y * aspect_ratio_y + texture_pos.y);
 }
 
-// - World/Screen Pixel Coordinates to Pixels Minimap Coordinate 
+// - Pixels Minimap Coordinate to World/Screen Pixel Coordinates
 iPoint Minimap::MinimapToWorld(const int x, const int y)
 {
-	return iPoint((float)(x - x_offset) / aspect_ratio_x, (float)y / aspect_ratio_y);
+	return iPoint((float)(x - x_offset - texture_pos.x) / aspect_ratio_x, (float) (y  - texture_pos.y )/ aspect_ratio_y);
 }
 
 bool Minimap::PointInEllipse(fPoint test, fPoint center, float width, float height)
