@@ -58,9 +58,10 @@ bool M_Scene::Start()
 	int minimap_height = 190;
 
 	fRect rect = app->win->GetWindowRect();
+	fPoint minimap_pos = { rect.GetRight() - minimap_width - screen_margin, rect.GetBottom() - minimap_height - screen_margin };
 
-	minimap = new Minimap( fPoint(rect.GetRight() - minimap_width - screen_margin, rect.GetBottom() - minimap_height - screen_margin), minimap_width, minimap_height, 2000);
-	minimap->target_to_follow = player;
+	minimap = new Minimap(minimap_pos, MINIMAP_MODE::FREE_MOVEMENT, minimap_width, minimap_height, 2000, player);
+
 	// Add indicators ========================================================
 
 	minimap->AddPonintedObject(player);

@@ -8,15 +8,23 @@
 class Object;
 struct SDL_Texture;
 
+enum class MINIMAP_MODE
+{
+	FOLLOW_TARGET,
+	FREE_MOVEMENT
+};
+
 class Minimap
 {
 public:
 
-	Minimap(const fPoint position, float minimap_width, float minimap_height, float texture_width);
+	Minimap(const fPoint position, MINIMAP_MODE mode = MINIMAP_MODE::FREE_MOVEMENT, float minimap_width = 0.f, float minimap_height = 0.f, float texture_width = 0.f, Object* target = nullptr);
+
+	~Minimap();
 
 	bool PreUpdate();
 
-	bool Update( float dt);
+	bool Update(float dt);
 
 	bool PostUpdate();
 
@@ -26,21 +34,25 @@ public:
 
 	// Mesures transformations methods ==========================
 
-	fPoint MapToMinimap(const float x, const float y);
+	fPoint	MapToMinimap(const float x, const float y);
 
-	fPoint MinimapToMap(const float x, const float y);
+	fPoint	MinimapToMap(const float x, const float y);
 
-	iPoint WorldToMinimap(const int x, const int y);
+	iPoint	WorldToMinimap(const int x, const int y);
 
-	iPoint MinimapToWorld(const int x, const int y);
+	iPoint	MinimapToWorld(const int x, const int y);
 
-	bool PointInEllipse(fPoint test, fPoint center, float width, float height);
+	bool	PointInEllipse(fPoint test, fPoint center, float width, float height);
 
 private:
 
-	bool LoadTextureFromMap();
+	bool LoadMinimap();
 
-	void UpdateMinimapTexture();
+	bool    LoadMinimapData();
+
+	bool	LoadMinimapTexture();
+
+	void	UpdateMinimapTexture();
 
 public:
 
@@ -57,6 +69,8 @@ private:
 
 	// Info ======================================
 
+	bool                minimap_loaded = false;
+	MINIMAP_MODE        mode = MINIMAP_MODE::FREE_MOVEMENT;
 	SDL_Rect            view_rect = { 0, 0, 0,0 };
 	SDL_Rect            minimap_rect = { 0, 0, 0,0 };
 	float				x_offset = 0;
@@ -66,7 +80,7 @@ private:
 	SDL_Texture*		minimap_texture = nullptr;      // Scaled map texture
 	SDL_Texture*        blitted_texture = nullptr;      // Blitted texture with masks
 	SDL_Texture*		alpha_mask_texture = nullptr;   // Mask texture used to aplly alpha mask
-	
+
 	float				texture_width = 0.f;
 	float				texture_height = 0.f;
 
@@ -79,6 +93,10 @@ private:
 	// Indicators ===================================
 
 	std::list<Object*>	indicators_list;
+
+	// Debug ========================================
+
+	bool				aplly_alpha_mask = true;
 };
 
 #endif // !_MINI_MAP_H__

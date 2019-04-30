@@ -634,6 +634,11 @@ bool M_Map::CreateWalkabilityMap(int& width, int &height, uchar** buffer) const
 	return ret;
 }
 
+bool M_Map::MapLoaded() const
+{
+	return map_loaded;
+}
+
 iPoint M_Map::MapToScreenI(int column, int row) const
 {
 
