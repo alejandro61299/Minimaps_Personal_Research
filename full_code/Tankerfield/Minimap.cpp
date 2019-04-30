@@ -7,7 +7,7 @@
 #include <list>
 #include "Object.h"
 
-Minimap::Minimap(const fPoint position, float minimap_width, float minimap_height, float map_texture_width, float map_texture_height) : position(position), map_texture_width(map_texture_width), map_texture_height(map_texture_height)
+Minimap::Minimap(const fPoint position, float minimap_width, float minimap_height, float texture_width) : position(position), texture_width(texture_width)
 {
 	// Set view rect =============================================================
 
@@ -15,7 +15,7 @@ Minimap::Minimap(const fPoint position, float minimap_width, float minimap_heigh
 
 	// Set texture rect =============================================================
 
-	minimap_rect = { 0, 0, (int)map_texture_width, (int)map_texture_height };
+	minimap_rect = { 0, 0, (int)texture_width, (int)texture_height };
 
 	// Load Textures ================================================================
 
@@ -59,26 +59,22 @@ bool Minimap::Update(float dt)
 	minimap_rect.x = (int)minimap_pos.x;
 	minimap_rect.y = (int)minimap_pos.y;
 
+
+	UpdateMinimapTexture();
+
 	return false;
 }
 
 bool Minimap::PostUpdate()
 {
-
-	//SDL_BlendMode mode = SDL_ComposeCustomBlendMode(SDL_BLENDFACTOR_ZERO, SDL_BLENDFACTOR_ONE, SDL_BLENDOPERATION_ADD, SDL_BLENDFACTOR_ONE, SDL_BLENDFACTOR_ONE, SDL_BLENDOPERATION_REV_SUBTRACT);
-
-//SDL_SetTextureBlendMode(alpha_mask_texture, mode);
-//SDL_RenderCopy(app->render->renderer, alpha_mask_texture, NULL, &view_rect);
-
-
 	// Draw minimap texture  ==========================================
-
+	SDL_Rect sprite_rect = { 0,0,view_rect.w, view_rect.h };
 	Camera* camera = (*app->render->cameras.begin());
-	app->render->BlitUI(minimap_texture, minimap_pos.x , minimap_pos.y , NULL, camera);
+	app->render->BlitUI(blitted_texture, view_rect.x , view_rect.y , &sprite_rect, camera);
 
 	// Draw pointed objects  ==========================================
 
-	SDL_Rect sprite_rect = { 0,0,0,0 };
+
 
 	for (std::list<Object*>::iterator iter = indicators_list.begin(); iter != indicators_list.end(); ++iter)
 	{
@@ -94,34 +90,33 @@ bool Minimap::PostUpdate()
 	app->render->DrawQuad(camera_rect, 255, 255, 255, 255, false, false);
 	app->render->DrawQuad(view_rect, 255, 255, 255, 255, false, false);
 
+
 	return true;
 }
 
 bool Minimap::LoadTextureFromMap()
 {
-	// Set Minimap Values ========================================
+	// Set Minimap Info ========================================
 
 	float tiles_average = (float)app->map->data.columns * 0.5f + (float)app->map->data.rows * 0.5f;
 
-	minimap_tile_width = map_texture_width / tiles_average;
-	minimap_tile_height = map_texture_height / tiles_average;
+	texture_height = (texture_width * (tiles_average* (float)app->map->data.tile_height)) / (tiles_average* (float)app->map->data.tile_width);
 
-	aspect_ratio_x = (float)map_texture_width /  ((float)app->map->data.tile_width * tiles_average);
-	aspect_ratio_y = (float)map_texture_height / ((float)app->map->data.tile_height *tiles_average);
+	minimap_tile_width = texture_width / tiles_average;
+	minimap_tile_height = texture_height / tiles_average;
+
+	aspect_ratio_x = (float)texture_width /  ((float)app->map->data.tile_width * tiles_average);
+	aspect_ratio_y = (float)texture_height / ((float)app->map->data.tile_height *tiles_average);
 
 	x_offset = (float)app->map->data.rows *minimap_tile_width * 0.5f;
 
 	// Create Target Textures ====================================
 
-	SDL_Texture* aux_texture = app->tex->CreateTargetTexture((float)app->map->data.tile_width * tiles_average, (float)app->map->data.tile_height *tiles_average);
-	float map_offset_x = (float)app->map->data.rows *(float)app->map->data.tile_width * 0.5f;
-
 	blitted_texture = app->tex->CreateTargetTexture(view_rect.w, view_rect.h);
-	minimap_texture = app->tex->CreateTargetTexture( map_texture_width, map_texture_height);
+	minimap_texture = app->tex->CreateTargetTexture( texture_width, texture_height);
 
-	SDL_SetTextureBlendMode(minimap_texture, SDL_BLENDMODE_BLEND);
 	SDL_SetRenderTarget(app->render->renderer, minimap_texture);
-
+	SDL_SetTextureBlendMode(minimap_texture, SDL_BLENDMODE_BLEND);
 	// Blit scaled map to minimap texture =========================
 
 	SDL_Rect sprite_rect = { 0,0,0,0 };
@@ -134,7 +129,8 @@ bool Minimap::LoadTextureFromMap()
 		{
 			for (int x = 0; x < (*iter)->columns; ++x)
 			{
-				sprite_rect = (*app->map->data.tilesets.begin())->GetTileRect((*iter)->Get(x, y));
+				Tileset* tileset = app->map->GetTilesetFromTileId((*iter)->Get(x, y));
+				sprite_rect = tileset->GetTileRect((*iter)->Get(x, y));
 
 				minimap_tile_pos = MapToMinimap(x, y);
 
@@ -144,10 +140,10 @@ bool Minimap::LoadTextureFromMap()
 				}
 				else
 				{
-					section_to_print = { (int)minimap_tile_pos.x, (int)minimap_tile_pos.y, 1, 1};
+					section_to_print = { (int)minimap_tile_pos.x, (int)minimap_tile_pos.y, 1, 1 };
 				}
 
-				SDL_RenderCopy(app->render->renderer, (*app->map->data.tilesets.begin())->texture , &sprite_rect, &section_to_print);
+				SDL_RenderCopy(app->render->renderer, tileset->texture , &sprite_rect, &section_to_print);
 			}
 		}
 	}
@@ -155,7 +151,6 @@ bool Minimap::LoadTextureFromMap()
 	// Reset target texture ==================================================
 
 	SDL_SetRenderTarget(app->render->renderer, NULL);
-	app->tex->UnLoad(aux_texture, TEXTURE_TYPE::STREAMING_OR_TARGET);
 
 	return true;
 }
@@ -163,8 +158,18 @@ bool Minimap::LoadTextureFromMap()
 void Minimap::UpdateMinimapTexture()
 {
 	SDL_SetRenderTarget(app->render->renderer, blitted_texture);
+	SDL_SetTextureBlendMode(blitted_texture, SDL_BLENDMODE_BLEND);
+	SDL_SetRenderDrawColor( app->render->renderer ,0, 0, 0, 255);
+	SDL_RenderClear(app->render->renderer);
+	Camera* camera = (*app->render->cameras.begin());
+	fPoint offset = MapToMinimap(target_to_follow->pos_map.x, target_to_follow->pos_map.y);
 
-	//SDL_RenderCopy(app->render->renderer, alpha_mask_texture, &sprite_rect, &section_to_print);
+	app->render->BlitUI(minimap_texture,  view_rect.w * .5f - offset.x , view_rect.h * .5f - offset.y, NULL, camera);
+
+	SDL_BlendMode mode = SDL_ComposeCustomBlendMode(SDL_BLENDFACTOR_ZERO, SDL_BLENDFACTOR_ONE, SDL_BLENDOPERATION_ADD, SDL_BLENDFACTOR_ONE, SDL_BLENDFACTOR_ONE, SDL_BLENDOPERATION_REV_SUBTRACT);
+
+	SDL_SetTextureBlendMode(alpha_mask_texture, mode);
+	SDL_RenderCopy(app->render->renderer, alpha_mask_texture, NULL, NULL);
 
 	SDL_SetRenderTarget(app->render->renderer, NULL);
 }
@@ -178,14 +183,14 @@ fPoint Minimap::MinimapToMap(const float x, const float y)
 {
 	fPoint ret = { 0.f, 0.f };
 
-	float half_width = minimap_tile_width * 0.5f;
-	float half_height = minimap_tile_height * 0.5f;
+	float half_width = minimap_tile_width   * .5f;
+	float half_height = minimap_tile_height * .5f;
 
 	float x_mod = x - x_offset;
 	float y_mod = y;
 
-	ret.x = (x_mod / half_width + y_mod / half_height) * 0.5f;
-	ret.y = (y_mod / half_height - x_mod / half_width) * 0.5f;
+	ret.x = (x_mod / half_width + y_mod / half_height) * .5f;
+	ret.y = (y_mod / half_height - x_mod / half_width) * .5f;
 
 	return ret;
 }

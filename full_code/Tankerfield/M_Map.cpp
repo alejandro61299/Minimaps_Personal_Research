@@ -47,7 +47,7 @@ bool M_Map::Load(const std::string& file_name)
 	pugi::xml_node tileset;
 	for (tileset = map_file.child("map").child("tileset"); tileset && ret; tileset = tileset.next_sibling("tileset"))
 	{
-		TileSet* set = new TileSet();
+		Tileset* set = new Tileset();
 
 		if (ret == true)
 		{
@@ -155,7 +155,7 @@ bool M_Map::PostUpdate(float dt)
 
 	for (std::vector<Tile>::iterator sorted_tiles = aux.begin(); sorted_tiles != aux.end(); ++sorted_tiles)
 	{
-		TileSet* tileset = app->map->GetTilesetFromTileId((*sorted_tiles).id);
+		Tileset* tileset = app->map->GetTilesetFromTileId((*sorted_tiles).id);
 
 		app->render->Blit(sorted_tiles->texture,
 			(*sorted_tiles).rect.x,
@@ -222,9 +222,9 @@ void M_Map::DebugMap()
 	LOG("width: %i height: %i", data.columns, data.rows);
 	LOG("tile_width: %i tile_height: %i", data.tile_width, data.tile_height);
 
-	for (std::list<TileSet*>::iterator item = data.tilesets.begin(); item != data.tilesets.end(); ++item)
+	for (std::list<Tileset*>::iterator item = data.tilesets.begin(); item != data.tilesets.end(); ++item)
 	{
-		TileSet* s = (*item);
+		Tileset* s = (*item);
 		LOG("Tileset ----");
 		LOG("name: %s firstgid: %i", (*s).name.data(), (*s).firstgid);
 		LOG("tile width: %i tile height: %i", s->tile_width, s->tile_height);
@@ -281,7 +281,7 @@ bool M_Map::LoadLayer(pugi::xml_node& node, MapLayer* layer)
 
 				if (qtile.id != 0)
 				{
-					TileSet* this_Tile = app->map->GetTilesetFromTileId(qtile.id);
+					Tileset* this_Tile = app->map->GetTilesetFromTileId(qtile.id);
 
 					if (this_Tile == nullptr)
 						continue;
@@ -427,7 +427,7 @@ bool M_Map::LoadObjectGroup(const pugi::xml_node & object_group_node, ObjectGrou
 
 
 
-bool M_Map::LoadTilesetImage(pugi::xml_node& tileset_node, TileSet* set)
+bool M_Map::LoadTilesetImage(pugi::xml_node& tileset_node, Tileset* set)
 {
 	bool ret = true;
 	pugi::xml_node image = tileset_node.child("image");
@@ -463,7 +463,7 @@ bool M_Map::LoadTilesetImage(pugi::xml_node& tileset_node, TileSet* set)
 	return ret;
 }
 
-bool M_Map::LoadTilesetDetails(pugi::xml_node& tileset_node, TileSet* set)
+bool M_Map::LoadTilesetDetails(pugi::xml_node& tileset_node, Tileset* set)
 {
 	bool ret = true;
 
@@ -558,7 +558,7 @@ bool M_Map::LoadMap()
 	return ret;
 }
 
-inline SDL_Rect TileSet::GetTileRect(int id) const
+inline SDL_Rect Tileset::GetTileRect(int id) const
 {
 	int relative_id = id - firstgid;
 	SDL_Rect rect = {
@@ -571,10 +571,10 @@ inline SDL_Rect TileSet::GetTileRect(int id) const
 	return rect;
 }
 
-inline TileSet* M_Map::GetTilesetFromTileId(int id) const
+inline Tileset* M_Map::GetTilesetFromTileId(int id) const
 {
 
-	std::list<TileSet*>::const_reverse_iterator item = data.tilesets.rbegin();
+	std::list<Tileset*>::const_reverse_iterator item = data.tilesets.rbegin();
 	for (; item != data.tilesets.rend() && id < (*item)->firstgid; ++item)
 	{
 	}
@@ -613,7 +613,7 @@ bool M_Map::CreateWalkabilityMap(int& width, int &height, uchar** buffer) const
 				int i = (y*layer->rows) + x;
 
 				int tile_id = layer->Get(x, y);
-				TileSet* tileset = (tile_id > 0) ? GetTilesetFromTileId(tile_id) : NULL;
+				Tileset* tileset = (tile_id > 0) ? GetTilesetFromTileId(tile_id) : NULL;
 
 				if (tileset != NULL)
 				{
@@ -838,7 +838,7 @@ bool M_Map::Unload()
 	if (!map_loaded)
 		return false;
 
-	for (std::list<TileSet*>::iterator iter = data.tilesets.begin(); iter != data.tilesets.end(); ++iter)
+	for (std::list<Tileset*>::iterator iter = data.tilesets.begin(); iter != data.tilesets.end(); ++iter)
 	{
 		if ((*iter != nullptr))
 		{

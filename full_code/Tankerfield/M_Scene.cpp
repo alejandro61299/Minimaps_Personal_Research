@@ -59,7 +59,7 @@ bool M_Scene::Start()
 
 	fRect rect = app->win->GetWindowRect();
 
-	minimap = new Minimap( fPoint(rect.GetRight() - minimap_width - screen_margin, rect.GetBottom() - minimap_height - screen_margin), minimap_width, minimap_height, 1400, 700 );
+	minimap = new Minimap( fPoint(rect.GetRight() - minimap_width - screen_margin, rect.GetBottom() - minimap_height - screen_margin), minimap_width, minimap_height, 2000);
 	minimap->target_to_follow = player;
 	// Add indicators ========================================================
 

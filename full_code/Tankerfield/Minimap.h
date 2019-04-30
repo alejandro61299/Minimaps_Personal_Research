@@ -12,7 +12,7 @@ class Minimap
 {
 public:
 
-	Minimap(const fPoint position, float minimap_width, float minimap_height, float map_texture_width, float map_texture_height);
+	Minimap(const fPoint position, float minimap_width, float minimap_height, float texture_width);
 
 	bool PreUpdate();
 
@@ -67,8 +67,8 @@ private:
 	SDL_Texture*        blitted_texture = nullptr;      // Blitted texture with masks
 	SDL_Texture*		alpha_mask_texture = nullptr;   // Mask texture used to aplly alpha mask
 	
-	float				map_texture_width = 0.f;
-	float				map_texture_height = 0.f;
+	float				texture_width = 0.f;
+	float				texture_height = 0.f;
 
 	float				minimap_tile_width = 0.f;
 	float				minimap_tile_height = 0.f;

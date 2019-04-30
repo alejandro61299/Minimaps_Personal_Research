@@ -88,9 +88,9 @@ struct ObjectGroup
 	}
 };
 // ----------------------------------------------------
-struct TileSet
+struct Tileset
 {
-	~TileSet()
+	~Tileset()
 	{
 		if (texture != nullptr)
 		{
@@ -174,7 +174,7 @@ struct MapData
 	MapTypes			type;
 	SDL_Color			background_color;
 
-	std::list<TileSet*>		tilesets;
+	std::list<Tileset*>		tilesets;
 	std::list<MapLayer*>	map_layers;
 	std::list<Collider*>    colliders_list;
 	std::list<ObjectGroup*> object_layers;
@@ -237,7 +237,7 @@ public:
 
 	fPoint ScreenToMapF(float x, float y);
 
-	inline TileSet* GetTilesetFromTileId(int id) const;
+	inline Tileset* GetTilesetFromTileId(int id) const;
 
 	uint GetMaxLevels();
   
@@ -258,9 +258,9 @@ private:
 
 	bool LoadMap();
 
-	bool LoadTilesetDetails(pugi::xml_node& tileset_node, TileSet* set);
+	bool LoadTilesetDetails(pugi::xml_node& tileset_node, Tileset* set);
 
-	bool LoadTilesetImage(pugi::xml_node& tileset_node, TileSet* set);
+	bool LoadTilesetImage(pugi::xml_node& tileset_node, Tileset* set);
 
 	bool LoadLayer(pugi::xml_node& node, MapLayer* layer);
 
