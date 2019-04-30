@@ -7,34 +7,23 @@
 #include <list>
 #include "Object.h"
 
-Minimap::Minimap(const fPoint position, MINIMAP_MODE mode, float minimap_width, float minimap_height, float texture_width, Object* target) : position(position), mode(mode), texture_width(texture_width), target_to_follow(target)
+Minimap::Minimap( const SDL_Rect minimap_rect, const float texture_width, const PROJECTION_TYPE projection_type, const SHAPE_TYPE shape_type, const INTERACTION_TYPE interaction_type, Object* target) 
+	: minimap_rect(minimap_rect), texture_width(texture_width), projection_type(projection_type), shape_type(shape_type), interaction_type(interaction_type), target_to_follow(target)
 {
-	// Set view rect =============================================================
-
-	view_rect = { (int)position.x, (int)position.y, (int)minimap_width, (int)minimap_height };
-
-	switch (mode)
+	if (interaction_type == INTERACTION_TYPE::FOLLOW_TARGET && target_to_follow == nullptr)
 	{
-	case MINIMAP_MODE::FOLLOW_TARGET:
-
-		if (target_to_follow == nullptr)
-		{
-			LOG("Minimap Error: Target nullptr , mode was changed to FREE_MOVEMENT");
-			this->mode = MINIMAP_MODE::FREE_MOVEMENT;
-		}
-		break;
-
-	case MINIMAP_MODE::FREE_MOVEMENT:
-		break;
+		LOG("Minimap Error: Target nullptr , interaction type was changed to FREE_MOVEMENT");
+		this->interaction_type = INTERACTION_TYPE::FREE_MOVEMENT;
 	}
 
 	// Load minimap  ================================================================
 
-	LoadMinimapData();
-	LoadMinimapTexture();
+	LoadMinimap();
 
 	// Load textures ===============================================================
 	alpha_mask_texture = app->tex->Load("maps/circle_mask.png");
+	SDL_BlendMode blend_mode = SDL_ComposeCustomBlendMode(SDL_BLENDFACTOR_ZERO, SDL_BLENDFACTOR_ONE, SDL_BLENDOPERATION_ADD, SDL_BLENDFACTOR_ONE, SDL_BLENDFACTOR_ONE, SDL_BLENDOPERATION_REV_SUBTRACT);
+	SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode);
 }
 
 Minimap::~Minimap()
@@ -56,17 +45,65 @@ bool Minimap::PreUpdate()
 	int x = 0, y = 0;
 	app->input->GetMousePosition(x, y);
 
+	//if (app->input->GetMouseButton(1) == KEY_REPEAT)
+	//{
+	//	fPoint mouse_point = { (float)x,  (float)y };
+
+	//	if (PointInEllipse(mouse_point, fPoint(minimap_rect.x + minimap_rect.w *0.5f, minimap_rect.y + minimap_rect.h *0.5f), minimap_rect.w *0.5f, minimap_rect.h *0.5f))
+	//	{
+	//		Camera* camera = (*app->render->cameras.begin());
+	//		camera_target_pos = MinimapToMap(x - minimap_pos.x, y - minimap_pos.y);
+	//		camera_target_pos = app->map->MapToScreenF(camera_target_pos);
+	//		camera_target_pos -= { camera->rect.w * 0.5f, camera->rect.h * 0.5f};
+	//	}
+	//}
+
+
+	if (app->input->GetMouseButton(1) == KEY_DOWN)
+	{
+	
+		SDL_Point mouse_point = { x, y };
+	
+		if (SDL_PointInRect(&mouse_point, &minimap_rect))
+		{
+			allow_interaction = true;
+		}
+	
+	}
+	
 	if (app->input->GetMouseButton(1) == KEY_REPEAT)
 	{
-		fPoint mouse_point = { (float)x,  (float)y };
-
-		if (PointInEllipse(mouse_point, fPoint(view_rect.x + view_rect.w *0.5f, view_rect.y + view_rect.h *0.5f), view_rect.w *0.5f, view_rect.h *0.5f))
+		if (allow_interaction)
 		{
 			Camera* camera = (*app->render->cameras.begin());
-			camera_target_pos = MinimapToMap(x - minimap_pos.x, y - minimap_pos.y);
+			camera_target_pos = MinimapToMap(x, y);
 			camera_target_pos = app->map->MapToScreenF(camera_target_pos);
 			camera_target_pos -= { camera->rect.w * 0.5f, camera->rect.h * 0.5f};
+	
+			if (camera_target_pos.x < -app->map->data.tile_width* .5f * app->map->data.rows)
+			{
+				camera_target_pos.x = -app->map->data.tile_width* .5f * app->map->data.rows;
+			}
+			
+			if  (camera_target_pos.x + camera->rect.w > app->map->data.tile_width* .5f * app->map->data.rows)
+			{
+				camera_target_pos.x = app->map->data.tile_width* .5f * app->map->data.rows - camera->rect.w;
+			}
+	
+			if (camera_target_pos.y < 0.f)
+			{
+				camera_target_pos.y = 0.f;
+			}
+	
+			if (camera_target_pos.y + camera->rect.h > app->map->data.tile_height * app->map->data.columns)
+			{
+				camera_target_pos.y = app->map->data.tile_height * app->map->data.columns - camera->rect.h;
+			}
 		}
+	}
+	if (app->input->GetMouseButton(1) == KEY_UP)
+	{
+		allow_interaction = false;
 	}
 
 	return true;
@@ -74,16 +111,23 @@ bool Minimap::PreUpdate()
 
 bool Minimap::Update(float dt)
 {
+
+	// Camera movement =========================================
+
 	Camera* camera = (*app->render->cameras.begin());
 	camera->MoveToScreenPoint(dt, camera_target_pos);
 
 	// Update texture rect =====================================
 
-	fPoint offset = MapToMinimap(target_to_follow->pos_map.x, target_to_follow->pos_map.y);
-	minimap_pos = { view_rect.x + view_rect.w* 0.5f - offset.x, view_rect.y + view_rect.h* 0.5f - offset.y };
-
-	minimap_rect.x = (int)minimap_pos.x;
-	minimap_rect.y = (int)minimap_pos.y;
+	if (interaction_type == INTERACTION_TYPE::FOLLOW_TARGET)
+	{
+		fPoint offset = MapToMinimap(target_to_follow->pos_map.x, target_to_follow->pos_map.y);
+		minimap_pos = { minimap_rect.x + minimap_rect.w* .5f - offset.x, minimap_rect.y + minimap_rect.h* .5f - offset.y };
+	}
+	else
+	{
+		minimap_pos = { minimap_rect.x + minimap_rect.w* .5f - texture_width* .5f , minimap_rect.y + minimap_rect.h* .5f - texture_height* .5f};
+	}
 
 	return false;
 }
@@ -92,13 +136,15 @@ bool Minimap::PostUpdate()
 {
 	// Draw minimap texture  ==========================================
 
-	SDL_Rect sprite_rect = { 0,0,view_rect.w, view_rect.h };
+	SDL_Rect sprite_rect = { 0,0,minimap_rect.w, minimap_rect.h };
 	Camera* camera = (*app->render->cameras.begin());
 
 	UpdateMinimapTexture();
-	app->render->BlitUI(blitted_texture, view_rect.x, view_rect.y, &sprite_rect, camera);
+	app->render->BlitUI(blitted_texture, minimap_rect.x, minimap_rect.y, &sprite_rect, camera);
 
 	// Draw pointed objects  ==========================================
+
+	SDL_RenderSetClipRect(app->render->renderer, &minimap_rect);
 
 	for (std::list<Object*>::iterator iter = indicators_list.begin(); iter != indicators_list.end(); ++iter)
 	{
@@ -107,12 +153,14 @@ bool Minimap::PostUpdate()
 		app->render->DrawQuad(sprite_rect, 255, 0, 0, 255, true, false);
 	}
 
+	SDL_RenderSetClipRect(app->render->renderer, NULL);
+
 	// Draw minimap camera  ==========================================
 
 	iPoint pos = WorldToMinimap(camera->camera_pos.x, camera->camera_pos.y) + (iPoint)minimap_pos;
 	SDL_Rect camera_rect = { pos.x , pos.y, camera->screen_section.w * aspect_ratio_x ,  camera->screen_section.h * aspect_ratio_y };
 	app->render->DrawQuad(camera_rect, 255, 255, 255, 255, false, false);
-	app->render->DrawQuad(view_rect, 255, 255, 255, 255, false, false);
+	app->render->DrawQuad(minimap_rect, 255, 255, 255, 255, false, false);
 
 
 	return true;
@@ -153,20 +201,27 @@ bool Minimap::LoadMinimapData()
 
 	float tiles_amount = (float)(app->map->data.columns + app->map->data.rows)* 0.5f;
 
+	// We also find a constant to transform from pixels in the world to pixels in the minimap  ==========
+
+	aspect_ratio_x = texture_width / (tile_width * tiles_amount);
+
 	// We found texture height from the width with a rule of 3  ===================================
 
-	texture_height = (texture_width * (tiles_amount * tile_height)) / (tiles_amount* tile_width);
-	minimap_rect = { 0, 0, (int)texture_width, (int)texture_height };
+	if (projection_type == PROJECTION_TYPE::ORTHOGONAL)
+	{
+		texture_height = texture_width;
+		aspect_ratio_y = aspect_ratio_x;
+	}
+	else
+	{
+		texture_height = (texture_width * (tiles_amount * tile_height)) / (tiles_amount* tile_width);
+		aspect_ratio_y = texture_height / (tile_height *tiles_amount);
+	}
 
 	// Now we have enough information to know the size of minimap tiles ===========================
 
 	minimap_tile_width = texture_width / tiles_amount;
 	minimap_tile_height = texture_height / tiles_amount;
-
-	// We also find a constant to transform from pixels in the world to pixels in the minimap  ==========
-
-	aspect_ratio_x = texture_width / (tile_width * tiles_amount);
-	aspect_ratio_y = texture_height / (tile_height *tiles_amount);
 
 	// Finally, the blit x offset ===============================================================
 
@@ -179,7 +234,7 @@ bool Minimap::LoadMinimapTexture()
 {
 	// Create Target Textures ====================================
 
-	blitted_texture = app->tex->CreateTargetTexture(view_rect.w, view_rect.h);
+	blitted_texture = app->tex->CreateTargetTexture(minimap_rect.w, minimap_rect.h);
 	minimap_texture = app->tex->CreateTargetTexture(texture_width, texture_height);
 
 	SDL_SetRenderTarget(app->render->renderer, minimap_texture);
@@ -239,26 +294,36 @@ void Minimap::UpdateMinimapTexture()
 	// Blit minimap texture  =====================================================
 
 	Camera* camera = (*app->render->cameras.begin());
-	fPoint offset = MapToMinimap(target_to_follow->pos_map.x, target_to_follow->pos_map.y);
-	app->render->BlitUI(minimap_texture, view_rect.w * .5f - offset.x, view_rect.h * .5f - offset.y, NULL, camera);
+
+	if (interaction_type == INTERACTION_TYPE::FOLLOW_TARGET)
+	{
+		fPoint offset = MapToMinimap(target_to_follow->pos_map.x, target_to_follow->pos_map.y);
+		app->render->BlitUI(minimap_texture, minimap_rect.w * .5f - offset.x, minimap_rect.h * .5f - offset.y, NULL, camera);
+	}
+	else
+	{
+		app->render->BlitUI(minimap_texture, minimap_rect.w * .5f - texture_width* 0.5f, minimap_rect.h * .5f - texture_height * 0.5f, NULL, camera);
+	}
 
 	// Blit minimap texture  =====================================================
-
-	SDL_BlendMode mode = SDL_ComposeCustomBlendMode(SDL_BLENDFACTOR_ZERO, SDL_BLENDFACTOR_ONE, SDL_BLENDOPERATION_ADD, SDL_BLENDFACTOR_ONE, SDL_BLENDFACTOR_ONE, SDL_BLENDOPERATION_REV_SUBTRACT);
-	SDL_SetTextureBlendMode(alpha_mask_texture, mode);
-	SDL_RenderCopy(app->render->renderer, alpha_mask_texture, NULL, NULL);
+	if (shape_type == SHAPE_TYPE::CIRCLE)
+	{
+		SDL_RenderCopy(app->render->renderer, alpha_mask_texture, NULL, NULL);
+	}
 
 	// Reset render target ======================================================
 
 	SDL_SetRenderTarget(app->render->renderer, NULL);
 }
 
+// - Map coordinates to Pixels Coordinate Minimap
 fPoint Minimap::MapToMinimap(const float x, const float y)
 {
 	return fPoint((x - y) * minimap_tile_width * 0.5f + x_offset, (x + y) * minimap_tile_height * 0.5f);
 }
 
-fPoint Minimap::MinimapToMap(const float x, const float y)
+// - Pixel Minimap Coordinate to Map Coordinates
+fPoint Minimap::MinimapToMap(const float x, const float y) 
 {
 	fPoint ret = { 0.f, 0.f };
 
@@ -274,11 +339,13 @@ fPoint Minimap::MinimapToMap(const float x, const float y)
 	return ret;
 }
 
+// - Pixels Minimap Coordinate to World/Screen Pixel Coordinates
 iPoint Minimap::WorldToMinimap(const int x, const int y)
 {
 	return iPoint(x * aspect_ratio_x + x_offset, y * aspect_ratio_y);
 }
 
+// - World/Screen Pixel Coordinates to Pixels Minimap Coordinate 
 iPoint Minimap::MinimapToWorld(const int x, const int y)
 {
 	return iPoint((float)(x - x_offset) / aspect_ratio_x, (float)y / aspect_ratio_y);

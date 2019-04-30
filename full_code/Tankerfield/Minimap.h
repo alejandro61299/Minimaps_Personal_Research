@@ -8,17 +8,36 @@
 class Object;
 struct SDL_Texture;
 
-enum class MINIMAP_MODE
-{
-	FOLLOW_TARGET,
-	FREE_MOVEMENT
-};
-
 class Minimap
 {
 public:
 
-	Minimap(const fPoint position, MINIMAP_MODE mode = MINIMAP_MODE::FREE_MOVEMENT, float minimap_width = 0.f, float minimap_height = 0.f, float texture_width = 0.f, Object* target = nullptr);
+	enum class INTERACTION_TYPE
+	{
+		FOLLOW_TARGET,
+		FREE_MOVEMENT
+	};
+
+	enum class PROJECTION_TYPE
+	{
+		ORTHOGONAL,
+		ISOMETRIC,
+	};
+
+	enum class SHAPE_TYPE
+	{
+		CIRCLE,
+		RECTANGLE
+	};
+
+
+	Minimap(
+		const SDL_Rect minimap_rect,
+		const float texture_width, 
+		const PROJECTION_TYPE projection_type = PROJECTION_TYPE::ISOMETRIC, 
+		const SHAPE_TYPE shape_type = SHAPE_TYPE::RECTANGLE, 
+		const INTERACTION_TYPE interaction_type = INTERACTION_TYPE::FREE_MOVEMENT, 
+		Object* target = nullptr);
 
 	~Minimap();
 
@@ -61,21 +80,18 @@ public:
 
 private:
 
-	fPoint				minimap_pos = { 0.f, 0.f };
-
-	// Camera ====================================
-
 	fPoint				camera_target_pos = { 0,0 };
 
-	// Info ======================================
+	// General info ======================================
 
-	bool                minimap_loaded = false;
-	MINIMAP_MODE        mode = MINIMAP_MODE::FREE_MOVEMENT;
-	SDL_Rect            view_rect = { 0, 0, 0,0 };
+	fPoint				minimap_pos = { 0.f, 0.f };
 	SDL_Rect            minimap_rect = { 0, 0, 0,0 };
-	float				x_offset = 0;
+	bool                minimap_loaded = false;
+	PROJECTION_TYPE		projection_type = PROJECTION_TYPE::ISOMETRIC;
+	SHAPE_TYPE			shape_type = SHAPE_TYPE::RECTANGLE;
+	INTERACTION_TYPE	interaction_type = INTERACTION_TYPE::FREE_MOVEMENT;
 
-	// Textures info ==============================
+	// Textures info ====================================
 
 	SDL_Texture*		minimap_texture = nullptr;      // Scaled map texture
 	SDL_Texture*        blitted_texture = nullptr;      // Blitted texture with masks
@@ -90,13 +106,18 @@ private:
 	float				aspect_ratio_x = 0.f;
 	float				aspect_ratio_y = 0.f;
 
-	// Indicators ===================================
+	float				x_offset = 0;
+
+	// Values ===========================================
+
+	bool                allow_interaction = false;
+
+	// Indicators =======================================
 
 	std::list<Object*>	indicators_list;
 
-	// Debug ========================================
-
-	bool				aplly_alpha_mask = true;
 };
 
 #endif // !_MINI_MAP_H__
+
+
