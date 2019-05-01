@@ -25,7 +25,7 @@ In order to solve these problems **one of the several options** is to implement 
 ### Minimap types , interactions & features 
 
 - **Whole world**
-This mini map type functions as a miniaturized world map. We can see them in Sports, Racing ,MOBA or Strategy games. In some cases they have a rectangle representing the area of the camera with which you can interact by dragging the mouse.
+This mini map type functions as a miniaturized world map. We can see them in Sports, Racing ,MOBA or Strategy games. In some cases they have a rectangle representing the area of the camera with which you can interact by **dragging the mouse**.
 
 ![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/world.png)
 
@@ -33,10 +33,6 @@ This mini map type functions as a miniaturized world map. We can see them in Spo
  The **scope** of the mini maps in Action, Shooter and Role-playing games displays only a limited field of view including your immediate surroundings (or your current sector). 
 
 ![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/player.png)
-
-
-
-
 
 
 
@@ -71,11 +67,11 @@ As we can verify each video game  genre has a distinctive position on the screen
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3OTg0MTc3MCwtNDk3NTI3MjUzLC0xNz
-k5NDgzMDE5LC0xOTM5NzEwMTYzLC0xNzU2MDU4NDU3LDM5NTE4
-MDIxNCwtMTc1NjA1ODQ1NywtMTMyMDg2NzExNSwyMDcyNDg2MD
-A3LDE4ODM5MTM3NjgsLTE1MDYwNDM1NjgsMTU4OTQ2MjEyMSwt
-MTczMDY0MDY3NSw0MTExNDI0NzAsMzg0NjY2NDMxLC04NTI3NT
-A1OSwtMTMxNjE5MzA3MCwyMTQyOTA4NzYsODIyMzA3OTMsLTIw
-NzQ1OTUyNzZdfQ==
+eyJoaXN0b3J5IjpbNzQzNjg3NTQsMTI3OTg0MTc3MCwtNDk3NT
+I3MjUzLC0xNzk5NDgzMDE5LC0xOTM5NzEwMTYzLC0xNzU2MDU4
+NDU3LDM5NTE4MDIxNCwtMTc1NjA1ODQ1NywtMTMyMDg2NzExNS
+wyMDcyNDg2MDA3LDE4ODM5MTM3NjgsLTE1MDYwNDM1NjgsMTU4
+OTQ2MjEyMSwtMTczMDY0MDY3NSw0MTExNDI0NzAsMzg0NjY2ND
+MxLC04NTI3NTA1OSwtMTMxNjE5MzA3MCwyMTQyOTA4NzYsODIy
+MzA3OTNdfQ==
 -->
