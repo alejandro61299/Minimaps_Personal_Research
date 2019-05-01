@@ -11,7 +11,8 @@ Minimap is an UI element of the HUD usually located in a corner of the screen. I
 ### Minimap types , interactions & features 
 
 The **scope** of the mini maps differs per genre: Action, Shooter and Role-playing games show only a limited field of view including your immediate surroundings (or your current sector), whereas in Sports, MOBA and Vehicle simulation games, the mini map functions as a miniaturized world map
-![enter image description here](https://i.gyazo.com/9864b38ca9ed42c58465280ec9a79d90.gif)
+
+![enter image description here](https://i.gyazo.com/cd88550085d9c7ff2ea7950ae9e43a2e.gif)
 
 ### When is a minimap necessary?
 
@@ -56,10 +57,10 @@ As we can verify each video game  genre has a distinctive position on the screen
 - [Mini-Map by Jack Davies ( Game UI Patterns Article )](https://gameuipatterns.com/gameui/mini-map/)
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzE4NzAxOTc2LC0xNzMwNjQwNjc1LDQxMT
-E0MjQ3MCwzODQ2NjY0MzEsLTg1Mjc1MDU5LC0xMzE2MTkzMDcw
-LDIxNDI5MDg3Niw4MjIzMDc5MywtMjA3NDU5NTI3NiwxMzIyMj
-Y2MTIxLDE1Mjc3ODUwNTEsMTA4ODk2Mzg4OCwxODc5OTE0ODc4
-LC0xODQyMzg1MjEyLDE5OTczMjExOTEsLTEyMDQ2OTQ1MjAsMj
-A4OTEyNjcxMSwyODcwMjY0MTMsOTkxMTc1NzI3XX0=
+eyJoaXN0b3J5IjpbMTU4OTQ2MjEyMSwtMTczMDY0MDY3NSw0MT
+ExNDI0NzAsMzg0NjY2NDMxLC04NTI3NTA1OSwtMTMxNjE5MzA3
+MCwyMTQyOTA4NzYsODIyMzA3OTMsLTIwNzQ1OTUyNzYsMTMyMj
+I2NjEyMSwxNTI3Nzg1MDUxLDEwODg5NjM4ODgsMTg3OTkxNDg3
+OCwtMTg0MjM4NTIxMiwxOTk3MzIxMTkxLC0xMjA0Njk0NTIwLD
+IwODkxMjY3MTEsMjg3MDI2NDEzLDk5MTE3NTcyN119
 -->
