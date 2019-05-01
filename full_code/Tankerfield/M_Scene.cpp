@@ -48,8 +48,7 @@ bool M_Scene::Start()
 
 	// Create Entity / Object =================================================
 
-	player = (Obj_Tank*)app->objectmanager->CreateObject(ObjectType::TANK, { 50.F,50.F });
-	//player->camera_follow = false;
+	player = (Obj_Tank*)app->objectmanager->CreateObject(ObjectType::TANK, { 200.f,200.f });
 
 	// Create Minimap =========================================================
 
@@ -59,11 +58,11 @@ bool M_Scene::Start()
 
 	fRect rect = app->win->GetWindowRect();
 	SDL_Rect  minimap_rect = {  (int)(rect.GetRight() - minimap_width - screen_margin) , (int)(rect.GetBottom() - minimap_height - screen_margin),  minimap_width , minimap_height };
-	minimap = new Minimap(minimap_rect, 800, Minimap::PROJECTION_TYPE::ISOMETRIC, Minimap::SHAPE_TYPE::CIRCLE, Minimap::INTERACTION_TYPE::FOLLOW_TARGET, player);
+	minimap = new Minimap(minimap_rect, 800, Minimap::PROJECTION_TYPE::ISOMETRIC, Minimap::SHAPE_TYPE::CIRCLE, Minimap::INTERACTION_TYPE::FREE_MOVEMENT, player);
 
 	// Add indicators ========================================================
 
-	minimap->AddPonintedObject(player);
+	minimap->AddIndicator(fPoint(5.f, 5.f), { 0,0,32,32 }, { 0,0,0,0 }, player);
 
 	return true;
 }

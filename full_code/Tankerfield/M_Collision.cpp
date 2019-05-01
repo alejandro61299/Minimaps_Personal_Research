@@ -18,7 +18,7 @@ void Collider::SetPosToObj()
 {
 	if (object != nullptr)
 	{
-		position = object->pos_map + obj_offset;
+		position = object->map_pos + obj_offset;
 	}
 }
 
@@ -405,7 +405,7 @@ void M_Collision::SolveOverlapDS(Collider * dynamic_col, Collider * static_col)
 		break;
 	}
 
-	dynamic_col->object->pos_map = dynamic_col->position - dynamic_col->obj_offset;
+	dynamic_col->object->map_pos = dynamic_col->position - dynamic_col->obj_offset;
 	dynamic_col->last_overlap = (Collider::OVERLAP_DIR)overlap_dir;
 
 }
@@ -452,8 +452,8 @@ void M_Collision::SolveOverlapDD(Collider * c1, Collider * c2)
 		break;
 	}
 
-	c1->object->pos_map = c1->position - c1->obj_offset;
-	c2->object->pos_map = c2->position - c2->obj_offset;
+	c1->object->map_pos = c1->position - c1->obj_offset;
+	c2->object->map_pos = c2->position - c2->obj_offset;
 }
 
 inline void M_Collision::DoOnTrigger(Collider * c1, Collider * c2)

@@ -15,11 +15,9 @@ public:
 	//Camera shake
 	void AddTrauma(float value);
 	void MoveToScreenPoint(float dt, fPoint point);
+	void MoveToObject(float dt, Object* player);
 
 private:
-
-	void FollowPlayer(float dt, Obj_Tank * player);
-
 	//Camera shake
 	void ResetCamera();//Removes the "shake" on the camera so it can be moved normally
 	void ShakeCamera(float dt);

@@ -33,7 +33,7 @@ void Obj_Building::SetTexture(const char* path, fPoint rect_collider)
 	
 	SDL_QueryTexture(texture, NULL, NULL, &frame.w, &frame.h);
 
-	coll = app->collision->AddCollider(pos_map, rect_collider.x, rect_collider.y, Collider::TAG::WALL, 0.f, this);
+	coll = app->collision->AddCollider(map_pos, rect_collider.x, rect_collider.y, Collider::TAG::WALL, 0.f, this);
 	coll->AddRigidBody(Collider::BODY_TYPE::STATIC);
 	
 }

@@ -11,13 +11,11 @@ Camera::Camera()
 	lerp_factor = 7.f;
 }
 
-void Camera::FollowPlayer(float dt, Obj_Tank * player)
+void Camera::MoveToObject(float dt, Object* object)
 {
-	fPoint source_pos(camera_pos);
+	fPoint target_pos( app->map->MapToScreenF(object->map_pos).x - (float)rect.w * 0.5f, app->map->MapToScreenF(object->map_pos).y - (float)rect.h * 0.5f);
 
-	fPoint target_pos( app->map->MapToScreenF(player->pos_map).x - (float)rect.w * 0.5f, app->map->MapToScreenF(player->pos_map).y - (float)rect.h * 0.5f);
-
-	fPoint lerp_pos = lerp(source_pos, target_pos, dt * lerp_factor);
+	fPoint lerp_pos = lerp(camera_pos, target_pos, dt * lerp_factor);
 
 	camera_pos = lerp_pos;
 
@@ -28,11 +26,9 @@ void Camera::FollowPlayer(float dt, Obj_Tank * player)
 
 void Camera::MoveToScreenPoint(float dt, fPoint point)
 {
-	fPoint source_pos = camera_pos;
-
 	fPoint target_pos = point;
 
-	fPoint lerp_pos = lerp(source_pos, target_pos, dt * lerp_factor);
+	fPoint lerp_pos = lerp(camera_pos, target_pos, dt * lerp_factor);
 
 	camera_pos = lerp_pos;
 

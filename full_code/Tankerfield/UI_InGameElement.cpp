@@ -44,7 +44,7 @@ bool UI_InGameElement::Update(float dt)
 {
 	if (pointed_obj != nullptr)
 	{
-		SetPos(pointed_obj->pos_map);
+		SetPos(pointed_obj->map_pos);
 	}
 	return true;
 }
@@ -56,7 +56,7 @@ bool UI_InGameElement::Draw()
 		return true;
 	}
 
-	fPoint screen_pos = app->map->MapToCamera(pointed_obj->pos_map, app->ui->current_camera);
+	fPoint screen_pos = app->map->MapToCamera(pointed_obj->map_pos, app->ui->current_camera);
 	SDL_Point screen_point;
 
 	screen_point.x = (int)screen_pos.x;

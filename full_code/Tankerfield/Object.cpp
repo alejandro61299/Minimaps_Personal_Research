@@ -17,7 +17,7 @@ Object::Object()
 {
 }
 
-Object::Object(fPoint pos) : pos_map(pos)
+Object::Object(fPoint pos) : map_pos(pos)
 {
 }
 
@@ -79,7 +79,7 @@ void Object::SetDamage(float damage)
 
 void Object::CalculateDrawVariables()
 {
-	pos_screen = app->map->MapToScreenF(pos_map);
+	pos_screen = app->map->MapToScreenF(map_pos);
 
 	if (curr_anim != nullptr) {
 		frame = curr_anim->GetFrame(angle);

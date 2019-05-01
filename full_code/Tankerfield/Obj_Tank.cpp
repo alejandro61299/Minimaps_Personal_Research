@@ -156,7 +156,7 @@ bool Obj_Tank::Start()
 	cos_45 = cosf(-45 * DEGTORAD);
 	sin_45 = sinf(-45 * DEGTORAD);
 
-	coll = app->collision->AddCollider(pos_map, 0.8f, 0.8f, Collider::TAG::PLAYER, 0.f, this);
+	coll = app->collision->AddCollider(map_pos, 0.8f, 0.8f, Collider::TAG::PLAYER, 0.f, this);
 	coll->AddRigidBody(Collider::BODY_TYPE::DYNAMIC);
 	coll->SetObjOffset({ -0.4f, -0.4f });
 
@@ -206,21 +206,21 @@ bool Obj_Tank::Start()
 	UI_InGameElementDef clue_def;
 	clue_def.pointed_obj = this;
 
-	tutorial_move = app->ui->CreateInGameHelper(pos_map, clue_def);
+	tutorial_move = app->ui->CreateInGameHelper(map_pos, clue_def);
 	tutorial_move->single_camera = camera_player;
 	tutorial_move->AddButtonHelper(CONTROLLER_BUTTON::L, { 0.f, 100.f });
 	tutorial_move->AddTextHelper("MOVE", { 0.f, 70.f });
 	tutorial_move_time = 2500;
 	movement_timer.Start();
 	////- Revive
-	tutorial_revive = app->ui->CreateInGameHelper(pos_map, clue_def);
+	tutorial_revive = app->ui->CreateInGameHelper(map_pos, clue_def);
 	tutorial_revive->single_camera = camera_player;
 	tutorial_revive->AddButtonHelper(CONTROLLER_BUTTON::X, { 0.f, 100.f });
 	tutorial_revive->AddTextHelper("REVIVE", { 0.f, 70.f });
 	tutorial_revive->SetStateToBranch(ELEMENT_STATE::HIDDEN);
 
 	////- PickUp
-	tutorial_pick_up = app->ui->CreateInGameHelper(pos_map, clue_def);
+	tutorial_pick_up = app->ui->CreateInGameHelper(map_pos, clue_def);
 	tutorial_pick_up->single_camera = camera_player;
 	tutorial_pick_up->AddButtonHelper(CONTROLLER_BUTTON::X, { 0.f, 100.f });
 	tutorial_pick_up->AddTextHelper("TAKE", { 0.f, 70.f });
@@ -250,22 +250,7 @@ bool Obj_Tank::Update(float dt)
 	Movement(dt);
 	Shoot(dt);
 
-	if (camera_follow == true)
-	{
-		CameraMovement(dt);//Camera moves after the player
-	}
-
 	return true;
-}
-
-void Obj_Tank::CameraMovement(float dt)
-{
-	if (camera_player == nullptr)
-		return;
-
-	camera_player->ResetCamera();
-	camera_player->FollowPlayer(dt, this);
-	//camera_player->ShakeCamera(dt);
 }
 
 fPoint Obj_Tank::GetTurrPos()
@@ -325,7 +310,7 @@ void Obj_Tank::Movement(float dt)
 
 	ShotRecoilMovement(dt);
 
-	pos_map += velocity;
+	map_pos += velocity;
 
 
 
@@ -587,7 +572,7 @@ void Obj_Tank::Shoot(float dt)
 {
 	//fPoint Obj_Tank::pos is on the center of the base
 	//fPoint shot_pos is on the center of the turret (considers the cannon_height)
-	turr_pos = pos_map - app->map->ScreenToMapF(0, cannon_height);
+	turr_pos = map_pos - app->map->ScreenToMapF(0, cannon_height);
 	fPoint iso_dir(0.f, 0.f);
 	fPoint input_dir(0.f, 0.f);
 	if (shot_input == INPUT_METHOD::KEYBOARD_MOUSE)
@@ -731,7 +716,7 @@ void Obj_Tank::ReviveTank(float dt)
 		++iter)
 	{
 		if (this != (*iter)
-			&& pos_map.DistanceNoSqrt((*iter)->pos_map) <= revive_range_squared
+			&& map_pos.DistanceNoSqrt((*iter)->map_pos) <= revive_range_squared
 			&& !(*iter)->Alive()
 			&& Alive())
 		{
