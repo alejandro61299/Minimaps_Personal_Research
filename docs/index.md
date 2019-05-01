@@ -40,8 +40,6 @@ As we can verify each video game  genre has a distinctive position on the screen
 
 ![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/positions.png)
 
-### Minimap types & features 
-The **scope** of the mini maps differs per genre: Action, Shooter and Role-playing games show only a limited field of view including your immediate surroundings (or your current sector), whereas in Sports, MOBA and Vehicle simulation games, the mini map functions as a miniaturized world map
 
 ## Selected approach
 
@@ -53,7 +51,7 @@ The **scope** of the mini maps differs per genre: Action, Shooter and Role-playi
 - [Mini-Map by Jack Davies ( Game UI Patterns Article )](https://gameuipatterns.com/gameui/mini-map/)
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI4NDU3Mzc0NiwzODQ2NjY0MzEsLTg1Mj
+eyJoaXN0b3J5IjpbLTM4NzQ2MTgwMywzODQ2NjY0MzEsLTg1Mj
 c1MDU5LC0xMzE2MTkzMDcwLDIxNDI5MDg3Niw4MjIzMDc5Mywt
 MjA3NDU5NTI3NiwxMzIyMjY2MTIxLDE1Mjc3ODUwNTEsMTA4OD
 k2Mzg4OCwxODc5OTE0ODc4LC0xODQyMzg1MjEyLDE5OTczMjEx
