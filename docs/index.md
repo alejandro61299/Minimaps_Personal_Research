@@ -23,6 +23,7 @@ This question has a different answer depending on the genre and the pillars of t
 In order to solve these problems **one of the several options** is to implement a minimap. Other options are in-game elements like arrows or the famous compas buts this elements are not compatible with most genres.
 
 ### Where should we place the mini map?
+
 You will be asking, does the position of the minimap matter? The truth is that yes, it affects above all the fast-paced games such as **First Person Shooters** where you usually put the minimap on the left. This is because our western culture tends to pay more attention to the left part of the screen
 
 A misplaced minimap can not only lead to **prolonged reaction times** but also to **erroneous clicks** and **misperceptions** (depending on where you place other HUD elements). Therefore it is not uncommon to find that the same game released in the West has the minimap or other elements of HUD different position than in the East. Ideally, give the possibility to configure its position and size, so we give access to the game.
@@ -47,9 +48,9 @@ The **scope** of the mini maps differs per genre: Action, Shooter and Role-playi
 - [Mini-Map by Jack Davies ( Game UI Patterns Article )](https://gameuipatterns.com/gameui/mini-map/)
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0OTgwNTM0OTAsODIyMzA3OTMsLTIwNz
-Q1OTUyNzYsMTMyMjI2NjEyMSwxNTI3Nzg1MDUxLDEwODg5NjM4
-ODgsMTg3OTkxNDg3OCwtMTg0MjM4NTIxMiwxOTk3MzIxMTkxLC
-0xMjA0Njk0NTIwLDIwODkxMjY3MTEsMjg3MDI2NDEzLDk5MTE3
-NTcyN119
+eyJoaXN0b3J5IjpbMjE0MjkwODc2LDgyMjMwNzkzLC0yMDc0NT
+k1Mjc2LDEzMjIyNjYxMjEsMTUyNzc4NTA1MSwxMDg4OTYzODg4
+LDE4Nzk5MTQ4NzgsLTE4NDIzODUyMTIsMTk5NzMyMTE5MSwtMT
+IwNDY5NDUyMCwyMDg5MTI2NzExLDI4NzAyNjQxMyw5OTExNzU3
+MjddfQ==
 -->
