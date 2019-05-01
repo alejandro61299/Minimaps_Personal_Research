@@ -23,6 +23,8 @@ In order to solve these problems **one of the several options** is to implement 
 
 ### Where should we place the mini map?
 
+As we can verify each genre of video game has a distinctive position on the screen, a different visible surface size (also called minimap scope).
+
 -   **MOBA games**  place the mini map exclusively at the  **bottom.**
 -   **Strategy games** use mostly the **bottom left** for placing their mini map.
 -   **MMORPG’s games**  place the mini map exclusively at the  **right** and mostly at the **top.**
@@ -39,6 +41,6 @@ In order to solve these problems **one of the several options** is to implement 
 - [Mini-Map by Jack Davies ( Game UI Patterns Article )](https://gameuipatterns.com/gameui/mini-map/)
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMDQ2OTQ1MjAsMjA4OTEyNjcxMSwyOD
-cwMjY0MTMsOTkxMTc1NzI3XX0=
+eyJoaXN0b3J5IjpbMTk5NzMyMTE5MSwtMTIwNDY5NDUyMCwyMD
+g5MTI2NzExLDI4NzAyNjQxMyw5OTExNzU3MjddfQ==
 -->
