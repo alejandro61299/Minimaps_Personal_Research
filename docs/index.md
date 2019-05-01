@@ -34,7 +34,11 @@ As we can verify each genre of video game has a distinctive position on the scre
 
 The **scope** of the mini maps differs per genre: Action, Shooter and Role-playing games show only a limited field of view including your immediate surroundings (or your current sector), whereas in Sports, MOBA and Vehicle simulation games, the mini map functions as a miniaturized world map
 
+You will be asking, does the position of the minimap matter? The truth is that yes, it affects above all the fast-paced games such as **First Person Shooters** where you usually put the minimap on the left. This is because our western culture tends to pay more attention to the left part of the screen
 
+A misplaced mini map can not only lead to prolonged reaction times but also to missclicks and misperceptions (depending on where you place other HUD elements).
+
+Therefore it is not uncommon to findat the same game released in the West has the minimap or other elements of HUD different position than in the East. Ideally, give the possibility to configure its position and size, so we give access to the game.
 
 ## Selected approach
 
@@ -46,7 +50,7 @@ The **scope** of the mini maps differs per genre: Action, Shooter and Role-playi
 - [Mini-Map by Jack Davies ( Game UI Patterns Article )](https://gameuipatterns.com/gameui/mini-map/)
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM3OTc4NzE3NSw4MjIzMDc5MywtMjA3ND
+eyJoaXN0b3J5IjpbLTY4NDI4NDU4NSw4MjIzMDc5MywtMjA3ND
 U5NTI3NiwxMzIyMjY2MTIxLDE1Mjc3ODUwNTEsMTA4ODk2Mzg4
 OCwxODc5OTE0ODc4LC0xODQyMzg1MjEyLDE5OTczMjExOTEsLT
 EyMDQ2OTQ1MjAsMjA4OTEyNjcxMSwyODcwMjY0MTMsOTkxMTc1
