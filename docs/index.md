@@ -47,7 +47,7 @@ This mini map type functions as a miniaturized world map. We can see them in Spo
 - **Peripheral arrows**   When a point of interest is not in the scope an arrow points in the direction where it is surrounding the edges of the minimap.
 - **Fog of War**
 - **Draw Layers** 
-- **Automapped**  
+- **Automapped**: Like the game The Binding of Isaac, the minimap is automatically generated next to the generation of rooms
 - **Rotation**  
 
 
@@ -84,7 +84,7 @@ As we can verify each video game  genre has a distinctive position on the screen
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA0ODA1ODM4NCwxMTIxNDk3MTgsLTk0Mj
+eyJoaXN0b3J5IjpbMTgyNDY4ODE0NCwxMTIxNDk3MTgsLTk0Mj
 YwNDc1NSwtMTcxNzYxMjc1NiwtNjM4NzY4MTE5LC0zNjE2NDk1
 NDcsLTY5MzQ1Njg5MiwxMjc5ODQxNzcwLC00OTc1MjcyNTMsLT
 E3OTk0ODMwMTksLTE5Mzk3MTAxNjMsLTE3NTYwNTg0NTcsMzk1
