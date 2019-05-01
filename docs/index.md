@@ -24,7 +24,7 @@ In order to solve these problems **one of the several options** is to implement 
 
 ### Where should we place the mini map?
 
-Os estaréis preguntando, ¿importa la posición del minimapa? La verdad es que sí, afecta sobretodo a los juegos de ritmo rápido como los **FPS** donde se suele poner el minimapa en 
+Os estaréis preguntando, ¿importa la posición del minimapa? La verdad es que sí, afecta sobretodo a los juegos de ritmo rápido como los  **First Person Shooters**  donde se suele poner el minimapa en la izquierda. Esto se debe a que por cultura ( occidental )  tenemos una tendencia ar
 
 As we can verify each genre of video game has a distinctive position on the screen, a different visible surface size (also called minimap scope).
 
@@ -46,8 +46,8 @@ The **scope** of the mini maps differs per genre: Action, Shooter and Role-playi
 - [Mini-Map by Jack Davies ( Game UI Patterns Article )](https://gameuipatterns.com/gameui/mini-map/)
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMyNDEyNDcsLTIwNzQ1OTUyNzYsMTMyMj
-I2NjEyMSwxNTI3Nzg1MDUxLDEwODg5NjM4ODgsMTg3OTkxNDg3
-OCwtMTg0MjM4NTIxMiwxOTk3MzIxMTkxLC0xMjA0Njk0NTIwLD
-IwODkxMjY3MTEsMjg3MDI2NDEzLDk5MTE3NTcyN119
+eyJoaXN0b3J5IjpbMTUwNDE3MzEyMSwtMjA3NDU5NTI3NiwxMz
+IyMjY2MTIxLDE1Mjc3ODUwNTEsMTA4ODk2Mzg4OCwxODc5OTE0
+ODc4LC0xODQyMzg1MjEyLDE5OTczMjExOTEsLTEyMDQ2OTQ1Mj
+AsMjA4OTEyNjcxMSwyODcwMjY0MTMsOTkxMTc1NzI3XX0=
 -->
