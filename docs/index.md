@@ -30,8 +30,7 @@ The **scope** of the mini maps differs per genre: Action, Shooter and Role-playi
 
 ![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/world.png)
 
-![
-](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/player.png)
+![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/player.png)
 ### Where should we place the minimap?
 
 You will be asking, does the position of the minimap matter? The truth is that yes, it affects above all the fast-paced games such as **First Person Shooters** where you usually put the minimap on the left. This is because our western culture tends to [pay more attention to the left part of the screen](http://www.useit.com/alertbox/horizontal-attention.html)
@@ -62,11 +61,11 @@ As we can verify each video game  genre has a distinctive position on the screen
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzk1MTgwMjE0LC0xNzU2MDU4NDU3LC0xMz
-IwODY3MTE1LDIwNzI0ODYwMDcsMTg4MzkxMzc2OCwtMTUwNjA0
-MzU2OCwxNTg5NDYyMTIxLC0xNzMwNjQwNjc1LDQxMTE0MjQ3MC
-wzODQ2NjY0MzEsLTg1Mjc1MDU5LC0xMzE2MTkzMDcwLDIxNDI5
-MDg3Niw4MjIzMDc5MywtMjA3NDU5NTI3NiwxMzIyMjY2MTIxLD
-E1Mjc3ODUwNTEsMTA4ODk2Mzg4OCwxODc5OTE0ODc4LC0xODQy
-Mzg1MjEyXX0=
+eyJoaXN0b3J5IjpbLTE3NTYwNTg0NTcsMzk1MTgwMjE0LC0xNz
+U2MDU4NDU3LC0xMzIwODY3MTE1LDIwNzI0ODYwMDcsMTg4Mzkx
+Mzc2OCwtMTUwNjA0MzU2OCwxNTg5NDYyMTIxLC0xNzMwNjQwNj
+c1LDQxMTE0MjQ3MCwzODQ2NjY0MzEsLTg1Mjc1MDU5LC0xMzE2
+MTkzMDcwLDIxNDI5MDg3Niw4MjIzMDc5MywtMjA3NDU5NTI3Ni
+wxMzIyMjY2MTIxLDE1Mjc3ODUwNTEsMTA4ODk2Mzg4OCwxODc5
+OTE0ODc4XX0=
 -->
