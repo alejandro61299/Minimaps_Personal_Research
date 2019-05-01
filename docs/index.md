@@ -26,6 +26,8 @@ In order to solve these problems **one of the several options** is to implement 
 
 You will be asking, does the position of the minimap matter? The truth is that yes, it affects above all the fast-paced games such as **First Person Shooters** where you usually put the minimap on the left. This is because our western culture tends to pay more attention to the left part of the screen
 
+![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/black.gif)
+
 A misplaced minimap can not only lead to **prolonged reaction times** but also to **erroneous clicks** and **misperceptions** (depending on where you place other HUD elements). Therefore it is not uncommon to find that the same game released in the West has the minimap or other elements of HUD different position than in the East. Ideally, give the possibility to configure its position and size, so we give access to the game.
 
 As we can verify each video game  genre has a distinctive position on the screen:
@@ -48,9 +50,9 @@ The **scope** of the mini maps differs per genre: Action, Shooter and Role-playi
 - [Mini-Map by Jack Davies ( Game UI Patterns Article )](https://gameuipatterns.com/gameui/mini-map/)
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMTYxOTMwNzAsMjE0MjkwODc2LDgyMj
-MwNzkzLC0yMDc0NTk1Mjc2LDEzMjIyNjYxMjEsMTUyNzc4NTA1
-MSwxMDg4OTYzODg4LDE4Nzk5MTQ4NzgsLTE4NDIzODUyMTIsMT
-k5NzMyMTE5MSwtMTIwNDY5NDUyMCwyMDg5MTI2NzExLDI4NzAy
-NjQxMyw5OTExNzU3MjddfQ==
+eyJoaXN0b3J5IjpbMTI1NTE3OTk3LC0xMzE2MTkzMDcwLDIxND
+I5MDg3Niw4MjIzMDc5MywtMjA3NDU5NTI3NiwxMzIyMjY2MTIx
+LDE1Mjc3ODUwNTEsMTA4ODk2Mzg4OCwxODc5OTE0ODc4LC0xOD
+QyMzg1MjEyLDE5OTczMjExOTEsLTEyMDQ2OTQ1MjAsMjA4OTEy
+NjcxMSwyODcwMjY0MTMsOTkxMTc1NzI3XX0=
 -->
