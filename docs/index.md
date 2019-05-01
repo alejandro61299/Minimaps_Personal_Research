@@ -25,7 +25,9 @@ In order to solve these problems **one of the several options** is to implement 
 ### Minimap types , interactions & features 
 
 - **Whole world**
+
 ![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/world.png)
+
 
 The **scope** of the mini maps differs per genre: Action, Shooter and Role-playing games show only a limited field of view including your immediate surroundings (or your current sector), whereas in Sports, MOBA and Vehicle simulation games, the mini map functions as a miniaturized world map
 
@@ -64,7 +66,7 @@ As we can verify each video game  genre has a distinctive position on the screen
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NTE3MzE5MjMsLTE3NTYwNTg0NTcsMz
+eyJoaXN0b3J5IjpbLTE5Mzk3MTAxNjMsLTE3NTYwNTg0NTcsMz
 k1MTgwMjE0LC0xNzU2MDU4NDU3LC0xMzIwODY3MTE1LDIwNzI0
 ODYwMDcsMTg4MzkxMzc2OCwtMTUwNjA0MzU2OCwxNTg5NDYyMT
 IxLC0xNzMwNjQwNjc1LDQxMTE0MjQ3MCwzODQ2NjY0MzEsLTg1
