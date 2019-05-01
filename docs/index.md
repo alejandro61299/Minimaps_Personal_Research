@@ -62,7 +62,7 @@ This mini map type functions as a miniaturized world map. We can see them in Spo
 
 ### Where should we place the minimap?
 
-You will be asking, does the position of the minimap matter? The truth is that yes, it affects above all the fast-paced games such as **First Person Shooters** where you usually put the minimap on the left. This is because our western culture tends to [pay more attention to the left part of the screen](http://www.useit.com/alertbox/horizontal-attention.html)
+You may be thinking, does the position of the minimap matter? The truth is that yes, it affects above all in fast-paced games such as **First Person Shooters** where you usually put the minimap on the left. This is because our western culture tends to [pay more attention to the left part of the screen](http://www.useit.com/alertbox/horizontal-attention.html)
 
 ![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/black.gif)
 
@@ -90,11 +90,11 @@ As we can verify each video game  genre has a distinctive position on the screen
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ4OTM1NTY2MywxNDUzMDY2NDYyLDEyNz
-MxMTE3NTgsMTI4MjI2MTU4MiwtNzU0NzY3MDAxLDExNDkwMDI3
-MTUsLTE3MjkxMjEyNDMsMTEyMTQ5NzE4LC05NDI2MDQ3NTUsLT
-E3MTc2MTI3NTYsLTYzODc2ODExOSwtMzYxNjQ5NTQ3LC02OTM0
-NTY4OTIsMTI3OTg0MTc3MCwtNDk3NTI3MjUzLC0xNzk5NDgzMD
-E5LC0xOTM5NzEwMTYzLC0xNzU2MDU4NDU3LDM5NTE4MDIxNCwt
-MTc1NjA1ODQ1N119
+eyJoaXN0b3J5IjpbLTE4NTEyOTk3MTUsMTQ1MzA2NjQ2MiwxMj
+czMTExNzU4LDEyODIyNjE1ODIsLTc1NDc2NzAwMSwxMTQ5MDAy
+NzE1LC0xNzI5MTIxMjQzLDExMjE0OTcxOCwtOTQyNjA0NzU1LC
+0xNzE3NjEyNzU2LC02Mzg3NjgxMTksLTM2MTY0OTU0NywtNjkz
+NDU2ODkyLDEyNzk4NDE3NzAsLTQ5NzUyNzI1MywtMTc5OTQ4Mz
+AxOSwtMTkzOTcxMDE2MywtMTc1NjA1ODQ1NywzOTUxODAyMTQs
+LTE3NTYwNTg0NTddfQ==
 -->
