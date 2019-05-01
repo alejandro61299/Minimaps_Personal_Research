@@ -56,13 +56,13 @@ As we can verify each video game  genre has a distinctive position on the screen
 - [Horizontal Atention Leans Left ( Nielsen Norman Group Article ) ](http://www.useit.com/alertbox/horizontal-attention.html) 
 - [Mini-Map by Jack Davies ( Game UI Patterns Article )](https://gameuipatterns.com/gameui/mini-map/)
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
-- [Game Design Affect Minimap Design  (  ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
+- [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI2Nzg3NTc3MSwxNTg5NDYyMTIxLC0xNz
-MwNjQwNjc1LDQxMTE0MjQ3MCwzODQ2NjY0MzEsLTg1Mjc1MDU5
-LC0xMzE2MTkzMDcwLDIxNDI5MDg3Niw4MjIzMDc5MywtMjA3ND
-U5NTI3NiwxMzIyMjY2MTIxLDE1Mjc3ODUwNTEsMTA4ODk2Mzg4
-OCwxODc5OTE0ODc4LC0xODQyMzg1MjEyLDE5OTczMjExOTEsLT
-EyMDQ2OTQ1MjAsMjA4OTEyNjcxMSwyODcwMjY0MTMsOTkxMTc1
-NzI3XX0=
+eyJoaXN0b3J5IjpbLTE1MDYwNDM1NjgsMTU4OTQ2MjEyMSwtMT
+czMDY0MDY3NSw0MTExNDI0NzAsMzg0NjY2NDMxLC04NTI3NTA1
+OSwtMTMxNjE5MzA3MCwyMTQyOTA4NzYsODIyMzA3OTMsLTIwNz
+Q1OTUyNzYsMTMyMjI2NjEyMSwxNTI3Nzg1MDUxLDEwODg5NjM4
+ODgsMTg3OTkxNDg3OCwtMTg0MjM4NTIxMiwxOTk3MzIxMTkxLC
+0xMjA0Njk0NTIwLDIwODkxMjY3MTEsMjg3MDI2NDEzLDk5MTE3
+NTcyN119
 -->
