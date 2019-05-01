@@ -30,6 +30,8 @@ This mini map type functions as a miniaturized world map. We can see them in Spo
 ![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/world.png)
 
 - **Player focus**
+![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/player.png)
+
 
 The **scope** of the mini maps differs per genre: Action, Shooter and Role-playing games show only a limited field of view including your immediate surroundings (or your current sector), whereas in Sports, MOBA and Vehicle simulation games, the mini map functions as a miniaturized world map
 
@@ -37,7 +39,7 @@ The **scope** of the mini maps differs per genre: Action, Shooter and Role-playi
 
 
 
-![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/player.png)
+
 ### Where should we place the minimap?
 
 You will be asking, does the position of the minimap matter? The truth is that yes, it affects above all the fast-paced games such as **First Person Shooters** where you usually put the minimap on the left. This is because our western culture tends to [pay more attention to the left part of the screen](http://www.useit.com/alertbox/horizontal-attention.html)
@@ -68,11 +70,11 @@ As we can verify each video game  genre has a distinctive position on the screen
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk2MTMzODczOSwtMTc5OTQ4MzAxOSwtMT
-kzOTcxMDE2MywtMTc1NjA1ODQ1NywzOTUxODAyMTQsLTE3NTYw
-NTg0NTcsLTEzMjA4NjcxMTUsMjA3MjQ4NjAwNywxODgzOTEzNz
-Y4LC0xNTA2MDQzNTY4LDE1ODk0NjIxMjEsLTE3MzA2NDA2NzUs
-NDExMTQyNDcwLDM4NDY2NjQzMSwtODUyNzUwNTksLTEzMTYxOT
-MwNzAsMjE0MjkwODc2LDgyMjMwNzkzLC0yMDc0NTk1Mjc2LDEz
-MjIyNjYxMjFdfQ==
+eyJoaXN0b3J5IjpbMTIyOTU2NDU3LC0xNzk5NDgzMDE5LC0xOT
+M5NzEwMTYzLC0xNzU2MDU4NDU3LDM5NTE4MDIxNCwtMTc1NjA1
+ODQ1NywtMTMyMDg2NzExNSwyMDcyNDg2MDA3LDE4ODM5MTM3Nj
+gsLTE1MDYwNDM1NjgsMTU4OTQ2MjEyMSwtMTczMDY0MDY3NSw0
+MTExNDI0NzAsMzg0NjY2NDMxLC04NTI3NTA1OSwtMTMxNjE5Mz
+A3MCwyMTQyOTA4NzYsODIyMzA3OTMsLTIwNzQ1OTUyNzYsMTMy
+MjI2NjEyMV19
 -->
