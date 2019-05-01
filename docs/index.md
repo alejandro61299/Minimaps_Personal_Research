@@ -6,7 +6,7 @@ I am [Alejandro Gamarra Niño](https://www.linkedin.com/in/alejandro-a-gamarra-n
 
 ### What is a minimap?
 
-Minimap is an UI element of the HUD usually located in a corner of the screen. It shows a abstracted view from the bird’s eye perspective of the playfield where the gameplay is being developed on a smaller scale. Its main objective is to help orientate the player and help them successfully navigate the environment to points of interest and objectives.
+Minimap is an UI element of the HUD usually located in a corner of the screen. It shows an abstract, from the bird's eye perspective view of the playfield where the gameplay is being played on a smaller scale. Its main objective is to help the player orientate and help them successfully navigate the environment to reach points of interest and objectives.
 
 ![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/lol.png)
 
@@ -90,11 +90,11 @@ As we can verify each video game  genre has a distinctive position on the screen
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ1MzA2NjQ2MiwxMjczMTExNzU4LDEyOD
-IyNjE1ODIsLTc1NDc2NzAwMSwxMTQ5MDAyNzE1LC0xNzI5MTIx
-MjQzLDExMjE0OTcxOCwtOTQyNjA0NzU1LC0xNzE3NjEyNzU2LC
-02Mzg3NjgxMTksLTM2MTY0OTU0NywtNjkzNDU2ODkyLDEyNzk4
-NDE3NzAsLTQ5NzUyNzI1MywtMTc5OTQ4MzAxOSwtMTkzOTcxMD
-E2MywtMTc1NjA1ODQ1NywzOTUxODAyMTQsLTE3NTYwNTg0NTcs
-LTEzMjA4NjcxMTVdfQ==
+eyJoaXN0b3J5IjpbLTQ4OTM1NTY2MywxNDUzMDY2NDYyLDEyNz
+MxMTE3NTgsMTI4MjI2MTU4MiwtNzU0NzY3MDAxLDExNDkwMDI3
+MTUsLTE3MjkxMjEyNDMsMTEyMTQ5NzE4LC05NDI2MDQ3NTUsLT
+E3MTc2MTI3NTYsLTYzODc2ODExOSwtMzYxNjQ5NTQ3LC02OTM0
+NTY4OTIsMTI3OTg0MTc3MCwtNDk3NTI3MjUzLC0xNzk5NDgzMD
+E5LC0xOTM5NzEwMTYzLC0xNzU2MDU4NDU3LDM5NTE4MDIxNCwt
+MTc1NjA1ODQ1N119
 -->
