@@ -26,9 +26,9 @@ In order to solve these problems **one of the several options** is to implement 
 As we can verify each genre of video game has a distinctive position on the screen, a different visible surface size (also called minimap scope).
 
 -   **MOBA games**  place the mini map exclusively at the  **bottom.**
--   **Strategy games** use mostly the **bottom left** for placing their mini map.
+-   **Strategy games** use mostly the **bottom left** for placing their mini map but most **RTS** use  **top right.**  .
 -   **MMORPG’s games**  place the mini map exclusively at the  **right** and mostly at the **top.**
--   **Racing games**  use predominantly the  **left**  as mini map location.
+-   **Racing games**  use predominantly the  **bottom**  as mini map location.
 -   **FPS games**  use also mainly the  **left side for placing the mini map.**
 
 ## Selected approach
@@ -41,6 +41,7 @@ As we can verify each genre of video game has a distinctive position on the scre
 - [Mini-Map by Jack Davies ( Game UI Patterns Article )](https://gameuipatterns.com/gameui/mini-map/)
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk5NzMyMTE5MSwtMTIwNDY5NDUyMCwyMD
-g5MTI2NzExLDI4NzAyNjQxMyw5OTExNzU3MjddfQ==
+eyJoaXN0b3J5IjpbLTE4NDIzODUyMTIsMTk5NzMyMTE5MSwtMT
+IwNDY5NDUyMCwyMDg5MTI2NzExLDI4NzAyNjQxMyw5OTExNzU3
+MjddfQ==
 -->
