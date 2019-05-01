@@ -29,6 +29,8 @@ In order to solve these problems **one of the several options** is to implement 
 -   **Racing games**  use predominantly the  **left**  as mini map location.
 -   **FPS games**  use also mainly the  **left side for placing the mini map.**
 
+## Selected approach
+
 ## Webgraphy
 
 - [Where Should We Place the Mini-Map? ( Gamasutra Blog )](https://www.gamasutra.com/blogs/JacekSliwinski/20130121/185119/Where_should_we_place_the_mini_map.php)
@@ -37,6 +39,6 @@ In order to solve these problems **one of the several options** is to implement 
 - [Mini-Map by Jack Davies ( Game UI Patterns Article )](https://gameuipatterns.com/gameui/mini-map/)
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA4OTEyNjcxMSwyODcwMjY0MTMsOTkxMT
-c1NzI3XX0=
+eyJoaXN0b3J5IjpbLTEyMDQ2OTQ1MjAsMjA4OTEyNjcxMSwyOD
+cwMjY0MTMsOTkxMTc1NzI3XX0=
 -->
