@@ -38,12 +38,14 @@ This mini map type functions as a miniaturized world map. We can see them in Spo
  
  
 ### Features & Interactions
+- Limits & barriers
+- Player & 
 - Fog of War
 - Draw Layers 
 - Rotation 
 - Zoom 
 - Automapped  
-- Labels: 
+- Labels
 
 
 
@@ -77,7 +79,7 @@ As we can verify each video game  genre has a distinctive position on the screen
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTAyOTQ2NzA5LC05NDI2MDQ3NTUsLTE3MT
+eyJoaXN0b3J5IjpbOTg1NTY2NDY0LC05NDI2MDQ3NTUsLTE3MT
 c2MTI3NTYsLTYzODc2ODExOSwtMzYxNjQ5NTQ3LC02OTM0NTY4
 OTIsMTI3OTg0MTc3MCwtNDk3NTI3MjUzLC0xNzk5NDgzMDE5LC
 0xOTM5NzEwMTYzLC0xNzU2MDU4NDU3LDM5NTE4MDIxNCwtMTc1
