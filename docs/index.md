@@ -34,7 +34,9 @@ As we can verify each genre of video game has a distinctive position on the scre
 
 The **scope** of the mini maps differs per genre: Action, Shooter and Role-playing games show only a limited field of view including your immediate surroundings (or your current sector), whereas in Sports, MOBA and Vehicle simulation games, the mini map functions as a miniaturized world map
 
-Os estaréis preguntando, ¿importa la posición del minimapa? La verdad es que sí, afecta sobretodo a los juegos de ritmo rápido como los  **First Person Shooters**  donde se suele poner el minimapa en la izquierda. Esto se debe a que por nuestra cultura occidental [tendemos a prestar más atención a la parte izquierda de la pantalla](http://www.useit.com/alertbox/horizontal-attention.html). Por ello no es raro encontrar que un mismo juego lanzado en occidente tenga el minimapa o elementos de la UI en distinta posición que en oriente. Lo ideal es dar la posibilidad de configurar su posición y tamaño, así damos accesibilidad al juego.
+Os estaréis preguntando, ¿importa la posición del minimapa? La verdad es que sí, afecta sobretodo a los juegos de ritmo rápido como los  **First Person Shooters**  donde se suele poner el minimapa en la izquierda. Esto se debe a que por nuestra cultura occidental [tendemos a prestar más atención a la parte izquierda de la pantalla](http://www.useit.com/alertbox/horizontal-attention.html). 
+
+Por ello no es raro encontrar que un mismo juego lanzado en occidente tenga el minimapa o elementos de la UI en distinta posición que en oriente. Lo ideal es dar la posibilidad de configurar su posición y tamaño, así damos accesibilidad al juego.
 
 ## Selected approach
 
@@ -46,7 +48,7 @@ Os estaréis preguntando, ¿importa la posición del minimapa? La verdad es que 
 - [Mini-Map by Jack Davies ( Game UI Patterns Article )](https://gameuipatterns.com/gameui/mini-map/)
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYwMzIwNzI0MCw4MjIzMDc5MywtMjA3ND
+eyJoaXN0b3J5IjpbMTg3MzI2NzM0OCw4MjIzMDc5MywtMjA3ND
 U5NTI3NiwxMzIyMjY2MTIxLDE1Mjc3ODUwNTEsMTA4ODk2Mzg4
 OCwxODc5OTE0ODc4LC0xODQyMzg1MjEyLDE5OTczMjExOTEsLT
 EyMDQ2OTQ1MjAsMjA4OTEyNjcxMSwyODcwMjY0MTMsOTkxMTc1
