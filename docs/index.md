@@ -30,7 +30,7 @@ This mini map type functions as a miniaturized world map. We can see them in Spo
 ![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/world.png)
 
 - **Focused on the player**
- The **scope** of the mini maps in Action, Shooter and Role-playing games displays only a limited field of view including your immediate surroundings (or your current sector).  That 
+ The **scope** of the mini maps in Action, Shooter and Role-playing games displays only a limited field of view including your immediate surroundings (or your current sector).  
 
 ![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/player.png)
 
@@ -67,11 +67,11 @@ As we can verify each video game  genre has a distinctive position on the screen
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODYxNzk5MTYxLDEyNzk4NDE3NzAsLTQ5Nz
-UyNzI1MywtMTc5OTQ4MzAxOSwtMTkzOTcxMDE2MywtMTc1NjA1
-ODQ1NywzOTUxODAyMTQsLTE3NTYwNTg0NTcsLTEzMjA4NjcxMT
-UsMjA3MjQ4NjAwNywxODgzOTEzNzY4LC0xNTA2MDQzNTY4LDE1
-ODk0NjIxMjEsLTE3MzA2NDA2NzUsNDExMTQyNDcwLDM4NDY2Nj
-QzMSwtODUyNzUwNTksLTEzMTYxOTMwNzAsMjE0MjkwODc2LDgy
-MjMwNzkzXX0=
+eyJoaXN0b3J5IjpbLTY5MzQ1Njg5MiwxMjc5ODQxNzcwLC00OT
+c1MjcyNTMsLTE3OTk0ODMwMTksLTE5Mzk3MTAxNjMsLTE3NTYw
+NTg0NTcsMzk1MTgwMjE0LC0xNzU2MDU4NDU3LC0xMzIwODY3MT
+E1LDIwNzI0ODYwMDcsMTg4MzkxMzc2OCwtMTUwNjA0MzU2OCwx
+NTg5NDYyMTIxLC0xNzMwNjQwNjc1LDQxMTE0MjQ3MCwzODQ2Nj
+Y0MzEsLTg1Mjc1MDU5LC0xMzE2MTkzMDcwLDIxNDI5MDg3Niw4
+MjIzMDc5M119
 -->
