@@ -37,7 +37,6 @@ This mini map type functions as a miniaturized world map. We can see them in Spo
 
 
 
-![enter image description here](https://i.gyazo.com/cd88550085d9c7ff2ea7950ae9e43a2e.gif)
 
 
 
@@ -72,11 +71,11 @@ As we can verify each video game  genre has a distinctive position on the screen
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNzY1OTg2NTQsLTQ5NzUyNzI1MywtMT
-c5OTQ4MzAxOSwtMTkzOTcxMDE2MywtMTc1NjA1ODQ1NywzOTUx
-ODAyMTQsLTE3NTYwNTg0NTcsLTEzMjA4NjcxMTUsMjA3MjQ4Nj
-AwNywxODgzOTEzNzY4LC0xNTA2MDQzNTY4LDE1ODk0NjIxMjEs
-LTE3MzA2NDA2NzUsNDExMTQyNDcwLDM4NDY2NjQzMSwtODUyNz
-UwNTksLTEzMTYxOTMwNzAsMjE0MjkwODc2LDgyMjMwNzkzLC0y
-MDc0NTk1Mjc2XX0=
+eyJoaXN0b3J5IjpbMTI3OTg0MTc3MCwtNDk3NTI3MjUzLC0xNz
+k5NDgzMDE5LC0xOTM5NzEwMTYzLC0xNzU2MDU4NDU3LDM5NTE4
+MDIxNCwtMTc1NjA1ODQ1NywtMTMyMDg2NzExNSwyMDcyNDg2MD
+A3LDE4ODM5MTM3NjgsLTE1MDYwNDM1NjgsMTU4OTQ2MjEyMSwt
+MTczMDY0MDY3NSw0MTExNDI0NzAsMzg0NjY2NDMxLC04NTI3NT
+A1OSwtMTMxNjE5MzA3MCwyMTQyOTA4NzYsODIyMzA3OTMsLTIw
+NzQ1OTUyNzZdfQ==
 -->
