@@ -42,11 +42,11 @@ The **scope** of the mini maps differs per genre: Action, Shooter and Role-playi
 
 - [Where Should We Place the Mini-Map? ( Gamasutra Blog )](https://www.gamasutra.com/blogs/JacekSliwinski/20130121/185119/Where_should_we_place_the_mini_map.php)
 - [Video Game Mini-Maps Might Finally Be Going Away ( Kotaku Article )](https://kotaku.com/video-game-mini-maps-might-finally-be-going-away-1820011897)
-- [Horizontal Atention ( Norman Group Article ) ](http://www.useit.com/alertbox/horizontal-attention.html) 
+- [Horizontal Atention Leans Left ( Norman Group Article ) ](http://www.useit.com/alertbox/horizontal-attention.html) 
 - [Mini-Map by Jack Davies ( Game UI Patterns Article )](https://gameuipatterns.com/gameui/mini-map/)
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMTg2OTYxNzAsMTMyMjI2NjEyMSwxNT
+eyJoaXN0b3J5IjpbLTIwNzQ1OTUyNzYsMTMyMjI2NjEyMSwxNT
 I3Nzg1MDUxLDEwODg5NjM4ODgsMTg3OTkxNDg3OCwtMTg0MjM4
 NTIxMiwxOTk3MzIxMTkxLC0xMjA0Njk0NTIwLDIwODkxMjY3MT
 EsMjg3MDI2NDEzLDk5MTE3NTcyN119
