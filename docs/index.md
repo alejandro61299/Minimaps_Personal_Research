@@ -54,7 +54,7 @@ This mini map type functions as a miniaturized world map. We can see them in Spo
 -   **Tooltips** Keeping the cursor on some element in the mini-map opens a panel with more information
 -   **Zoom**  Usually this interaction is accompanied by two buttons plus and minus zoom or a slider
 -   **Mouse drag**: Change the map  segment using mouse drag.
--   **Change modes** 
+-   **Change rotation mode**: It allows to iterate between fixed map in the north or rotation
 
 
 
@@ -88,7 +88,7 @@ As we can verify each video game  genre has a distinctive position on the screen
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAxNDMyNjc3MiwxMTQ5MDAyNzE1LC0xNz
+eyJoaXN0b3J5IjpbLTc1NDc2NzAwMSwxMTQ5MDAyNzE1LC0xNz
 I5MTIxMjQzLDExMjE0OTcxOCwtOTQyNjA0NzU1LC0xNzE3NjEy
 NzU2LC02Mzg3NjgxMTksLTM2MTY0OTU0NywtNjkzNDU2ODkyLD
 EyNzk4NDE3NzAsLTQ5NzUyNzI1MywtMTc5OTQ4MzAxOSwtMTkz
