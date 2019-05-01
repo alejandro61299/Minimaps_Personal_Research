@@ -1,5 +1,7 @@
 # Minimaps Research 
-I am Alejandro Gamarra Niño , student of the [Bachelor’s Degree in Video Games by UPC at CITM](https://www.citm.upc.edu/ing/estudis/graus-videojocs/). This content is generated for the second year’s subject Project 2, under supervision of lecturer [Ricard Pillosu](https://es.linkedin.com/in/ricardpillosu).
+
+I am [Alejandro Gamarra Niño](https://www.linkedin.com/in/alejandro-a-gamarra-ni%C3%B1o-568b6b171/) , student of the [Bachelor’s Degree in Video Games by UPC at CITM](https://www.citm.upc.edu/ing/estudis/graus-videojocs/). This content is generated for the second year’s subject Project 2, under supervision of lecturer [Ricard Pillosu](https://es.linkedin.com/in/ricardpillosu).
+
 ## Theory about minimaps
 
 ### What is a minimap?
@@ -88,7 +90,7 @@ As we can verify each video game  genre has a distinctive position on the screen
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNTAxNTYzNDQsMTI3MzExMTc1OCwxMj
+eyJoaXN0b3J5IjpbLTEzNTcyODE4NTksMTI3MzExMTc1OCwxMj
 gyMjYxNTgyLC03NTQ3NjcwMDEsMTE0OTAwMjcxNSwtMTcyOTEy
 MTI0MywxMTIxNDk3MTgsLTk0MjYwNDc1NSwtMTcxNzYxMjc1Ni
 wtNjM4NzY4MTE5LC0zNjE2NDk1NDcsLTY5MzQ1Njg5MiwxMjc5
