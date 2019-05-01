@@ -8,12 +8,6 @@ Minimap is an UI element of the HUD usually located in a corner of the screen. I
 
 ![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/lol.png)
 
-### Minimap types , interactions & features 
-
-The **scope** of the mini maps differs per genre: Action, Shooter and Role-playing games show only a limited field of view including your immediate surroundings (or your current sector), whereas in Sports, MOBA and Vehicle simulation games, the mini map functions as a miniaturized world map
-
-![enter image description here](https://i.gyazo.com/cd88550085d9c7ff2ea7950ae9e43a2e.gif)
-
 ### When is a minimap necessary?
 
 This question has a different answer depending on the genre and the pillars of the video game but in general the main problems that make the minimap a necessity are:
@@ -27,6 +21,12 @@ This question has a different answer depending on the genre and the pillars of t
 ![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/massive_enemies.png)
 
 In order to solve these problems **one of the several options** is to implement a minimap. Other options are in-game elements like arrows or the famous compas buts this elements are not compatible with most genres.
+
+### Minimap types , interactions & features 
+
+The **scope** of the mini maps differs per genre: Action, Shooter and Role-playing games show only a limited field of view including your immediate surroundings (or your current sector), whereas in Sports, MOBA and Vehicle simulation games, the mini map functions as a miniaturized world map
+
+![enter image description here](https://i.gyazo.com/cd88550085d9c7ff2ea7950ae9e43a2e.gif)
 
 ### Where should we place the minimap?
 
@@ -58,11 +58,11 @@ As we can verify each video game  genre has a distinctive position on the screen
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MDYwNDM1NjgsMTU4OTQ2MjEyMSwtMT
-czMDY0MDY3NSw0MTExNDI0NzAsMzg0NjY2NDMxLC04NTI3NTA1
-OSwtMTMxNjE5MzA3MCwyMTQyOTA4NzYsODIyMzA3OTMsLTIwNz
-Q1OTUyNzYsMTMyMjI2NjEyMSwxNTI3Nzg1MDUxLDEwODg5NjM4
-ODgsMTg3OTkxNDg3OCwtMTg0MjM4NTIxMiwxOTk3MzIxMTkxLC
-0xMjA0Njk0NTIwLDIwODkxMjY3MTEsMjg3MDI2NDEzLDk5MTE3
-NTcyN119
+eyJoaXN0b3J5IjpbMTg4MzkxMzc2OCwtMTUwNjA0MzU2OCwxNT
+g5NDYyMTIxLC0xNzMwNjQwNjc1LDQxMTE0MjQ3MCwzODQ2NjY0
+MzEsLTg1Mjc1MDU5LC0xMzE2MTkzMDcwLDIxNDI5MDg3Niw4Mj
+IzMDc5MywtMjA3NDU5NTI3NiwxMzIyMjY2MTIxLDE1Mjc3ODUw
+NTEsMTA4ODk2Mzg4OCwxODc5OTE0ODc4LC0xODQyMzg1MjEyLD
+E5OTczMjExOTEsLTEyMDQ2OTQ1MjAsMjA4OTEyNjcxMSwyODcw
+MjY0MTNdfQ==
 -->
