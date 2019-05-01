@@ -45,7 +45,7 @@ This mini map type functions as a miniaturized world map. We can see them in Spo
 - **Labels**: Can be attached to points of interest or only indicate the name of an area,
 - **Peripheral arrows**: When a point of interest is not in the scope an arrow points in the direction where it is surrounding the edges of the minimap.
 - **Rotation**:  When a minimap is focused on player it can rotate according to the angle of the axis that represents the height (y or z normally)
-- **Automapped**: Like the game The Binding of Isaac, the minimap is automatically generated next to the generation of rooms
+- **Automap**: Like the game The Binding of Isaac, the minimap is automatically generated next to the generation of rooms
  
 
 ### Interactions
@@ -88,11 +88,11 @@ As we can verify each video game  genre has a distinctive position on the screen
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc1NDc2NzAwMSwxMTQ5MDAyNzE1LC0xNz
-I5MTIxMjQzLDExMjE0OTcxOCwtOTQyNjA0NzU1LC0xNzE3NjEy
-NzU2LC02Mzg3NjgxMTksLTM2MTY0OTU0NywtNjkzNDU2ODkyLD
-EyNzk4NDE3NzAsLTQ5NzUyNzI1MywtMTc5OTQ4MzAxOSwtMTkz
-OTcxMDE2MywtMTc1NjA1ODQ1NywzOTUxODAyMTQsLTE3NTYwNT
-g0NTcsLTEzMjA4NjcxMTUsMjA3MjQ4NjAwNywxODgzOTEzNzY4
-LC0xNTA2MDQzNTY4XX0=
+eyJoaXN0b3J5IjpbMTI4MjI2MTU4MiwtNzU0NzY3MDAxLDExND
+kwMDI3MTUsLTE3MjkxMjEyNDMsMTEyMTQ5NzE4LC05NDI2MDQ3
+NTUsLTE3MTc2MTI3NTYsLTYzODc2ODExOSwtMzYxNjQ5NTQ3LC
+02OTM0NTY4OTIsMTI3OTg0MTc3MCwtNDk3NTI3MjUzLC0xNzk5
+NDgzMDE5LC0xOTM5NzEwMTYzLC0xNzU2MDU4NDU3LDM5NTE4MD
+IxNCwtMTc1NjA1ODQ1NywtMTMyMDg2NzExNSwyMDcyNDg2MDA3
+LDE4ODM5MTM3NjhdfQ==
 -->
