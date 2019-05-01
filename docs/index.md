@@ -38,7 +38,7 @@ As we can verify each video game  genre has a distinctive position on the screen
 -   **Racing games**  use predominantly the  **bottom**  like GPS's.
 -   **FPS games**  use also mainly the  **left** for placing the mini map.
 
-### Where should we place the minimap?
+### Minimap types & features 
 The **scope** of the mini maps differs per genre: Action, Shooter and Role-playing games show only a limited field of view including your immediate surroundings (or your current sector), whereas in Sports, MOBA and Vehicle simulation games, the mini map functions as a miniaturized world map
 
 ## Selected approach
@@ -51,10 +51,9 @@ The **scope** of the mini maps differs per genre: Action, Shooter and Role-playi
 - [Mini-Map by Jack Davies ( Game UI Patterns Article )](https://gameuipatterns.com/gameui/mini-map/)
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU3MzE3NjQ0NCwtODUyNzUwNTksLTEzMT
-YxOTMwNzAsMjE0MjkwODc2LDgyMjMwNzkzLC0yMDc0NTk1Mjc2
-LDEzMjIyNjYxMjEsMTUyNzc4NTA1MSwxMDg4OTYzODg4LDE4Nz
-k5MTQ4NzgsLTE4NDIzODUyMTIsMTk5NzMyMTE5MSwtMTIwNDY5
-NDUyMCwyMDg5MTI2NzExLDI4NzAyNjQxMyw5OTExNzU3MjddfQ
-==
+eyJoaXN0b3J5IjpbMzg0NjY2NDMxLC04NTI3NTA1OSwtMTMxNj
+E5MzA3MCwyMTQyOTA4NzYsODIyMzA3OTMsLTIwNzQ1OTUyNzYs
+MTMyMjI2NjEyMSwxNTI3Nzg1MDUxLDEwODg5NjM4ODgsMTg3OT
+kxNDg3OCwtMTg0MjM4NTIxMiwxOTk3MzIxMTkxLC0xMjA0Njk0
+NTIwLDIwODkxMjY3MTEsMjg3MDI2NDEzLDk5MTE3NTcyN119
 -->
