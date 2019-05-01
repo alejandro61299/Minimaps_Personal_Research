@@ -28,7 +28,7 @@ As we can verify each genre of video game has a distinctive position on the scre
 -   **MOBA games**  place the mini map exclusively at the  **bottom.**
 -   **Strategy games** use mostly the **bottom left** for placing mini map but most **RTS** use  **top right.**  .
 -   **MMORPG’s games**  place the mini map exclusively at the  **right** and mostly at the **top.**
--   **Racing games**  use predominantly the  **bottom**  as mini map location.
+-   **Racing games**  use predominantly the  **bottom**  but .
 -   **FPS games**  use also mainly the  **left side for placing the mini map.**
 
 ## Selected approach
@@ -41,7 +41,7 @@ As we can verify each genre of video game has a distinctive position on the scre
 - [Mini-Map by Jack Davies ( Game UI Patterns Article )](https://gameuipatterns.com/gameui/mini-map/)
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg3OTkxNDg3OCwtMTg0MjM4NTIxMiwxOT
-k3MzIxMTkxLC0xMjA0Njk0NTIwLDIwODkxMjY3MTEsMjg3MDI2
-NDEzLDk5MTE3NTcyN119
+eyJoaXN0b3J5IjpbMjA4Nzk3NTc1MywxODc5OTE0ODc4LC0xOD
+QyMzg1MjEyLDE5OTczMjExOTEsLTEyMDQ2OTQ1MjAsMjA4OTEy
+NjcxMSwyODcwMjY0MTMsOTkxMTc1NzI3XX0=
 -->
