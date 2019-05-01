@@ -17,6 +17,8 @@ This question has a different answer depending on the genre and the pillars of t
 -  There are lots of different points of interest
 -  The game requires [macro management](https://gamemakers.com/micro-vs-macro-consolepc-vs-mobile-gaming/) ( RTS )
 
+![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/massive_enemies.png)
+
 In order to solve these problems **one of the several options** is to implement a minimap. Other options are in-game elements like arrows or the famous compas buts this elements are not compatible with most genres.
 
 ### Where should we place the mini map?
@@ -35,5 +37,6 @@ In order to solve these problems **one of the several options** is to implement 
 - [Mini-Map by Jack Davies ( Game UI Patterns Article )](https://gameuipatterns.com/gameui/mini-map/)
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjg3MDI2NDEzLDk5MTE3NTcyN119
+eyJoaXN0b3J5IjpbMjA4OTEyNjcxMSwyODcwMjY0MTMsOTkxMT
+c1NzI3XX0=
 -->
