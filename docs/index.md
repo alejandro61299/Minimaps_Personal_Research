@@ -23,7 +23,7 @@ This question has a different answer depending on the genre and the pillars of t
 In order to solve these problems **one of the several options** is to implement a minimap. Other options are in-game elements like arrows or the famous compas buts this elements are not compatible with most genres.
 
 ### Where should we place the mini map?
-
+Os estareis preguntando, ¿importa la posición del minimapa? D
 
 As we can verify each genre of video game has a distinctive position on the screen, a different visible surface size (also called minimap scope).
 
@@ -45,7 +45,7 @@ The **scope** of the mini maps differs per genre: Action, Shooter and Role-playi
 - [Mini-Map by Jack Davies ( Game UI Patterns Article )](https://gameuipatterns.com/gameui/mini-map/)
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA3ODM4MzYzNywxMzIyMjY2MTIxLDE1Mj
+eyJoaXN0b3J5IjpbLTk1NjA0MjA2NiwxMzIyMjY2MTIxLDE1Mj
 c3ODUwNTEsMTA4ODk2Mzg4OCwxODc5OTE0ODc4LC0xODQyMzg1
 MjEyLDE5OTczMjExOTEsLTEyMDQ2OTQ1MjAsMjA4OTEyNjcxMS
 wyODcwMjY0MTMsOTkxMTc1NzI3XX0=
