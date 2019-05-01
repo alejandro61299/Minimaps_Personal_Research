@@ -37,7 +37,7 @@ This mini map type functions as a miniaturized world map. We can see them in Spo
 ![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/player.png)
  
  
-### Features & Interactions
+### Features
 
 - **Limits & barriers**
 - **Player/s, enemies & allied position** 
@@ -45,10 +45,10 @@ This mini map type functions as a miniaturized world map. We can see them in Spo
 - **Labels**: Can be attached to points of interest or only indicate the name of an area,
 - **Peripheral arrows**   When a point of interest is not in the scope an arrow points in the direction where it is surrounding the edges of the minimap.
 - **Rotation**  When a minimap is focused on player it can rotate according to the angle of the axis that represents the height (y or z normally)
-- **Draw layers** 
 - **Automapped**: Like the game The Binding of Isaac, the minimap is automatically generated next to the generation of rooms
  
 
+### Interactions
 
 
 
@@ -83,11 +83,11 @@ As we can verify each video game  genre has a distinctive position on the screen
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0OTkzMjcwMTEsLTE3MjkxMjEyNDMsMT
-EyMTQ5NzE4LC05NDI2MDQ3NTUsLTE3MTc2MTI3NTYsLTYzODc2
-ODExOSwtMzYxNjQ5NTQ3LC02OTM0NTY4OTIsMTI3OTg0MTc3MC
-wtNDk3NTI3MjUzLC0xNzk5NDgzMDE5LC0xOTM5NzEwMTYzLC0x
-NzU2MDU4NDU3LDM5NTE4MDIxNCwtMTc1NjA1ODQ1NywtMTMyMD
-g2NzExNSwyMDcyNDg2MDA3LDE4ODM5MTM3NjgsLTE1MDYwNDM1
-NjgsMTU4OTQ2MjEyMV19
+eyJoaXN0b3J5IjpbLTcxNjI0NjgwMywtMTcyOTEyMTI0MywxMT
+IxNDk3MTgsLTk0MjYwNDc1NSwtMTcxNzYxMjc1NiwtNjM4NzY4
+MTE5LC0zNjE2NDk1NDcsLTY5MzQ1Njg5MiwxMjc5ODQxNzcwLC
+00OTc1MjcyNTMsLTE3OTk0ODMwMTksLTE5Mzk3MTAxNjMsLTE3
+NTYwNTg0NTcsMzk1MTgwMjE0LC0xNzU2MDU4NDU3LC0xMzIwOD
+Y3MTE1LDIwNzI0ODYwMDcsMTg4MzkxMzc2OCwtMTUwNjA0MzU2
+OCwxNTg5NDYyMTIxXX0=
 -->
