@@ -43,13 +43,18 @@ This mini map type functions as a miniaturized world map. We can see them in Spo
 - **Player/s, enemies & allied position** 
 - **Points of interest with icons**:  Checkpoints, domination points, buildings, save points, traders, etc;
 - **Labels**: Can be attached to points of interest or only indicate the name of an area,
-- **Peripheral arrows**   When a point of interest is not in the scope an arrow points in the direction where it is surrounding the edges of the minimap.
-- **Rotation**  When a minimap is focused on player it can rotate according to the angle of the axis that represents the height (y or z normally)
+- **Peripheral arrows**: When a point of interest is not in the scope an arrow points in the direction where it is surrounding the edges of the minimap.
+- **Rotation**:  When a minimap is focused on player it can rotate according to the angle of the axis that represents the height (y or z normally)
 - **Automapped**: Like the game The Binding of Isaac, the minimap is automatically generated next to the generation of rooms
  
 
 ### Interactions
-
+-   **Navigation**  through the mini map: Setting waypoint by one click and/or drawing the path with the cursor (e.g. Strategy and MOBA games).  _Only if the map is not transparent._
+-   Setting various kinds of  **alerts**  (Pings) like Target or Retreat (especially in multiplayer games)
+-   **Tooltips**
+-   **Zoom**  out/in
+-   Change the map  **segment**  by mouse drag
+-   Change between a  **fixed and a rotating**  map
 
 
 
@@ -83,7 +88,7 @@ As we can verify each video game  genre has a distinctive position on the screen
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcxNjI0NjgwMywtMTcyOTEyMTI0MywxMT
+eyJoaXN0b3J5IjpbLTQyNTc5NDI5NiwtMTcyOTEyMTI0MywxMT
 IxNDk3MTgsLTk0MjYwNDc1NSwtMTcxNzYxMjc1NiwtNjM4NzY4
 MTE5LC0zNjE2NDk1NDcsLTY5MzQ1Njg5MiwxMjc5ODQxNzcwLC
 00OTc1MjcyNTMsLTE3OTk0ODMwMTksLTE5Mzk3MTAxNjMsLTE3
