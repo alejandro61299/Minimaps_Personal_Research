@@ -50,11 +50,11 @@ This mini map type functions as a miniaturized world map. We can see them in Spo
 
 ### Interactions
 -   **Navigation**: Move to a position by one click and/or drawing the path with the cursor (Strategy & MOBA games).
--   **Alerts**  (Pings) like Target or Retreat (especially in multiplayer games)
+-   **Alerts**:  (also called Pings) like Target or Retreat (especially in multiplayer games)
 -   **Tooltips** Keeping the cursor on some element in the mini-map opens a panel with more information
--   **Zoom**  
+-   **Zoom**  Usually this interaction is accompanied by two buttons plus and minus zoom or a slider
 -   **Mouse drag**: Change the map  segment using mouse drag.
--   Change between a  **fixed and a rotating**  map.
+-   **Change modes** 
 
 
 
@@ -88,11 +88,11 @@ As we can verify each video game  genre has a distinctive position on the screen
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU2MzExODUxLDExNDkwMDI3MTUsLTE3Mj
-kxMjEyNDMsMTEyMTQ5NzE4LC05NDI2MDQ3NTUsLTE3MTc2MTI3
-NTYsLTYzODc2ODExOSwtMzYxNjQ5NTQ3LC02OTM0NTY4OTIsMT
-I3OTg0MTc3MCwtNDk3NTI3MjUzLC0xNzk5NDgzMDE5LC0xOTM5
-NzEwMTYzLC0xNzU2MDU4NDU3LDM5NTE4MDIxNCwtMTc1NjA1OD
-Q1NywtMTMyMDg2NzExNSwyMDcyNDg2MDA3LDE4ODM5MTM3Njgs
-LTE1MDYwNDM1NjhdfQ==
+eyJoaXN0b3J5IjpbMjAxNDMyNjc3MiwxMTQ5MDAyNzE1LC0xNz
+I5MTIxMjQzLDExMjE0OTcxOCwtOTQyNjA0NzU1LC0xNzE3NjEy
+NzU2LC02Mzg3NjgxMTksLTM2MTY0OTU0NywtNjkzNDU2ODkyLD
+EyNzk4NDE3NzAsLTQ5NzUyNzI1MywtMTc5OTQ4MzAxOSwtMTkz
+OTcxMDE2MywtMTc1NjA1ODQ1NywzOTUxODAyMTQsLTE3NTYwNT
+g0NTcsLTEzMjA4NjcxMTUsMjA3MjQ4NjAwNywxODgzOTEzNzY4
+LC0xNTA2MDQzNTY4XX0=
 -->
