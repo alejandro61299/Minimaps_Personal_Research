@@ -40,9 +40,8 @@ This mini map type functions as a miniaturized world map. We can see them in Spo
 ### Features & Interactions
 
 - **Limits & barriers**
-- **Player position** 
-- **Enemies & Allied Positions**
-- **Points of interest**:  Checkpoints, domination points, buildings, save points, traders, etc;
+- **Player, Enemies & Allied Position** 
+- **Points of interest with icons **:  Checkpoints, domination points, buildings, save points, traders, etc;
 - **Labels**: Can be attached to points of interest or only indicate the name of an area,
 - **Peripheral arrows**   When a point of interest is not in the scope an arrow points in the direction where it is surrounding the edges of the minimap.
 - **Rotation**  
@@ -85,11 +84,11 @@ As we can verify each video game  genre has a distinctive position on the screen
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA4MDE3Nzc5MCwxMTIxNDk3MTgsLTk0Mj
-YwNDc1NSwtMTcxNzYxMjc1NiwtNjM4NzY4MTE5LC0zNjE2NDk1
-NDcsLTY5MzQ1Njg5MiwxMjc5ODQxNzcwLC00OTc1MjcyNTMsLT
-E3OTk0ODMwMTksLTE5Mzk3MTAxNjMsLTE3NTYwNTg0NTcsMzk1
-MTgwMjE0LC0xNzU2MDU4NDU3LC0xMzIwODY3MTE1LDIwNzI0OD
-YwMDcsMTg4MzkxMzc2OCwtMTUwNjA0MzU2OCwxNTg5NDYyMTIx
-LC0xNzMwNjQwNjc1XX0=
+eyJoaXN0b3J5IjpbMTQzOTY5ODgxLDExMjE0OTcxOCwtOTQyNj
+A0NzU1LC0xNzE3NjEyNzU2LC02Mzg3NjgxMTksLTM2MTY0OTU0
+NywtNjkzNDU2ODkyLDEyNzk4NDE3NzAsLTQ5NzUyNzI1MywtMT
+c5OTQ4MzAxOSwtMTkzOTcxMDE2MywtMTc1NjA1ODQ1NywzOTUx
+ODAyMTQsLTE3NTYwNTg0NTcsLTEzMjA4NjcxMTUsMjA3MjQ4Nj
+AwNywxODgzOTEzNzY4LC0xNTA2MDQzNTY4LDE1ODk0NjIxMjEs
+LTE3MzA2NDA2NzVdfQ==
 -->
