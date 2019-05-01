@@ -24,6 +24,7 @@ In order to solve these problems **one of the several options** is to implement 
 
 ### Minimap types 
 
+Mini maps can be classified by many of their attributes as their perspective (Orthogonal, Isometric, 3D ...) or their type of interaction but the two most common types are:
 - **Whole world**
 This mini map type functions as a miniaturized world map. We can see them in Sports, Racing ,MOBA or Strategy games. In some cases they have a rectangle representing the area of the camera with which you can interact by dragging the mouse.
 
@@ -68,11 +69,11 @@ As we can verify each video game  genre has a distinctive position on the screen
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzODc2ODExOSwtMzYxNjQ5NTQ3LC02OT
-M0NTY4OTIsMTI3OTg0MTc3MCwtNDk3NTI3MjUzLC0xNzk5NDgz
-MDE5LC0xOTM5NzEwMTYzLC0xNzU2MDU4NDU3LDM5NTE4MDIxNC
-wtMTc1NjA1ODQ1NywtMTMyMDg2NzExNSwyMDcyNDg2MDA3LDE4
-ODM5MTM3NjgsLTE1MDYwNDM1NjgsMTU4OTQ2MjEyMSwtMTczMD
-Y0MDY3NSw0MTExNDI0NzAsMzg0NjY2NDMxLC04NTI3NTA1OSwt
-MTMxNjE5MzA3MF19
+eyJoaXN0b3J5IjpbLTE3MTc2MTI3NTYsLTYzODc2ODExOSwtMz
+YxNjQ5NTQ3LC02OTM0NTY4OTIsMTI3OTg0MTc3MCwtNDk3NTI3
+MjUzLC0xNzk5NDgzMDE5LC0xOTM5NzEwMTYzLC0xNzU2MDU4ND
+U3LDM5NTE4MDIxNCwtMTc1NjA1ODQ1NywtMTMyMDg2NzExNSwy
+MDcyNDg2MDA3LDE4ODM5MTM3NjgsLTE1MDYwNDM1NjgsMTU4OT
+Q2MjEyMSwtMTczMDY0MDY3NSw0MTExNDI0NzAsMzg0NjY2NDMx
+LC04NTI3NTA1OV19
 -->
