@@ -299,7 +299,21 @@ window = SDL_CreateWindow(app->GetTitle(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPO
 ```
 - Identify the "opengles2" driver
 - And finally create the SDL_Render
+```cpp
+SDL_RendererInfo info;
+int index = -1;
 
+for (int i = 0; i < SDL_GetNumRenderDrivers(); ++i)
+{
+	SDL_GetRenderDriverInfo(i, &info);
+
+	if (info.name == std::string("opengles2"))
+	{
+		index = i;
+	}
+}
+renderer = SDL_CreateRenderer(app->win->window, index, flags);
+```
 
 ## Links to more Documentation
 
@@ -311,11 +325,11 @@ window = SDL_CreateWindow(app->GetTitle(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPO
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MjQ3NTA0NTksLTU5ODUyNzY4OSwxMj
-YyODIxOTExLC0xOTMwMTgzOTY3LDkwODY2MDg1OSwtMTIxNjI2
-NzE2MSwxODY0ODkzOTcwLDE5ODk5MDA1OTYsLTIwMDY5ODMxMT
-MsLTE2NTA4MTk3MzAsOTI3MTc5NzQxLDE3MjgyMzUwMzMsLTEw
-MjUzNjk5OTQsLTE0MDk4NDIwNjYsLTE4MDUwMjkyMTksLTMyNj
-U5NzEzNiwtNTY4OTk5MDg5LC0yMDY5ODExNjMwLDE0Mjc0MjUw
-OTQsMTI1MDMzMDU2N119
+eyJoaXN0b3J5IjpbNDEyMjUyMjEyLC0xOTI0NzUwNDU5LC01OT
+g1Mjc2ODksMTI2MjgyMTkxMSwtMTkzMDE4Mzk2Nyw5MDg2NjA4
+NTksLTEyMTYyNjcxNjEsMTg2NDg5Mzk3MCwxOTg5OTAwNTk2LC
+0yMDA2OTgzMTEzLC0xNjUwODE5NzMwLDkyNzE3OTc0MSwxNzI4
+MjM1MDMzLC0xMDI1MzY5OTk0LC0xNDA5ODQyMDY2LC0xODA1MD
+I5MjE5LC0zMjY1OTcxMzYsLTU2ODk5OTA4OSwtMjA2OTgxMTYz
+MCwxNDI3NDI1MDk0XX0=
 -->
