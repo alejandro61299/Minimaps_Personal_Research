@@ -78,7 +78,7 @@ As we can verify each video game  genre has a distinctive position on the screen
 
 
 ## Selected approach
-Despues de ver la teor'ia c
+Despues de ver la teoría vamos a comenzar con la parte práctica. Os voy a enseñar a como programar un minimapa desde 0 usando únicamente SDL con un renderer inicializado co
 
 
 ## Webgraphy
@@ -90,7 +90,7 @@ Despues de ver la teor'ia c
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzMTEwMDMwNiwtMjAzMTIzNDk3Miw0MD
+eyJoaXN0b3J5IjpbMTM2NDE4MjYwMSwtMjAzMTIzNDk3Miw0MD
 E4ODU3MDQsMTE1OTQxMDIwMCwxNDUzMDY2NDYyLDEyNzMxMTE3
 NTgsMTI4MjI2MTU4MiwtNzU0NzY3MDAxLDExNDkwMDI3MTUsLT
 E3MjkxMjEyNDMsMTEyMTQ5NzE4LC05NDI2MDQ3NTUsLTE3MTc2
