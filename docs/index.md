@@ -91,7 +91,9 @@ Aquí podéis ver como quedaría el resultado final:
 
 ![enter image description here](https://github.com/alejandro61299/Minimaps_Personal_Research/blob/master/docs/web_images/final%20result.gif?raw=true)
 
-## Webgraphy
+
+
+## Links to more Documentation
 
 - [Where Should We Place the Mini-Map? ( Gamasutra Blog )](https://www.gamasutra.com/blogs/JacekSliwinski/20130121/185119/Where_should_we_place_the_mini_map.php)
 - [Video Game Mini-Maps Might Finally Be Going Away ( Kotaku Article )](https://kotaku.com/video-game-mini-maps-might-finally-be-going-away-1820011897)
@@ -100,11 +102,11 @@ Aquí podéis ver como quedaría el resultado final:
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwOTc0NTY0OTgsMTI4NjM3MTU0LDg1Mz
-k2MTgwOCwtMjAzMTIzNDk3Miw0MDE4ODU3MDQsMTE1OTQxMDIw
-MCwxNDUzMDY2NDYyLDEyNzMxMTE3NTgsMTI4MjI2MTU4MiwtNz
-U0NzY3MDAxLDExNDkwMDI3MTUsLTE3MjkxMjEyNDMsMTEyMTQ5
-NzE4LC05NDI2MDQ3NTUsLTE3MTc2MTI3NTYsLTYzODc2ODExOS
-wtMzYxNjQ5NTQ3LC02OTM0NTY4OTIsMTI3OTg0MTc3MCwtNDk3
-NTI3MjUzXX0=
+eyJoaXN0b3J5IjpbMTkwMTI2Nzk2NCwtMTA5NzQ1NjQ5OCwxMj
+g2MzcxNTQsODUzOTYxODA4LC0yMDMxMjM0OTcyLDQwMTg4NTcw
+NCwxMTU5NDEwMjAwLDE0NTMwNjY0NjIsMTI3MzExMTc1OCwxMj
+gyMjYxNTgyLC03NTQ3NjcwMDEsMTE0OTAwMjcxNSwtMTcyOTEy
+MTI0MywxMTIxNDk3MTgsLTk0MjYwNDc1NSwtMTcxNzYxMjc1Ni
+wtNjM4NzY4MTE5LC0zNjE2NDk1NDcsLTY5MzQ1Njg5MiwxMjc5
+ODQxNzcwXX0=
 -->
