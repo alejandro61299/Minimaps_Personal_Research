@@ -388,8 +388,6 @@ renderer = SDL_CreateRenderer(app->win->window, index, flags);
 SDL_BlendMode blend_mode = SDL_ComposeCustomBlendMode(SDL_BLENDFACTOR_ZERO, SDL_BLENDFACTOR_ONE, SDL_BLENDOPERATION_ADD, SDL_BLENDFACTOR_ONE, SDL_BLENDFACTOR_ONE, SDL_BLENDOPERATION_REV_SUBTRACT);
 SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode become transaparent all pixels under the painted area of texture
 ```
-
-
 ## Links to more Documentation
 
 - [Where Should We Place the Mini-Map? ( Gamasutra Blog )](https://www.gamasutra.com/blogs/JacekSliwinski/20130121/185119/Where_should_we_place_the_mini_map.php)
@@ -399,12 +397,15 @@ SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode beco
 - [Creating Isometric Worlds (gamedevelopment)](https://gamedevelopment.tutsplus.com/tutorials/creating-isometric-worlds-a-primer-for-game-developers--gamedev-6511)
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
+
+## TODO'S & Solutions
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODUzNDE1OTE1LC0yMzE5MTAzNDAsLTExND
-M5MzU3NTksLTc2NDIzNjA3MiwtMTY4NTY0Nzg3OCwzOTUzNzQ1
-NDIsLTk0NzQ3NDUzNCw0NjcwODM0NTMsLTE5MjQ3NTA0NTksLT
-U5ODUyNzY4OSwxMjYyODIxOTExLC0xOTMwMTgzOTY3LDkwODY2
-MDg1OSwtMTIxNjI2NzE2MSwxODY0ODkzOTcwLDE5ODk5MDA1OT
-YsLTIwMDY5ODMxMTMsLTE2NTA4MTk3MzAsOTI3MTc5NzQxLDE3
-MjgyMzUwMzNdfQ==
+eyJoaXN0b3J5IjpbLTE4ODQ4Mzg3NzksODUzNDE1OTE1LC0yMz
+E5MTAzNDAsLTExNDM5MzU3NTksLTc2NDIzNjA3MiwtMTY4NTY0
+Nzg3OCwzOTUzNzQ1NDIsLTk0NzQ3NDUzNCw0NjcwODM0NTMsLT
+E5MjQ3NTA0NTksLTU5ODUyNzY4OSwxMjYyODIxOTExLC0xOTMw
+MTgzOTY3LDkwODY2MDg1OSwtMTIxNjI2NzE2MSwxODY0ODkzOT
+cwLDE5ODk5MDA1OTYsLTIwMDY5ODMxMTMsLTE2NTA4MTk3MzAs
+OTI3MTc5NzQxXX0=
 -->
