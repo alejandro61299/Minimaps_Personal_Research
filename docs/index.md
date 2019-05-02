@@ -83,13 +83,13 @@ After seeing the theory, let's start with the practical part. I'm going to teach
 
 - Switch between **Focused on Player**  or  **Whole world**.
 - Change its shape between **rectangular** or **circular**.
-- Create **indicators** with icons such as points of interest, positons ,warnings by **clicking** over the minimap or world.
+- Create **indicators** with icons such as points of interest, positIons  & warnings by **clicking** over the minimap or world.
 - Move the camera using the **mouse drag**.
 
 
 ![enter image description here](https://github.com/alejandro61299/Minimaps_Personal_Research/blob/master/docs/web_images/final%20result.gif?raw=true)
 
-We have two classes that will contain everything we need:
+So, we have two classes that will contain everything we need:
 
   - The first is ``` class Minimap```  that will serve as the factory for the instances of ``` class Minimap_Indicator```
 - The second one is  ``` class Minimap_Indicator``` that will serve as an infromation container for warnings and positions.
@@ -187,9 +187,9 @@ fPoint Minimap::MinimapToWorld(const float x, const float y)
 
 ### Generate Minimap Texture 
 
-Once we have the transformation methods of units we can generate the texture of the minimap. To do this iterate throught all the layers tiles and draw a tileset tile sprite  in a scaled size corresponding to the width and height of minimap tiles. This is the responsibility of the  `GenerateMinimapTexture()` method. 
+Once we have the transformation methods of units we can generate the texture of the minimap. To do this, iterate throught all the layers tiles and draw a tileset tile sprite  in a scaled size corresponding to the width and height of minimap tiles. This is the responsibility of the  `GenerateMinimapTexture()` method. 
 
-This method creates the final texture and the minimap texture. These textures will be used later in the drawing of the minimap. What you have to keep in mind is that we change the SDL_Render render target in order to draw in a texture (in this case minimap_texture) instead of the default texture that is the texture that the SDL_Window has internally.  For more information on this topic I leave the [SDL_SetRenderTarget ()](https://wiki.libsdl.org/SDL_SetRenderTarget)  API.
+This method creates the final texture and the minimap texture. These textures will be used later in the drawing of the minimap. What you have to keep in mind is that we change the SDL_Render target in order to draw in a texture (in this case minimap_texture) instead of the default texture that is the texture that the SDL_Window has internally.  For more information on this topic I leave the [SDL_SetRenderTarget ()](https://wiki.libsdl.org/SDL_SetRenderTarget)  API.
 
 
 
@@ -242,17 +242,82 @@ bool Minimap::GenerateMinimapTexture()
 	return true;
 }
 ```
-### Minimap Indicators lifecycle
+### Minimap Indicators Lifecycle
 
+Leaving the textures aside, we first need to integrate the indicators. These have a life cycle that only consists of a Constructor, an Update and a Destroy. These can use either a target to update their position or stay at a fixed point. Your position is in map coordinates.  This class is a class Minimap friend since it only will treat its private variables.
+```cpp
+class Minimap_Indicator
+{
+public:
 
+	Minimap_Indicator(const fPoint map_pos, const SDL_Rect icon_rect = { 0,0,0,0 }, const SDL_Color color = { 0,0,0,0 }, Object*  target = nullptr);
 
+	void Destroy();
 
+private:
 
+	bool UpdateFromTargetPosition();
 
+private:
 
+	fPoint     map_pos = { 0, 0 };        // - Map position in map units 
+	SDL_Rect   icon_rect = { 0,0,0,0 };   // - Icon sprite rect , {0,0,0,0} = No icon
+	SDL_Color  color = { 0,0,0,0 };       // - Point color, {0,0,0,0} = No point 
+	Object*    target = nullptr;          // - Target used to update map_pos, nullptr = static map_pos
+	bool       to_destroy = false;        // - Indicator used to known when is ready to be destroied
 
+private:
 
+	friend Minimap;
+};
+```
+### Update Final Texture  
 
+In this method we draw all the necessary textures in the final_texture using the render target as we have done before. We will do the drawing in this order ( like photoshop layers ):
+
+ - Set `final_texture` as  render target
+ - Clear texture (erase all and draw a black background)
+ - Draw `minimap_texture`
+ - Draw all icons from  `icons_texture` or points instead.
+ - Draw camera representation rect
+ - Draw `alpha_mask_texture`
+
+As you can see, we draw an alpha mask. This is possible thanks to the custom blend mode that has the texture. This blend mode is achieved using the [SDL_ComposeCustomBlendMode](https://wiki.libsdl.org/SDL_ComposeCustomBlendMode) function.  The blend mode that alpha masks need is only available with render that certain drivers like [OpenGLES 2.0](https://es.wikipedia.org/wiki/OpenGL_ES) or [DirectX11](https://es.wikipedia.org/wiki/DirectX) use. In our case, we will use OpenGL ES 2.0, which is already integrated with SDL 2.0. To be able to use it we must:
+
+- Attach `SDL_WINDOW_OPENGL` flag
+- Set all the necessary attributes to work in a OpenGL context.
+- Create the SDL_Window 
+```cpp
+Uint32 flags = SDL_WINDOW_SHOWN;
+flags |= SDL_WINDOW_OPENGL;
+SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_ES);
+SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 2);
+SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 0);
+SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
+window = SDL_CreateWindow(app->GetTitle(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, flags);
+```
+- Identify the "opengles2" driver
+- Create the SDL_Render
+```cpp
+SDL_RendererInfo info;
+int index = -1;
+
+for (int i = 0; i < SDL_GetNumRenderDrivers(); ++i)
+{
+	SDL_GetRenderDriverInfo(i, &info);
+
+	if (info.name == std::string("opengles2"))
+	{
+		index = i;
+	}
+}
+renderer = SDL_CreateRenderer(app->win->window, index, flags);
+```
+- Finally, we can create the `SDL_BelndMode` and set it in our `alpha_mask_texture`
+```cpp
+
+```
 
 ## Links to more Documentation
 
@@ -260,15 +325,15 @@ bool Minimap::GenerateMinimapTexture()
 - [Video Game Mini-Maps Might Finally Be Going Away ( Kotaku Article )](https://kotaku.com/video-game-mini-maps-might-finally-be-going-away-1820011897)
 - [Horizontal Atention Leans Left ( Nielsen Norman Group Article ) ](http://www.useit.com/alertbox/horizontal-attention.html) 
 - [Mini-Map by Jack Davies ( Game UI Patterns Article )](https://gameuipatterns.com/gameui/mini-map/)
-- [Creating Isometric Worlds | gamedevelopment ](https://gamedevelopment.tutsplus.com/tutorials/creating-isometric-worlds-a-primer-for-game-developers--gamedev-6511)
+- [Creating Isometric Worlds (gamedevelopment)](https://gamedevelopment.tutsplus.com/tutorials/creating-isometric-worlds-a-primer-for-game-developers--gamedev-6511)
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTA4NjYwODU5LC0xMjE2MjY3MTYxLDE4Nj
-Q4OTM5NzAsMTk4OTkwMDU5NiwtMjAwNjk4MzExMywtMTY1MDgx
-OTczMCw5MjcxNzk3NDEsMTcyODIzNTAzMywtMTAyNTM2OTk5NC
-wtMTQwOTg0MjA2NiwtMTgwNTAyOTIxOSwtMzI2NTk3MTM2LC01
-Njg5OTkwODksLTIwNjk4MTE2MzAsMTQyNzQyNTA5NCwxMjUwMz
-MwNTY3LC0xMjU3NzcyNjI5LC0xNzI3NjA2NTY1LC0xMDk3NDU2
-NDk4LDEyODYzNzE1NF19
+eyJoaXN0b3J5IjpbLTk0NzQ3NDUzNCw0NjcwODM0NTMsLTE5Mj
+Q3NTA0NTksLTU5ODUyNzY4OSwxMjYyODIxOTExLC0xOTMwMTgz
+OTY3LDkwODY2MDg1OSwtMTIxNjI2NzE2MSwxODY0ODkzOTcwLD
+E5ODk5MDA1OTYsLTIwMDY5ODMxMTMsLTE2NTA4MTk3MzAsOTI3
+MTc5NzQxLDE3MjgyMzUwMzMsLTEwMjUzNjk5OTQsLTE0MDk4ND
+IwNjYsLTE4MDUwMjkyMTksLTMyNjU5NzEzNiwtNTY4OTk5MDg5
+LC0yMDY5ODExNjMwXX0=
 -->
