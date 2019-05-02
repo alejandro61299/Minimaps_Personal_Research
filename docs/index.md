@@ -243,7 +243,10 @@ bool Minimap::GenerateMinimapTexture()
 }
 ```
 ### Minimap Indicators Lifecycle
+
 Leaving the textures aside, we first need to integrate the indicators. These have a life cycle that only consists of a Constructor, an Update and a Destroy. These can use either a target to update their position or stay at a fixed point. Your position is in map coordinates.
+
+
 
 
 
@@ -260,11 +263,11 @@ Leaving the textures aside, we first need to integrate the indicators. These hav
 - [Video Game Mini-Maps Might Finally Be Going Away ( Kotaku Article )](https://kotaku.com/video-game-mini-maps-might-finally-be-going-away-1820011897)
 - [Horizontal Atention Leans Left ( Nielsen Norman Group Article ) ](http://www.useit.com/alertbox/horizontal-attention.html) 
 - [Mini-Map by Jack Davies ( Game UI Patterns Article )](https://gameuipatterns.com/gameui/mini-map/)
-- [Creating Isometric Worlds | gamedevelopment ](https://gamedevelopment.tutsplus.com/tutorials/creating-isometric-worlds-a-primer-for-game-developers--gamedev-6511)
+- [Creating Isometric Worlds | gamedevelopment](https://gamedevelopment.tutsplus.com/tutorials/creating-isometric-worlds-a-primer-for-game-developers--gamedev-6511).
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgzNjE1MDY3Niw5MDg2NjA4NTksLTEyMT
+eyJoaXN0b3J5IjpbLTI0Mzk0OTg2Niw5MDg2NjA4NTksLTEyMT
 YyNjcxNjEsMTg2NDg5Mzk3MCwxOTg5OTAwNTk2LC0yMDA2OTgz
 MTEzLC0xNjUwODE5NzMwLDkyNzE3OTc0MSwxNzI4MjM1MDMzLC
 0xMDI1MzY5OTk0LC0xNDA5ODQyMDY2LC0xODA1MDI5MjE5LC0z
