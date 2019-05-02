@@ -186,7 +186,9 @@ fPoint Minimap::MinimapToWorld(const float x, const float y)
 ```
 ### Generate Minimap Texture 
 
-Once we have the transformation methods of units we can generate the texture of the minimap. To do this iterate throught all the layers tiles and draw a tileset tile sprite  in a scaled size corresponding to the width and height of minimap tiles. This is the responsibility of the  `GenerateMinimapTexture()` method.
+Once we have the transformation methods of units we can generate the texture of the minimap. To do this iterate throught all the layers tiles and draw a tileset tile sprite  in a scaled size corresponding to the width and height of minimap tiles. This is the responsibility of the  `GenerateMinimapTexture()` method. 
+
+
 
 ```cpp
 bool Minimap::GenerateMinimapTexture()
@@ -259,11 +261,11 @@ bool Minimap::GenerateMinimapTexture()
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk4OTkwMDU5NiwtMjAwNjk4MzExMywtMT
-Y1MDgxOTczMCw5MjcxNzk3NDEsMTcyODIzNTAzMywtMTAyNTM2
-OTk5NCwtMTQwOTg0MjA2NiwtMTgwNTAyOTIxOSwtMzI2NTk3MT
-M2LC01Njg5OTkwODksLTIwNjk4MTE2MzAsMTQyNzQyNTA5NCwx
-MjUwMzMwNTY3LC0xMjU3NzcyNjI5LC0xNzI3NjA2NTY1LC0xMD
-k3NDU2NDk4LDEyODYzNzE1NCw4NTM5NjE4MDgsLTIwMzEyMzQ5
-NzIsNDAxODg1NzA0XX0=
+eyJoaXN0b3J5IjpbLTEyNTk3MDM0NCwxOTg5OTAwNTk2LC0yMD
+A2OTgzMTEzLC0xNjUwODE5NzMwLDkyNzE3OTc0MSwxNzI4MjM1
+MDMzLC0xMDI1MzY5OTk0LC0xNDA5ODQyMDY2LC0xODA1MDI5Mj
+E5LC0zMjY1OTcxMzYsLTU2ODk5OTA4OSwtMjA2OTgxMTYzMCwx
+NDI3NDI1MDk0LDEyNTAzMzA1NjcsLTEyNTc3NzI2MjksLTE3Mj
+c2MDY1NjUsLTEwOTc0NTY0OTgsMTI4NjM3MTU0LDg1Mzk2MTgw
+OCwtMjAzMTIzNDk3Ml19
 -->
