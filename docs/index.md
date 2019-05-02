@@ -94,9 +94,8 @@ Aquí podéis ver como quedará el resultado final:
 ### Code Classes 
 Tendemos dos clases que contendrán todo lo que necesitamos:
 
-La primera será la principal  ``` class Minimap```  que servirá como factory para  las instancias de  ``` class Minimap_Indicator```
-
-
+ - La primera es  ``` class Minimap```  que servirá como factory para  las instancias de  ``` class Minimap_Indicator```
+- La segunda se
 ## Links to more Documentation
 
 - [Where Should We Place the Mini-Map? ( Gamasutra Blog )](https://www.gamasutra.com/blogs/JacekSliwinski/20130121/185119/Where_should_we_place_the_mini_map.php)
@@ -106,7 +105,7 @@ La primera será la principal  ``` class Minimap```  que servirá como factory p
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjA4NTYzNDI3LC0xMjU3NzcyNjI5LC0xNz
+eyJoaXN0b3J5IjpbNDY0MzAzNTUzLC0xMjU3NzcyNjI5LC0xNz
 I3NjA2NTY1LC0xMDk3NDU2NDk4LDEyODYzNzE1NCw4NTM5NjE4
 MDgsLTIwMzEyMzQ5NzIsNDAxODg1NzA0LDExNTk0MTAyMDAsMT
 Q1MzA2NjQ2MiwxMjczMTExNzU4LDEyODIyNjE1ODIsLTc1NDc2
