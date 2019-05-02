@@ -314,7 +314,11 @@ for (int i = 0; i < SDL_GetNumRenderDrivers(); ++i)
 }
 renderer = SDL_CreateRenderer(app->win->window, index, flags);
 ```
-- Por 
+- Finally we can create the `SDL_BelndMode` and set it in our `alpha_mask_texture`
+```cpp
+
+```
+
 ## Links to more Documentation
 
 - [Where Should We Place the Mini-Map? ( Gamasutra Blog )](https://www.gamasutra.com/blogs/JacekSliwinski/20130121/185119/Where_should_we_place_the_mini_map.php)
@@ -325,11 +329,11 @@ renderer = SDL_CreateRenderer(app->win->window, index, flags);
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQzMTgxMzM5MywtMTkyNDc1MDQ1OSwtNT
-k4NTI3Njg5LDEyNjI4MjE5MTEsLTE5MzAxODM5NjcsOTA4NjYw
-ODU5LC0xMjE2MjY3MTYxLDE4NjQ4OTM5NzAsMTk4OTkwMDU5Ni
-wtMjAwNjk4MzExMywtMTY1MDgxOTczMCw5MjcxNzk3NDEsMTcy
-ODIzNTAzMywtMTAyNTM2OTk5NCwtMTQwOTg0MjA2NiwtMTgwNT
-AyOTIxOSwtMzI2NTk3MTM2LC01Njg5OTkwODksLTIwNjk4MTE2
-MzAsMTQyNzQyNTA5NF19
+eyJoaXN0b3J5IjpbNDY3MDgzNDUzLC0xOTI0NzUwNDU5LC01OT
+g1Mjc2ODksMTI2MjgyMTkxMSwtMTkzMDE4Mzk2Nyw5MDg2NjA4
+NTksLTEyMTYyNjcxNjEsMTg2NDg5Mzk3MCwxOTg5OTAwNTk2LC
+0yMDA2OTgzMTEzLC0xNjUwODE5NzMwLDkyNzE3OTc0MSwxNzI4
+MjM1MDMzLC0xMDI1MzY5OTk0LC0xNDA5ODQyMDY2LC0xODA1MD
+I5MjE5LC0zMjY1OTcxMzYsLTU2ODk5OTA4OSwtMjA2OTgxMTYz
+MCwxNDI3NDI1MDk0XX0=
 -->
