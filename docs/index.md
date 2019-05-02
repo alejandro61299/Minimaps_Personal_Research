@@ -394,17 +394,18 @@ SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode beco
 - [Horizontal Atention Leans Left ( Nielsen Norman Group Article ) ](http://www.useit.com/alertbox/horizontal-attention.html) 
 - [Mini-Map by Jack Davies ( Game UI Patterns Article )](https://gameuipatterns.com/gameui/mini-map/)
 - [Creating Isometric Worlds (gamedevelopment)](https://gamedevelopment.tutsplus.com/tutorials/creating-isometric-worlds-a-primer-for-game-developers--gamedev-6511)
+- [Game Design Affect Minimap Design - Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
-- [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
+
 
 ## TODO'S & Solutions
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU0NTg4MjgzOSwtMTg4NDgzODc3OSw4NT
-M0MTU5MTUsLTIzMTkxMDM0MCwtMTE0MzkzNTc1OSwtNzY0MjM2
-MDcyLC0xNjg1NjQ3ODc4LDM5NTM3NDU0MiwtOTQ3NDc0NTM0LD
-Q2NzA4MzQ1MywtMTkyNDc1MDQ1OSwtNTk4NTI3Njg5LDEyNjI4
-MjE5MTEsLTE5MzAxODM5NjcsOTA4NjYwODU5LC0xMjE2MjY3MT
-YxLDE4NjQ4OTM5NzAsMTk4OTkwMDU5NiwtMjAwNjk4MzExMywt
-MTY1MDgxOTczMF19
+eyJoaXN0b3J5IjpbMTc3NDk3OTI3MCwtMTExNDQ4MTc1LDE1ND
+U4ODI4MzksLTE4ODQ4Mzg3NzksODUzNDE1OTE1LC0yMzE5MTAz
+NDAsLTExNDM5MzU3NTksLTc2NDIzNjA3MiwtMTY4NTY0Nzg3OC
+wzOTUzNzQ1NDIsLTk0NzQ3NDUzNCw0NjcwODM0NTMsLTE5MjQ3
+NTA0NTksLTU5ODUyNzY4OSwxMjYyODIxOTExLC0xOTMwMTgzOT
+Y3LDkwODY2MDg1OSwtMTIxNjI2NzE2MSwxODY0ODkzOTcwLDE5
+ODk5MDA1OTZdfQ==
 -->
