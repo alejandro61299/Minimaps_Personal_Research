@@ -297,6 +297,8 @@ SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
 window = SDL_CreateWindow(app->GetTitle(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, flags);
 ```
+- Identify the "opengles2" driver
+- 
 
 
 ## Links to more Documentation
@@ -309,11 +311,11 @@ window = SDL_CreateWindow(app->GetTitle(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPO
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc2MjUxMzA2LC01OTg1Mjc2ODksMTI2Mj
-gyMTkxMSwtMTkzMDE4Mzk2Nyw5MDg2NjA4NTksLTEyMTYyNjcx
-NjEsMTg2NDg5Mzk3MCwxOTg5OTAwNTk2LC0yMDA2OTgzMTEzLC
-0xNjUwODE5NzMwLDkyNzE3OTc0MSwxNzI4MjM1MDMzLC0xMDI1
-MzY5OTk0LC0xNDA5ODQyMDY2LC0xODA1MDI5MjE5LC0zMjY1OT
-cxMzYsLTU2ODk5OTA4OSwtMjA2OTgxMTYzMCwxNDI3NDI1MDk0
-LDEyNTAzMzA1NjddfQ==
+eyJoaXN0b3J5IjpbNTgwMzE0LC01OTg1Mjc2ODksMTI2MjgyMT
+kxMSwtMTkzMDE4Mzk2Nyw5MDg2NjA4NTksLTEyMTYyNjcxNjEs
+MTg2NDg5Mzk3MCwxOTg5OTAwNTk2LC0yMDA2OTgzMTEzLC0xNj
+UwODE5NzMwLDkyNzE3OTc0MSwxNzI4MjM1MDMzLC0xMDI1MzY5
+OTk0LC0xNDA5ODQyMDY2LC0xODA1MDI5MjE5LC0zMjY1OTcxMz
+YsLTU2ODk5OTA4OSwtMjA2OTgxMTYzMCwxNDI3NDI1MDk0LDEy
+NTAzMzA1NjddfQ==
 -->
