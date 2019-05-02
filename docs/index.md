@@ -263,15 +263,15 @@ Leaving the textures aside, we first need to integrate the indicators. These hav
 - [Video Game Mini-Maps Might Finally Be Going Away ( Kotaku Article )](https://kotaku.com/video-game-mini-maps-might-finally-be-going-away-1820011897)
 - [Horizontal Atention Leans Left ( Nielsen Norman Group Article ) ](http://www.useit.com/alertbox/horizontal-attention.html) 
 - [Mini-Map by Jack Davies ( Game UI Patterns Article )](https://gameuipatterns.com/gameui/mini-map/)
+- [Creating Isometric Worlds (gamedevelopment)](https://gamedevelopment.tutsplus.com/tutorials/creating-isometric-worlds-a-primer-for-game-developers--gamedev-6511)
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
-- [Creating Isometric Worlds (gamedevelopment)](https://gamedevelopment.tutsplus.com/tutorials/creating-isometric-worlds-a-primer-for-game-developers--gamedev-6511)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTU5MDg1NTU3LDkwODY2MDg1OSwtMTIxNj
-I2NzE2MSwxODY0ODkzOTcwLDE5ODk5MDA1OTYsLTIwMDY5ODMx
-MTMsLTE2NTA4MTk3MzAsOTI3MTc5NzQxLDE3MjgyMzUwMzMsLT
-EwMjUzNjk5OTQsLTE0MDk4NDIwNjYsLTE4MDUwMjkyMTksLTMy
-NjU5NzEzNiwtNTY4OTk5MDg5LC0yMDY5ODExNjMwLDE0Mjc0Mj
-UwOTQsMTI1MDMzMDU2NywtMTI1Nzc3MjYyOSwtMTcyNzYwNjU2
-NSwtMTA5NzQ1NjQ5OF19
+eyJoaXN0b3J5IjpbLTE5MzAxODM5NjcsOTA4NjYwODU5LC0xMj
+E2MjY3MTYxLDE4NjQ4OTM5NzAsMTk4OTkwMDU5NiwtMjAwNjk4
+MzExMywtMTY1MDgxOTczMCw5MjcxNzk3NDEsMTcyODIzNTAzMy
+wtMTAyNTM2OTk5NCwtMTQwOTg0MjA2NiwtMTgwNTAyOTIxOSwt
+MzI2NTk3MTM2LC01Njg5OTkwODksLTIwNjk4MTE2MzAsMTQyNz
+QyNTA5NCwxMjUwMzMwNTY3LC0xMjU3NzcyNjI5LC0xNzI3NjA2
+NTY1LC0xMDk3NDU2NDk4XX0=
 -->
