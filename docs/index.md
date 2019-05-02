@@ -273,8 +273,9 @@ private:
 ```
 ### Update Final Texture  
 
-In this method we draw all the necessary textures in the final_texture (using the render target as we have done before), in the corresponding order :
- - Minima
+In this method we draw all the necessary textures in the final_texture using the render target as we have done before.
+Realizaremos el pintado en este orden:
+ 
 
 ## Links to more Documentation
 
@@ -286,11 +287,11 @@ In this method we draw all the necessary textures in the final_texture (using th
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA2Njk1NDk5NywxMjYyODIxOTExLC0xOT
-MwMTgzOTY3LDkwODY2MDg1OSwtMTIxNjI2NzE2MSwxODY0ODkz
-OTcwLDE5ODk5MDA1OTYsLTIwMDY5ODMxMTMsLTE2NTA4MTk3Mz
-AsOTI3MTc5NzQxLDE3MjgyMzUwMzMsLTEwMjUzNjk5OTQsLTE0
-MDk4NDIwNjYsLTE4MDUwMjkyMTksLTMyNjU5NzEzNiwtNTY4OT
-k5MDg5LC0yMDY5ODExNjMwLDE0Mjc0MjUwOTQsMTI1MDMzMDU2
-NywtMTI1Nzc3MjYyOV19
+eyJoaXN0b3J5IjpbMTQwMDU2ODMzLDEyNjI4MjE5MTEsLTE5Mz
+AxODM5NjcsOTA4NjYwODU5LC0xMjE2MjY3MTYxLDE4NjQ4OTM5
+NzAsMTk4OTkwMDU5NiwtMjAwNjk4MzExMywtMTY1MDgxOTczMC
+w5MjcxNzk3NDEsMTcyODIzNTAzMywtMTAyNTM2OTk5NCwtMTQw
+OTg0MjA2NiwtMTgwNTAyOTIxOSwtMzI2NTk3MTM2LC01Njg5OT
+kwODksLTIwNjk4MTE2MzAsMTQyNzQyNTA5NCwxMjUwMzMwNTY3
+LC0xMjU3NzcyNjI5XX0=
 -->
