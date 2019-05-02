@@ -84,7 +84,7 @@ El resultado final será un minimapa que podrá:
 
 - Cambair entre **Focused on Player** o **Whole world**
 - Cambiar su shape entre rectangular o circular
-- Contener indicadores con iconos como **points of interest**, **positons**, **alerts**, etc. 
+- Crear indicadores con iconos como **points of interest**, **positons**, **alerts** clickando en el minimapa o en el mismo mapa. 
 - Mover la cámara usando el **mouse drag**
 
 Aquí podéis ver como quedaría el resultado final: 
@@ -102,7 +102,7 @@ Aquí podéis ver como quedaría el resultado final:
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkwMTI2Nzk2NCwtMTA5NzQ1NjQ5OCwxMj
+eyJoaXN0b3J5IjpbMTIyMjAxODU5NCwtMTA5NzQ1NjQ5OCwxMj
 g2MzcxNTQsODUzOTYxODA4LC0yMDMxMjM0OTcyLDQwMTg4NTcw
 NCwxMTU5NDEwMjAwLDE0NTMwNjY0NjIsMTI3MzExMTc1OCwxMj
 gyMjYxNTgyLC03NTQ3NjcwMDEsMTE0OTAwMjcxNSwtMTcyOTEy
