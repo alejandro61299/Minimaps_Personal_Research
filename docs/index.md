@@ -89,7 +89,7 @@ El resultado final será un minimapa que podrá:
 
 Aquí podéis ver como quedaría el resultado final: 
 
-
+![enter image description here](https://github.com/alejandro61299/Minimaps_Personal_Research/blob/master/docs/web_images/final%20result.gif?raw=true)
 
 ## Webgraphy
 
@@ -100,11 +100,11 @@ Aquí podéis ver como quedaría el resultado final:
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODUzOTYxODA4LC0yMDMxMjM0OTcyLDQwMT
-g4NTcwNCwxMTU5NDEwMjAwLDE0NTMwNjY0NjIsMTI3MzExMTc1
-OCwxMjgyMjYxNTgyLC03NTQ3NjcwMDEsMTE0OTAwMjcxNSwtMT
-cyOTEyMTI0MywxMTIxNDk3MTgsLTk0MjYwNDc1NSwtMTcxNzYx
-Mjc1NiwtNjM4NzY4MTE5LC0zNjE2NDk1NDcsLTY5MzQ1Njg5Mi
-wxMjc5ODQxNzcwLC00OTc1MjcyNTMsLTE3OTk0ODMwMTksLTE5
-Mzk3MTAxNjNdfQ==
+eyJoaXN0b3J5IjpbMTI4NjM3MTU0LDg1Mzk2MTgwOCwtMjAzMT
+IzNDk3Miw0MDE4ODU3MDQsMTE1OTQxMDIwMCwxNDUzMDY2NDYy
+LDEyNzMxMTE3NTgsMTI4MjI2MTU4MiwtNzU0NzY3MDAxLDExND
+kwMDI3MTUsLTE3MjkxMjEyNDMsMTEyMTQ5NzE4LC05NDI2MDQ3
+NTUsLTE3MTc2MTI3NTYsLTYzODc2ODExOSwtMzYxNjQ5NTQ3LC
+02OTM0NTY4OTIsMTI3OTg0MTc3MCwtNDk3NTI3MjUzLC0xNzk5
+NDgzMDE5XX0=
 -->
