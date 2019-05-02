@@ -273,13 +273,9 @@ private:
 ```
 ### Update Final Texture  
 
+In this method we draw all the necessary textures in the final_texture, in the corresponding order:
 
-
-
-
-
-
-
+ - Minima
 
 ## Links to more Documentation
 
@@ -291,11 +287,11 @@ private:
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI2MjgyMTkxMSwtMTkzMDE4Mzk2Nyw5MD
-g2NjA4NTksLTEyMTYyNjcxNjEsMTg2NDg5Mzk3MCwxOTg5OTAw
-NTk2LC0yMDA2OTgzMTEzLC0xNjUwODE5NzMwLDkyNzE3OTc0MS
-wxNzI4MjM1MDMzLC0xMDI1MzY5OTk0LC0xNDA5ODQyMDY2LC0x
-ODA1MDI5MjE5LC0zMjY1OTcxMzYsLTU2ODk5OTA4OSwtMjA2OT
-gxMTYzMCwxNDI3NDI1MDk0LDEyNTAzMzA1NjcsLTEyNTc3NzI2
-MjksLTE3Mjc2MDY1NjVdfQ==
+eyJoaXN0b3J5IjpbMjAzNzY1OTY1NywxMjYyODIxOTExLC0xOT
+MwMTgzOTY3LDkwODY2MDg1OSwtMTIxNjI2NzE2MSwxODY0ODkz
+OTcwLDE5ODk5MDA1OTYsLTIwMDY5ODMxMTMsLTE2NTA4MTk3Mz
+AsOTI3MTc5NzQxLDE3MjgyMzUwMzMsLTEwMjUzNjk5OTQsLTE0
+MDk4NDIwNjYsLTE4MDUwMjkyMTksLTMyNjU5NzEzNiwtNTY4OT
+k5MDg5LC0yMDY5ODExNjMwLDE0Mjc0MjUwOTQsMTI1MDMzMDU2
+NywtMTI1Nzc3MjYyOV19
 -->
