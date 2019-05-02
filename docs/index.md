@@ -274,11 +274,12 @@ private:
 ### Update Final Texture  
 
 In this method we draw all the necessary textures in the final_texture using the render target as we have done before.
-Realizaremos el pintado en este orden:
+
+
  - Set `final_texture` as  render target
  - Clear texture (erase all and draw a black background)
  - Draw `minimap_texture`
- - Draw all icons or points o
+ - Draw all icons or points of 
 
 ## Links to more Documentation
 
@@ -290,7 +291,7 @@ Realizaremos el pintado en este orden:
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMjg3NzIwNTYsMTI2MjgyMTkxMSwtMT
+eyJoaXN0b3J5IjpbLTE4MjUzMDAyMTAsMTI2MjgyMTkxMSwtMT
 kzMDE4Mzk2Nyw5MDg2NjA4NTksLTEyMTYyNjcxNjEsMTg2NDg5
 Mzk3MCwxOTg5OTAwNTk2LC0yMDA2OTgzMTEzLC0xNjUwODE5Nz
 MwLDkyNzE3OTc0MSwxNzI4MjM1MDMzLC0xMDI1MzY5OTk0LC0x
