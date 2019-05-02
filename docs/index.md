@@ -147,7 +147,34 @@ bool Minimap::LoadMinimapInfo()
 	return true;
 }
 ```
+### Minimap Indicators Lifecycle
 
+Leaving the textures aside, we first need to integrate the indicators. These have a life cycle that only consists of a Constructor, an Update and a Destroy. These can use either a target to update their position or stay at a fixed point. Your position is in map coordinates.  This class is a class Minimap friend since it only will treat its private variables.
+```cpp
+class Minimap_Indicator
+{
+public:
+
+	Minimap_Indicator(const fPoint map_pos, const SDL_Rect icon_rect = { 0,0,0,0 }, const SDL_Color color = { 0,0,0,0 }, Object*  target = nullptr);
+
+	void Destroy();
+
+private:
+
+	bool UpdateFromTargetPosition();
+
+private:
+
+	fPoint     map_pos = { 0, 0 };        // - Map position in map units 
+	SDL_Rect   icon_rect = { 0,0,0,0 };   // - Icon sprite rect , {0,0,0,0} = No icon
+	SDL_Color  color = { 0,0,0,0 };       // - Point color, {0,0,0,0} = No point 
+	Object*    target = nullptr;          // - Target used to update map_pos, nullptr = static map_pos
+	bool       to_destroy = false;        // - Indicator used to known when is ready to be destroied
+
+private:
+
+	friend Minimap;
+};
 ### Unit transformation methods
 
 These functions are the core of our class. They allow us to transform units and thus be able to interact between the map and the minimap with its respective offset  `x_offset`.  These formulas are related to the isometric world. You can get more information about isometric maps in this [link](https://gamedevelopment.tutsplus.com/tutorials/creating-isometric-worlds-a-primer-for-game-developers--gamedev-6511).
@@ -244,34 +271,6 @@ bool Minimap::GenerateMinimapTexture()
 	return true;
 }
 ```
-### Minimap Indicators Lifecycle
-
-Leaving the textures aside, we first need to integrate the indicators. These have a life cycle that only consists of a Constructor, an Update and a Destroy. These can use either a target to update their position or stay at a fixed point. Your position is in map coordinates.  This class is a class Minimap friend since it only will treat its private variables.
-```cpp
-class Minimap_Indicator
-{
-public:
-
-	Minimap_Indicator(const fPoint map_pos, const SDL_Rect icon_rect = { 0,0,0,0 }, const SDL_Color color = { 0,0,0,0 }, Object*  target = nullptr);
-
-	void Destroy();
-
-private:
-
-	bool UpdateFromTargetPosition();
-
-private:
-
-	fPoint     map_pos = { 0, 0 };        // - Map position in map units 
-	SDL_Rect   icon_rect = { 0,0,0,0 };   // - Icon sprite rect , {0,0,0,0} = No icon
-	SDL_Color  color = { 0,0,0,0 };       // - Point color, {0,0,0,0} = No point 
-	Object*    target = nullptr;          // - Target used to update map_pos, nullptr = static map_pos
-	bool       to_destroy = false;        // - Indicator used to known when is ready to be destroied
-
-private:
-
-	friend Minimap;
-};
 ```
 ### Update Final Texture  
 
@@ -394,11 +393,11 @@ SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode beco
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTExNjczOTIzOSwtNzY0MjM2MDcyLC0xNj
-g1NjQ3ODc4LDM5NTM3NDU0MiwtOTQ3NDc0NTM0LDQ2NzA4MzQ1
-MywtMTkyNDc1MDQ1OSwtNTk4NTI3Njg5LDEyNjI4MjE5MTEsLT
-E5MzAxODM5NjcsOTA4NjYwODU5LC0xMjE2MjY3MTYxLDE4NjQ4
-OTM5NzAsMTk4OTkwMDU5NiwtMjAwNjk4MzExMywtMTY1MDgxOT
-czMCw5MjcxNzk3NDEsMTcyODIzNTAzMywtMTAyNTM2OTk5NCwt
-MTQwOTg0MjA2Nl19
+eyJoaXN0b3J5IjpbNDkxNDc3OTcsLTc2NDIzNjA3MiwtMTY4NT
+Y0Nzg3OCwzOTUzNzQ1NDIsLTk0NzQ3NDUzNCw0NjcwODM0NTMs
+LTE5MjQ3NTA0NTksLTU5ODUyNzY4OSwxMjYyODIxOTExLC0xOT
+MwMTgzOTY3LDkwODY2MDg1OSwtMTIxNjI2NzE2MSwxODY0ODkz
+OTcwLDE5ODk5MDA1OTYsLTIwMDY5ODMxMTMsLTE2NTA4MTk3Mz
+AsOTI3MTc5NzQxLDE3MjgyMzUwMzMsLTEwMjUzNjk5OTQsLTE0
+MDk4NDIwNjZdfQ==
 -->
