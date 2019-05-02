@@ -273,8 +273,7 @@ private:
 ```
 ### Update Final Texture  
 
-In this method we draw all the necessary textures in the final_texture, in the corresponding order:
-
+In this method we draw all the necessary textures in the final_texture (using the render target as we have done before), in the corresponding order :
  - Minima
 
 ## Links to more Documentation
@@ -287,7 +286,7 @@ In this method we draw all the necessary textures in the final_texture, in the c
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAzNzY1OTY1NywxMjYyODIxOTExLC0xOT
+eyJoaXN0b3J5IjpbMTA2Njk1NDk5NywxMjYyODIxOTExLC0xOT
 MwMTgzOTY3LDkwODY2MDg1OSwtMTIxNjI2NzE2MSwxODY0ODkz
 OTcwLDE5ODk5MDA1OTYsLTIwMDY5ODMxMTMsLTE2NTA4MTk3Mz
 AsOTI3MTc5NzQxLDE3MjgyMzUwMzMsLTEwMjUzNjk5OTQsLTE0
