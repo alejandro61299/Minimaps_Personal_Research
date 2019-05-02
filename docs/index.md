@@ -96,31 +96,102 @@ Tendemos dos clases que contendrán todo lo que necesitamos:
 
 La primera será la principal Minimap que servirá como factory para       los Minimap_Indicators
 
-    class Minimap_Indicator
-    {
-    public:
-    
-    	Minimap_Indicator(const fPoint map_pos, const SDL_Rect icon_rect = { 0,0,0,0 }, const SDL_Color color = { 0,0,0,0 }, Object*  target = nullptr);
-    
-    	void Destroy();
-    
-    private:
-    
-    	bool UpdateFromTargetPosition();
-    
-    private:
-    
-    	fPoint     map_pos = { 0, 0 };        // - Map position in map units 
-    	SDL_Rect   icon_rect = { 0,0,0,0 };   // - Icon sprite rect , {0,0,0,0} = No icon
-    	SDL_Color  color = { 0,0,0,0 };       // - Point color, {0,0,0,0} = No point 
-    	Object*    target = nullptr;          // - Target used to update map_pos, nullptr = static map_pos
-    	bool       to_destroy = false;        // - Indicator used to known when is ready to be destroied
-    
-    private:
-    
-    	friend Minimap;
-    };
+```cpp
+class Minimap : public Module
+{
+public:
 
+	Minimap(
+		const SDL_Rect minimap_rect,
+		const float texture_width,
+		const PROJECTION_TYPE projection_type = PROJECTION_TYPE::ISOMETRIC,
+		const SHAPE_TYPE shape_type = SHAPE_TYPE::RECTANGLE,
+		const INTERACTION_TYPE interaction_type = INTERACTION_TYPE::MOUSE_DRAG,
+		Object* target = nullptr);
+	~Minimap();
+	
+	bool PreUpdate() override;
+	bool Update(float dt) override;
+	bool PostUpdate(float dt) override;
+	
+public:
+
+	void	AddIndicator(const fPoint map_pos, const SDL_Rect icon_rect = { 0,0,0,0 }, const SDL_Color color = { 0,0,0,0 }, Object*  target = nullptr);
+
+	void	SetInteractionType(const INTERACTION_TYPE new_type);
+	void	SetShapeType(const SHAPE_TYPE new_type);
+	fPoint  GetTextureScreenPos();
+
+	// Mesures transformations methods ==========================
+
+	fPoint	MapToMinimap(const float x, const float y);
+
+	fPoint	MinimapToMap(const float x, const float y);
+
+	fPoint	WorldToMinimap(const float x, const float y);
+
+	fPoint	MinimapToWorld(const float x, const float y);
+
+	bool	PointInEllipse(fPoint test, fPoint center, float width, float height);
+
+private:
+
+	void	MouseDragInput( float dt);
+
+	bool	LoadMinimap();
+
+	bool    LoadMinimapData();
+
+	bool	LoadMinimapTexture();
+
+	void	UpdateMinimapTexture();
+
+public:
+
+	Object*             target_to_follow = nullptr;
+
+private:
+	Camera*             camera = nullptr;
+	fPoint				camera_target_pos = { 0,0 };
+
+	// General info ======================================
+
+	SDL_Rect            minimap_rect = { 0, 0, 0,0 };   // - Determinate the minimap position on screen & its scope
+	bool                minimap_loaded = false;         
+
+	PROJECTION_TYPE		projection_type = PROJECTION_TYPE::ISOMETRIC;
+	SHAPE_TYPE			shape_type = SHAPE_TYPE::RECTANGLE;
+	INTERACTION_TYPE	interaction_type = INTERACTION_TYPE::MOUSE_DRAG;
+
+	// Textures info ====================================
+
+	SDL_Texture*		minimap_texture = nullptr;      // - Scaled map texture
+	SDL_Texture*		alpha_mask_texture = nullptr;   // - Mask texture used to aplly alpha mask
+	SDL_Texture*        final_texture = nullptr;        // - Final texture with masks
+	SDL_Texture*		icons_texture = nullptr;
+
+	float				x_offset = 0;                   // - Offset between texture and his map 0,0 represented in pixels
+	fPoint				texture_pos = { 0.f, 0.f };     // - Texture position respect minimap_rect position
+	float				texture_width = 0.f;            
+	float				texture_height = 0.f;
+
+	float				minimap_tile_width = 0.f;
+	float				minimap_tile_height = 0.f;
+
+	float				aspect_ratio_x = 0.f;           
+	float				aspect_ratio_y = 0.f;
+
+
+	// Values ===========================================
+
+	bool                allow_interaction = false;
+
+	// Indicators =======================================
+
+	std::list<Minimap_Indicator*>	indicators_list;
+
+};
+```
 ## Links to more Documentation
 
 - [Where Should We Place the Mini-Map? ( Gamasutra Blog )](https://www.gamasutra.com/blogs/JacekSliwinski/20130121/185119/Where_should_we_place_the_mini_map.php)
@@ -130,7 +201,7 @@ La primera será la principal Minimap que servirá como factory para       los M
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE4OTQxMzYwNywtMTcyNzYwNjU2NSwtMT
+eyJoaXN0b3J5IjpbLTk4NDI3NjA4MCwtMTcyNzYwNjU2NSwtMT
 A5NzQ1NjQ5OCwxMjg2MzcxNTQsODUzOTYxODA4LC0yMDMxMjM0
 OTcyLDQwMTg4NTcwNCwxMTU5NDEwMjAwLDE0NTMwNjY0NjIsMT
 I3MzExMTc1OCwxMjgyMjYxNTgyLC03NTQ3NjcwMDEsMTE0OTAw
