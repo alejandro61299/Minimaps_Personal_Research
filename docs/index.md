@@ -87,7 +87,7 @@ El resultado final será un minimapa que podrá:
 - Crear indicadores con iconos como **points of interest**, **positons**, **alerts** clickando en el minimapa o en el mismo mapa. 
 - Mover la cámara usando el **mouse drag**
 
-Aquí podéis ver como quedaría el resultado final: 
+Aquí podéis ver como quedará el resultado final: 
 
 ![enter image description here](https://github.com/alejandro61299/Minimaps_Personal_Research/blob/master/docs/web_images/final%20result.gif?raw=true)
 
@@ -102,11 +102,11 @@ Aquí podéis ver como quedaría el resultado final:
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIyMjAxODU5NCwtMTA5NzQ1NjQ5OCwxMj
-g2MzcxNTQsODUzOTYxODA4LC0yMDMxMjM0OTcyLDQwMTg4NTcw
-NCwxMTU5NDEwMjAwLDE0NTMwNjY0NjIsMTI3MzExMTc1OCwxMj
-gyMjYxNTgyLC03NTQ3NjcwMDEsMTE0OTAwMjcxNSwtMTcyOTEy
-MTI0MywxMTIxNDk3MTgsLTk0MjYwNDc1NSwtMTcxNzYxMjc1Ni
-wtNjM4NzY4MTE5LC0zNjE2NDk1NDcsLTY5MzQ1Njg5MiwxMjc5
-ODQxNzcwXX0=
+eyJoaXN0b3J5IjpbLTE3Mjc2MDY1NjUsLTEwOTc0NTY0OTgsMT
+I4NjM3MTU0LDg1Mzk2MTgwOCwtMjAzMTIzNDk3Miw0MDE4ODU3
+MDQsMTE1OTQxMDIwMCwxNDUzMDY2NDYyLDEyNzMxMTE3NTgsMT
+I4MjI2MTU4MiwtNzU0NzY3MDAxLDExNDkwMDI3MTUsLTE3Mjkx
+MjEyNDMsMTEyMTQ5NzE4LC05NDI2MDQ3NTUsLTE3MTc2MTI3NT
+YsLTYzODc2ODExOSwtMzYxNjQ5NTQ3LC02OTM0NTY4OTIsMTI3
+OTg0MTc3MF19
 -->
