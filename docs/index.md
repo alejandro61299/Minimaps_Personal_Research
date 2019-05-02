@@ -79,6 +79,8 @@ As we can verify each video game  genre has a distinctive position on the screen
 
 ## Selected approach
 
+
+
 ## Webgraphy
 
 - [Where Should We Place the Mini-Map? ( Gamasutra Blog )](https://www.gamasutra.com/blogs/JacekSliwinski/20130121/185119/Where_should_we_place_the_mini_map.php)
@@ -88,11 +90,11 @@ As we can verify each video game  genre has a distinctive position on the screen
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDAxODg1NzA0LDExNTk0MTAyMDAsMTQ1Mz
-A2NjQ2MiwxMjczMTExNzU4LDEyODIyNjE1ODIsLTc1NDc2NzAw
-MSwxMTQ5MDAyNzE1LC0xNzI5MTIxMjQzLDExMjE0OTcxOCwtOT
-QyNjA0NzU1LC0xNzE3NjEyNzU2LC02Mzg3NjgxMTksLTM2MTY0
-OTU0NywtNjkzNDU2ODkyLDEyNzk4NDE3NzAsLTQ5NzUyNzI1My
-wtMTc5OTQ4MzAxOSwtMTkzOTcxMDE2MywtMTc1NjA1ODQ1Nywz
-OTUxODAyMTRdfQ==
+eyJoaXN0b3J5IjpbLTIwMzEyMzQ5NzIsNDAxODg1NzA0LDExNT
+k0MTAyMDAsMTQ1MzA2NjQ2MiwxMjczMTExNzU4LDEyODIyNjE1
+ODIsLTc1NDc2NzAwMSwxMTQ5MDAyNzE1LC0xNzI5MTIxMjQzLD
+ExMjE0OTcxOCwtOTQyNjA0NzU1LC0xNzE3NjEyNzU2LC02Mzg3
+NjgxMTksLTM2MTY0OTU0NywtNjkzNDU2ODkyLDEyNzk4NDE3Nz
+AsLTQ5NzUyNzI1MywtMTc5OTQ4MzAxOSwtMTkzOTcxMDE2Mywt
+MTc1NjA1ODQ1N119
 -->
