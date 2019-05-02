@@ -275,7 +275,9 @@ private:
 
 In this method we draw all the necessary textures in the final_texture using the render target as we have done before.
 Realizaremos el pintado en este orden:
- 
+ - Set render target
+ - Clear texture (erase all and draw a black background)
+ - 
 
 ## Links to more Documentation
 
@@ -287,11 +289,11 @@ Realizaremos el pintado en este orden:
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQwMDU2ODMzLDEyNjI4MjE5MTEsLTE5Mz
-AxODM5NjcsOTA4NjYwODU5LC0xMjE2MjY3MTYxLDE4NjQ4OTM5
-NzAsMTk4OTkwMDU5NiwtMjAwNjk4MzExMywtMTY1MDgxOTczMC
-w5MjcxNzk3NDEsMTcyODIzNTAzMywtMTAyNTM2OTk5NCwtMTQw
-OTg0MjA2NiwtMTgwNTAyOTIxOSwtMzI2NTk3MTM2LC01Njg5OT
-kwODksLTIwNjk4MTE2MzAsMTQyNzQyNTA5NCwxMjUwMzMwNTY3
-LC0xMjU3NzcyNjI5XX0=
+eyJoaXN0b3J5IjpbLTEzNDYxMTgwODYsMTI2MjgyMTkxMSwtMT
+kzMDE4Mzk2Nyw5MDg2NjA4NTksLTEyMTYyNjcxNjEsMTg2NDg5
+Mzk3MCwxOTg5OTAwNTk2LC0yMDA2OTgzMTEzLC0xNjUwODE5Nz
+MwLDkyNzE3OTc0MSwxNzI4MjM1MDMzLC0xMDI1MzY5OTk0LC0x
+NDA5ODQyMDY2LC0xODA1MDI5MjE5LC0zMjY1OTcxMzYsLTU2OD
+k5OTA4OSwtMjA2OTgxMTYzMCwxNDI3NDI1MDk0LDEyNTAzMzA1
+NjcsLTEyNTc3NzI2MjldfQ==
 -->
