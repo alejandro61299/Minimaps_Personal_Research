@@ -103,11 +103,10 @@ The first step is to generate the necessary information for the subsequent gener
 ```cpp
 bool Minimap::LoadMinimapInfo()
 {
-	if (app->map->MapLoaded() == false) // If there isn't a map loaded break load
-	{
-		return false;
-	}
-	
+	if (app->map->MapLoaded() == false) { return false; }  // If there isn't a map loaded break load
+
+	// Information from map data ==================================================================
+
 	float tile_width = app->map->data.tile_width;
 	float tile_height = app->map->data.tile_height;
 	float half_tile_width = (float)app->map->data.tile_width * 0.5f;
@@ -117,34 +116,31 @@ bool Minimap::LoadMinimapInfo()
 
 	float tiles_amount = (float)(app->map->data.columns + app->map->data.rows)* 0.5f;
 
+	// Map Pixel Mesures ==========================================================================
+
+	float map_width = tile_width * tiles_amount;
+	float map_height = tile_height * tiles_amount;
+
 	// We found texture height from the width with a rule of 3  ===================================
 
-	if (projection_type == PROJECTION_TYPE::ORTHOGONAL)
-	{
-		texture_height = texture_width;
-		tiles_amount *= 2;
-	}
-	else
-	{
-		texture_height = (texture_width * (tiles_amount * tile_height)) / (tiles_amount* tile_width);
-	}
-
-	// We also find a constant to transform from pixels in the world to pixels in the minimap  ====
-
-	aspect_ratio_x = texture_width / (tile_width * tiles_amount);
-	aspect_ratio_y = texture_height / (tile_height *tiles_amount);
+	texture_height = (texture_width * map_height) / map_width;
 
 	// Now we have enough information to know the size of minimap tiles ===========================
 
 	minimap_tile_width = texture_width / tiles_amount;
 	minimap_tile_height = texture_height / tiles_amount;
 
+	// We also find a constant to transform from pixels in the world to pixels in the minimap  ====
+
+	aspect_ratio_x = texture_width / map_width;
+	aspect_ratio_y = texture_height / map_height;
+
 	// Finally, the blit x offset ===============================================================
 
 	x_offset = (float)app->map->data.rows *minimap_tile_width * 0.5f;
 
 	return true;
-};
+}
 ```
 
 ## Links to more Documentation
@@ -156,11 +152,11 @@ bool Minimap::LoadMinimapInfo()
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MDUwMjkyMTksLTMyNjU5NzEzNiwtNT
-Y4OTk5MDg5LC0yMDY5ODExNjMwLDE0Mjc0MjUwOTQsMTI1MDMz
-MDU2NywtMTI1Nzc3MjYyOSwtMTcyNzYwNjU2NSwtMTA5NzQ1Nj
-Q5OCwxMjg2MzcxNTQsODUzOTYxODA4LC0yMDMxMjM0OTcyLDQw
-MTg4NTcwNCwxMTU5NDEwMjAwLDE0NTMwNjY0NjIsMTI3MzExMT
-c1OCwxMjgyMjYxNTgyLC03NTQ3NjcwMDEsMTE0OTAwMjcxNSwt
-MTcyOTEyMTI0M119
+eyJoaXN0b3J5IjpbMTk2NjgzNjI4OSwtMTgwNTAyOTIxOSwtMz
+I2NTk3MTM2LC01Njg5OTkwODksLTIwNjk4MTE2MzAsMTQyNzQy
+NTA5NCwxMjUwMzMwNTY3LC0xMjU3NzcyNjI5LC0xNzI3NjA2NT
+Y1LC0xMDk3NDU2NDk4LDEyODYzNzE1NCw4NTM5NjE4MDgsLTIw
+MzEyMzQ5NzIsNDAxODg1NzA0LDExNTk0MTAyMDAsMTQ1MzA2Nj
+Q2MiwxMjczMTExNzU4LDEyODIyNjE1ODIsLTc1NDc2NzAwMSwx
+MTQ5MDAyNzE1XX0=
 -->
