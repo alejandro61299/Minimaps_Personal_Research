@@ -227,9 +227,9 @@ public:
 
 	bool Unload();
 
-	iPoint MapToScreenI(int column, int row) const;
+	iPoint MapToWorldI(int column, int row) const;
 
-	fPoint MapToScreenF(const fPoint & map_pos);
+	fPoint MapToWorldF(const fPoint & map_pos);
 
 	fPoint MapToCamera(const fPoint map_pos, const Camera* camera);
 

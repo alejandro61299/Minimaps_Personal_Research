@@ -135,8 +135,11 @@ bool Minimap::Update(float dt)
 	{
 	case INTERACTION_TYPE::NO_TYPE:
 
-		// TODO 4: Update the variable texture_pos so that the player stays in the center of the minimap as in the "Focused on the Player" minimap type 
+		// TODO 4: Update the variable texture_pos so that the player stays in the center of the minimap as in the "Focused on the Player" minimap type. 
+		// The pointer that contains the player is target_to_follow
+
 		/*texture_pos = fPoint(minimap_rect.w * .5f, minimap_rect.h * .5f) - MapToMinimap(target_to_follow->map_pos.x, target_to_follow->map_pos.y);*/
+
 		camera_target_pos = camera->camera_pos;
 		camera->MoveToObject(dt, target_to_follow);         // Caemra movement ----------
 		break;

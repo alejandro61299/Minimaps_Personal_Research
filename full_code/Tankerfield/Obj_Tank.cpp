@@ -412,7 +412,7 @@ bool Obj_Tank::Draw(float dt, Camera * camera)
 		//1-- Set a position in the isometric space
 		fPoint input_iso_pos(turr_pos.x + shot_dir.x * line_length, turr_pos.y + shot_dir.y * line_length);
 		//2-- Transform that poin to screen coordinates
-		iPoint input_screen_pos = (iPoint)app->map->MapToScreenF(input_iso_pos);
+		iPoint input_screen_pos = (iPoint)app->map->MapToWorldF(input_iso_pos);
 		app->render->DrawLineSplitScreen(
 			pos_screen.x, pos_screen.y - cannon_height,
 			input_screen_pos.x, input_screen_pos.y, 0, 0, 255, 123, camera);
@@ -550,7 +550,7 @@ void Obj_Tank::InputShotMouse(const fPoint & turr_map_pos, fPoint & input_dir, f
 		mouse_screen_pos += {camera_player->rect.x, camera_player->rect.y};
 
 
-	input_dir = (fPoint)mouse_screen_pos - app->map->MapToScreenF(turr_map_pos);
+	input_dir = (fPoint)mouse_screen_pos - app->map->MapToWorldF(turr_map_pos);
 
 	//Transform to map to work all variables in map(blit do MapToWorld automatically)
 	iso_dir = app->map->ScreenToMapF(mouse_screen_pos.x, mouse_screen_pos.y) - turr_map_pos;

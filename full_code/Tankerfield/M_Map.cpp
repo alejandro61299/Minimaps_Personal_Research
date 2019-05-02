@@ -177,14 +177,14 @@ bool M_Map::PostUpdate(float dt)
 			SDL_RenderSetClipRect(app->render->renderer, &(*item_cam)->screen_section);
 			for (int i = 0; i <= data.columns; ++i)
 			{
-				point_1 = MapToScreenI(i, 0);
-				point_2 = MapToScreenI(i, data.rows);
+				point_1 = MapToWorldI(i, 0);
+				point_2 = MapToWorldI(i, data.rows);
 				app->render->DrawLineSplitScreen(point_1.x, point_1.y, point_2.x, point_2.y, 255, 255, 255, 255, (*item_cam));
 			}
 			for (int i = 0; i <= data.rows; ++i)
 			{
-				point_1 = MapToScreenI(0, i);
-				point_2 = MapToScreenI(data.columns, i);
+				point_1 = MapToWorldI(0, i);
+				point_2 = MapToWorldI(data.columns, i);
 				app->render->DrawLineSplitScreen(point_1.x, point_1.y, point_2.x, point_2.y, 255, 255, 255, 255, (*item_cam));
 			}
 		}
@@ -538,7 +538,7 @@ bool M_Map::LoadMap()
 		{
 			for (int x = 0; x < data.columns; ++x)
 			{
-				iPoint pos = app->map->MapToScreenI(x, y);
+				iPoint pos = app->map->MapToWorldI(x, y);
 				data.screen_tile_rect[(y*data.columns) + x].create(pos.x + data.offset_x, pos.y + data.offset_y, data.tile_width, data.tile_height);
 			}
 		}
@@ -639,7 +639,7 @@ bool M_Map::MapLoaded() const
 	return map_loaded;
 }
 
-iPoint M_Map::MapToScreenI(int column, int row) const
+iPoint M_Map::MapToWorldI(int column, int row) const
 {
 
 	iPoint screen_pos(0, 0);
@@ -660,7 +660,7 @@ iPoint M_Map::MapToScreenI(int column, int row) const
 	return screen_pos;
 }
 
-fPoint M_Map::MapToScreenF(const fPoint & map_pos)
+fPoint M_Map::MapToWorldF(const fPoint & map_pos)
 {
 	fPoint screen_pos(0.0F, 0.0F);
 	switch (data.type) {

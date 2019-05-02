@@ -13,7 +13,7 @@ Camera::Camera()
 
 void Camera::MoveToObject(float dt, Object* object)
 {
-	fPoint target_pos( app->map->MapToScreenF(object->map_pos).x - (float)rect.w * 0.5f, app->map->MapToScreenF(object->map_pos).y - (float)rect.h * 0.5f);
+	fPoint target_pos( app->map->MapToWorldF(object->map_pos).x - (float)rect.w * 0.5f, app->map->MapToWorldF(object->map_pos).y - (float)rect.h * 0.5f);
 
 	fPoint lerp_pos = lerp(camera_pos, target_pos, dt * lerp_factor);
 
