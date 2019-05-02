@@ -96,7 +96,39 @@ So, we have two classes that will contain everything we need:
   - The first is ``` class Minimap```  that will serve as the factory for the instances of ``` class Minimap_Indicator```
 - The second one is  ``` class Minimap_Indicator``` that will serve as an infromation container for warnings and positions.
 
-### Introduction
+### Class Minimap Lifecycle
+![enter image description here](https://github.com/alejandro61299/Minimaps_Personal_Research/blob/master/docs/web_images/LifeCycle.png?raw=true)
+### Class Minimap Indicators Lifecycle
+
+Leaving the textures aside, we first need to integrate the indicators. These have a life cycle that only consists of a Constructor, an Update and a Destroy. These can use either a target to update their position or stay at a fixed point. Your position is in map coordinates.  This class is a class Minimap friend since it only will treat its private variables.
+```cpp
+class Minimap_Indicator
+{
+public:
+
+	Minimap_Indicator(const fPoint map_pos, const SDL_Rect icon_rect = { 0,0,0,0 }, const SDL_Color color = { 0,0,0,0 }, Object*  target = nullptr);
+
+	void Destroy();
+
+private:
+
+	bool UpdateFromTargetPosition();
+
+private:
+
+	fPoint     map_pos = { 0, 0 };        // - Map position in map units 
+	SDL_Rect   icon_rect = { 0,0,0,0 };   // - Icon sprite rect , {0,0,0,0} = No icon
+	SDL_Color  color = { 0,0,0,0 };       // - Point color, {0,0,0,0} = No point 
+	Object*    target = nullptr;          // - Target used to update map_pos, nullptr = static map_pos
+	bool       to_destroy = false;        // - Indicator used to known when is ready to be destroied
+
+private:
+
+	friend Minimap;
+};
+```
+
+### Load Minimap Info
 
 The first step is to generate the necessary information for the subsequent generation of the texture. In order not to distort the image, we will generate the texture from the width value. The information we have from the map will be obtained from a map daata already loaded in the Map module  (`class M_Map`  m_map on app).  This is the responsibility of the  `LoadMinimapInfo()` method.
 
@@ -148,37 +180,6 @@ bool Minimap::LoadMinimapInfo()
 }
 ```
 
-### Class Minimap Lifecycle
-![enter image description here](https://github.com/alejandro61299/Minimaps_Personal_Research/blob/master/docs/web_images/LifeCycle.png?raw=true)
-### Class Minimap Indicators Lifecycle
-
-Leaving the textures aside, we first need to integrate the indicators. These have a life cycle that only consists of a Constructor, an Update and a Destroy. These can use either a target to update their position or stay at a fixed point. Your position is in map coordinates.  This class is a class Minimap friend since it only will treat its private variables.
-```cpp
-class Minimap_Indicator
-{
-public:
-
-	Minimap_Indicator(const fPoint map_pos, const SDL_Rect icon_rect = { 0,0,0,0 }, const SDL_Color color = { 0,0,0,0 }, Object*  target = nullptr);
-
-	void Destroy();
-
-private:
-
-	bool UpdateFromTargetPosition();
-
-private:
-
-	fPoint     map_pos = { 0, 0 };        // - Map position in map units 
-	SDL_Rect   icon_rect = { 0,0,0,0 };   // - Icon sprite rect , {0,0,0,0} = No icon
-	SDL_Color  color = { 0,0,0,0 };       // - Point color, {0,0,0,0} = No point 
-	Object*    target = nullptr;          // - Target used to update map_pos, nullptr = static map_pos
-	bool       to_destroy = false;        // - Indicator used to known when is ready to be destroied
-
-private:
-
-	friend Minimap;
-};
-```
 ### Unit transformation methods
 
 These functions are the core of our class. They allow us to transform units and thus be able to interact between the map and the minimap with its respective offset  `x_offset`.  These formulas are related to the isometric world. You can get more information about isometric maps in this [link](https://gamedevelopment.tutsplus.com/tutorials/creating-isometric-worlds-a-primer-for-game-developers--gamedev-6511).
@@ -387,7 +388,6 @@ renderer = SDL_CreateRenderer(app->win->window, index, flags);
 SDL_BlendMode blend_mode = SDL_ComposeCustomBlendMode(SDL_BLENDFACTOR_ZERO, SDL_BLENDFACTOR_ONE, SDL_BLENDOPERATION_ADD, SDL_BLENDFACTOR_ONE, SDL_BLENDFACTOR_ONE, SDL_BLENDOPERATION_REV_SUBTRACT);
 SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode become transaparent all pixels under the painted area of texture
 ```
-
 ## Links to more Documentation
 
 - [Where Should We Place the Mini-Map? ( Gamasutra Blog )](https://www.gamasutra.com/blogs/JacekSliwinski/20130121/185119/Where_should_we_place_the_mini_map.php)
@@ -398,11 +398,11 @@ SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode beco
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIzMTkxMDM0MCwtMTE0MzkzNTc1OSwtNz
-Y0MjM2MDcyLC0xNjg1NjQ3ODc4LDM5NTM3NDU0MiwtOTQ3NDc0
-NTM0LDQ2NzA4MzQ1MywtMTkyNDc1MDQ1OSwtNTk4NTI3Njg5LD
-EyNjI4MjE5MTEsLTE5MzAxODM5NjcsOTA4NjYwODU5LC0xMjE2
-MjY3MTYxLDE4NjQ4OTM5NzAsMTk4OTkwMDU5NiwtMjAwNjk4Mz
-ExMywtMTY1MDgxOTczMCw5MjcxNzk3NDEsMTcyODIzNTAzMywt
-MTAyNTM2OTk5NF19
+eyJoaXN0b3J5IjpbLTE0Mjg2NDg2ODksLTIzMTkxMDM0MCwtMT
+E0MzkzNTc1OSwtNzY0MjM2MDcyLC0xNjg1NjQ3ODc4LDM5NTM3
+NDU0MiwtOTQ3NDc0NTM0LDQ2NzA4MzQ1MywtMTkyNDc1MDQ1OS
+wtNTk4NTI3Njg5LDEyNjI4MjE5MTEsLTE5MzAxODM5NjcsOTA4
+NjYwODU5LC0xMjE2MjY3MTYxLDE4NjQ4OTM5NzAsMTk4OTkwMD
+U5NiwtMjAwNjk4MzExMywtMTY1MDgxOTczMCw5MjcxNzk3NDEs
+MTcyODIzNTAzM119
 -->
