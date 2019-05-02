@@ -83,8 +83,9 @@ After seeing the theory, let's start with the practical part. I'm going to teach
 
 - Switch between **Focused on Player**  or  **Whole world**.
 - Change its shape between **rectangular** or **circular**.
-- Create **indicators** with icons such as points of interest, positons ,warnings by **clicking** on the minimap or on the same map.
+- Create **indicators** with icons such as points of interest, positons ,warnings by **clicking** over the minimap or world.
 - Move the camera using the **mouse drag**.
+
 
 ![enter image description here](https://github.com/alejandro61299/Minimaps_Personal_Research/blob/master/docs/web_images/final%20result.gif?raw=true)
 
@@ -109,11 +110,11 @@ The first step is to generate the necessary information for the subsequent gener
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNjk4MTE2MzAsMTQyNzQyNTA5NCwxMj
-UwMzMwNTY3LC0xMjU3NzcyNjI5LC0xNzI3NjA2NTY1LC0xMDk3
-NDU2NDk4LDEyODYzNzE1NCw4NTM5NjE4MDgsLTIwMzEyMzQ5Nz
-IsNDAxODg1NzA0LDExNTk0MTAyMDAsMTQ1MzA2NjQ2MiwxMjcz
-MTExNzU4LDEyODIyNjE1ODIsLTc1NDc2NzAwMSwxMTQ5MDAyNz
-E1LC0xNzI5MTIxMjQzLDExMjE0OTcxOCwtOTQyNjA0NzU1LC0x
-NzE3NjEyNzU2XX0=
+eyJoaXN0b3J5IjpbLTU2ODk5OTA4OSwtMjA2OTgxMTYzMCwxND
+I3NDI1MDk0LDEyNTAzMzA1NjcsLTEyNTc3NzI2MjksLTE3Mjc2
+MDY1NjUsLTEwOTc0NTY0OTgsMTI4NjM3MTU0LDg1Mzk2MTgwOC
+wtMjAzMTIzNDk3Miw0MDE4ODU3MDQsMTE1OTQxMDIwMCwxNDUz
+MDY2NDYyLDEyNzMxMTE3NTgsMTI4MjI2MTU4MiwtNzU0NzY3MD
+AxLDExNDkwMDI3MTUsLTE3MjkxMjEyNDMsMTEyMTQ5NzE4LC05
+NDI2MDQ3NTVdfQ==
 -->
