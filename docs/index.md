@@ -147,8 +147,9 @@ bool Minimap::LoadMinimapInfo()
 ```
 
 ### Unit transformation methods
+
+ - **Map coordinates to Pixels Coordinate Minimap**
 ```cpp
- // - Map coordinates to Pixels Coordinate Minimap
 fPoint Minimap::MapToMinimap(const float x, const float y)
 {
 	return fPoint((x - y) * minimap_tile_width * 0.5f + x_offset, (x + y) * minimap_tile_height * 0.5f);
@@ -163,7 +164,7 @@ fPoint Minimap::MapToMinimap(const float x, const float y)
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIzMjQ0ODMzOSwtMTQwOTg0MjA2NiwtMT
+eyJoaXN0b3J5IjpbLTMxNTI2ODM4NSwtMTQwOTg0MjA2NiwtMT
 gwNTAyOTIxOSwtMzI2NTk3MTM2LC01Njg5OTkwODksLTIwNjk4
 MTE2MzAsMTQyNzQyNTA5NCwxMjUwMzMwNTY3LC0xMjU3NzcyNj
 I5LC0xNzI3NjA2NTY1LC0xMDk3NDU2NDk4LDEyODYzNzE1NCw4
