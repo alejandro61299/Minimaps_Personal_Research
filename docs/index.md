@@ -275,7 +275,7 @@ private:
 ```
 ### Update Final Texture  
 
-In this method we draw all the necessary textures in the final_texture using the render target as we have done before. We will do the drawing in this order ( like photoshop layers ):
+In `UpdateFinalTexture()` method we draw all the necessary textures in the final_texture using the render target as we have done before. We will do the drawing in this order ( like photoshop layers ):
 
  - Set `final_texture` as  render target
  - Clear texture (erase all and draw a black background)
@@ -394,7 +394,7 @@ SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode beco
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA0OTI2NDM3MiwtNzY0MjM2MDcyLC0xNj
+eyJoaXN0b3J5IjpbMTExNjczOTIzOSwtNzY0MjM2MDcyLC0xNj
 g1NjQ3ODc4LDM5NTM3NDU0MiwtOTQ3NDc0NTM0LDQ2NzA4MzQ1
 MywtMTkyNDc1MDQ1OSwtNTk4NTI3Njg5LDEyNjI4MjE5MTEsLT
 E5MzAxODM5NjcsOTA4NjYwODU5LC0xMjE2MjY3MTYxLDE4NjQ4
