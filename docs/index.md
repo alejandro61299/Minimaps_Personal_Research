@@ -401,14 +401,32 @@ SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode beco
 ## TODO'S & Solutions
 
 ### TODO 1: Complete MapToMinimap()
-**Explicaition** : Transfrom map coordinates to Minimap Pixel Cordinates. Very similar to the MapToWorldF function on M_Map
+#### **Explicaition** 
+ Transfrom map coordinates to Minimap Pixel Cordinates. Very similar to the MapToWorldF function on M_Map.
+ #### **Solution** 
+ ```cpp
+SDL_RendererInfo info;
+int index = -1;
+
+for (int i = 0; i < SDL_GetNumRenderDrivers(); ++i)
+{
+	SDL_GetRenderDriverInfo(i, &info);
+
+	if (info.name == std::string("opengles2"))
+	{
+		index = i;
+	}
+}
+renderer = SDL_CreateRenderer(app->win->window, index, flags);
+```
+
 ### TODO 2: Complete MinimapToMap()
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTYwNTQzNTYyLDEzODA2MjUyNjAsMTc3ND
-k3OTI3MCwtMTExNDQ4MTc1LDE1NDU4ODI4MzksLTE4ODQ4Mzg3
-NzksODUzNDE1OTE1LC0yMzE5MTAzNDAsLTExNDM5MzU3NTksLT
-c2NDIzNjA3MiwtMTY4NTY0Nzg3OCwzOTUzNzQ1NDIsLTk0NzQ3
-NDUzNCw0NjcwODM0NTMsLTE5MjQ3NTA0NTksLTU5ODUyNzY4OS
-wxMjYyODIxOTExLC0xOTMwMTgzOTY3LDkwODY2MDg1OSwtMTIx
-NjI2NzE2MV19
+eyJoaXN0b3J5IjpbLTc4OTM1MjYxNiwxMzgwNjI1MjYwLDE3Nz
+Q5NzkyNzAsLTExMTQ0ODE3NSwxNTQ1ODgyODM5LC0xODg0ODM4
+Nzc5LDg1MzQxNTkxNSwtMjMxOTEwMzQwLC0xMTQzOTM1NzU5LC
+03NjQyMzYwNzIsLTE2ODU2NDc4NzgsMzk1Mzc0NTQyLC05NDc0
+NzQ1MzQsNDY3MDgzNDUzLC0xOTI0NzUwNDU5LC01OTg1Mjc2OD
+ksMTI2MjgyMTkxMSwtMTkzMDE4Mzk2Nyw5MDg2NjA4NTksLTEy
+MTYyNjcxNjFdfQ==
 -->
