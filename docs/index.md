@@ -188,7 +188,35 @@ fPoint Minimap::MinimapToWorld(const float x, const float y)
 
 Once we have the transformation methods of units we can generate the texture of the minimap. To do this iterate throught all the layers tiles and draw a tileset tile sprite  in a scaled size corresponding to the width and height of minimap tiles. This is the responsibility of the  `GenerateMinimapTexture()` method.
 
+```cpp
+bool Minimap::GenerateMinimapTexture()
+{
+	// Create Target Textures ====================================
 
+	final_texture = app->tex->CreateTargetTexture(minimap_rect.w, minimap_rect.h);
+	minimap_texture = app->tex->CreateTargetTexture(texture_width, texture_height);
+
+	SDL_SetRenderTarget(app->render->renderer, minimap_texture);
+	SDL_SetTextureBlendMode(minimap_texture, SDL_BLENDMODE_BLEND);
+
+	// Blit scaled map to minimap texture =========================
+
+	SDL_Rect sprite_rect = { 0,0,0,0 };
+	SDL_Rect section_to_print = { 0,0,0,0 };
+	fPoint minimap_tile_pos = { 0,0 };
+
+	for (std::list<MapLayer*>::iterator iter = app->map->data.map_layers.begin(); iter != app->map->data.map_layers.end(); ++iter)
+	{
+		
+	}
+
+	// Reset target texture ==================================================
+
+	SDL_SetRenderTarget(app->render->renderer, NULL);
+
+	return true;
+}
+```
 
 
 
@@ -211,7 +239,7 @@ Once we have the transformation methods of units we can generate the texture of 
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2Mjc1ODI5NzIsLTIwMDY5ODMxMTMsLT
+eyJoaXN0b3J5IjpbLTE3OTg1NjQxMTAsLTIwMDY5ODMxMTMsLT
 E2NTA4MTk3MzAsOTI3MTc5NzQxLDE3MjgyMzUwMzMsLTEwMjUz
 Njk5OTQsLTE0MDk4NDIwNjYsLTE4MDUwMjkyMTksLTMyNjU5Nz
 EzNiwtNTY4OTk5MDg5LC0yMDY5ODExNjMwLDE0Mjc0MjUwOTQs
