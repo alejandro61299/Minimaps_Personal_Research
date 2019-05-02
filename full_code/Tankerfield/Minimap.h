@@ -112,7 +112,7 @@ private:
 
 	bool	LoadMinimap();
 
-	bool    LoadMinimapData();
+	bool    LoadMinimapInfo();
 
 	bool	LoadMinimapTexture();
 

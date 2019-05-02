@@ -127,7 +127,7 @@ bool M_Map::Update(float dt)
 	BROFILER_CATEGORY("MAP Update", Profiler::Color::DeepPink);
 	bool ret = true;
 
-	if (app->input->GetKey(SDL_SCANCODE_F1) == KeyState::KEY_DOWN)
+	if (app->input->GetKey(SDL_SCANCODE_F4) == KeyState::KEY_DOWN)
 		show_grid = !show_grid;
 
 	if (!map_loaded)

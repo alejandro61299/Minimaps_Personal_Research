@@ -62,7 +62,7 @@ bool Minimap::PreUpdate()
 
 	// Change Interaction Type ------------------------------
 	
-	if (app->input->GetKey(SDL_SCANCODE_1) == KEY_DOWN)
+	if (app->input->GetKey(SDL_SCANCODE_F1) == KEY_DOWN)
 	{
 		if (interaction_type == INTERACTION_TYPE::NO_TYPE)
 		{
@@ -76,7 +76,7 @@ bool Minimap::PreUpdate()
 
 	// Change Shape Type ------------------------------------
 
-	if (app->input->GetKey(SDL_SCANCODE_2) == KEY_DOWN)
+	if (app->input->GetKey(SDL_SCANCODE_F2) == KEY_DOWN)
 	{
 		if (shape_type == SHAPE_TYPE::CIRCLE)
 		{
@@ -108,7 +108,7 @@ bool Minimap::PreUpdate()
 
 	// Reset indicators ------------------------------------
 
-	if (app->input->GetKey(SDL_SCANCODE_4) == KEY_DOWN)
+	if (app->input->GetKey(SDL_SCANCODE_F3) == KEY_DOWN)
 	{
 		for (std::list<Minimap_Indicator*>::iterator iter = indicators_list.begin(); iter != indicators_list.end(); ++iter)
 		{
@@ -250,7 +250,7 @@ bool Minimap::LoadMinimap()
 {
 	bool ret = true;
 
-	if (LoadMinimapData() == false)
+	if (LoadMinimapInfo() == false)
 	{
 		ret = false;
 	}
@@ -265,7 +265,7 @@ bool Minimap::LoadMinimap()
 	return ret;
 }
 
-bool Minimap::LoadMinimapData()
+bool Minimap::LoadMinimapInfo()
 {
 	if (app->map->MapLoaded() == false) // If there isn't a map loaded break load
 	{
