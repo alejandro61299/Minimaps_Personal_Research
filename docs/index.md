@@ -62,7 +62,7 @@ This mini map type functions as a miniaturized world map. We can see them in Spo
 
 You may be thinking, does the position of the minimap matter? The truth is that yes, it affects above all in fast-paced games such as **First Person Shooters** where you usually put the minimap on the left. This is because our western culture tends to [pay more attention to the left part of the screen](http://www.useit.com/alertbox/horizontal-attention.html)
 
-![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/black.gif  =600x)
+![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/black.gif )
 
 A misplaced minimap can not only lead to **prolonged reaction times** but also to **erroneous clicks** and **misperceptions** (depending on where you place other HUD elements). Therefore it is not uncommon to find that the same game released in the West has the minimap or other elements of HUD different position than in the East. Ideally, we would give the possibility to configure its position and size to make the game more accessible for everyone.
 
@@ -89,10 +89,8 @@ El resultado final será un minimapa que podrá:
 
 Aquí podéis ver como quedaría el resultado final: 
 
-![enter image description here](https://github.com/alejandro61299/Minimaps_Personal_Research/blob/master/docs/web_images/final%20result.gif?raw=true =600x) 
-```
+![enter image description here](https://github.com/alejandro61299/Minimaps_Personal_Research/blob/master/docs/web_images/final%20result.gif?raw=true)
 
-```
 ## Webgraphy
 
 - [Where Should We Place the Mini-Map? ( Gamasutra Blog )](https://www.gamasutra.com/blogs/JacekSliwinski/20130121/185119/Where_should_we_place_the_mini_map.php)
@@ -102,11 +100,11 @@ Aquí podéis ver como quedaría el resultado final:
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgzOTk2NTAwNiwxMjg2MzcxNTQsODUzOT
-YxODA4LC0yMDMxMjM0OTcyLDQwMTg4NTcwNCwxMTU5NDEwMjAw
-LDE0NTMwNjY0NjIsMTI3MzExMTc1OCwxMjgyMjYxNTgyLC03NT
-Q3NjcwMDEsMTE0OTAwMjcxNSwtMTcyOTEyMTI0MywxMTIxNDk3
-MTgsLTk0MjYwNDc1NSwtMTcxNzYxMjc1NiwtNjM4NzY4MTE5LC
-0zNjE2NDk1NDcsLTY5MzQ1Njg5MiwxMjc5ODQxNzcwLC00OTc1
-MjcyNTNdfQ==
+eyJoaXN0b3J5IjpbLTExNDM3MjUyMDAsMTI4NjM3MTU0LDg1Mz
+k2MTgwOCwtMjAzMTIzNDk3Miw0MDE4ODU3MDQsMTE1OTQxMDIw
+MCwxNDUzMDY2NDYyLDEyNzMxMTE3NTgsMTI4MjI2MTU4MiwtNz
+U0NzY3MDAxLDExNDkwMDI3MTUsLTE3MjkxMjEyNDMsMTEyMTQ5
+NzE4LC05NDI2MDQ3NTUsLTE3MTc2MTI3NTYsLTYzODc2ODExOS
+wtMzYxNjQ5NTQ3LC02OTM0NTY4OTIsMTI3OTg0MTc3MCwtNDk3
+NTI3MjUzXX0=
 -->
