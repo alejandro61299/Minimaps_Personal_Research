@@ -147,7 +147,8 @@ bool Minimap::LoadMinimapInfo()
 ```
 
 ### Unit transformation methods
-These functions are the core of our class. They allow us to transform units and thus be able to interact between the map and the minimap. 
+
+These functions are the core of our class. They allow us to transform units and thus be able to interact between the map and the minimap.  [enter link description here](https://gamedevelopment.tutsplus.com/es/tutorials/creating-isometric-worlds-a-primer-for-game-developers--gamedev-6511)
 
  - **Map Coordinates to Minimap Pixels Coordinate**
 ```cpp
@@ -203,11 +204,11 @@ fPoint Minimap::MinimapToWorld(const float x, const float y)
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTI3MTc5NzQxLDE3MjgyMzUwMzMsLTEwMj
-UzNjk5OTQsLTE0MDk4NDIwNjYsLTE4MDUwMjkyMTksLTMyNjU5
-NzEzNiwtNTY4OTk5MDg5LC0yMDY5ODExNjMwLDE0Mjc0MjUwOT
-QsMTI1MDMzMDU2NywtMTI1Nzc3MjYyOSwtMTcyNzYwNjU2NSwt
-MTA5NzQ1NjQ5OCwxMjg2MzcxNTQsODUzOTYxODA4LC0yMDMxMj
-M0OTcyLDQwMTg4NTcwNCwxMTU5NDEwMjAwLDE0NTMwNjY0NjIs
-MTI3MzExMTc1OF19
+eyJoaXN0b3J5IjpbLTE2NTA4MTk3MzAsOTI3MTc5NzQxLDE3Mj
+gyMzUwMzMsLTEwMjUzNjk5OTQsLTE0MDk4NDIwNjYsLTE4MDUw
+MjkyMTksLTMyNjU5NzEzNiwtNTY4OTk5MDg5LC0yMDY5ODExNj
+MwLDE0Mjc0MjUwOTQsMTI1MDMzMDU2NywtMTI1Nzc3MjYyOSwt
+MTcyNzYwNjU2NSwtMTA5NzQ1NjQ5OCwxMjg2MzcxNTQsODUzOT
+YxODA4LC0yMDMxMjM0OTcyLDQwMTg4NTcwNCwxMTU5NDEwMjAw
+LDE0NTMwNjY0NjJdfQ==
 -->
