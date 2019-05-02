@@ -395,16 +395,16 @@ SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode beco
 - [Mini-Map by Jack Davies ( Game UI Patterns Article )](https://gameuipatterns.com/gameui/mini-map/)
 - [Creating Isometric Worlds (gamedevelopment)](https://gamedevelopment.tutsplus.com/tutorials/creating-isometric-worlds-a-primer-for-game-developers--gamedev-6511)
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
-- [Game Design Affect Minimap Design |  ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
+- [Game Design Affect Minimap Design ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 
 ## TODO'S & Solutions
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTA0OTQ3NDQ5LDE1NDU4ODI4MzksLTE4OD
-Q4Mzg3NzksODUzNDE1OTE1LC0yMzE5MTAzNDAsLTExNDM5MzU3
-NTksLTc2NDIzNjA3MiwtMTY4NTY0Nzg3OCwzOTUzNzQ1NDIsLT
-k0NzQ3NDUzNCw0NjcwODM0NTMsLTE5MjQ3NTA0NTksLTU5ODUy
-NzY4OSwxMjYyODIxOTExLC0xOTMwMTgzOTY3LDkwODY2MDg1OS
-wtMTIxNjI2NzE2MSwxODY0ODkzOTcwLDE5ODk5MDA1OTYsLTIw
-MDY5ODMxMTNdfQ==
+eyJoaXN0b3J5IjpbLTExMTQ0ODE3NSwxNTQ1ODgyODM5LC0xOD
+g0ODM4Nzc5LDg1MzQxNTkxNSwtMjMxOTEwMzQwLC0xMTQzOTM1
+NzU5LC03NjQyMzYwNzIsLTE2ODU2NDc4NzgsMzk1Mzc0NTQyLC
+05NDc0NzQ1MzQsNDY3MDgzNDUzLC0xOTI0NzUwNDU5LC01OTg1
+Mjc2ODksMTI2MjgyMTkxMSwtMTkzMDE4Mzk2Nyw5MDg2NjA4NT
+ksLTEyMTYyNjcxNjEsMTg2NDg5Mzk3MCwxOTg5OTAwNTk2LC0y
+MDA2OTgzMTEzXX0=
 -->
