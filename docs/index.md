@@ -78,7 +78,7 @@ As we can verify each video game  genre has a distinctive position on the screen
 
 
 ## Selected approach
-
+Despues de ver la teor'ia c
 
 
 ## Webgraphy
@@ -90,11 +90,11 @@ As we can verify each video game  genre has a distinctive position on the screen
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMzEyMzQ5NzIsNDAxODg1NzA0LDExNT
-k0MTAyMDAsMTQ1MzA2NjQ2MiwxMjczMTExNzU4LDEyODIyNjE1
-ODIsLTc1NDc2NzAwMSwxMTQ5MDAyNzE1LC0xNzI5MTIxMjQzLD
-ExMjE0OTcxOCwtOTQyNjA0NzU1LC0xNzE3NjEyNzU2LC02Mzg3
-NjgxMTksLTM2MTY0OTU0NywtNjkzNDU2ODkyLDEyNzk4NDE3Nz
-AsLTQ5NzUyNzI1MywtMTc5OTQ4MzAxOSwtMTkzOTcxMDE2Mywt
-MTc1NjA1ODQ1N119
+eyJoaXN0b3J5IjpbLTYzMTEwMDMwNiwtMjAzMTIzNDk3Miw0MD
+E4ODU3MDQsMTE1OTQxMDIwMCwxNDUzMDY2NDYyLDEyNzMxMTE3
+NTgsMTI4MjI2MTU4MiwtNzU0NzY3MDAxLDExNDkwMDI3MTUsLT
+E3MjkxMjEyNDMsMTEyMTQ5NzE4LC05NDI2MDQ3NTUsLTE3MTc2
+MTI3NTYsLTYzODc2ODExOSwtMzYxNjQ5NTQ3LC02OTM0NTY4OT
+IsMTI3OTg0MTc3MCwtNDk3NTI3MjUzLC0xNzk5NDgzMDE5LC0x
+OTM5NzEwMTYzXX0=
 -->
