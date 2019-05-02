@@ -81,8 +81,8 @@ As we can verify each video game  genre has a distinctive position on the screen
 Después de ver la teoría vamos a comenzar con la parte práctica. Os voy a enseñar a como programar un minimapa desde 0 usando únicamente SDL con un renderer inicializado con [Opengles2](https://es.wikipedia.org/wiki/OpenGL_ES).
 El resultado final será un minimapa que podrá:
 - Cambiar su shape entre rectangular o circular
-- Contener indicadores con iconos como Points of Interest, Positons, Alerts, etc. 
-- Mover la camara con el jugador con el Mouse Drag
+- Contener indicadores con iconos como **points of interest**, **positons**, **alerts**, etc. 
+- Mover la cámara usando el **mouse drag**
 
 
 ## Webgraphy
@@ -94,7 +94,7 @@ El resultado final será un minimapa que podrá:
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0OTc5OTE2OTMsLTIwMzEyMzQ5NzIsND
+eyJoaXN0b3J5IjpbLTEwMzg5MjYyMDIsLTIwMzEyMzQ5NzIsND
 AxODg1NzA0LDExNTk0MTAyMDAsMTQ1MzA2NjQ2MiwxMjczMTEx
 NzU4LDEyODIyNjE1ODIsLTc1NDc2NzAwMSwxMTQ5MDAyNzE1LC
 0xNzI5MTIxMjQzLDExMjE0OTcxOCwtOTQyNjA0NzU1LC0xNzE3
