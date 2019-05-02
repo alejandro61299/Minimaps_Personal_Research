@@ -282,7 +282,7 @@ In this method we draw all the necessary textures in the final_texture using the
  - Draw camera representation rect
  - Draw `alpha_mask_texture`
 
-As you can see, we draw an alpha mask. This is possible thanks to the custom blend mode that has the texture. This blend mode is achieved using the [SDL_ComposeCustomBlendMode](https://wiki.libsdl.org/SDL_ComposeCustomBlendMode) function.  The blend mode that alpha masks need is only available with render that certain drivers like [OpenGLES 2.0](https://es.wikipedia.org/wiki/OpenGL_ES) or DirectX11 use. In our case, we will use OpenGL ES 2.0, which is already integrated with SDL 2.0. To be able to use it we must:
+As you can see, we draw an alpha mask. This is possible thanks to the custom blend mode that has the texture. This blend mode is achieved using the [SDL_ComposeCustomBlendMode](https://wiki.libsdl.org/SDL_ComposeCustomBlendMode) function.  The blend mode that alpha masks need is only available with render that certain API'S like [OpenGLES 2.0](https://es.wikipedia.org/wiki/OpenGL_ES) or [DirectX11](https://es.wikipedia.org/wiki/DirectX) use. In our case, we will use OpenGL ES 2.0, which is already integrated with SDL 2.0. To be able to use it we must:
 
 - Attach `SDL_WINDOW_OPENGL` flag
 - Set all the necessary attributes to work in a OpenGL context.
@@ -325,11 +325,11 @@ renderer = SDL_CreateRenderer(app->win->window, index, flags);
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzODAyMjg5NDksLTE5MjQ3NTA0NTksLT
-U5ODUyNzY4OSwxMjYyODIxOTExLC0xOTMwMTgzOTY3LDkwODY2
-MDg1OSwtMTIxNjI2NzE2MSwxODY0ODkzOTcwLDE5ODk5MDA1OT
-YsLTIwMDY5ODMxMTMsLTE2NTA4MTk3MzAsOTI3MTc5NzQxLDE3
-MjgyMzUwMzMsLTEwMjUzNjk5OTQsLTE0MDk4NDIwNjYsLTE4MD
-UwMjkyMTksLTMyNjU5NzEzNiwtNTY4OTk5MDg5LC0yMDY5ODEx
-NjMwLDE0Mjc0MjUwOTRdfQ==
+eyJoaXN0b3J5IjpbMjEwMTE3MzM0OCwtMTkyNDc1MDQ1OSwtNT
+k4NTI3Njg5LDEyNjI4MjE5MTEsLTE5MzAxODM5NjcsOTA4NjYw
+ODU5LC0xMjE2MjY3MTYxLDE4NjQ4OTM5NzAsMTk4OTkwMDU5Ni
+wtMjAwNjk4MzExMywtMTY1MDgxOTczMCw5MjcxNzk3NDEsMTcy
+ODIzNTAzMywtMTAyNTM2OTk5NCwtMTQwOTg0MjA2NiwtMTgwNT
+AyOTIxOSwtMzI2NTk3MTM2LC01Njg5OTkwODksLTIwNjk4MTE2
+MzAsMTQyNzQyNTA5NF19
 -->
