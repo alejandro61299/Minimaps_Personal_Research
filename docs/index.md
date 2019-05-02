@@ -100,7 +100,8 @@ The first step is to generate the necessary information for the subsequent gener
 
 ![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/info_1.png)
 
-- Necesitamos saber `x_offset` 
+- Necesitamos saber `x_offset`  ya que el 0,0 de la minimap texture no coincide con el 0,0 del mapa representado.
+- 
 
 ```cpp
 bool Minimap::LoadMinimapInfo()
@@ -154,7 +155,7 @@ bool Minimap::LoadMinimapInfo()
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDE1NzM1NDYwLC0xODA1MDI5MjE5LC0zMj
+eyJoaXN0b3J5IjpbODI1MDMwOTY3LC0xODA1MDI5MjE5LC0zMj
 Y1OTcxMzYsLTU2ODk5OTA4OSwtMjA2OTgxMTYzMCwxNDI3NDI1
 MDk0LDEyNTAzMzA1NjcsLTEyNTc3NzI2MjksLTE3Mjc2MDY1Nj
 UsLTEwOTc0NTY0OTgsMTI4NjM3MTU0LDg1Mzk2MTgwOCwtMjAz
