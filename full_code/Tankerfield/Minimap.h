@@ -4,6 +4,9 @@
 #include <list>
 #include "Point.h"
 #include "SDL/include/SDL_rect.h"
+#include "PugiXml/src/pugiconfig.hpp"
+#include "PugiXml/src/pugixml.hpp"
+#include "Module.h" // Delete this if you transform the Minimap class into a UI _Element
 
 #define CAMERA_SPEED 50.F
 
@@ -13,7 +16,26 @@ class Camera;
 struct SDL_Texture;
 struct SDL_Color;
 
+enum class INTERACTION_TYPE
+{
+	NO_TYPE,
+	MOUSE_DRAG
+};
+
+enum class PROJECTION_TYPE
+{
+	ORTHOGONAL,
+	ISOMETRIC,
+};
+
+enum class SHAPE_TYPE
+{
+	CIRCLE,
+	RECTANGLE
+};
+
 // - Minimap Indicator Class used to contain icons, points and arrows info
+
 class Minimap_Indicator
 {
 public:
@@ -41,44 +63,26 @@ private:
 
 
 // Minimap Class, genere a texture and handle minimap indicators
-class Minimap
+class Minimap : public Module
 {
 public:
 
-	enum class INTERACTION_TYPE
-	{
-		FOLLOW_TARGET,
-		FREE_MOVEMENT
-	};
-
-	enum class PROJECTION_TYPE
-	{
-		ORTHOGONAL,
-		ISOMETRIC,
-	};
-
-	enum class SHAPE_TYPE
-	{
-		CIRCLE,
-		RECTANGLE
-	};
-
-
 	Minimap(
 		const SDL_Rect minimap_rect,
-		const float texture_width, 
-		const PROJECTION_TYPE projection_type = PROJECTION_TYPE::ISOMETRIC, 
-		const SHAPE_TYPE shape_type = SHAPE_TYPE::RECTANGLE, 
-		const INTERACTION_TYPE interaction_type = INTERACTION_TYPE::FREE_MOVEMENT, 
+		const float texture_width,
+		const PROJECTION_TYPE projection_type = PROJECTION_TYPE::ISOMETRIC,
+		const SHAPE_TYPE shape_type = SHAPE_TYPE::RECTANGLE,
+		const INTERACTION_TYPE interaction_type = INTERACTION_TYPE::MOUSE_DRAG,
 		Object* target = nullptr);
 
 	~Minimap();
 
-	bool PreUpdate();
+	bool PreUpdate() override;
 
-	bool Update(float dt);
+	bool Update(float dt) override;
 
-	bool PostUpdate();
+	bool PostUpdate(float dt) override;
+
 
 public:
 
@@ -87,6 +91,8 @@ public:
 	void	SetInteractionType(const INTERACTION_TYPE new_type);
 
 	void	SetShapeType(const SHAPE_TYPE new_type);
+
+	fPoint  GetTextureScreenPos();
 
 	// Mesures transformations methods ==========================
 
@@ -102,7 +108,7 @@ public:
 
 private:
 
-	void	InteractionInput( float dt);
+	void	MouseDragInput( float dt);
 
 	bool	LoadMinimap();
 
@@ -114,7 +120,6 @@ private:
 
 public:
 
-	fPoint              position = { 0.f,0.f };         // UI Element Position
 	Object*             target_to_follow = nullptr;
 
 private:
@@ -123,31 +128,31 @@ private:
 
 	// General info ======================================
 
-	SDL_Rect            minimap_rect = { 0, 0, 0,0 };
-	bool                minimap_loaded = false;
+	SDL_Rect            minimap_rect = { 0, 0, 0,0 };   // - Determinate the minimap position on screen & its scope
+	bool                minimap_loaded = false;         
 
 	PROJECTION_TYPE		projection_type = PROJECTION_TYPE::ISOMETRIC;
 	SHAPE_TYPE			shape_type = SHAPE_TYPE::RECTANGLE;
-	INTERACTION_TYPE	interaction_type = INTERACTION_TYPE::FREE_MOVEMENT;
+	INTERACTION_TYPE	interaction_type = INTERACTION_TYPE::MOUSE_DRAG;
 
 	// Textures info ====================================
 
-	SDL_Texture*		minimap_texture = nullptr;      // Scaled map texture
-	SDL_Texture*        final_texture = nullptr;      // Blitted texture with masks
-	SDL_Texture*		alpha_mask_texture = nullptr;   // Mask texture used to aplly alpha mask
+	SDL_Texture*		minimap_texture = nullptr;      // - Scaled map texture
+	SDL_Texture*		alpha_mask_texture = nullptr;   // - Mask texture used to aplly alpha mask
+	SDL_Texture*        final_texture = nullptr;        // - Final texture with masks
 	SDL_Texture*		icons_texture = nullptr;
 
-	fPoint				texture_pos = { 0.f, 0.f };
-	float				texture_width = 0.f;
+	float				x_offset = 0;                   // - Offset between texture and his map 0,0 represented in pixels
+	fPoint				texture_pos = { 0.f, 0.f };     // - Texture position respect minimap_rect position
+	float				texture_width = 0.f;            
 	float				texture_height = 0.f;
 
 	float				minimap_tile_width = 0.f;
 	float				minimap_tile_height = 0.f;
 
-	float				aspect_ratio_x = 0.f;
+	float				aspect_ratio_x = 0.f;           
 	float				aspect_ratio_y = 0.f;
 
-	float				x_offset = 0;
 
 	// Values ===========================================
 

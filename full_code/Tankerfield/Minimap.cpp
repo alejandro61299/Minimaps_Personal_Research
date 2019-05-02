@@ -6,10 +6,12 @@
 #include "M_Render.h"
 #include <list>
 #include "Object.h"
+#include <string>
+
 
 // Minimap Class Methods ====================================================================================
 
-Minimap::Minimap( const SDL_Rect minimap_rect, const float texture_width, const PROJECTION_TYPE projection_type, const SHAPE_TYPE shape_type, const INTERACTION_TYPE interaction_type, Object* target) 
+Minimap::Minimap(const SDL_Rect minimap_rect, const float texture_width, const PROJECTION_TYPE projection_type, const SHAPE_TYPE shape_type, const INTERACTION_TYPE interaction_type, Object* target)
 	: minimap_rect(minimap_rect), texture_width(texture_width), projection_type(projection_type), shape_type(shape_type), interaction_type(interaction_type), target_to_follow(target)
 {
 	SetInteractionType(interaction_type);
@@ -18,17 +20,24 @@ Minimap::Minimap( const SDL_Rect minimap_rect, const float texture_width, const 
 	// Load minimap  ================================================================
 
 	LoadMinimap();
-	texture_pos = fPoint(minimap_rect.x - texture_width * 0.5f, minimap_rect.y - texture_height* 0.5f);
 
 	// Load textures ===============================================================
 	alpha_mask_texture = app->tex->Load("textures/minimap/circle_mask.png");
 	icons_texture = app->tex->Load("textures/minimap/icons.png");
 	SDL_BlendMode blend_mode = SDL_ComposeCustomBlendMode(SDL_BLENDFACTOR_ZERO, SDL_BLENDFACTOR_ONE, SDL_BLENDOPERATION_ADD, SDL_BLENDFACTOR_ONE, SDL_BLENDFACTOR_ONE, SDL_BLENDOPERATION_REV_SUBTRACT);
-	SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode);
+	SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode become transaparent all pixels under the painted area of texture
+
 }
 
 Minimap::~Minimap()
 {
+	for (std::list<Minimap_Indicator*>::iterator iter = indicators_list.begin(); iter != indicators_list.end();)
+	{
+		delete(*iter);
+	}
+
+	indicators_list.clear();
+
 	if (alpha_mask_texture != nullptr)
 	{
 		app->tex->UnLoad(alpha_mask_texture, TEXTURE_TYPE::NORMAL);
@@ -51,17 +60,21 @@ bool Minimap::PreUpdate()
 {
 	// Debug ================================================================
 
+	// Change Interaction Type ------------------------------
+	
 	if (app->input->GetKey(SDL_SCANCODE_1) == KEY_DOWN)
 	{
-		if (interaction_type == INTERACTION_TYPE::FOLLOW_TARGET)
+		if (interaction_type == INTERACTION_TYPE::NO_TYPE)
 		{
-			SetInteractionType(INTERACTION_TYPE::FREE_MOVEMENT);
+			SetInteractionType(INTERACTION_TYPE::MOUSE_DRAG);
 		}
 		else
 		{
-			SetInteractionType(INTERACTION_TYPE::FOLLOW_TARGET);
+			SetInteractionType(INTERACTION_TYPE::NO_TYPE);
 		}
 	}
+
+	// Change Shape Type ------------------------------------
 
 	if (app->input->GetKey(SDL_SCANCODE_2) == KEY_DOWN)
 	{
@@ -72,6 +85,34 @@ bool Minimap::PreUpdate()
 		else
 		{
 			SetShapeType(SHAPE_TYPE::CIRCLE);
+		}
+	}
+
+	// Add advice ------------------------------------------
+
+	SDL_Point mouse_point;
+	app->input->GetMousePosition(mouse_point.x, mouse_point.y);
+
+	if (app->input->GetMouseButton(3) == KEY_DOWN)
+	{
+		if (SDL_PointInRect(&mouse_point, &minimap_rect))
+		{
+			AddIndicator(MinimapToMap(mouse_point.x - GetTextureScreenPos().x, mouse_point.y - GetTextureScreenPos().y), { 32, 32, 32, 32 });
+		}
+		else
+		{
+			AddIndicator(app->map->ScreenToMapF(mouse_point.x + camera->rect.x, mouse_point.y + camera->rect.y), { 32, 32, 32, 32 });
+		}
+
+	}
+
+	// Reset indicators ------------------------------------
+
+	if (app->input->GetKey(SDL_SCANCODE_4) == KEY_DOWN)
+	{
+		for (std::list<Minimap_Indicator*>::iterator iter = indicators_list.begin(); iter != indicators_list.end(); ++iter)
+		{
+			(*iter)->Destroy();
 		}
 	}
 
@@ -86,16 +127,16 @@ bool Minimap::Update(float dt)
 
 	switch (interaction_type)
 	{
-	case INTERACTION_TYPE::FOLLOW_TARGET:
+	case INTERACTION_TYPE::NO_TYPE:
 
 		offset = MapToMinimap(target_to_follow->map_pos.x, target_to_follow->map_pos.y);
-		texture_pos = { minimap_rect.x + minimap_rect.w* .5f - offset.x, minimap_rect.y + minimap_rect.h* .5f - offset.y };
+		texture_pos = fPoint(minimap_rect.w * .5f, minimap_rect.h * .5f) - MapToMinimap(target_to_follow->map_pos.x, target_to_follow->map_pos.y);
 		camera->MoveToObject(dt, target_to_follow);         // Caemra movement ----------
-
+		camera_target_pos = camera->camera_pos;
 		break;
-	case INTERACTION_TYPE::FREE_MOVEMENT:
+	case INTERACTION_TYPE::MOUSE_DRAG:
 
-		InteractionInput(dt);
+		MouseDragInput(dt);
 		camera->MoveToScreenPoint(dt, camera_target_pos);	// Caemra movement ----------
 
 		break;
@@ -103,15 +144,24 @@ bool Minimap::Update(float dt)
 
 	// Update indicators positions ============================
 
-	for (std::list<Minimap_Indicator*>::iterator iter = indicators_list.begin(); iter != indicators_list.end(); ++iter)
+	for (std::list<Minimap_Indicator*>::iterator iter = indicators_list.begin(); iter != indicators_list.end();)
 	{
-		(*iter)->UpdateFromTargetPosition();
+		if ((*iter)->to_destroy == true)
+		{
+			delete(*iter);
+			iter = indicators_list.erase(iter);
+		}
+		else
+		{
+			(*iter)->UpdateFromTargetPosition();
+			++iter;
+		}
 	}
 
-	return false;
+	return true;
 }
 
-bool Minimap::PostUpdate()
+bool Minimap::PostUpdate(float dt)
 {
 	// Update Minimap texture ===================================================
 
@@ -123,7 +173,13 @@ bool Minimap::PostUpdate()
 
 	// Draw debug ===============================================================
 
+	// Minimap screen rect --------------------------
 	app->render->DrawQuad(minimap_rect, 255, 255, 255, 255, false, false);
+
+	// Minimap texture screem rect ------------------
+
+	SDL_Rect texture_debug_rect = { minimap_rect.x + texture_pos.x , minimap_rect.y + texture_pos.y, texture_width, texture_height };
+	app->render->DrawQuad(texture_debug_rect, 255, 0, 0, 255, false, false);
 
 	return true;
 }
@@ -142,17 +198,13 @@ void Minimap::UpdateMinimapTexture()
 
 	// Draw minimap texture  =====================================================
 
-	fPoint relative_minimap_tex_pos;
-
-	if (interaction_type == INTERACTION_TYPE::FOLLOW_TARGET)
+	if (interaction_type == INTERACTION_TYPE::NO_TYPE)
 	{
-		relative_minimap_tex_pos = fPoint(minimap_rect.w * .5f, minimap_rect.h * .5f) - (fPoint)MapToMinimap(target_to_follow->map_pos.x, target_to_follow->map_pos.y);
-		app->render->BlitUI(minimap_texture, relative_minimap_tex_pos.x, relative_minimap_tex_pos.y, NULL, camera);
+		app->render->BlitUI(minimap_texture, texture_pos.x, texture_pos.y, NULL, camera);
 	}
 	else
 	{
-		relative_minimap_tex_pos = texture_pos - fPoint(minimap_rect.x, minimap_rect.y) ;
-		app->render->BlitUI(minimap_texture, relative_minimap_tex_pos.x, relative_minimap_tex_pos.y, NULL, camera);
+		app->render->BlitUI(minimap_texture, texture_pos.x, texture_pos.y, NULL, camera);
 	}
 
 	// Draw minimap indicators ==================================================
@@ -162,7 +214,7 @@ void Minimap::UpdateMinimapTexture()
 
 	for (std::list<Minimap_Indicator*>::iterator iter = indicators_list.begin(); iter != indicators_list.end(); ++iter)
 	{
-		pos = relative_minimap_tex_pos +  MapToMinimap((*iter)->map_pos.x, (*iter)->map_pos.y);
+		pos = texture_pos +  MapToMinimap((*iter)->map_pos.x, (*iter)->map_pos.y);
 
 		if ((*iter)->icon_rect.w != 0 && (*iter)->icon_rect.h != 0)
 		{
@@ -178,7 +230,7 @@ void Minimap::UpdateMinimapTexture()
 
 	// Draw minimap camera rect =================================================
 
-	pos = relative_minimap_tex_pos + WorldToMinimap(camera->camera_pos.x, camera->camera_pos.y) ;
+	pos = texture_pos + WorldToMinimap(camera->camera_pos.x, camera->camera_pos.y) ;
 
 	SDL_Rect camera_rect = { pos.x , pos.y, camera->screen_section.w * aspect_ratio_x ,  camera->screen_section.h * aspect_ratio_y };
 	app->render->DrawQuad(camera_rect, 255, 255, 255, 255, false, false);
@@ -234,6 +286,7 @@ bool Minimap::LoadMinimapData()
 	if (projection_type == PROJECTION_TYPE::ORTHOGONAL)
 	{
 		texture_height = texture_width;
+		tiles_amount *= 2;
 	}
 	else
 	{
@@ -298,7 +351,6 @@ bool Minimap::LoadMinimapTexture()
 		}
 	}
 
-
 	// Reset target texture ==================================================
 
 	SDL_SetRenderTarget(app->render->renderer, NULL);
@@ -306,24 +358,24 @@ bool Minimap::LoadMinimapTexture()
 	return true;
 }
 
-void Minimap::InteractionInput(float dt)
+void Minimap::MouseDragInput(float dt)
 {
 	int x = 0, y = 0;
 	app->input->GetMousePosition(x, y);
 
 	if (app->input->GetMouseButton(1) == KEY_DOWN)
 	{
-		SDL_Point mouse_point = { x, y };
+		SDL_Point mouse_point = { x , y };
 
 		if (SDL_PointInRect(&mouse_point, &minimap_rect))
 		{
 			allow_interaction = true;
 		}
-
 	}
 
 	if (app->input->GetMouseButton(1) == KEY_REPEAT)
 	{
+
 		float half_camera_w = camera->rect.w *aspect_ratio_x * 0.5f;
 		float half_camera_h = camera->rect.h *aspect_ratio_y * 0.5f;
 
@@ -353,7 +405,7 @@ void Minimap::InteractionInput(float dt)
 				texture_pos.y -= CAMERA_SPEED * dt;
 			}
 
-			camera_target_pos = (fPoint)MinimapToWorld(x - texture_pos.x, y - texture_pos.y) - fPoint(camera->rect.w *0.5f, camera->rect.h * 0.5f);
+			camera_target_pos = MinimapToWorld(x - GetTextureScreenPos().x - half_camera_w, y - GetTextureScreenPos().y - half_camera_h);
 		}
 	}
 
@@ -413,10 +465,10 @@ void Minimap::AddIndicator(const fPoint map_pos, const SDL_Rect icon_rect, const
 
 void Minimap::SetInteractionType( const INTERACTION_TYPE new_type)
 {
-	if (new_type == INTERACTION_TYPE::FOLLOW_TARGET && target_to_follow == nullptr)
+	if (new_type == INTERACTION_TYPE::NO_TYPE && target_to_follow == nullptr)
 	{
 		LOG("Minimap Error: Target nullptr , interaction type was changed to FREE_MOVEMENT");
-		interaction_type = INTERACTION_TYPE::FREE_MOVEMENT;
+		interaction_type = INTERACTION_TYPE::MOUSE_DRAG;
 	}
 	else
 	{
@@ -427,6 +479,11 @@ void Minimap::SetInteractionType( const INTERACTION_TYPE new_type)
 void Minimap::SetShapeType(const SHAPE_TYPE new_type)
 {
 	shape_type = new_type;
+}
+
+fPoint Minimap::GetTextureScreenPos()
+{
+	return fPoint(minimap_rect.x + texture_pos.x , minimap_rect.y + texture_pos.y);
 }
 
 // Minimap Indicator Class Methods =========================================================================

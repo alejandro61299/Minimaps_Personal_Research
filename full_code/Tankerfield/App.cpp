@@ -53,8 +53,8 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	AddModule(audio);
 	AddModule(pathfinding);
 	AddModule(map);
-	AddModule(scene);
 	AddModule(objectmanager);
+	AddModule(scene);
 	AddModule(collision);
 	AddModule(ui);
 	AddModule(anim_bank);
