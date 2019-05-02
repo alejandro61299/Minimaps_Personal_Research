@@ -102,6 +102,7 @@ The first step is to generate the necessary information for the subsequent gener
 
 - We need to know `x_offset` since the 0.0 of the minimap texture does not match the 0.0 of the represented map.
 - `apect_ratio_x` and` apect_ratio_y` are constants that directly relate the dimensions in pixels of the map with the size of our texture
+
 ```cpp
 bool Minimap::LoadMinimapInfo()
 {
@@ -155,11 +156,11 @@ bool Minimap::LoadMinimapInfo()
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU4MTk2NDY0NCwtMTgwNTAyOTIxOSwtMz
-I2NTk3MTM2LC01Njg5OTkwODksLTIwNjk4MTE2MzAsMTQyNzQy
-NTA5NCwxMjUwMzMwNTY3LC0xMjU3NzcyNjI5LC0xNzI3NjA2NT
-Y1LC0xMDk3NDU2NDk4LDEyODYzNzE1NCw4NTM5NjE4MDgsLTIw
-MzEyMzQ5NzIsNDAxODg1NzA0LDExNTk0MTAyMDAsMTQ1MzA2Nj
-Q2MiwxMjczMTExNzU4LDEyODIyNjE1ODIsLTc1NDc2NzAwMSwx
-MTQ5MDAyNzE1XX0=
+eyJoaXN0b3J5IjpbLTE0MDk4NDIwNjYsLTE4MDUwMjkyMTksLT
+MyNjU5NzEzNiwtNTY4OTk5MDg5LC0yMDY5ODExNjMwLDE0Mjc0
+MjUwOTQsMTI1MDMzMDU2NywtMTI1Nzc3MjYyOSwtMTcyNzYwNj
+U2NSwtMTA5NzQ1NjQ5OCwxMjg2MzcxNTQsODUzOTYxODA4LC0y
+MDMxMjM0OTcyLDQwMTg4NTcwNCwxMTU5NDEwMjAwLDE0NTMwNj
+Y0NjIsMTI3MzExMTc1OCwxMjgyMjYxNTgyLC03NTQ3NjcwMDEs
+MTE0OTAwMjcxNV19
 -->
