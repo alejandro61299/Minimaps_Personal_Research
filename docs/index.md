@@ -147,7 +147,10 @@ bool Minimap::LoadMinimapInfo()
 	return true;
 }
 ```
-### Minimap Indicators Lifecycle
+
+### Class Minimap Lifecycle
+
+### Class Minimap Indicators Lifecycle
 
 Leaving the textures aside, we first need to integrate the indicators. These have a life cycle that only consists of a Constructor, an Update and a Destroy. These can use either a target to update their position or stay at a fixed point. Your position is in map coordinates.  This class is a class Minimap friend since it only will treat its private variables.
 ```cpp
@@ -395,11 +398,11 @@ SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode beco
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzcyMDEwOTg5LC03NjQyMzYwNzIsLTE2OD
-U2NDc4NzgsMzk1Mzc0NTQyLC05NDc0NzQ1MzQsNDY3MDgzNDUz
-LC0xOTI0NzUwNDU5LC01OTg1Mjc2ODksMTI2MjgyMTkxMSwtMT
-kzMDE4Mzk2Nyw5MDg2NjA4NTksLTEyMTYyNjcxNjEsMTg2NDg5
-Mzk3MCwxOTg5OTAwNTk2LC0yMDA2OTgzMTEzLC0xNjUwODE5Nz
-MwLDkyNzE3OTc0MSwxNzI4MjM1MDMzLC0xMDI1MzY5OTk0LC0x
-NDA5ODQyMDY2XX0=
+eyJoaXN0b3J5IjpbLTExNDM5MzU3NTksLTc2NDIzNjA3MiwtMT
+Y4NTY0Nzg3OCwzOTUzNzQ1NDIsLTk0NzQ3NDUzNCw0NjcwODM0
+NTMsLTE5MjQ3NTA0NTksLTU5ODUyNzY4OSwxMjYyODIxOTExLC
+0xOTMwMTgzOTY3LDkwODY2MDg1OSwtMTIxNjI2NzE2MSwxODY0
+ODkzOTcwLDE5ODk5MDA1OTYsLTIwMDY5ODMxMTMsLTE2NTA4MT
+k3MzAsOTI3MTc5NzQxLDE3MjgyMzUwMzMsLTEwMjUzNjk5OTQs
+LTE0MDk4NDIwNjZdfQ==
 -->
