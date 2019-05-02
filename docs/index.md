@@ -94,7 +94,7 @@ Tendemos dos clases que contendrán todo lo que necesitamos:
 - La segunda es  ``` class Minimap_Indicator``` que servirá como contenedor de infromación para los avisos y posiciones.
 
 ### Introduction
-Para no distorcionar la imagen generaremos la textura a partir del valor del ancho. 
+El primer paso es generar la información necesario para la posterior generación de la textura- Para no distorcionar la imagen generaremos la textura a partir del valor del ancho. La información que tenemos l
 
 ![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/info_1.png)
 
@@ -107,7 +107,7 @@ Para no distorcionar la imagen generaremos la textura a partir del valor del anc
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk0ODkzMTk2NiwxMjUwMzMwNTY3LC0xMj
+eyJoaXN0b3J5IjpbMTI3OTg2NzYzMSwxMjUwMzMwNTY3LC0xMj
 U3NzcyNjI5LC0xNzI3NjA2NTY1LC0xMDk3NDU2NDk4LDEyODYz
 NzE1NCw4NTM5NjE4MDgsLTIwMzEyMzQ5NzIsNDAxODg1NzA0LD
 ExNTk0MTAyMDAsMTQ1MzA2NjQ2MiwxMjczMTExNzU4LDEyODIy
