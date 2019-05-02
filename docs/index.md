@@ -145,6 +145,8 @@ bool Minimap::LoadMinimapInfo()
 	return true;
 }
 ```
+
+### Unit transformation methods
 ```cpp
  // - Map coordinates to Pixels Coordinate Minimap
 fPoint Minimap::MapToMinimap(const float x, const float y)
@@ -152,8 +154,6 @@ fPoint Minimap::MapToMinimap(const float x, const float y)
 	return fPoint((x - y) * minimap_tile_width * 0.5f + x_offset, (x + y) * minimap_tile_height * 0.5f);
 }
 ```
-### Unit transformation methods
-
 ## Links to more Documentation
 
 - [Where Should We Place the Mini-Map? ( Gamasutra Blog )](https://www.gamasutra.com/blogs/JacekSliwinski/20130121/185119/Where_should_we_place_the_mini_map.php)
@@ -163,11 +163,11 @@ fPoint Minimap::MapToMinimap(const float x, const float y)
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzE4MjE4MTQxLC0xNDA5ODQyMDY2LC0xOD
-A1MDI5MjE5LC0zMjY1OTcxMzYsLTU2ODk5OTA4OSwtMjA2OTgx
-MTYzMCwxNDI3NDI1MDk0LDEyNTAzMzA1NjcsLTEyNTc3NzI2Mj
-ksLTE3Mjc2MDY1NjUsLTEwOTc0NTY0OTgsMTI4NjM3MTU0LDg1
-Mzk2MTgwOCwtMjAzMTIzNDk3Miw0MDE4ODU3MDQsMTE1OTQxMD
-IwMCwxNDUzMDY2NDYyLDEyNzMxMTE3NTgsMTI4MjI2MTU4Miwt
-NzU0NzY3MDAxXX0=
+eyJoaXN0b3J5IjpbMTIzMjQ0ODMzOSwtMTQwOTg0MjA2NiwtMT
+gwNTAyOTIxOSwtMzI2NTk3MTM2LC01Njg5OTkwODksLTIwNjk4
+MTE2MzAsMTQyNzQyNTA5NCwxMjUwMzMwNTY3LC0xMjU3NzcyNj
+I5LC0xNzI3NjA2NTY1LC0xMDk3NDU2NDk4LDEyODYzNzE1NCw4
+NTM5NjE4MDgsLTIwMzEyMzQ5NzIsNDAxODg1NzA0LDExNTk0MT
+AyMDAsMTQ1MzA2NjQ2MiwxMjczMTExNzU4LDEyODIyNjE1ODIs
+LTc1NDc2NzAwMV19
 -->
