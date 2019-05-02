@@ -148,7 +148,7 @@ bool Minimap::LoadMinimapInfo()
 
 ### Unit transformation methods
 
-These functions are the core of our class. They allow us to transform units and thus be able to interact between the map and the minimap.  These formulas are related to the isometric world. You can get more information about isometric maps in this [link](https://gamedevelopment.tutsplus.com/es/tutorials/creating-isometric-worlds-a-primer-for-game-developers--gamedev-6511).
+These functions are the core of our class. They allow us to transform units and thus be able to interact between the map and the minimap .  These formulas are related to the isometric world. You can get more information about isometric maps in this [link](https://gamedevelopment.tutsplus.com/tutorials/creating-isometric-worlds-a-primer-for-game-developers--gamedev-6511).
 
  - **Map Coordinates to Minimap Pixels Coordinate**
 ```cpp
@@ -201,15 +201,15 @@ fPoint Minimap::MinimapToWorld(const float x, const float y)
 - [Video Game Mini-Maps Might Finally Be Going Away ( Kotaku Article )](https://kotaku.com/video-game-mini-maps-might-finally-be-going-away-1820011897)
 - [Horizontal Atention Leans Left ( Nielsen Norman Group Article ) ](http://www.useit.com/alertbox/horizontal-attention.html) 
 - [Mini-Map by Jack Davies ( Game UI Patterns Article )](https://gameuipatterns.com/gameui/mini-map/)
-- [enter link description here](https://gamedevelopment.tutsplus.com/tutorials/creating-isometric-worlds-a-primer-for-game-developers--gamedev-6511)
+- [Creating Isometric Worlds | gamedevelopment ](https://gamedevelopment.tutsplus.com/tutorials/creating-isometric-worlds-a-primer-for-game-developers--gamedev-6511)
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA5NjA2NzQ2NywtMTY1MDgxOTczMCw5Mj
-cxNzk3NDEsMTcyODIzNTAzMywtMTAyNTM2OTk5NCwtMTQwOTg0
-MjA2NiwtMTgwNTAyOTIxOSwtMzI2NTk3MTM2LC01Njg5OTkwOD
-ksLTIwNjk4MTE2MzAsMTQyNzQyNTA5NCwxMjUwMzMwNTY3LC0x
-MjU3NzcyNjI5LC0xNzI3NjA2NTY1LC0xMDk3NDU2NDk4LDEyOD
-YzNzE1NCw4NTM5NjE4MDgsLTIwMzEyMzQ5NzIsNDAxODg1NzA0
-LDExNTk0MTAyMDBdfQ==
+eyJoaXN0b3J5IjpbLTEyODQxOTE3NDAsLTE2NTA4MTk3MzAsOT
+I3MTc5NzQxLDE3MjgyMzUwMzMsLTEwMjUzNjk5OTQsLTE0MDk4
+NDIwNjYsLTE4MDUwMjkyMTksLTMyNjU5NzEzNiwtNTY4OTk5MD
+g5LC0yMDY5ODExNjMwLDE0Mjc0MjUwOTQsMTI1MDMzMDU2Nywt
+MTI1Nzc3MjYyOSwtMTcyNzYwNjU2NSwtMTA5NzQ1NjQ5OCwxMj
+g2MzcxNTQsODUzOTYxODA4LC0yMDMxMjM0OTcyLDQwMTg4NTcw
+NCwxMTU5NDEwMjAwXX0=
 -->
