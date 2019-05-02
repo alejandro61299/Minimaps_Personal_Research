@@ -94,6 +94,8 @@ Aquí podéis ver como quedará el resultado final:
 ### Code Classes 
 Tendemos dos clases que contendrán todo lo que necesitamos:
 
+La primera será la principal Minimap que servirá como factory para       los Minimap_Indicators
+
     class Minimap_Indicator
     {
     public:
@@ -128,11 +130,11 @@ Tendemos dos clases que contendrán todo lo que necesitamos:
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0OTc4Mzg4ODgsLTE3Mjc2MDY1NjUsLT
-EwOTc0NTY0OTgsMTI4NjM3MTU0LDg1Mzk2MTgwOCwtMjAzMTIz
-NDk3Miw0MDE4ODU3MDQsMTE1OTQxMDIwMCwxNDUzMDY2NDYyLD
-EyNzMxMTE3NTgsMTI4MjI2MTU4MiwtNzU0NzY3MDAxLDExNDkw
-MDI3MTUsLTE3MjkxMjEyNDMsMTEyMTQ5NzE4LC05NDI2MDQ3NT
-UsLTE3MTc2MTI3NTYsLTYzODc2ODExOSwtMzYxNjQ5NTQ3LC02
-OTM0NTY4OTJdfQ==
+eyJoaXN0b3J5IjpbMTE4OTQxMzYwNywtMTcyNzYwNjU2NSwtMT
+A5NzQ1NjQ5OCwxMjg2MzcxNTQsODUzOTYxODA4LC0yMDMxMjM0
+OTcyLDQwMTg4NTcwNCwxMTU5NDEwMjAwLDE0NTMwNjY0NjIsMT
+I3MzExMTc1OCwxMjgyMjYxNTgyLC03NTQ3NjcwMDEsMTE0OTAw
+MjcxNSwtMTcyOTEyMTI0MywxMTIxNDk3MTgsLTk0MjYwNDc1NS
+wtMTcxNzYxMjc1NiwtNjM4NzY4MTE5LC0zNjE2NDk1NDcsLTY5
+MzQ1Njg5Ml19
 -->
