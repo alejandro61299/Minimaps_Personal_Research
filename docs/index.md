@@ -431,7 +431,9 @@ fPoint Minimap::MinimapToMap(const float x, const float y)
 ```
 ### TODO 3: Add indicators by clicking over minimap 
 #### **Explicaition** 
-
+When you click on the minimap, you must add an alert. Use the AddIndicator () function. 
+The alert sprite sheet rectangle is {32, 32, 32, 32}.
+  #### **Test** 
  #### **Solution** 
 ```cpp
 ```
@@ -448,7 +450,7 @@ fPoint Minimap::MinimapToMap(const float x, const float y)
 ```cpp
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTE0NjIxMjUxLDEzODA2MjUyNjAsMTc3ND
+eyJoaXN0b3J5IjpbMjg5MjU5MjI4LDEzODA2MjUyNjAsMTc3ND
 k3OTI3MCwtMTExNDQ4MTc1LDE1NDU4ODI4MzksLTE4ODQ4Mzg3
 NzksODUzNDE1OTE1LC0yMzE5MTAzNDAsLTExNDM5MzU3NTksLT
 c2NDIzNjA3MiwtMTY4NTY0Nzg3OCwzOTUzNzQ1NDIsLTk0NzQ3
