@@ -284,8 +284,12 @@ In this method we draw all the necessary textures in the final_texture using the
 
 As you can see, we draw an alpha mask. This is possible thanks to the custom blend mode that has the texture. This blend mode is achieved using the [SDL_ComposeCustomBlendMode](https://wiki.libsdl.org/SDL_ComposeCustomBlendMode) function.  The blend mode that alpha masks need is only available with render that certain drivers like OpenGLES 2.0 or DirectX11 use. In our case, we will use OpenGLES 2.0, which is already integrated with SDL 2.0. To be able to use it we must:
 
-- Create an SDL_Window with SDL flags
-- 
+- Create an SDL_Window with `SDL_WINDOW_OPENGL` flag
+```cpp
+flags |= SDL_WINDOW_OPENGL;
+window = SDL_CreateWindow(app->GetTitle(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, flags);
+```
+
 ## Links to more Documentation
 
 - [Where Should We Place the Mini-Map? ( Gamasutra Blog )](https://www.gamasutra.com/blogs/JacekSliwinski/20130121/185119/Where_should_we_place_the_mini_map.php)
@@ -296,7 +300,7 @@ As you can see, we draw an alpha mask. This is possible thanks to the custom ble
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA1MzY5MTc2NywtNTk4NTI3Njg5LDEyNj
+eyJoaXN0b3J5IjpbLTM2OTEzNTQzMCwtNTk4NTI3Njg5LDEyNj
 I4MjE5MTEsLTE5MzAxODM5NjcsOTA4NjYwODU5LC0xMjE2MjY3
 MTYxLDE4NjQ4OTM5NzAsMTk4OTkwMDU5NiwtMjAwNjk4MzExMy
 wtMTY1MDgxOTczMCw5MjcxNzk3NDEsMTcyODIzNTAzMywtMTAy
