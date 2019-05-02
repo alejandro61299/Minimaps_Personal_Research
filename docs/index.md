@@ -218,7 +218,6 @@ fPoint Minimap::MinimapToWorld(const float x, const float y)
 	return fPoint((x - x_offset) / aspect_ratio_x,  y/ aspect_ratio_y);
 }
 ```
-
 ### Generate Minimap Texture 
 
 Once we have the transformation methods of units we can generate the texture of the minimap. To do this, iterate throught all the layers tiles and draw a tileset tile sprite  in a scaled size corresponding to the width and height of minimap tiles. This is the responsibility of the  `GenerateMinimapTexture()` method. 
@@ -401,11 +400,11 @@ SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode beco
 ## TODO'S & Solutions
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4ODQ4Mzg3NzksODUzNDE1OTE1LC0yMz
-E5MTAzNDAsLTExNDM5MzU3NTksLTc2NDIzNjA3MiwtMTY4NTY0
-Nzg3OCwzOTUzNzQ1NDIsLTk0NzQ3NDUzNCw0NjcwODM0NTMsLT
-E5MjQ3NTA0NTksLTU5ODUyNzY4OSwxMjYyODIxOTExLC0xOTMw
-MTgzOTY3LDkwODY2MDg1OSwtMTIxNjI2NzE2MSwxODY0ODkzOT
-cwLDE5ODk5MDA1OTYsLTIwMDY5ODMxMTMsLTE2NTA4MTk3MzAs
-OTI3MTc5NzQxXX0=
+eyJoaXN0b3J5IjpbMTU0NTg4MjgzOSwtMTg4NDgzODc3OSw4NT
+M0MTU5MTUsLTIzMTkxMDM0MCwtMTE0MzkzNTc1OSwtNzY0MjM2
+MDcyLC0xNjg1NjQ3ODc4LDM5NTM3NDU0MiwtOTQ3NDc0NTM0LD
+Q2NzA4MzQ1MywtMTkyNDc1MDQ1OSwtNTk4NTI3Njg5LDEyNjI4
+MjE5MTEsLTE5MzAxODM5NjcsOTA4NjYwODU5LC0xMjE2MjY3MT
+YxLDE4NjQ4OTM5NzAsMTk4OTkwMDU5NiwtMjAwNjk4MzExMywt
+MTY1MDgxOTczMF19
 -->
