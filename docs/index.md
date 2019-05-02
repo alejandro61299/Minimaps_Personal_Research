@@ -271,7 +271,7 @@ private:
 	friend Minimap;
 };
 ```
-
+### Update Final Texture  
 
 
 
@@ -291,11 +291,11 @@ private:
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMTU4Mjc3OTQsLTE5MzAxODM5NjcsOT
-A4NjYwODU5LC0xMjE2MjY3MTYxLDE4NjQ4OTM5NzAsMTk4OTkw
-MDU5NiwtMjAwNjk4MzExMywtMTY1MDgxOTczMCw5MjcxNzk3ND
-EsMTcyODIzNTAzMywtMTAyNTM2OTk5NCwtMTQwOTg0MjA2Niwt
-MTgwNTAyOTIxOSwtMzI2NTk3MTM2LC01Njg5OTkwODksLTIwNj
-k4MTE2MzAsMTQyNzQyNTA5NCwxMjUwMzMwNTY3LC0xMjU3Nzcy
-NjI5LC0xNzI3NjA2NTY1XX0=
+eyJoaXN0b3J5IjpbMTI2MjgyMTkxMSwtMTkzMDE4Mzk2Nyw5MD
+g2NjA4NTksLTEyMTYyNjcxNjEsMTg2NDg5Mzk3MCwxOTg5OTAw
+NTk2LC0yMDA2OTgzMTEzLC0xNjUwODE5NzMwLDkyNzE3OTc0MS
+wxNzI4MjM1MDMzLC0xMDI1MzY5OTk0LC0xNDA5ODQyMDY2LC0x
+ODA1MDI5MjE5LC0zMjY1OTcxMzYsLTU2ODk5OTA4OSwtMjA2OT
+gxMTYzMCwxNDI3NDI1MDk0LDEyNTAzMzA1NjcsLTEyNTc3NzI2
+MjksLTE3Mjc2MDY1NjVdfQ==
 -->
