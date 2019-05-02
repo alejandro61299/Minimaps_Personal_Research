@@ -145,6 +145,7 @@ bool Minimap::LoadMinimapInfo()
 	return true;
 }
 ```
+
 ### Unit transformation methods
 
 ## Links to more Documentation
@@ -156,11 +157,11 @@ bool Minimap::LoadMinimapInfo()
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MDk4NDIwNjYsLTE4MDUwMjkyMTksLT
-MyNjU5NzEzNiwtNTY4OTk5MDg5LC0yMDY5ODExNjMwLDE0Mjc0
-MjUwOTQsMTI1MDMzMDU2NywtMTI1Nzc3MjYyOSwtMTcyNzYwNj
-U2NSwtMTA5NzQ1NjQ5OCwxMjg2MzcxNTQsODUzOTYxODA4LC0y
-MDMxMjM0OTcyLDQwMTg4NTcwNCwxMTU5NDEwMjAwLDE0NTMwNj
-Y0NjIsMTI3MzExMTc1OCwxMjgyMjYxNTgyLC03NTQ3NjcwMDEs
-MTE0OTAwMjcxNV19
+eyJoaXN0b3J5IjpbMTI4Mzc4ODg2NCwtMTQwOTg0MjA2NiwtMT
+gwNTAyOTIxOSwtMzI2NTk3MTM2LC01Njg5OTkwODksLTIwNjk4
+MTE2MzAsMTQyNzQyNTA5NCwxMjUwMzMwNTY3LC0xMjU3NzcyNj
+I5LC0xNzI3NjA2NTY1LC0xMDk3NDU2NDk4LDEyODYzNzE1NCw4
+NTM5NjE4MDgsLTIwMzEyMzQ5NzIsNDAxODg1NzA0LDExNTk0MT
+AyMDAsMTQ1MzA2NjQ2MiwxMjczMTExNzU4LDEyODIyNjE1ODIs
+LTc1NDc2NzAwMV19
 -->
