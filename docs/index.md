@@ -125,27 +125,18 @@ public:
 	// Mesures transformations methods ==========================
 
 	fPoint	MapToMinimap(const float x, const float y);
-
 	fPoint	MinimapToMap(const float x, const float y);
-
 	fPoint	WorldToMinimap(const float x, const float y);
-
 	fPoint	MinimapToWorld(const float x, const float y);
-
-	bool	PointInEllipse(fPoint test, fPoint center, float width, float height);
 
 private:
 
 	void	MouseDragInput( float dt);
-
 	bool	LoadMinimap();
-
 	bool    LoadMinimapData();
-
 	bool	LoadMinimapTexture();
-
 	void	UpdateMinimapTexture();
-
+	
 public:
 
 	Object*             target_to_follow = nullptr;
@@ -181,7 +172,6 @@ private:
 	float				aspect_ratio_x = 0.f;           
 	float				aspect_ratio_y = 0.f;
 
-
 	// Values ===========================================
 
 	bool                allow_interaction = false;
@@ -201,11 +191,11 @@ private:
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk4NDI3NjA4MCwtMTcyNzYwNjU2NSwtMT
-A5NzQ1NjQ5OCwxMjg2MzcxNTQsODUzOTYxODA4LC0yMDMxMjM0
-OTcyLDQwMTg4NTcwNCwxMTU5NDEwMjAwLDE0NTMwNjY0NjIsMT
-I3MzExMTc1OCwxMjgyMjYxNTgyLC03NTQ3NjcwMDEsMTE0OTAw
-MjcxNSwtMTcyOTEyMTI0MywxMTIxNDk3MTgsLTk0MjYwNDc1NS
-wtMTcxNzYxMjc1NiwtNjM4NzY4MTE5LC0zNjE2NDk1NDcsLTY5
-MzQ1Njg5Ml19
+eyJoaXN0b3J5IjpbLTEyNTc3NzI2MjksLTE3Mjc2MDY1NjUsLT
+EwOTc0NTY0OTgsMTI4NjM3MTU0LDg1Mzk2MTgwOCwtMjAzMTIz
+NDk3Miw0MDE4ODU3MDQsMTE1OTQxMDIwMCwxNDUzMDY2NDYyLD
+EyNzMxMTE3NTgsMTI4MjI2MTU4MiwtNzU0NzY3MDAxLDExNDkw
+MDI3MTUsLTE3MjkxMjEyNDMsMTEyMTQ5NzE4LC05NDI2MDQ3NT
+UsLTE3MTc2MTI3NTYsLTYzODc2ODExOSwtMzYxNjQ5NTQ3LC02
+OTM0NTY4OTJdfQ==
 -->
