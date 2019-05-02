@@ -188,7 +188,7 @@ fPoint Minimap::MinimapToWorld(const float x, const float y)
 
 Once we have the transformation methods of units we can generate the texture of the minimap. To do this iterate throught all the layers tiles and draw a tileset tile sprite  in a scaled size corresponding to the width and height of minimap tiles. This is the responsibility of the  `GenerateMinimapTexture()` method. 
 
-This method creates the final texture and the minimap texture. These textures will be used later in the drawing of the minimap. What you have to keep in mind is that we change the SDL_Render render target in order to draw in a texture (in this case minimap_texture) instead of the default texture that is the texture that the SDL_Window has internally.  For more information on this topic I leave this [link](https://wiki.libsdl.org/SDL_SetRenderTarget) with the SDL API
+This method creates the final texture and the minimap texture. These textures will be used later in the drawing of the minimap. What you have to keep in mind is that we change the SDL_Render render target in order to draw in a texture (in this case minimap_texture) instead of the default texture that is the texture that the SDL_Window has internally.  For more information on this topic I leave this [link](https://wiki.libsdl.org/SDL_SetRenderTarget) with the SDL_SetRenderTarget API.
 
 
 
@@ -263,11 +263,11 @@ bool Minimap::GenerateMinimapTexture()
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMzMTQ0NzQwOCwxODY0ODkzOTcwLDE5OD
-k5MDA1OTYsLTIwMDY5ODMxMTMsLTE2NTA4MTk3MzAsOTI3MTc5
-NzQxLDE3MjgyMzUwMzMsLTEwMjUzNjk5OTQsLTE0MDk4NDIwNj
-YsLTE4MDUwMjkyMTksLTMyNjU5NzEzNiwtNTY4OTk5MDg5LC0y
-MDY5ODExNjMwLDE0Mjc0MjUwOTQsMTI1MDMzMDU2NywtMTI1Nz
-c3MjYyOSwtMTcyNzYwNjU2NSwtMTA5NzQ1NjQ5OCwxMjg2Mzcx
-NTQsODUzOTYxODA4XX0=
+eyJoaXN0b3J5IjpbLTEyMjA3MDYwMjgsMTg2NDg5Mzk3MCwxOT
+g5OTAwNTk2LC0yMDA2OTgzMTEzLC0xNjUwODE5NzMwLDkyNzE3
+OTc0MSwxNzI4MjM1MDMzLC0xMDI1MzY5OTk0LC0xNDA5ODQyMD
+Y2LC0xODA1MDI5MjE5LC0zMjY1OTcxMzYsLTU2ODk5OTA4OSwt
+MjA2OTgxMTYzMCwxNDI3NDI1MDk0LDEyNTAzMzA1NjcsLTEyNT
+c3NzI2MjksLTE3Mjc2MDY1NjUsLTEwOTc0NTY0OTgsMTI4NjM3
+MTU0LDg1Mzk2MTgwOF19
 -->
