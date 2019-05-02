@@ -187,7 +187,7 @@ fPoint Minimap::MinimapToWorld(const float x, const float y)
 
 ### Generate Minimap Texture 
 
-Once we have the transformation methods of units we can generate the texture of the minimap. To do this iterate throught all the layers tiles and draw a tileset tile sprite  in a scaled size corresponding to the width and height of minimap tiles. This is the responsibility of the  `GenerateMinimapTexture()` method. 
+Once we have the transformation methods of units we can generate the texture of the minimap. To do this, iterate throught all the layers tiles and draw a tileset tile sprite  in a scaled size corresponding to the width and height of minimap tiles. This is the responsibility of the  `GenerateMinimapTexture()` method. 
 
 This method creates the final texture and the minimap texture. These textures will be used later in the drawing of the minimap. What you have to keep in mind is that we change the SDL_Render target in order to draw in a texture (in this case minimap_texture) instead of the default texture that is the texture that the SDL_Window has internally.  For more information on this topic I leave the [SDL_SetRenderTarget ()](https://wiki.libsdl.org/SDL_SetRenderTarget)  API.
 
@@ -244,7 +244,7 @@ bool Minimap::GenerateMinimapTexture()
 ```
 ### Minimap Indicators Lifecycle
 
-Leaving the textures aside, we first need to integrate the indicators. These have a life cycle that only consists of a Constructor, an Update and a Destroy. These can use either a target to update their position or stay at a fixed point. Your position is in map coordinates.  This class is a class Minimap friend since only she will treat its private variables.
+Leaving the textures aside, we first need to integrate the indicators. These have a life cycle that only consists of a Constructor, an Update and a Destroy. These can use either a target to update their position or stay at a fixed point. Your position is in map coordinates.  This class is a class Minimap friend since it only will treat its private variables.
 ```cpp
 class Minimap_Indicator
 {
@@ -329,11 +329,11 @@ renderer = SDL_CreateRenderer(app->win->window, index, flags);
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NDE3MzMwMDUsNDY3MDgzNDUzLC0xOT
-I0NzUwNDU5LC01OTg1Mjc2ODksMTI2MjgyMTkxMSwtMTkzMDE4
-Mzk2Nyw5MDg2NjA4NTksLTEyMTYyNjcxNjEsMTg2NDg5Mzk3MC
-wxOTg5OTAwNTk2LC0yMDA2OTgzMTEzLC0xNjUwODE5NzMwLDky
-NzE3OTc0MSwxNzI4MjM1MDMzLC0xMDI1MzY5OTk0LC0xNDA5OD
-QyMDY2LC0xODA1MDI5MjE5LC0zMjY1OTcxMzYsLTU2ODk5OTA4
-OSwtMjA2OTgxMTYzMF19
+eyJoaXN0b3J5IjpbLTk0NzQ3NDUzNCw0NjcwODM0NTMsLTE5Mj
+Q3NTA0NTksLTU5ODUyNzY4OSwxMjYyODIxOTExLC0xOTMwMTgz
+OTY3LDkwODY2MDg1OSwtMTIxNjI2NzE2MSwxODY0ODkzOTcwLD
+E5ODk5MDA1OTYsLTIwMDY5ODMxMTMsLTE2NTA4MTk3MzAsOTI3
+MTc5NzQxLDE3MjgyMzUwMzMsLTEwMjUzNjk5OTQsLTE0MDk4ND
+IwNjYsLTE4MDUwMjkyMTksLTMyNjU5NzEzNiwtNTY4OTk5MDg5
+LC0yMDY5ODExNjMwXX0=
 -->
