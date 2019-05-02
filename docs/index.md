@@ -1,6 +1,6 @@
 # Minimaps Research 
 
-I am [Alejandro Gamarra Niño](https://www.linkedin.com/in/alejandro-a-gamarra-ni%C3%B1o-568b6b171/) , student of the [Bachelor’s Degree in Video Games by UPC at CITM](https://www.citm.upc.edu/ing/estudis/graus-videojocs/). This content is generated for the second year’s subject Project 2, under supervision of lecturer [Ricard Pillosu](https://es.linkedin.com/in/ricardpillosu).
+I am [Alejandro Gamarra Niño](https://www.linkedin.com/in/alejandro-a-gamarra-ni%C3%B1o-568b6b171/), student of the [Bachelor’s Degree in Video Games by UPC at CITM](https://www.citm.upc.edu/ing/estudis/graus-videojocs/). This content is generated for the second year’s subject Project 2, under supervision of lecturer [Ricard Pillosu](https://es.linkedin.com/in/ricardpillosu).
 
 ## Theory about minimaps
 
@@ -26,14 +26,14 @@ In order to solve these problems **one of the several options** is to implement 
 
 ### Minimap types 
 
-Mini maps can be classified by many of their attributes as their **perspective** (Orthogonal, Isometric, 3D ...) or their **shape** (Rectangular, Circular...) but the two most common types are:
+Mini maps can be classified by many of their attributes as their **perspective** (Orthogonal, Isometric, 3D) or their **shape** (Rectangular, Circular) but the two most common types are:
 
-- **Whole world**
+- **Whole world**: 
 This mini map type functions as a miniaturized world map. We can see them in Sports, Racing ,MOBA or Strategy games. In some cases they have a rectangle representing the area of the camera with which you can interact by dragging the mouse.
 
 ![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/world.png)
 
-- **Focused on the player**
+- **Focused on the player**:
  The **scope** of the mini maps in Action, Shooter and Role-playing games displays only a limited field of view including your immediate surroundings (or your current sector).  
 
 ![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/player.png)
@@ -88,11 +88,11 @@ As we can verify each video game  genre has a distinctive position on the screen
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE1OTQxMDIwMCwxNDUzMDY2NDYyLDEyNz
-MxMTE3NTgsMTI4MjI2MTU4MiwtNzU0NzY3MDAxLDExNDkwMDI3
-MTUsLTE3MjkxMjEyNDMsMTEyMTQ5NzE4LC05NDI2MDQ3NTUsLT
-E3MTc2MTI3NTYsLTYzODc2ODExOSwtMzYxNjQ5NTQ3LC02OTM0
-NTY4OTIsMTI3OTg0MTc3MCwtNDk3NTI3MjUzLC0xNzk5NDgzMD
-E5LC0xOTM5NzEwMTYzLC0xNzU2MDU4NDU3LDM5NTE4MDIxNCwt
-MTc1NjA1ODQ1N119
+eyJoaXN0b3J5IjpbNDAxODg1NzA0LDExNTk0MTAyMDAsMTQ1Mz
+A2NjQ2MiwxMjczMTExNzU4LDEyODIyNjE1ODIsLTc1NDc2NzAw
+MSwxMTQ5MDAyNzE1LC0xNzI5MTIxMjQzLDExMjE0OTcxOCwtOT
+QyNjA0NzU1LC0xNzE3NjEyNzU2LC02Mzg3NjgxMTksLTM2MTY0
+OTU0NywtNjkzNDU2ODkyLDEyNzk4NDE3NzAsLTQ5NzUyNzI1My
+wtMTc5OTQ4MzAxOSwtMTkzOTcxMDE2MywtMTc1NjA1ODQ1Nywz
+OTUxODAyMTRdfQ==
 -->
