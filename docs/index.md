@@ -281,12 +281,15 @@ In this method we draw all the necessary textures in the final_texture using the
  - Draw all icons from  `icons_texture` or points instead.
  - Draw camera representation rect
  - Draw `alpha_mask_texture`
+ 
+![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/draw.gif)
 
 As you can see, we draw an alpha mask. This is possible thanks to the custom blend mode that has the texture. This blend mode is achieved using the [SDL_ComposeCustomBlendMode](https://wiki.libsdl.org/SDL_ComposeCustomBlendMode) function.  The blend mode that alpha masks need is only available with render that certain drivers like [OpenGLES 2.0](https://es.wikipedia.org/wiki/OpenGL_ES) or [DirectX11](https://es.wikipedia.org/wiki/DirectX) use. In our case, we will use OpenGL ES 2.0, which is already integrated with SDL 2.0. To be able to use it we must:
 
 - Attach `SDL_WINDOW_OPENGL` flag
 - Set all the necessary attributes to work in a OpenGL context.
-- Create the SDL_Window 
+- Create the SDL_Window
+
 ```cpp
 Uint32 flags = SDL_WINDOW_SHOWN;
 flags |= SDL_WINDOW_OPENGL;
@@ -314,9 +317,12 @@ for (int i = 0; i < SDL_GetNumRenderDrivers(); ++i)
 }
 renderer = SDL_CreateRenderer(app->win->window, index, flags);
 ```
-- Finally, we can create the `SDL_BelndMode` and set it in our `alpha_mask_texture`
-```cpp
 
+- Finally, we can create the `SDL_BelndMode` and set it in our `alpha_mask_texture`
+
+```cpp
+SDL_BlendMode blend_mode = SDL_ComposeCustomBlendMode(SDL_BLENDFACTOR_ZERO, SDL_BLENDFACTOR_ONE, SDL_BLENDOPERATION_ADD, SDL_BLENDFACTOR_ONE, SDL_BLENDFACTOR_ONE, SDL_BLENDOPERATION_REV_SUBTRACT);
+SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode become transaparent all pixels under the painted area of texture
 ```
 
 ## Links to more Documentation
@@ -329,11 +335,11 @@ renderer = SDL_CreateRenderer(app->win->window, index, flags);
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk0NzQ3NDUzNCw0NjcwODM0NTMsLTE5Mj
-Q3NTA0NTksLTU5ODUyNzY4OSwxMjYyODIxOTExLC0xOTMwMTgz
-OTY3LDkwODY2MDg1OSwtMTIxNjI2NzE2MSwxODY0ODkzOTcwLD
-E5ODk5MDA1OTYsLTIwMDY5ODMxMTMsLTE2NTA4MTk3MzAsOTI3
-MTc5NzQxLDE3MjgyMzUwMzMsLTEwMjUzNjk5OTQsLTE0MDk4ND
-IwNjYsLTE4MDUwMjkyMTksLTMyNjU5NzEzNiwtNTY4OTk5MDg5
-LC0yMDY5ODExNjMwXX0=
+eyJoaXN0b3J5IjpbMzk1Mzc0NTQyLC05NDc0NzQ1MzQsNDY3MD
+gzNDUzLC0xOTI0NzUwNDU5LC01OTg1Mjc2ODksMTI2MjgyMTkx
+MSwtMTkzMDE4Mzk2Nyw5MDg2NjA4NTksLTEyMTYyNjcxNjEsMT
+g2NDg5Mzk3MCwxOTg5OTAwNTk2LC0yMDA2OTgzMTEzLC0xNjUw
+ODE5NzMwLDkyNzE3OTc0MSwxNzI4MjM1MDMzLC0xMDI1MzY5OT
+k0LC0xNDA5ODQyMDY2LC0xODA1MDI5MjE5LC0zMjY1OTcxMzYs
+LTU2ODk5OTA4OV19
 -->
