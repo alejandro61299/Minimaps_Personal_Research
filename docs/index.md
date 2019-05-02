@@ -242,7 +242,7 @@ bool Minimap::GenerateMinimapTexture()
 	return true;
 }
 ```
-
+### Heading
 
 
 
@@ -264,11 +264,11 @@ bool Minimap::GenerateMinimapTexture()
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMDc4MDUwOTksLTEyMTYyNjcxNjEsMT
-g2NDg5Mzk3MCwxOTg5OTAwNTk2LC0yMDA2OTgzMTEzLC0xNjUw
-ODE5NzMwLDkyNzE3OTc0MSwxNzI4MjM1MDMzLC0xMDI1MzY5OT
-k0LC0xNDA5ODQyMDY2LC0xODA1MDI5MjE5LC0zMjY1OTcxMzYs
-LTU2ODk5OTA4OSwtMjA2OTgxMTYzMCwxNDI3NDI1MDk0LDEyNT
-AzMzA1NjcsLTEyNTc3NzI2MjksLTE3Mjc2MDY1NjUsLTEwOTc0
-NTY0OTgsMTI4NjM3MTU0XX0=
+eyJoaXN0b3J5IjpbLTYzMzI4NDE1NiwtMTIxNjI2NzE2MSwxOD
+Y0ODkzOTcwLDE5ODk5MDA1OTYsLTIwMDY5ODMxMTMsLTE2NTA4
+MTk3MzAsOTI3MTc5NzQxLDE3MjgyMzUwMzMsLTEwMjUzNjk5OT
+QsLTE0MDk4NDIwNjYsLTE4MDUwMjkyMTksLTMyNjU5NzEzNiwt
+NTY4OTk5MDg5LC0yMDY5ODExNjMwLDE0Mjc0MjUwOTQsMTI1MD
+MzMDU2NywtMTI1Nzc3MjYyOSwtMTcyNzYwNjU2NSwtMTA5NzQ1
+NjQ5OCwxMjg2MzcxNTRdfQ==
 -->
