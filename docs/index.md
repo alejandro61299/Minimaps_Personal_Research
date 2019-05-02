@@ -207,7 +207,27 @@ bool Minimap::GenerateMinimapTexture()
 
 	for (std::list<MapLayer*>::iterator iter = app->map->data.map_layers.begin(); iter != app->map->data.map_layers.end(); ++iter)
 	{
-		
+		for (int y = 0; y < (*iter)->rows; ++y)
+		{
+			for (int x = 0; x < (*iter)->columns; ++x)
+			{
+				Tileset* tileset = app->map->GetTilesetFromTileId((*iter)->Get(x, y));
+				sprite_rect = tileset->GetTileRect((*iter)->Get(x, y));
+
+				minimap_tile_pos = MapToMinimap(x, y);
+
+				if (minimap_tile_width > 1.f && minimap_tile_height > 1.f)
+				{
+					section_to_print = { (int)minimap_tile_pos.x, (int)minimap_tile_pos.y, (int)minimap_tile_width, (int)minimap_tile_height };
+				}
+				else
+				{
+					section_to_print = { (int)minimap_tile_pos.x, (int)minimap_tile_pos.y, 1, 1 };
+				}
+
+				SDL_RenderCopy(app->render->renderer, tileset->texture, &sprite_rect, &section_to_print);
+			}
+		}
 	}
 
 	// Reset target texture ==================================================
@@ -239,11 +259,11 @@ bool Minimap::GenerateMinimapTexture()
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3OTg1NjQxMTAsLTIwMDY5ODMxMTMsLT
-E2NTA4MTk3MzAsOTI3MTc5NzQxLDE3MjgyMzUwMzMsLTEwMjUz
-Njk5OTQsLTE0MDk4NDIwNjYsLTE4MDUwMjkyMTksLTMyNjU5Nz
-EzNiwtNTY4OTk5MDg5LC0yMDY5ODExNjMwLDE0Mjc0MjUwOTQs
-MTI1MDMzMDU2NywtMTI1Nzc3MjYyOSwtMTcyNzYwNjU2NSwtMT
-A5NzQ1NjQ5OCwxMjg2MzcxNTQsODUzOTYxODA4LC0yMDMxMjM0
-OTcyLDQwMTg4NTcwNF19
+eyJoaXN0b3J5IjpbMTk4OTkwMDU5NiwtMjAwNjk4MzExMywtMT
+Y1MDgxOTczMCw5MjcxNzk3NDEsMTcyODIzNTAzMywtMTAyNTM2
+OTk5NCwtMTQwOTg0MjA2NiwtMTgwNTAyOTIxOSwtMzI2NTk3MT
+M2LC01Njg5OTkwODksLTIwNjk4MTE2MzAsMTQyNzQyNTA5NCwx
+MjUwMzMwNTY3LC0xMjU3NzcyNjI5LC0xNzI3NjA2NTY1LC0xMD
+k3NDU2NDk4LDEyODYzNzE1NCw4NTM5NjE4MDgsLTIwMzEyMzQ5
+NzIsNDAxODg1NzA0XX0=
 -->
