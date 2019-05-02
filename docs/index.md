@@ -282,7 +282,7 @@ In this method we draw all the necessary textures in the final_texture using the
  - Draw camera representation rect
  - Draw `alpha_mask_texture`
 
-
+As you can see, we draw an alpha mask. This is possible thanks to the custom blend mode that has the texture. This blend mode is achieved using the [SDL_ComposeCustomBlendMode](https://wiki.libsdl.org/SDL_ComposeCustomBlendMode) function. El blend que necesitan las mas
 
 ## Links to more Documentation
 
@@ -294,11 +294,11 @@ In this method we draw all the necessary textures in the final_texture using the
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU0OTc4OTY4MSwxMjYyODIxOTExLC0xOT
-MwMTgzOTY3LDkwODY2MDg1OSwtMTIxNjI2NzE2MSwxODY0ODkz
-OTcwLDE5ODk5MDA1OTYsLTIwMDY5ODMxMTMsLTE2NTA4MTk3Mz
-AsOTI3MTc5NzQxLDE3MjgyMzUwMzMsLTEwMjUzNjk5OTQsLTE0
-MDk4NDIwNjYsLTE4MDUwMjkyMTksLTMyNjU5NzEzNiwtNTY4OT
-k5MDg5LC0yMDY5ODExNjMwLDE0Mjc0MjUwOTQsMTI1MDMzMDU2
-NywtMTI1Nzc3MjYyOV19
+eyJoaXN0b3J5IjpbNDM3NDM3OTEsMTI2MjgyMTkxMSwtMTkzMD
+E4Mzk2Nyw5MDg2NjA4NTksLTEyMTYyNjcxNjEsMTg2NDg5Mzk3
+MCwxOTg5OTAwNTk2LC0yMDA2OTgzMTEzLC0xNjUwODE5NzMwLD
+kyNzE3OTc0MSwxNzI4MjM1MDMzLC0xMDI1MzY5OTk0LC0xNDA5
+ODQyMDY2LC0xODA1MDI5MjE5LC0zMjY1OTcxMzYsLTU2ODk5OT
+A4OSwtMjA2OTgxMTYzMCwxNDI3NDI1MDk0LDEyNTAzMzA1Njcs
+LTEyNTc3NzI2MjldfQ==
 -->
