@@ -243,7 +243,7 @@ bool Minimap::GenerateMinimapTexture()
 }
 ```
 ### Minimap Indicators Lifecycle
-
+Leaving the textures aside, we first need to integrate the indicators. These have a life cycle that only consists of a Constructor, an Update and a Destroy. These can use either a target to update their position or stay at a fixed point. Your position is in map coordinates.
 
 
 
@@ -264,7 +264,7 @@ bool Minimap::GenerateMinimapTexture()
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMxMTE4MzI2OSw5MDg2NjA4NTksLTEyMT
+eyJoaXN0b3J5IjpbMTgzNjE1MDY3Niw5MDg2NjA4NTksLTEyMT
 YyNjcxNjEsMTg2NDg5Mzk3MCwxOTg5OTAwNTk2LC0yMDA2OTgz
 MTEzLC0xNjUwODE5NzMwLDkyNzE3OTc0MSwxNzI4MjM1MDMzLC
 0xMDI1MzY5OTk0LC0xNDA5ODQyMDY2LC0xODA1MDI5MjE5LC0z
