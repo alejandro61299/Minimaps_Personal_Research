@@ -175,6 +175,7 @@ private:
 
 	friend Minimap;
 };
+```
 ### Unit transformation methods
 
 These functions are the core of our class. They allow us to transform units and thus be able to interact between the map and the minimap with its respective offset  `x_offset`.  These formulas are related to the isometric world. You can get more information about isometric maps in this [link](https://gamedevelopment.tutsplus.com/tutorials/creating-isometric-worlds-a-primer-for-game-developers--gamedev-6511).
@@ -271,7 +272,8 @@ bool Minimap::GenerateMinimapTexture()
 	return true;
 }
 ```
-```
+
+
 ### Update Final Texture  
 
 In `UpdateFinalTexture()` method we draw all the necessary textures in the final_texture using the render target as we have done before. We will do the drawing in this order ( like photoshop layers ):
@@ -393,11 +395,11 @@ SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode beco
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDkxNDc3OTcsLTc2NDIzNjA3MiwtMTY4NT
-Y0Nzg3OCwzOTUzNzQ1NDIsLTk0NzQ3NDUzNCw0NjcwODM0NTMs
-LTE5MjQ3NTA0NTksLTU5ODUyNzY4OSwxMjYyODIxOTExLC0xOT
-MwMTgzOTY3LDkwODY2MDg1OSwtMTIxNjI2NzE2MSwxODY0ODkz
-OTcwLDE5ODk5MDA1OTYsLTIwMDY5ODMxMTMsLTE2NTA4MTk3Mz
-AsOTI3MTc5NzQxLDE3MjgyMzUwMzMsLTEwMjUzNjk5OTQsLTE0
-MDk4NDIwNjZdfQ==
+eyJoaXN0b3J5IjpbNzcyMDEwOTg5LC03NjQyMzYwNzIsLTE2OD
+U2NDc4NzgsMzk1Mzc0NTQyLC05NDc0NzQ1MzQsNDY3MDgzNDUz
+LC0xOTI0NzUwNDU5LC01OTg1Mjc2ODksMTI2MjgyMTkxMSwtMT
+kzMDE4Mzk2Nyw5MDg2NjA4NTksLTEyMTYyNjcxNjEsMTg2NDg5
+Mzk3MCwxOTg5OTAwNTk2LC0yMDA2OTgzMTEzLC0xNjUwODE5Nz
+MwLDkyNzE3OTc0MSwxNzI4MjM1MDMzLC0xMDI1MzY5OTk0LC0x
+NDA5ODQyMDY2XX0=
 -->
