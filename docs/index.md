@@ -101,10 +101,50 @@ The first step is to generate the necessary information for the subsequent gener
 ![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/info_1.png)
 
 ```cpp
-struct EntityInfo {
-	TileSetEntity tileset;
-	EntityAnim* animations = nullptr;
-	uint num_animations = 0;
+bool Minimap::LoadMinimapInfo()
+{
+	if (app->map->MapLoaded() == false) // If there isn't a map loaded break load
+	{
+		return false;
+	}
+	
+	float tile_width = app->map->data.tile_width;
+	float tile_height = app->map->data.tile_height;
+	float half_tile_width = (float)app->map->data.tile_width * 0.5f;
+	float half_tile_height = (float)app->map->data.tile_height * 0.5f;
+
+	// Number of tiles that fit on one side of the map =============================================
+
+	float tiles_amount = (float)(app->map->data.columns + app->map->data.rows)* 0.5f;
+
+	// We found texture height from the width with a rule of 3  ===================================
+
+	if (projection_type == PROJECTION_TYPE::ORTHOGONAL)
+	{
+		texture_height = texture_width;
+		tiles_amount *= 2;
+	}
+	else
+	{
+		texture_height = (texture_width * (tiles_amount * tile_height)) / (tiles_amount* tile_width);
+	}
+
+	// We also find a constant to transform from pixels in the world to pixels in the minimap  ====
+
+	aspect_ratio_x = texture_width / (tile_width * tiles_amount);
+	aspect_ratio_y = texture_height / (tile_height *tiles_amount);
+
+	// Now we have enough information to know the size of minimap tiles ===========================
+
+	minimap_tile_width = texture_width / tiles_amount;
+	minimap_tile_height = texture_height / tiles_amount;
+
+	// Finally, the blit x offset ===============================================================
+
+	x_offset = (float)app->map->data.rows *minimap_tile_width * 0.5f;
+
+	return true;
+}
 };
 ```
 
@@ -117,7 +157,7 @@ struct EntityInfo {
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE5Mzk5NjY3NywtNTY4OTk5MDg5LC0yMD
+eyJoaXN0b3J5IjpbLTMyNjU5NzEzNiwtNTY4OTk5MDg5LC0yMD
 Y5ODExNjMwLDE0Mjc0MjUwOTQsMTI1MDMzMDU2NywtMTI1Nzc3
 MjYyOSwtMTcyNzYwNjU2NSwtMTA5NzQ1NjQ5OCwxMjg2MzcxNT
 QsODUzOTYxODA4LC0yMDMxMjM0OTcyLDQwMTg4NTcwNCwxMTU5
