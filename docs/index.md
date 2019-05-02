@@ -286,6 +286,63 @@ In this method we draw all the necessary textures in the final_texture using the
  
 ![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/draw.gif)
 
+```cpp
+void Minimap::UpdateFinalTexture()
+{
+	// Set render target =========================================================
+
+	SDL_SetRenderTarget(app->render->renderer, final_texture);
+	SDL_SetTextureBlendMode(final_texture, SDL_BLENDMODE_BLEND);
+
+	// Clear texture =============================================================
+
+	SDL_SetRenderDrawColor(app->render->renderer, 0, 0, 0, 255);
+	SDL_RenderClear(app->render->renderer);
+
+	// Draw minimap texture  =====================================================
+
+	app->render->BlitUI(minimap_texture, texture_pos.x, texture_pos.y, NULL, camera);
+
+	// Draw minimap indicators ==================================================
+
+	SDL_Rect section_to_print = { 0,0,0,0 };
+	fPoint pos = { 0,0 };
+
+	for (std::list<Minimap_Indicator*>::iterator iter = indicators_list.begin(); iter != indicators_list.end(); ++iter)
+	{
+		pos = texture_pos +  MapToMinimap((*iter)->map_pos.x, (*iter)->map_pos.y);
+
+		if ((*iter)->icon_rect.w != 0 && (*iter)->icon_rect.h != 0)
+		{
+			section_to_print = { (int) (pos.x - (*iter)->icon_rect.w* 0.5f)  ,  (int)(pos.y - (*iter)->icon_rect.h* 0.5f), (*iter)->icon_rect.w, (*iter)->icon_rect.h };
+			SDL_RenderCopy(app->render->renderer, icons_texture, &(*iter)->icon_rect, &section_to_print);
+		}
+		else
+		{
+			section_to_print = { (int)(pos.x - 2), (int) (pos.y - 2), 4, 4 };
+			app->render->DrawQuad(section_to_print, 255, 0, 0, 255, true, false);
+		}
+	}
+
+	// Draw minimap camera rect =================================================
+
+	pos = texture_pos + WorldToMinimap(camera->camera_pos.x, camera->camera_pos.y) ;
+
+	SDL_Rect camera_rect = { pos.x , pos.y, camera->screen_section.w * aspect_ratio_x ,  camera->screen_section.h * aspect_ratio_y };
+	app->render->DrawQuad(camera_rect, 255, 255, 255, 255, false, false);
+
+	// Draw alpha mask texture  =================================================
+	if (shape_type == SHAPE_TYPE::CIRCLE)
+	{
+		SDL_RenderCopy(app->render->renderer, alpha_mask_texture, NULL, NULL);
+	}
+
+	// Reset render target ======================================================
+
+	SDL_SetRenderTarget(app->render->renderer, NULL);
+}
+```
+
 As you can see, we draw an alpha mask. This is possible thanks to the custom blend mode that has the texture. This blend mode is achieved using the [SDL_ComposeCustomBlendMode](https://wiki.libsdl.org/SDL_ComposeCustomBlendMode) function.  The blend mode that alpha masks need is only available with render that certain drivers like [OpenGLES 2.0](https://es.wikipedia.org/wiki/OpenGL_ES) or [DirectX11](https://es.wikipedia.org/wiki/DirectX) use. In our case, we will use OpenGL ES 2.0, which is already integrated with SDL 2.0. To be able to use it we must:
 
 - Attach `SDL_WINDOW_OPENGL` flag
@@ -337,11 +394,11 @@ SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode beco
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc2NDIzNjA3MiwtMTY4NTY0Nzg3OCwzOT
-UzNzQ1NDIsLTk0NzQ3NDUzNCw0NjcwODM0NTMsLTE5MjQ3NTA0
-NTksLTU5ODUyNzY4OSwxMjYyODIxOTExLC0xOTMwMTgzOTY3LD
-kwODY2MDg1OSwtMTIxNjI2NzE2MSwxODY0ODkzOTcwLDE5ODk5
-MDA1OTYsLTIwMDY5ODMxMTMsLTE2NTA4MTk3MzAsOTI3MTc5Nz
-QxLDE3MjgyMzUwMzMsLTEwMjUzNjk5OTQsLTE0MDk4NDIwNjYs
-LTE4MDUwMjkyMTldfQ==
+eyJoaXN0b3J5IjpbMTA0OTI2NDM3MiwtNzY0MjM2MDcyLC0xNj
+g1NjQ3ODc4LDM5NTM3NDU0MiwtOTQ3NDc0NTM0LDQ2NzA4MzQ1
+MywtMTkyNDc1MDQ1OSwtNTk4NTI3Njg5LDEyNjI4MjE5MTEsLT
+E5MzAxODM5NjcsOTA4NjYwODU5LC0xMjE2MjY3MTYxLDE4NjQ4
+OTM5NzAsMTk4OTkwMDU5NiwtMjAwNjk4MzExMywtMTY1MDgxOT
+czMCw5MjcxNzk3NDEsMTcyODIzNTAzMywtMTAyNTM2OTk5NCwt
+MTQwOTg0MjA2Nl19
 -->
