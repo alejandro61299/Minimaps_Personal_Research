@@ -287,7 +287,8 @@ As you can see, we draw an alpha mask. This is possible thanks to the custom ble
 
 - Attach `SDL_WINDOW_OPENGL` flag
 - Set all the necessary attributes to work in a OpenGL context.
-- Create the SDL_Window 
+- Create the SDL_Window
+
 ```cpp
 Uint32 flags = SDL_WINDOW_SHOWN;
 flags |= SDL_WINDOW_OPENGL;
@@ -315,7 +316,9 @@ for (int i = 0; i < SDL_GetNumRenderDrivers(); ++i)
 }
 renderer = SDL_CreateRenderer(app->win->window, index, flags);
 ```
+
 - Finally, we can create the `SDL_BelndMode` and set it in our `alpha_mask_texture`
+
 ```cpp
 SDL_BlendMode blend_mode = SDL_ComposeCustomBlendMode(SDL_BLENDFACTOR_ZERO, SDL_BLENDFACTOR_ONE, SDL_BLENDOPERATION_ADD, SDL_BLENDFACTOR_ONE, SDL_BLENDFACTOR_ONE, SDL_BLENDOPERATION_REV_SUBTRACT);
 SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode become transaparent all pixels under the painted area of texture
@@ -331,11 +334,11 @@ SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode beco
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQzNTU5MzA3MiwtOTQ3NDc0NTM0LDQ2Nz
-A4MzQ1MywtMTkyNDc1MDQ1OSwtNTk4NTI3Njg5LDEyNjI4MjE5
-MTEsLTE5MzAxODM5NjcsOTA4NjYwODU5LC0xMjE2MjY3MTYxLD
-E4NjQ4OTM5NzAsMTk4OTkwMDU5NiwtMjAwNjk4MzExMywtMTY1
-MDgxOTczMCw5MjcxNzk3NDEsMTcyODIzNTAzMywtMTAyNTM2OT
-k5NCwtMTQwOTg0MjA2NiwtMTgwNTAyOTIxOSwtMzI2NTk3MTM2
-LC01Njg5OTkwODldfQ==
+eyJoaXN0b3J5IjpbMTQ5OTA4MDQ2LC05NDc0NzQ1MzQsNDY3MD
+gzNDUzLC0xOTI0NzUwNDU5LC01OTg1Mjc2ODksMTI2MjgyMTkx
+MSwtMTkzMDE4Mzk2Nyw5MDg2NjA4NTksLTEyMTYyNjcxNjEsMT
+g2NDg5Mzk3MCwxOTg5OTAwNTk2LC0yMDA2OTgzMTEzLC0xNjUw
+ODE5NzMwLDkyNzE3OTc0MSwxNzI4MjM1MDMzLC0xMDI1MzY5OT
+k0LC0xNDA5ODQyMDY2LC0xODA1MDI5MjE5LC0zMjY1OTcxMzYs
+LTU2ODk5OTA4OV19
 -->
