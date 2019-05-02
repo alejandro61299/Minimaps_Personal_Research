@@ -273,13 +273,14 @@ private:
 ```
 ### Update Final Texture  
 
-In this method we draw all the necessary textures in the final_texture using the render target as we have done before.
-
+In this method we draw all the necessary textures in the final_texture using the render target as we have done before. We will do the drawing in this order:
 
  - Set `final_texture` as  render target
  - Clear texture (erase all and draw a black background)
  - Draw `minimap_texture`
- - Draw all icons or points of 
+ - Draw all icons or points of indicators
+ - Draw camera representation rect
+ - D
 
 ## Links to more Documentation
 
@@ -291,11 +292,11 @@ In this method we draw all the necessary textures in the final_texture using the
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MjUzMDAyMTAsMTI2MjgyMTkxMSwtMT
-kzMDE4Mzk2Nyw5MDg2NjA4NTksLTEyMTYyNjcxNjEsMTg2NDg5
-Mzk3MCwxOTg5OTAwNTk2LC0yMDA2OTgzMTEzLC0xNjUwODE5Nz
-MwLDkyNzE3OTc0MSwxNzI4MjM1MDMzLC0xMDI1MzY5OTk0LC0x
-NDA5ODQyMDY2LC0xODA1MDI5MjE5LC0zMjY1OTcxMzYsLTU2OD
-k5OTA4OSwtMjA2OTgxMTYzMCwxNDI3NDI1MDk0LDEyNTAzMzA1
-NjcsLTEyNTc3NzI2MjldfQ==
+eyJoaXN0b3J5IjpbMTYyMTc2NjUwMSwxMjYyODIxOTExLC0xOT
+MwMTgzOTY3LDkwODY2MDg1OSwtMTIxNjI2NzE2MSwxODY0ODkz
+OTcwLDE5ODk5MDA1OTYsLTIwMDY5ODMxMTMsLTE2NTA4MTk3Mz
+AsOTI3MTc5NzQxLDE3MjgyMzUwMzMsLTEwMjUzNjk5OTQsLTE0
+MDk4NDIwNjYsLTE4MDUwMjkyMTksLTMyNjU5NzEzNiwtNTY4OT
+k5MDg5LC0yMDY5ODExNjMwLDE0Mjc0MjUwOTQsMTI1MDMzMDU2
+NywtMTI1Nzc3MjYyOV19
 -->
