@@ -246,7 +246,32 @@ bool Minimap::GenerateMinimapTexture()
 
 Leaving the textures aside, we first need to integrate the indicators. These have a life cycle that only consists of a Constructor, an Update and a Destroy. These can use either a target to update their position or stay at a fixed point. Your position is in map coordinates.
 
+```cpp
+class Minimap_Indicator
+{
+public:
 
+	Minimap_Indicator(const fPoint map_pos, const SDL_Rect icon_rect = { 0,0,0,0 }, const SDL_Color color = { 0,0,0,0 }, Object*  target = nullptr);
+
+	void Destroy();
+
+private:
+
+	bool UpdateFromTargetPosition();
+
+private:
+
+	fPoint     map_pos = { 0, 0 };        // - Map position in map units 
+	SDL_Rect   icon_rect = { 0,0,0,0 };   // - Icon sprite rect , {0,0,0,0} = No icon
+	SDL_Color  color = { 0,0,0,0 };       // - Point color, {0,0,0,0} = No point 
+	Object*    target = nullptr;          // - Target used to update map_pos, nullptr = static map_pos
+	bool       to_destroy = false;        // - Indicator used to known when is ready to be destroied
+
+private:
+
+	friend Minimap;
+};
+```
 
 
 
@@ -267,11 +292,11 @@ Leaving the textures aside, we first need to integrate the indicators. These hav
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MzAxODM5NjcsOTA4NjYwODU5LC0xMj
-E2MjY3MTYxLDE4NjQ4OTM5NzAsMTk4OTkwMDU5NiwtMjAwNjk4
-MzExMywtMTY1MDgxOTczMCw5MjcxNzk3NDEsMTcyODIzNTAzMy
-wtMTAyNTM2OTk5NCwtMTQwOTg0MjA2NiwtMTgwNTAyOTIxOSwt
-MzI2NTk3MTM2LC01Njg5OTkwODksLTIwNjk4MTE2MzAsMTQyNz
-QyNTA5NCwxMjUwMzMwNTY3LC0xMjU3NzcyNjI5LC0xNzI3NjA2
-NTY1LC0xMDk3NDU2NDk4XX0=
+eyJoaXN0b3J5IjpbLTE5NTI5ODE4NzUsLTE5MzAxODM5NjcsOT
+A4NjYwODU5LC0xMjE2MjY3MTYxLDE4NjQ4OTM5NzAsMTk4OTkw
+MDU5NiwtMjAwNjk4MzExMywtMTY1MDgxOTczMCw5MjcxNzk3ND
+EsMTcyODIzNTAzMywtMTAyNTM2OTk5NCwtMTQwOTg0MjA2Niwt
+MTgwNTAyOTIxOSwtMzI2NTk3MTM2LC01Njg5OTkwODksLTIwNj
+k4MTE2MzAsMTQyNzQyNTA5NCwxMjUwMzMwNTY3LC0xMjU3Nzcy
+NjI5LC0xNzI3NjA2NTY1XX0=
 -->
