@@ -189,7 +189,7 @@ fPoint Minimap::MinimapToWorld(const float x, const float y)
 
 Once we have the transformation methods of units we can generate the texture of the minimap. To do this iterate throught all the layers tiles and draw a tileset tile sprite  in a scaled size corresponding to the width and height of minimap tiles. This is the responsibility of the  `GenerateMinimapTexture()` method. 
 
-This method creates the final texture and the minimap texture. These textures will be used later in the drawing of the minimap. What you have to keep in mind is that we change the SDL_Render render target in order to draw in a texture (in this case minimap_texture) instead of the default texture that is the texture that the SDL_Window has internally.  For more information on this topic I leave the [SDL_SetRenderTarget ()](https://wiki.libsdl.org/SDL_SetRenderTarget)  API.
+This method creates the final texture and the minimap texture. These textures will be used later in the drawing of the minimap. What you have to keep in mind is that we change the SDL_Render target in order to draw in a texture (in this case minimap_texture) instead of the default texture that is the texture that the SDL_Window has internally.  For more information on this topic I leave the [SDL_SetRenderTarget ()](https://wiki.libsdl.org/SDL_SetRenderTarget)  API.
 
 
 
@@ -244,7 +244,7 @@ bool Minimap::GenerateMinimapTexture()
 ```
 ### Minimap Indicators Lifecycle
 
-Leaving the textures aside, we first need to integrate the indicators. These have a life cycle that only consists of a Constructor, an Update and a Destroy. These can use either a target to update their position or stay at a fixed point. Your position is in map coordinates.  This class is a class Minimapa friend since only she will treat its private variables.
+Leaving the textures aside, we first need to integrate the indicators. These have a life cycle that only consists of a Constructor, an Update and a Destroy. These can use either a target to update their position or stay at a fixed point. Your position is in map coordinates.  This class is a class Minimap friend since only she will treat its private variables.
 ```cpp
 class Minimap_Indicator
 {
@@ -314,7 +314,7 @@ for (int i = 0; i < SDL_GetNumRenderDrivers(); ++i)
 }
 renderer = SDL_CreateRenderer(app->win->window, index, flags);
 ```
-- Finally we can create the `SDL_BelndMode` and set it in our `alpha_mask_texture`
+- Finally, we can create the `SDL_BelndMode` and set it in our `alpha_mask_texture`
 ```cpp
 
 ```
@@ -329,11 +329,11 @@ renderer = SDL_CreateRenderer(app->win->window, index, flags);
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzI3MjAxMzQyLDQ2NzA4MzQ1MywtMTkyND
-c1MDQ1OSwtNTk4NTI3Njg5LDEyNjI4MjE5MTEsLTE5MzAxODM5
-NjcsOTA4NjYwODU5LC0xMjE2MjY3MTYxLDE4NjQ4OTM5NzAsMT
-k4OTkwMDU5NiwtMjAwNjk4MzExMywtMTY1MDgxOTczMCw5Mjcx
-Nzk3NDEsMTcyODIzNTAzMywtMTAyNTM2OTk5NCwtMTQwOTg0Mj
-A2NiwtMTgwNTAyOTIxOSwtMzI2NTk3MTM2LC01Njg5OTkwODks
-LTIwNjk4MTE2MzBdfQ==
+eyJoaXN0b3J5IjpbLTE3NDE3MzMwMDUsNDY3MDgzNDUzLC0xOT
+I0NzUwNDU5LC01OTg1Mjc2ODksMTI2MjgyMTkxMSwtMTkzMDE4
+Mzk2Nyw5MDg2NjA4NTksLTEyMTYyNjcxNjEsMTg2NDg5Mzk3MC
+wxOTg5OTAwNTk2LC0yMDA2OTgzMTEzLC0xNjUwODE5NzMwLDky
+NzE3OTc0MSwxNzI4MjM1MDMzLC0xMDI1MzY5OTk0LC0xNDA5OD
+QyMDY2LC0xODA1MDI5MjE5LC0zMjY1OTcxMzYsLTU2ODk5OTA4
+OSwtMjA2OTgxMTYzMF19
 -->
