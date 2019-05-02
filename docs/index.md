@@ -403,30 +403,41 @@ SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode beco
 ### TODO 1: Complete MapToMinimap()
 #### **Explicaition** 
  Transfrom map coordinates to Minimap Pixel Cordinates. Very similar to the MapToWorldF function on M_Map.
+  #### **Test** 
+  
  #### **Solution** 
- ```cpp
-SDL_RendererInfo info;
-int index = -1;
-
-for (int i = 0; i < SDL_GetNumRenderDrivers(); ++i)
-{
-	SDL_GetRenderDriverInfo(i, &info);
-
-	if (info.name == std::string("opengles2"))
-	{
-		index = i;
-	}
-}
-renderer = SDL_CreateRenderer(app->win->window, index, flags);
+```cpp
 ```
-
 ### TODO 2: Complete MinimapToMap()
+#### **Explicaition** 
+ Transfrom map coordinates to Minimap Pixel Cordinates. Very similar to the MapToWorldF function on M_Map.
+ #### **Solution** 
+```cpp
+```
+### TODO 3: Complete MinimapToMap()
+#### **Explicaition** 
+ Transfrom map coordinates to Minimap Pixel Cordinates. Very similar to the MapToWorldF function on M_Map.
+ #### **Solution** 
+```cpp
+```
+### TODO 4: Complete MinimapToMap()
+#### **Explicaition** 
+ Transfrom map coordinates to Minimap Pixel Cordinates. Very similar to the MapToWorldF function on M_Map.
+ #### **Solution** 
+```cpp
+```
+### TODO 5: Complete MinimapToMap()
+#### **Explicaition** 
+ Transfrom map coordinates to Minimap Pixel Cordinates. Very similar to the MapToWorldF function on M_Map.
+ #### **Solution** 
+```cpp
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc4OTM1MjYxNiwxMzgwNjI1MjYwLDE3Nz
-Q5NzkyNzAsLTExMTQ0ODE3NSwxNTQ1ODgyODM5LC0xODg0ODM4
-Nzc5LDg1MzQxNTkxNSwtMjMxOTEwMzQwLC0xMTQzOTM1NzU5LC
-03NjQyMzYwNzIsLTE2ODU2NDc4NzgsMzk1Mzc0NTQyLC05NDc0
-NzQ1MzQsNDY3MDgzNDUzLC0xOTI0NzUwNDU5LC01OTg1Mjc2OD
-ksMTI2MjgyMTkxMSwtMTkzMDE4Mzk2Nyw5MDg2NjA4NTksLTEy
-MTYyNjcxNjFdfQ==
+eyJoaXN0b3J5IjpbLTE2ODcyNjc5ODMsMTM4MDYyNTI2MCwxNz
+c0OTc5MjcwLC0xMTE0NDgxNzUsMTU0NTg4MjgzOSwtMTg4NDgz
+ODc3OSw4NTM0MTU5MTUsLTIzMTkxMDM0MCwtMTE0MzkzNTc1OS
+wtNzY0MjM2MDcyLC0xNjg1NjQ3ODc4LDM5NTM3NDU0MiwtOTQ3
+NDc0NTM0LDQ2NzA4MzQ1MywtMTkyNDc1MDQ1OSwtNTk4NTI3Nj
+g5LDEyNjI4MjE5MTEsLTE5MzAxODM5NjcsOTA4NjYwODU5LC0x
+MjE2MjY3MTYxXX0=
 -->
