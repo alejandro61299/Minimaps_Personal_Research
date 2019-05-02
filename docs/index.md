@@ -87,7 +87,7 @@ After seeing the theory, let's start with the practical part. I'm going to teach
 - Move the camera using the **mouse drag**.
 
 
-![enter image description here](https://github.com/alejandro61299/Minimaps_Personal_Research/blob/master/docs/web_images/final%20result.gif?raw=true)
+
 
 So, we have two classes that will contain everything we need:
 
@@ -335,11 +335,11 @@ SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode beco
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzk1Mzc0NTQyLC05NDc0NzQ1MzQsNDY3MD
-gzNDUzLC0xOTI0NzUwNDU5LC01OTg1Mjc2ODksMTI2MjgyMTkx
-MSwtMTkzMDE4Mzk2Nyw5MDg2NjA4NTksLTEyMTYyNjcxNjEsMT
-g2NDg5Mzk3MCwxOTg5OTAwNTk2LC0yMDA2OTgzMTEzLC0xNjUw
-ODE5NzMwLDkyNzE3OTc0MSwxNzI4MjM1MDMzLC0xMDI1MzY5OT
-k0LC0xNDA5ODQyMDY2LC0xODA1MDI5MjE5LC0zMjY1OTcxMzYs
-LTU2ODk5OTA4OV19
+eyJoaXN0b3J5IjpbLTE2ODU2NDc4NzgsMzk1Mzc0NTQyLC05ND
+c0NzQ1MzQsNDY3MDgzNDUzLC0xOTI0NzUwNDU5LC01OTg1Mjc2
+ODksMTI2MjgyMTkxMSwtMTkzMDE4Mzk2Nyw5MDg2NjA4NTksLT
+EyMTYyNjcxNjEsMTg2NDg5Mzk3MCwxOTg5OTAwNTk2LC0yMDA2
+OTgzMTEzLC0xNjUwODE5NzMwLDkyNzE3OTc0MSwxNzI4MjM1MD
+MzLC0xMDI1MzY5OTk0LC0xNDA5ODQyMDY2LC0xODA1MDI5MjE5
+LC0zMjY1OTcxMzZdfQ==
 -->
