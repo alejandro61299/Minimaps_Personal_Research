@@ -288,6 +288,7 @@ As you can see, we draw an alpha mask. This is possible thanks to the custom ble
 - Set all the necessary attributes to work in a OpenGL context.
 - Create the SDL_Window 
 ```cpp
+Uint32 flags = SDL_WINDOW_SHOWN;
 flags |= SDL_WINDOW_OPENGL;
 SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_ES);
 SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 2);
@@ -296,6 +297,7 @@ SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
 window = SDL_CreateWindow(app->GetTitle(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, flags);
 ```
+
 
 ## Links to more Documentation
 
@@ -307,11 +309,11 @@ window = SDL_CreateWindow(app->GetTitle(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPO
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQyNDMzMzA3NiwtNTk4NTI3Njg5LDEyNj
-I4MjE5MTEsLTE5MzAxODM5NjcsOTA4NjYwODU5LC0xMjE2MjY3
-MTYxLDE4NjQ4OTM5NzAsMTk4OTkwMDU5NiwtMjAwNjk4MzExMy
-wtMTY1MDgxOTczMCw5MjcxNzk3NDEsMTcyODIzNTAzMywtMTAy
-NTM2OTk5NCwtMTQwOTg0MjA2NiwtMTgwNTAyOTIxOSwtMzI2NT
-k3MTM2LC01Njg5OTkwODksLTIwNjk4MTE2MzAsMTQyNzQyNTA5
-NCwxMjUwMzMwNTY3XX0=
+eyJoaXN0b3J5IjpbLTc2MjUxMzA2LC01OTg1Mjc2ODksMTI2Mj
+gyMTkxMSwtMTkzMDE4Mzk2Nyw5MDg2NjA4NTksLTEyMTYyNjcx
+NjEsMTg2NDg5Mzk3MCwxOTg5OTAwNTk2LC0yMDA2OTgzMTEzLC
+0xNjUwODE5NzMwLDkyNzE3OTc0MSwxNzI4MjM1MDMzLC0xMDI1
+MzY5OTk0LC0xNDA5ODQyMDY2LC0xODA1MDI5MjE5LC0zMjY1OT
+cxMzYsLTU2ODk5OTA4OSwtMjA2OTgxMTYzMCwxNDI3NDI1MDk0
+LDEyNTAzMzA1NjddfQ==
 -->
