@@ -79,7 +79,7 @@ As we can verify each video game  genre has a distinctive position on the screen
 
 ## Selected approach
 Después de ver la teoría vamos a comenzar con la parte práctica. Os voy a enseñar a como programar un minimapa desde 0 usando únicamente SDL con un renderer inicializado con Opengles2.
-El resultado final será un minimapa con forma circular o rectangular , 
+El resultado final será un minimapa con forma circular o rectangular , que pueda ser Focused on Player, se podrá 
 
 
 ## Webgraphy
@@ -91,11 +91,11 @@ El resultado final será un minimapa con forma circular o rectangular ,
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk1NDAwMzc5MSwtMjAzMTIzNDk3Miw0MD
-E4ODU3MDQsMTE1OTQxMDIwMCwxNDUzMDY2NDYyLDEyNzMxMTE3
-NTgsMTI4MjI2MTU4MiwtNzU0NzY3MDAxLDExNDkwMDI3MTUsLT
-E3MjkxMjEyNDMsMTEyMTQ5NzE4LC05NDI2MDQ3NTUsLTE3MTc2
-MTI3NTYsLTYzODc2ODExOSwtMzYxNjQ5NTQ3LC02OTM0NTY4OT
-IsMTI3OTg0MTc3MCwtNDk3NTI3MjUzLC0xNzk5NDgzMDE5LC0x
-OTM5NzEwMTYzXX0=
+eyJoaXN0b3J5IjpbLTIxNDA1MzYyODgsLTIwMzEyMzQ5NzIsND
+AxODg1NzA0LDExNTk0MTAyMDAsMTQ1MzA2NjQ2MiwxMjczMTEx
+NzU4LDEyODIyNjE1ODIsLTc1NDc2NzAwMSwxMTQ5MDAyNzE1LC
+0xNzI5MTIxMjQzLDExMjE0OTcxOCwtOTQyNjA0NzU1LC0xNzE3
+NjEyNzU2LC02Mzg3NjgxMTksLTM2MTY0OTU0NywtNjkzNDU2OD
+kyLDEyNzk4NDE3NzAsLTQ5NzUyNzI1MywtMTc5OTQ4MzAxOSwt
+MTkzOTcxMDE2M119
 -->
