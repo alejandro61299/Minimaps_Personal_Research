@@ -53,12 +53,12 @@ bool M_Scene::Start()
 	// Create Minimap =========================================================
 
 	int screen_margin = 20;
-	int minimap_width = 200;
-	int minimap_height = 200;
+	int minimap_width = 300;
+	int minimap_height = 300;
 
 	fRect rect = app->win->GetWindowRect();
 	SDL_Rect  minimap_rect = {  (int)(rect.GetRight() - minimap_width - screen_margin) , (int)(rect.GetBottom() - minimap_height - screen_margin),  minimap_width , minimap_height };
-	minimap = new Minimap(minimap_rect, 800, PROJECTION_TYPE::ISOMETRIC, SHAPE_TYPE::CIRCLE, INTERACTION_TYPE::MOUSE_DRAG, player);
+	minimap = new Minimap(minimap_rect, 1600, PROJECTION_TYPE::ORTHOGONAL, SHAPE_TYPE::CIRCLE, INTERACTION_TYPE::MOUSE_DRAG, player);
 
 	// Add indicators ========================================================
 
