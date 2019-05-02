@@ -400,14 +400,15 @@ SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode beco
 
 ## TODO'S & Solutions
 
-### TODO 1: Transfrom map coordinates to Minimap Pixel Cordinates
+### TODO 1: Co
 Very similar to the MapToWorldF function on M_Map
+### TODO 2: Transfrom Minimap Pixel Cordinates map coordinates to 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM4MDYyNTI2MCwxNzc0OTc5MjcwLC0xMT
-E0NDgxNzUsMTU0NTg4MjgzOSwtMTg4NDgzODc3OSw4NTM0MTU5
-MTUsLTIzMTkxMDM0MCwtMTE0MzkzNTc1OSwtNzY0MjM2MDcyLC
-0xNjg1NjQ3ODc4LDM5NTM3NDU0MiwtOTQ3NDc0NTM0LDQ2NzA4
-MzQ1MywtMTkyNDc1MDQ1OSwtNTk4NTI3Njg5LDEyNjI4MjE5MT
-EsLTE5MzAxODM5NjcsOTA4NjYwODU5LC0xMjE2MjY3MTYxLDE4
-NjQ4OTM5NzBdfQ==
+eyJoaXN0b3J5IjpbLTk1MDM5NTQ1NSwxMzgwNjI1MjYwLDE3Nz
+Q5NzkyNzAsLTExMTQ0ODE3NSwxNTQ1ODgyODM5LC0xODg0ODM4
+Nzc5LDg1MzQxNTkxNSwtMjMxOTEwMzQwLC0xMTQzOTM1NzU5LC
+03NjQyMzYwNzIsLTE2ODU2NDc4NzgsMzk1Mzc0NTQyLC05NDc0
+NzQ1MzQsNDY3MDgzNDUzLC0xOTI0NzUwNDU5LC01OTg1Mjc2OD
+ksMTI2MjgyMTkxMSwtMTkzMDE4Mzk2Nyw5MDg2NjA4NTksLTEy
+MTYyNjcxNjFdfQ==
 -->
