@@ -95,7 +95,7 @@ We have two classes that will contain everything we need:
 
 ### Introduction
 
-The first step is to generate the necessary information for the subsequent generation of the texture. In order not to distort the image, we will generate the texture from the width value. The information we have from the map will be obtained from a map daata already loaded in the Map module  (`class M_Map`  m_map on app). Todo esto se encargara l
+The first step is to generate the necessary information for the subsequent generation of the texture. In order not to distort the image, we will generate the texture from the width value. The information we have from the map will be obtained from a map daata already loaded in the Map module  (`class M_Map`  m_map on app).   The Load method is responsible for this
 
 ![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/info_1.png)
 
@@ -109,11 +109,11 @@ The first step is to generate the necessary information for the subsequent gener
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU4MDE2MTkwOSwxNDI3NDI1MDk0LDEyNT
-AzMzA1NjcsLTEyNTc3NzI2MjksLTE3Mjc2MDY1NjUsLTEwOTc0
-NTY0OTgsMTI4NjM3MTU0LDg1Mzk2MTgwOCwtMjAzMTIzNDk3Mi
-w0MDE4ODU3MDQsMTE1OTQxMDIwMCwxNDUzMDY2NDYyLDEyNzMx
-MTE3NTgsMTI4MjI2MTU4MiwtNzU0NzY3MDAxLDExNDkwMDI3MT
-UsLTE3MjkxMjEyNDMsMTEyMTQ5NzE4LC05NDI2MDQ3NTUsLTE3
-MTc2MTI3NTZdfQ==
+eyJoaXN0b3J5IjpbNDI2NDA3NjEsMTQyNzQyNTA5NCwxMjUwMz
+MwNTY3LC0xMjU3NzcyNjI5LC0xNzI3NjA2NTY1LC0xMDk3NDU2
+NDk4LDEyODYzNzE1NCw4NTM5NjE4MDgsLTIwMzEyMzQ5NzIsND
+AxODg1NzA0LDExNTk0MTAyMDAsMTQ1MzA2NjQ2MiwxMjczMTEx
+NzU4LDEyODIyNjE1ODIsLTc1NDc2NzAwMSwxMTQ5MDAyNzE1LC
+0xNzI5MTIxMjQzLDExMjE0OTcxOCwtOTQyNjA0NzU1LC0xNzE3
+NjEyNzU2XX0=
 -->
