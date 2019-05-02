@@ -169,6 +169,14 @@ fPoint Minimap::MinimapToMap(const float x, const float y)
 ```
 
 
+- **Pixels Minimap Coordinate to World Pixel Coordinates**
+```cpp
+fPoint Minimap::MinimapToWorld(const float x, const float y)
+{
+	return fPoint((x - x_offset) / aspect_ratio_x,  y/ aspect_ratio_y);
+}
+```
+
 
 
 
@@ -188,11 +196,11 @@ fPoint Minimap::MinimapToMap(const float x, const float y)
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzg1Mzc0NTgxLC0xMDI1MzY5OTk0LC0xND
-A5ODQyMDY2LC0xODA1MDI5MjE5LC0zMjY1OTcxMzYsLTU2ODk5
-OTA4OSwtMjA2OTgxMTYzMCwxNDI3NDI1MDk0LDEyNTAzMzA1Nj
-csLTEyNTc3NzI2MjksLTE3Mjc2MDY1NjUsLTEwOTc0NTY0OTgs
-MTI4NjM3MTU0LDg1Mzk2MTgwOCwtMjAzMTIzNDk3Miw0MDE4OD
-U3MDQsMTE1OTQxMDIwMCwxNDUzMDY2NDYyLDEyNzMxMTE3NTgs
-MTI4MjI2MTU4Ml19
+eyJoaXN0b3J5IjpbMTcxOTY1ODk4NCwtMTAyNTM2OTk5NCwtMT
+QwOTg0MjA2NiwtMTgwNTAyOTIxOSwtMzI2NTk3MTM2LC01Njg5
+OTkwODksLTIwNjk4MTE2MzAsMTQyNzQyNTA5NCwxMjUwMzMwNT
+Y3LC0xMjU3NzcyNjI5LC0xNzI3NjA2NTY1LC0xMDk3NDU2NDk4
+LDEyODYzNzE1NCw4NTM5NjE4MDgsLTIwMzEyMzQ5NzIsNDAxOD
+g1NzA0LDExNTk0MTAyMDAsMTQ1MzA2NjQ2MiwxMjczMTExNzU4
+LDEyODIyNjE1ODJdfQ==
 -->
