@@ -100,6 +100,13 @@ The first step is to generate the necessary information for the subsequent gener
 
 ![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/info_1.png)
 
+```cpp
+struct EntityInfo {
+	TileSetEntity tileset;
+	EntityAnim* animations = nullptr;
+	uint num_animations = 0;
+};
+```
 
 ## Links to more Documentation
 
@@ -110,11 +117,11 @@ The first step is to generate the necessary information for the subsequent gener
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU2ODk5OTA4OSwtMjA2OTgxMTYzMCwxND
-I3NDI1MDk0LDEyNTAzMzA1NjcsLTEyNTc3NzI2MjksLTE3Mjc2
-MDY1NjUsLTEwOTc0NTY0OTgsMTI4NjM3MTU0LDg1Mzk2MTgwOC
-wtMjAzMTIzNDk3Miw0MDE4ODU3MDQsMTE1OTQxMDIwMCwxNDUz
-MDY2NDYyLDEyNzMxMTE3NTgsMTI4MjI2MTU4MiwtNzU0NzY3MD
-AxLDExNDkwMDI3MTUsLTE3MjkxMjEyNDMsMTEyMTQ5NzE4LC05
-NDI2MDQ3NTVdfQ==
+eyJoaXN0b3J5IjpbMTE5Mzk5NjY3NywtNTY4OTk5MDg5LC0yMD
+Y5ODExNjMwLDE0Mjc0MjUwOTQsMTI1MDMzMDU2NywtMTI1Nzc3
+MjYyOSwtMTcyNzYwNjU2NSwtMTA5NzQ1NjQ5OCwxMjg2MzcxNT
+QsODUzOTYxODA4LC0yMDMxMjM0OTcyLDQwMTg4NTcwNCwxMTU5
+NDEwMjAwLDE0NTMwNjY0NjIsMTI3MzExMTc1OCwxMjgyMjYxNT
+gyLC03NTQ3NjcwMDEsMTE0OTAwMjcxNSwtMTcyOTEyMTI0Mywx
+MTIxNDk3MThdfQ==
 -->
