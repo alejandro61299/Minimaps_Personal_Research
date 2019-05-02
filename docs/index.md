@@ -100,7 +100,7 @@ The first step is to generate the necessary information for the subsequent gener
 
 ![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/info_1.png)
 
-- E
+- Necesitamos saber `x_offset` 
 
 ```cpp
 bool Minimap::LoadMinimapInfo()
@@ -154,11 +154,11 @@ bool Minimap::LoadMinimapInfo()
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYwMjgyNDE0NSwtMTgwNTAyOTIxOSwtMz
-I2NTk3MTM2LC01Njg5OTkwODksLTIwNjk4MTE2MzAsMTQyNzQy
-NTA5NCwxMjUwMzMwNTY3LC0xMjU3NzcyNjI5LC0xNzI3NjA2NT
-Y1LC0xMDk3NDU2NDk4LDEyODYzNzE1NCw4NTM5NjE4MDgsLTIw
-MzEyMzQ5NzIsNDAxODg1NzA0LDExNTk0MTAyMDAsMTQ1MzA2Nj
-Q2MiwxMjczMTExNzU4LDEyODIyNjE1ODIsLTc1NDc2NzAwMSwx
-MTQ5MDAyNzE1XX0=
+eyJoaXN0b3J5IjpbNDE1NzM1NDYwLC0xODA1MDI5MjE5LC0zMj
+Y1OTcxMzYsLTU2ODk5OTA4OSwtMjA2OTgxMTYzMCwxNDI3NDI1
+MDk0LDEyNTAzMzA1NjcsLTEyNTc3NzI2MjksLTE3Mjc2MDY1Nj
+UsLTEwOTc0NTY0OTgsMTI4NjM3MTU0LDg1Mzk2MTgwOCwtMjAz
+MTIzNDk3Miw0MDE4ODU3MDQsMTE1OTQxMDIwMCwxNDUzMDY2ND
+YyLDEyNzMxMTE3NTgsMTI4MjI2MTU4MiwtNzU0NzY3MDAxLDEx
+NDkwMDI3MTVdfQ==
 -->
