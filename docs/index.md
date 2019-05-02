@@ -79,13 +79,12 @@ As we can verify each video game  genre has a distinctive position on the screen
 
 ## Selected approach
 
-Después de ver la teoría vamos a comenzar con la parte práctica. Os voy a enseñar a como programar un minimapa **isométrico** desde 0 usando únicamente SDL con un renderer inicializado con [Opengles2](https://es.wikipedia.org/wiki/OpenGL_ES). El resultado final será un minimapa que podrá:
+After seeing the theory, let's start with the practical part. I'm going to teach you how to program an ** isometric ** mini-map from 0 using only SDL with a renderer initialized with [Opengles2] (https://es.wikipedia.org/wiki/OpenGL_ES). The final result will be a mini-map that can:
 
-- Cambair entre **Focused on Player** o **Whole world**
-- Cambiar su shape entre rectangular o circular
-- Crear indicadores con iconos como **points of interest**, **positons**, **alerts** clickando en el minimapa o en el mismo mapa. 
-- Mover la cámara usando el **mouse drag**
-
+- Switch between ** Focused on Player ** or ** Whole world **
+- Change its shape between rectangular or circular
+- Create indicators with icons such as ** points of interest **, ** positons **, ** alerts ** by clicking on the minimap or on the same map.
+- Move the camera using the ** mouse drag **
 ![enter image description here](https://github.com/alejandro61299/Minimaps_Personal_Research/blob/master/docs/web_images/final%20result.gif?raw=true)
 
 Tendemos dos clases que contendrán todo lo que necesitamos:
@@ -94,7 +93,7 @@ Tendemos dos clases que contendrán todo lo que necesitamos:
 - La segunda es  ``` class Minimap_Indicator``` que servirá como contenedor de infromación para los avisos y posiciones.
 
 ### Introduction
-El primer paso es generar la información necesario para la posterior generación de la textura- Para no distorcionar la imagen generaremos la textura a partir del valor del ancho. La información que tenemos l
+El primer paso es generar la información necesario para la posterior generación de la textura- Para no distorcionar la imagen generaremos la textura a partir del valor del ancho. La información que tenemos del mapa.
 
 ![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/info_1.png)
 
@@ -107,11 +106,11 @@ El primer paso es generar la información necesario para la posterior generació
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3OTg2NzYzMSwxMjUwMzMwNTY3LC0xMj
-U3NzcyNjI5LC0xNzI3NjA2NTY1LC0xMDk3NDU2NDk4LDEyODYz
-NzE1NCw4NTM5NjE4MDgsLTIwMzEyMzQ5NzIsNDAxODg1NzA0LD
-ExNTk0MTAyMDAsMTQ1MzA2NjQ2MiwxMjczMTExNzU4LDEyODIy
-NjE1ODIsLTc1NDc2NzAwMSwxMTQ5MDAyNzE1LC0xNzI5MTIxMj
-QzLDExMjE0OTcxOCwtOTQyNjA0NzU1LC0xNzE3NjEyNzU2LC02
-Mzg3NjgxMTldfQ==
+eyJoaXN0b3J5IjpbNzU3MDQ1MzcxLDEyNTAzMzA1NjcsLTEyNT
+c3NzI2MjksLTE3Mjc2MDY1NjUsLTEwOTc0NTY0OTgsMTI4NjM3
+MTU0LDg1Mzk2MTgwOCwtMjAzMTIzNDk3Miw0MDE4ODU3MDQsMT
+E1OTQxMDIwMCwxNDUzMDY2NDYyLDEyNzMxMTE3NTgsMTI4MjI2
+MTU4MiwtNzU0NzY3MDAxLDExNDkwMDI3MTUsLTE3MjkxMjEyND
+MsMTEyMTQ5NzE4LC05NDI2MDQ3NTUsLTE3MTc2MTI3NTYsLTYz
+ODc2ODExOV19
 -->
