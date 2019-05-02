@@ -91,14 +91,12 @@ Aquí podéis ver como quedará el resultado final:
 
 ![enter image description here](https://github.com/alejandro61299/Minimaps_Personal_Research/blob/master/docs/web_images/final%20result.gif?raw=true)
 
-### Introduction
-
 Tendemos dos clases que contendrán todo lo que necesitamos:
 
  - La primera es  ``` class Minimap```  que servirá como factory para  las instancias de  ``` class Minimap_Indicator```
 - La segunda es  ``` class Minimap_Indicator``` que servirá como contenedor de infromación
 
-
+### Introduction
 
 ## Links to more Documentation
 
@@ -109,7 +107,7 @@ Tendemos dos clases que contendrán todo lo que necesitamos:
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc1MDA3MzQ2NSwtMTI1Nzc3MjYyOSwtMT
+eyJoaXN0b3J5IjpbMTI1MDMzMDU2NywtMTI1Nzc3MjYyOSwtMT
 cyNzYwNjU2NSwtMTA5NzQ1NjQ5OCwxMjg2MzcxNTQsODUzOTYx
 ODA4LC0yMDMxMjM0OTcyLDQwMTg4NTcwNCwxMTU5NDEwMjAwLD
 E0NTMwNjY0NjIsMTI3MzExMTc1OCwxMjgyMjYxNTgyLC03NTQ3
