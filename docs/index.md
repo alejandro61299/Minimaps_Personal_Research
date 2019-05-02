@@ -285,9 +285,15 @@ In this method we draw all the necessary textures in the final_texture using the
 As you can see, we draw an alpha mask. This is possible thanks to the custom blend mode that has the texture. This blend mode is achieved using the [SDL_ComposeCustomBlendMode](https://wiki.libsdl.org/SDL_ComposeCustomBlendMode) function.  The blend mode that alpha masks need is only available with render that certain drivers like OpenGLES 2.0 or DirectX11 use. In our case, we will use OpenGLES 2.0, which is already integrated with SDL 2.0. To be able to use it we must:
 
 - Create an SDL_Window with `SDL_WINDOW_OPENGL` flag
-- Set all
+- Set all the necessary attributes to work in a OpenGL context.
 ```cpp
 flags |= SDL_WINDOW_OPENGL;
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_ES);
+		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 2);
+		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 0);
+		SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+		SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
+		
 window = SDL_CreateWindow(app->GetTitle(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, flags);
 ```
 
@@ -301,11 +307,11 @@ window = SDL_CreateWindow(app->GetTitle(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPO
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA3OTA4ODU3NCwtNTk4NTI3Njg5LDEyNj
-I4MjE5MTEsLTE5MzAxODM5NjcsOTA4NjYwODU5LC0xMjE2MjY3
-MTYxLDE4NjQ4OTM5NzAsMTk4OTkwMDU5NiwtMjAwNjk4MzExMy
-wtMTY1MDgxOTczMCw5MjcxNzk3NDEsMTcyODIzNTAzMywtMTAy
-NTM2OTk5NCwtMTQwOTg0MjA2NiwtMTgwNTAyOTIxOSwtMzI2NT
-k3MTM2LC01Njg5OTkwODksLTIwNjk4MTE2MzAsMTQyNzQyNTA5
-NCwxMjUwMzMwNTY3XX0=
+eyJoaXN0b3J5IjpbLTEzMzY1OTE0OTgsLTU5ODUyNzY4OSwxMj
+YyODIxOTExLC0xOTMwMTgzOTY3LDkwODY2MDg1OSwtMTIxNjI2
+NzE2MSwxODY0ODkzOTcwLDE5ODk5MDA1OTYsLTIwMDY5ODMxMT
+MsLTE2NTA4MTk3MzAsOTI3MTc5NzQxLDE3MjgyMzUwMzMsLTEw
+MjUzNjk5OTQsLTE0MDk4NDIwNjYsLTE4MDUwMjkyMTksLTMyNj
+U5NzEzNiwtNTY4OTk5MDg5LC0yMDY5ODExNjMwLDE0Mjc0MjUw
+OTQsMTI1MDMzMDU2N119
 -->
