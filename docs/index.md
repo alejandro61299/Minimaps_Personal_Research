@@ -89,8 +89,10 @@ El resultado final será un minimapa que podrá:
 
 Aquí podéis ver como quedaría el resultado final: 
 
-![enter image description here](https://github.com/alejandro61299/Minimaps_Personal_Research/blob/master/docs/web_images/final%20result.gif?raw=true =600x)
+![enter image description here](https://github.com/alejandro61299/Minimaps_Personal_Research/blob/master/docs/web_images/final%20result.gif?raw=true =600x) 
+```
 
+```
 ## Webgraphy
 
 - [Where Should We Place the Mini-Map? ( Gamasutra Blog )](https://www.gamasutra.com/blogs/JacekSliwinski/20130121/185119/Where_should_we_place_the_mini_map.php)
@@ -100,7 +102,7 @@ Aquí podéis ver como quedaría el resultado final:
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEwNTQzNzM5MiwxMjg2MzcxNTQsODUzOT
+eyJoaXN0b3J5IjpbMTgzOTk2NTAwNiwxMjg2MzcxNTQsODUzOT
 YxODA4LC0yMDMxMjM0OTcyLDQwMTg4NTcwNCwxMTU5NDEwMjAw
 LDE0NTMwNjY0NjIsMTI3MzExMTc1OCwxMjgyMjYxNTgyLC03NT
 Q3NjcwMDEsMTE0OTAwMjcxNSwtMTcyOTEyMTI0MywxMTIxNDk3
