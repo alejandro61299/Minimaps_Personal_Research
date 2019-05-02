@@ -407,18 +407,17 @@ void Minimap::MouseDragInput(float dt)
 // - Map Coordinates to Minimap Pixels Coordinate   
 fPoint Minimap::MapToMinimap(const float x, const float y)
 {
-	return fPoint((x - y) * minimap_tile_width * 0.5f + x_offset, (x + y) * minimap_tile_height * 0.5f);
+	/*return fPoint((x - y) * minimap_tile_width * 0.5f + x_offset, (x + y) * minimap_tile_height * 0.5f);*/
+	return fPoint();
 }
 
 // - Minimap Pixel Coordinate to Map Coordinates
 fPoint Minimap::MinimapToMap(const float x, const float y) 
 {
-	float half_width = minimap_tile_width * .5f;
-	float half_height = minimap_tile_height * .5f;
+	// TODO 1: Knowing how to transform coordinates of the map to coordinates of the mini map,
+	// complete the function to go from coordinates of the minimap to coordinates of the map
 
-	float x_mod = x - x_offset;
-
-	return fPoint( (x_mod / half_width + y / half_height) * .5f, (y / half_height - x_mod / half_width) * .5f);
+	return fPoint();
 }
 
 // - World Pixels Coordinates to Minimap Pixels Coordinate 
