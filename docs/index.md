@@ -298,7 +298,7 @@ SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
 window = SDL_CreateWindow(app->GetTitle(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, flags);
 ```
 - Identify the "opengles2" driver
-- And finally create the SDL_Render
+- Create the SDL_Render
 ```cpp
 SDL_RendererInfo info;
 int index = -1;
@@ -314,7 +314,7 @@ for (int i = 0; i < SDL_GetNumRenderDrivers(); ++i)
 }
 renderer = SDL_CreateRenderer(app->win->window, index, flags);
 ```
-
+- Por 
 ## Links to more Documentation
 
 - [Where Should We Place the Mini-Map? ( Gamasutra Blog )](https://www.gamasutra.com/blogs/JacekSliwinski/20130121/185119/Where_should_we_place_the_mini_map.php)
@@ -325,7 +325,7 @@ renderer = SDL_CreateRenderer(app->win->window, index, flags);
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgyMTA3MzA0NywtMTkyNDc1MDQ1OSwtNT
+eyJoaXN0b3J5IjpbLTQzMTgxMzM5MywtMTkyNDc1MDQ1OSwtNT
 k4NTI3Njg5LDEyNjI4MjE5MTEsLTE5MzAxODM5NjcsOTA4NjYw
 ODU5LC0xMjE2MjY3MTYxLDE4NjQ4OTM5NzAsMTk4OTkwMDU5Ni
 wtMjAwNjk4MzExMywtMTY1MDgxOTczMCw5MjcxNzk3NDEsMTcy
