@@ -97,7 +97,7 @@ Tendemos dos clases que contendrán todo lo que necesitamos:
 - La segunda es  ``` class Minimap_Indicator``` que servirá como contenedor de infromación
 
 ### Introduction
-
+![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/info_1.png)
 ## Links to more Documentation
 
 - [Where Should We Place the Mini-Map? ( Gamasutra Blog )](https://www.gamasutra.com/blogs/JacekSliwinski/20130121/185119/Where_should_we_place_the_mini_map.php)
@@ -107,11 +107,11 @@ Tendemos dos clases que contendrán todo lo que necesitamos:
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI1MDMzMDU2NywtMTI1Nzc3MjYyOSwtMT
-cyNzYwNjU2NSwtMTA5NzQ1NjQ5OCwxMjg2MzcxNTQsODUzOTYx
-ODA4LC0yMDMxMjM0OTcyLDQwMTg4NTcwNCwxMTU5NDEwMjAwLD
-E0NTMwNjY0NjIsMTI3MzExMTc1OCwxMjgyMjYxNTgyLC03NTQ3
-NjcwMDEsMTE0OTAwMjcxNSwtMTcyOTEyMTI0MywxMTIxNDk3MT
-gsLTk0MjYwNDc1NSwtMTcxNzYxMjc1NiwtNjM4NzY4MTE5LC0z
-NjE2NDk1NDddfQ==
+eyJoaXN0b3J5IjpbLTEyMzAyNTg0MjQsMTI1MDMzMDU2NywtMT
+I1Nzc3MjYyOSwtMTcyNzYwNjU2NSwtMTA5NzQ1NjQ5OCwxMjg2
+MzcxNTQsODUzOTYxODA4LC0yMDMxMjM0OTcyLDQwMTg4NTcwNC
+wxMTU5NDEwMjAwLDE0NTMwNjY0NjIsMTI3MzExMTc1OCwxMjgy
+MjYxNTgyLC03NTQ3NjcwMDEsMTE0OTAwMjcxNSwtMTcyOTEyMT
+I0MywxMTIxNDk3MTgsLTk0MjYwNDc1NSwtMTcxNzYxMjc1Niwt
+NjM4NzY4MTE5XX0=
 -->
