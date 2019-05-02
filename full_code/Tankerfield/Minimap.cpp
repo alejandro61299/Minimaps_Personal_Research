@@ -11,8 +11,8 @@
 
 // Minimap Class Methods ====================================================================================
 
-Minimap::Minimap(const SDL_Rect minimap_rect, const float texture_width, const PROJECTION_TYPE projection_type, const SHAPE_TYPE shape_type, const INTERACTION_TYPE interaction_type, Object* target)
-	: minimap_rect(minimap_rect), texture_width(texture_width), projection_type(projection_type), shape_type(shape_type), interaction_type(interaction_type), target_to_follow(target)
+Minimap::Minimap(const SDL_Rect minimap_rect, const float texture_width, const SHAPE_TYPE shape_type, const INTERACTION_TYPE interaction_type, Object* target)
+	: minimap_rect(minimap_rect), texture_width(texture_width), shape_type(shape_type), interaction_type(interaction_type), target_to_follow(target)
 {
 	SetInteractionType(interaction_type);
 	camera = (*app->render->cameras.begin());;
@@ -146,7 +146,7 @@ bool Minimap::Update(float dt)
 
 	for (std::list<Minimap_Indicator*>::iterator iter = indicators_list.begin(); iter != indicators_list.end();)
 	{
-		if ((*iter)->to_destroy == true)
+		if ((*iter)->to_destroy == true && (*iter)->target != target_to_follow)
 		{
 			delete(*iter);
 			iter = indicators_list.erase(iter);
@@ -165,7 +165,7 @@ bool Minimap::PostUpdate(float dt)
 {
 	// Update Minimap texture ===================================================
 
-	UpdateMinimapTexture();
+	UpdateFinalTexture();
 
 	// Draw final texture =======================================================
 
@@ -184,7 +184,7 @@ bool Minimap::PostUpdate(float dt)
 	return true;
 }
 
-void Minimap::UpdateMinimapTexture()
+void Minimap::UpdateFinalTexture()
 {
 	// Set render target =========================================================
 
@@ -198,14 +198,7 @@ void Minimap::UpdateMinimapTexture()
 
 	// Draw minimap texture  =====================================================
 
-	if (interaction_type == INTERACTION_TYPE::NO_TYPE)
-	{
-		app->render->BlitUI(minimap_texture, texture_pos.x, texture_pos.y, NULL, camera);
-	}
-	else
-	{
-		app->render->BlitUI(minimap_texture, texture_pos.x, texture_pos.y, NULL, camera);
-	}
+	app->render->BlitUI(minimap_texture, texture_pos.x, texture_pos.y, NULL, camera);
 
 	// Draw minimap indicators ==================================================
 
@@ -255,7 +248,7 @@ bool Minimap::LoadMinimap()
 		ret = false;
 	}
 
-	if (ret == false || LoadMinimapTexture() == false)
+	if (ret == false || GenerateMinimapTexture() == false)
 	{
 		ret = false;
 	}
@@ -267,10 +260,9 @@ bool Minimap::LoadMinimap()
 
 bool Minimap::LoadMinimapInfo()
 {
-	if (app->map->MapLoaded() == false) // If there isn't a map loaded break load
-	{
-		return false;
-	}
+	if (app->map->MapLoaded() == false) { return false; }  // If there isn't a map loaded break load
+
+	// Information from map data ==================================================================
 
 	float tile_width = app->map->data.tile_width;
 	float tile_height = app->map->data.tile_height;
@@ -281,27 +273,24 @@ bool Minimap::LoadMinimapInfo()
 
 	float tiles_amount = (float)(app->map->data.columns + app->map->data.rows)* 0.5f;
 
+	// Map Pixel Mesures ==========================================================================
+
+	float map_width = tile_width * tiles_amount;
+	float map_height = tile_height * tiles_amount;
+
 	// We found texture height from the width with a rule of 3  ===================================
 
-	if (projection_type == PROJECTION_TYPE::ORTHOGONAL)
-	{
-		texture_height = texture_width;
-		tiles_amount *= 2;
-	}
-	else
-	{
-		texture_height = (texture_width * (tiles_amount * tile_height)) / (tiles_amount* tile_width);
-	}
-
-	// We also find a constant to transform from pixels in the world to pixels in the minimap  ====
-
-	aspect_ratio_x = texture_width / (tile_width * tiles_amount);
-	aspect_ratio_y = texture_height / (tile_height *tiles_amount);
+	texture_height = (texture_width * map_height) / map_width;
 
 	// Now we have enough information to know the size of minimap tiles ===========================
 
 	minimap_tile_width = texture_width / tiles_amount;
 	minimap_tile_height = texture_height / tiles_amount;
+
+	// We also find a constant to transform from pixels in the world to pixels in the minimap  ====
+
+	aspect_ratio_x = texture_width / map_width;
+	aspect_ratio_y = texture_height / map_height;
 
 	// Finally, the blit x offset ===============================================================
 
@@ -310,7 +299,7 @@ bool Minimap::LoadMinimapInfo()
 	return true;
 }
 
-bool Minimap::LoadMinimapTexture()
+bool Minimap::GenerateMinimapTexture()
 {
 	// Create Target Textures ====================================
 
@@ -415,36 +404,30 @@ void Minimap::MouseDragInput(float dt)
 	}
 }
 
-// - Map coordinates to Pixels Coordinate Minimap
+// - Map Coordinates to Minimap Pixels Coordinate   
 fPoint Minimap::MapToMinimap(const float x, const float y)
 {
 	return fPoint((x - y) * minimap_tile_width * 0.5f + x_offset, (x + y) * minimap_tile_height * 0.5f);
 }
 
-// - Pixel Minimap Coordinate to Map Coordinates
+// - Minimap Pixel Coordinate to Map Coordinates
 fPoint Minimap::MinimapToMap(const float x, const float y) 
 {
-	fPoint ret = { 0.f, 0.f };
-
 	float half_width = minimap_tile_width * .5f;
 	float half_height = minimap_tile_height * .5f;
 
 	float x_mod = x - x_offset;
-	float y_mod = y;
 
-	ret.x = (x_mod / half_width + y_mod / half_height) * .5f;
-	ret.y = (y_mod / half_height - x_mod / half_width) * .5f;
-
-	return ret;
+	return fPoint( (x_mod / half_width + y / half_height) * .5f, (y / half_height - x_mod / half_width) * .5f);
 }
 
-// - World/Screen Pixel Coordinates to Pixels Minimap Coordinate 
+// - World Pixels Coordinates to Minimap Pixels Coordinate 
 fPoint Minimap::WorldToMinimap(const float x, const float y)
 {
 	return fPoint(x * aspect_ratio_x + x_offset, y * aspect_ratio_y);
 }
 
-// - Pixels Minimap Coordinate to World/Screen Pixel Coordinates
+// - Minimap Pixels Coordinate to World Pixels Coordinates
 fPoint Minimap::MinimapToWorld(const float x, const float y)
 {
 	return fPoint((x - x_offset) / aspect_ratio_x,  y/ aspect_ratio_y);

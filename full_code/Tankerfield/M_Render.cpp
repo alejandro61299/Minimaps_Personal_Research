@@ -56,16 +56,19 @@ bool M_Render::Awake(pugi::xml_node& config)
 	}
 
 	SDL_RendererInfo info;
-		
+	int index = -1;
 
 	for (int i = 0; i < SDL_GetNumRenderDrivers(); ++i)
 	{
 		SDL_GetRenderDriverInfo(i, &info);
-		LOG("%s", info.name);
+
+		if (info.name == std::string("opengles2"))
+		{
+			index = i;
+		}
 	}
 	
-
-	renderer = SDL_CreateRenderer(app->win->window, 2, flags);
+	renderer = SDL_CreateRenderer(app->win->window, index, flags);
 
 	if (renderer == NULL)
 	{

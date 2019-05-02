@@ -22,12 +22,6 @@ enum class INTERACTION_TYPE
 	MOUSE_DRAG
 };
 
-enum class PROJECTION_TYPE
-{
-	ORTHOGONAL,
-	ISOMETRIC,
-};
-
 enum class SHAPE_TYPE
 {
 	CIRCLE,
@@ -70,7 +64,6 @@ public:
 	Minimap(
 		const SDL_Rect minimap_rect,
 		const float texture_width,
-		const PROJECTION_TYPE projection_type = PROJECTION_TYPE::ISOMETRIC,
 		const SHAPE_TYPE shape_type = SHAPE_TYPE::RECTANGLE,
 		const INTERACTION_TYPE interaction_type = INTERACTION_TYPE::MOUSE_DRAG,
 		Object* target = nullptr);
@@ -114,9 +107,9 @@ private:
 
 	bool    LoadMinimapInfo();
 
-	bool	LoadMinimapTexture();
+	bool	GenerateMinimapTexture();
 
-	void	UpdateMinimapTexture();
+	void	UpdateFinalTexture();
 
 public:
 
@@ -131,7 +124,6 @@ private:
 	SDL_Rect            minimap_rect = { 0, 0, 0,0 };   // - Determinate the minimap position on screen & its scope
 	bool                minimap_loaded = false;         
 
-	PROJECTION_TYPE		projection_type = PROJECTION_TYPE::ISOMETRIC;
 	SHAPE_TYPE			shape_type = SHAPE_TYPE::RECTANGLE;
 	INTERACTION_TYPE	interaction_type = INTERACTION_TYPE::MOUSE_DRAG;
 
