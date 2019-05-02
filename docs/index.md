@@ -415,7 +415,7 @@ fPoint Minimap::MapToMinimap(const float x, const float y)
 
 ### TODO 2: Complete MinimapToMap()
 #### **Explicaition** 
-Knowing how to transform coordinates of the Map to Cordinates of the mini map, complete the function to go from coordinates of the minimap to coordinates of the map.
+Knowing how to transform  Map coordinates to  Minimap Cordinates,  complete the inverse function
   #### **Test** 
  #### **Solution** 
 ```cpp
@@ -448,7 +448,7 @@ fPoint Minimap::MinimapToMap(const float x, const float y)
 ```cpp
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk5NTgyODg5MywxMzgwNjI1MjYwLDE3Nz
+eyJoaXN0b3J5IjpbMTUyNTU1NjA2MCwxMzgwNjI1MjYwLDE3Nz
 Q5NzkyNzAsLTExMTQ0ODE3NSwxNTQ1ODgyODM5LC0xODg0ODM4
 Nzc5LDg1MzQxNTkxNSwtMjMxOTEwMzQwLC0xMTQzOTM1NzU5LC
 03NjQyMzYwNzIsLTE2ODU2NDc4NzgsMzk1Mzc0NTQyLC05NDc0
