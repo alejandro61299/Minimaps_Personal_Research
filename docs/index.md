@@ -444,6 +444,18 @@ The alert sprite sheet rectangle is {32, 32, 32, 32}.
   
  #### **Solution** 
 ```cpp
+if (app->input->GetMouseButton(3) == KEY_DOWN)
+{
+	if (SDL_PointInRect(&mouse_point, &minimap_rect))
+	{
+		AddIndicator(MinimapToMap(mouse_point.x - GetTextureScreenPos().x, mouse_point.y - GetTextureScreenPos().y), { 32, 32, 32, 32 });
+	}
+	else
+	{
+		AddIndicator(app->map->ScreenToMapF(mouse_point.x + camera->rect.x, mouse_point.y + camera->rect.y), { 32, 32, 32, 32 });
+	}
+}
+
 ```
 ### TODO 4: Complete MinimapToMap()
 #### **Explicaition** 
@@ -460,25 +472,14 @@ The alert sprite sheet rectangle is {32, 32, 32, 32}.
  
  #### **Solution** 
 ```cpp
-	if (app->input->GetMouseButton(3) == KEY_DOWN)
-	{
-		if (SDL_PointInRect(&mouse_point, &minimap_rect))
-		{
-			AddIndicator(MinimapToMap(mouse_point.x - GetTextureScreenPos().x, mouse_point.y - GetTextureScreenPos().y), { 32, 32, 32, 32 });
-		}
-		else
-		{
-			AddIndicator(app->map->ScreenToMapF(mouse_point.x + camera->rect.x, mouse_point.y + camera->rect.y), { 32, 32, 32, 32 });
-		}
 
-	}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NjM0NTUxMSwxMzgwNjI1MjYwLDE3Nz
-Q5NzkyNzAsLTExMTQ0ODE3NSwxNTQ1ODgyODM5LC0xODg0ODM4
-Nzc5LDg1MzQxNTkxNSwtMjMxOTEwMzQwLC0xMTQzOTM1NzU5LC
-03NjQyMzYwNzIsLTE2ODU2NDc4NzgsMzk1Mzc0NTQyLC05NDc0
-NzQ1MzQsNDY3MDgzNDUzLC0xOTI0NzUwNDU5LC01OTg1Mjc2OD
-ksMTI2MjgyMTkxMSwtMTkzMDE4Mzk2Nyw5MDg2NjA4NTksLTEy
-MTYyNjcxNjFdfQ==
+eyJoaXN0b3J5IjpbODYyMTE3Mzk3LDEzODA2MjUyNjAsMTc3ND
+k3OTI3MCwtMTExNDQ4MTc1LDE1NDU4ODI4MzksLTE4ODQ4Mzg3
+NzksODUzNDE1OTE1LC0yMzE5MTAzNDAsLTExNDM5MzU3NTksLT
+c2NDIzNjA3MiwtMTY4NTY0Nzg3OCwzOTUzNzQ1NDIsLTk0NzQ3
+NDUzNCw0NjcwODM0NTMsLTE5MjQ3NTA0NTksLTU5ODUyNzY4OS
+wxMjYyODIxOTExLC0xOTMwMTgzOTY3LDkwODY2MDg1OSwtMTIx
+NjI2NzE2MV19
 -->
