@@ -103,7 +103,7 @@ bool M_Scene::Reset()
 bool M_Scene::CleanUp()
 {
 	LOG("Freeing scene");
-	
+	delete minimap;
 	return true;
 }
 

@@ -31,7 +31,7 @@ Minimap::Minimap(const SDL_Rect minimap_rect, const float texture_width, const S
 
 Minimap::~Minimap()
 {
-	for (std::list<Minimap_Indicator*>::iterator iter = indicators_list.begin(); iter != indicators_list.end();)
+	for (std::list<Minimap_Indicator*>::iterator iter = indicators_list.begin(); iter != indicators_list.end(); ++iter)
 	{
 		delete(*iter);
 	}
@@ -472,9 +472,7 @@ fPoint Minimap::GetTextureScreenPos()
 // Minimap Indicator Class Methods =========================================================================
 
 Minimap_Indicator::Minimap_Indicator(const fPoint map_pos, const SDL_Rect icon_rect, const SDL_Color color, Object * target): map_pos(map_pos), icon_rect(icon_rect), color(color), target(target)
-{
-
-}
+{}
 
 void Minimap_Indicator::Destroy()
 {
