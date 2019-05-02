@@ -83,13 +83,13 @@ After seeing the theory, let's start with the practical part. I'm going to teach
 
 - Switch between **Focused on Player**  or  **Whole world**.
 - Change its shape between **rectangular** or **circular**.
-- Create **indicators** with icons such as points of interest, positons ,warnings by **clicking** over the minimap or world.
+- Create **indicators** with icons such as points of interest, positIons  & warnings by **clicking** over the minimap or world.
 - Move the camera using the **mouse drag**.
 
 
 ![enter image description here](https://github.com/alejandro61299/Minimaps_Personal_Research/blob/master/docs/web_images/final%20result.gif?raw=true)
 
-We have two classes that will contain everything we need:
+So, we have two classes that will contain everything we need:
 
   - The first is ``` class Minimap```  that will serve as the factory for the instances of ``` class Minimap_Indicator```
 - The second one is  ``` class Minimap_Indicator``` that will serve as an infromation container for warnings and positions.
@@ -329,11 +329,11 @@ renderer = SDL_CreateRenderer(app->win->window, index, flags);
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDY3MDgzNDUzLC0xOTI0NzUwNDU5LC01OT
-g1Mjc2ODksMTI2MjgyMTkxMSwtMTkzMDE4Mzk2Nyw5MDg2NjA4
-NTksLTEyMTYyNjcxNjEsMTg2NDg5Mzk3MCwxOTg5OTAwNTk2LC
-0yMDA2OTgzMTEzLC0xNjUwODE5NzMwLDkyNzE3OTc0MSwxNzI4
-MjM1MDMzLC0xMDI1MzY5OTk0LC0xNDA5ODQyMDY2LC0xODA1MD
-I5MjE5LC0zMjY1OTcxMzYsLTU2ODk5OTA4OSwtMjA2OTgxMTYz
-MCwxNDI3NDI1MDk0XX0=
+eyJoaXN0b3J5IjpbMzI3MjAxMzQyLDQ2NzA4MzQ1MywtMTkyND
+c1MDQ1OSwtNTk4NTI3Njg5LDEyNjI4MjE5MTEsLTE5MzAxODM5
+NjcsOTA4NjYwODU5LC0xMjE2MjY3MTYxLDE4NjQ4OTM5NzAsMT
+k4OTkwMDU5NiwtMjAwNjk4MzExMywtMTY1MDgxOTczMCw5Mjcx
+Nzk3NDEsMTcyODIzNTAzMywtMTAyNTM2OTk5NCwtMTQwOTg0Mj
+A2NiwtMTgwNTAyOTIxOSwtMzI2NTk3MTM2LC01Njg5OTkwODks
+LTIwNjk4MTE2MzBdfQ==
 -->
