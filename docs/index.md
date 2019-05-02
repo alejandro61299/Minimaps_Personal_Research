@@ -79,22 +79,19 @@ As we can verify each video game  genre has a distinctive position on the screen
 
 ## Selected approach
 
-Después de ver la teoría vamos a comenzar con la parte práctica. Os voy a enseñar a como programar un minimapa desde 0 usando únicamente SDL con un renderer inicializado con [Opengles2](https://es.wikipedia.org/wiki/OpenGL_ES).
-El resultado final será un minimapa que podrá:
+Después de ver la teoría vamos a comenzar con la parte práctica. Os voy a enseñar a como programar un minimapa **isométrico** desde 0 usando únicamente SDL con un renderer inicializado con [Opengles2](https://es.wikipedia.org/wiki/OpenGL_ES). El resultado final será un minimapa que podrá:
 
 - Cambair entre **Focused on Player** o **Whole world**
 - Cambiar su shape entre rectangular o circular
 - Crear indicadores con iconos como **points of interest**, **positons**, **alerts** clickando en el minimapa o en el mismo mapa. 
 - Mover la cámara usando el **mouse drag**
 
-Aquí podéis ver como quedará el resultado final: 
-
 ![enter image description here](https://github.com/alejandro61299/Minimaps_Personal_Research/blob/master/docs/web_images/final%20result.gif?raw=true)
 
 Tendemos dos clases que contendrán todo lo que necesitamos:
 
  - La primera es  ``` class Minimap```  que servirá como factory para  las instancias de  ``` class Minimap_Indicator```
-- La segunda es  ``` class Minimap_Indicator``` que servirá como contenedor de infromación
+- La segunda es  ``` class Minimap_Indicator``` que servirá como contenedor de infromación para los avisos y posiciones.
 
 ### Introduction
 ![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/info_1.png)
@@ -107,11 +104,11 @@ Tendemos dos clases que contendrán todo lo que necesitamos:
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 - [Game Design Affect Minimap Design | Black Ops 4 Minimap ( Dexerto Article ) ](https://www.dexerto.com/call-of-duty/treyarch-dev-reveals-why-there-is-no-vsat-blackbird-in-black-ops-4-mutilplayer-184986)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMzAyNTg0MjQsMTI1MDMzMDU2NywtMT
-I1Nzc3MjYyOSwtMTcyNzYwNjU2NSwtMTA5NzQ1NjQ5OCwxMjg2
-MzcxNTQsODUzOTYxODA4LC0yMDMxMjM0OTcyLDQwMTg4NTcwNC
-wxMTU5NDEwMjAwLDE0NTMwNjY0NjIsMTI3MzExMTc1OCwxMjgy
-MjYxNTgyLC03NTQ3NjcwMDEsMTE0OTAwMjcxNSwtMTcyOTEyMT
-I0MywxMTIxNDk3MTgsLTk0MjYwNDc1NSwtMTcxNzYxMjc1Niwt
-NjM4NzY4MTE5XX0=
+eyJoaXN0b3J5IjpbMTgxNjYxNDk3OCwxMjUwMzMwNTY3LC0xMj
+U3NzcyNjI5LC0xNzI3NjA2NTY1LC0xMDk3NDU2NDk4LDEyODYz
+NzE1NCw4NTM5NjE4MDgsLTIwMzEyMzQ5NzIsNDAxODg1NzA0LD
+ExNTk0MTAyMDAsMTQ1MzA2NjQ2MiwxMjczMTExNzU4LDEyODIy
+NjE1ODIsLTc1NDc2NzAwMSwxMTQ5MDAyNzE1LC0xNzI5MTIxMj
+QzLDExMjE0OTcxOCwtOTQyNjA0NzU1LC0xNzE3NjEyNzU2LC02
+Mzg3NjgxMTldfQ==
 -->
