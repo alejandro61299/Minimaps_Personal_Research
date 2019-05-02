@@ -407,10 +407,15 @@ SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode beco
   
  #### **Solution** 
 ```cpp
+fPoint Minimap::MapToMinimap(const float x, const float y)
+{
+	return fPoint((x - y) * minimap_tile_width * 0.5f + x_offset, (x + y) * minimap_tile_height * 0.5f);
+}
 ```
+
 ### TODO 2: Complete MinimapToMap()
 #### **Explicaition** 
- Transfrom map coordinates to Minimap Pixel Cordinates. Very similar to the MapToWorldF function on M_Map.
+Knowing how to transform coordinates of the Map to Cordinates of the mini map, complete the function to go from coordinates of the minimap to coordinates of the map
  #### **Solution** 
 ```cpp
 ```
@@ -433,7 +438,7 @@ SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode beco
 ```cpp
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2ODcyNjc5ODMsMTM4MDYyNTI2MCwxNz
+eyJoaXN0b3J5IjpbLTE5MTQyMDIwNDYsMTM4MDYyNTI2MCwxNz
 c0OTc5MjcwLC0xMTE0NDgxNzUsMTU0NTg4MjgzOSwtMTg4NDgz
 ODc3OSw4NTM0MTU5MTUsLTIzMTkxMDM0MCwtMTE0MzkzNTc1OS
 wtNzY0MjM2MDcyLC0xNjg1NjQ3ODc4LDM5NTM3NDU0MiwtOTQ3
