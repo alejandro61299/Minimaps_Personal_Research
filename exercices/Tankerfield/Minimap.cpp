@@ -98,7 +98,7 @@ bool Minimap::PreUpdate()
 	SDL_Point mouse_point;
 	app->input->GetMousePosition(mouse_point.x, mouse_point.y);
 
-	// TODO 3: When you click on the minimap, you must add an alert. Use the AddIndicator () function. 
+	// TODO 3: When you click on the minimap, you must add an alert. Use the AddIndicator () function & GetTextureScreenPos() function
 	// The alert sprite sheet rectangle is {32, 32, 32, 32}.
 
 	if (app->input->GetMouseButton(3) == KEY_DOWN)
