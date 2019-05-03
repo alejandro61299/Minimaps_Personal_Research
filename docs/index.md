@@ -404,7 +404,7 @@ SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode beco
 
 #### **Explication** 
 
- Transfrom Map Coordinates to Minimap Pixel Cordinates. Very similar to the MapToWorldF function on M_Map.
+ Transfrom Map Coordinates to Minimap Pixel Cordinates. Very similar to the `MapToWorldF()` function on M_Map.
  
   #### **Test** 
 The texture of the minimap will be well generated and you will be able to see it but it will be static. You will also see the position indicator of the player and you can even add alerts by clicking on the map.
@@ -439,7 +439,7 @@ fPoint Minimap::MinimapToMap(const float x, const float y)
 ### TODO 3: Add an alert (Ping) by clicking over minimap 
 
 #### **Explication** 
-When you right click on the minimap, you must add an alert. Use the AddIndicator () function &  use GetTextureScreenPos() function. The alert sprite sheet rectangle is {32, 32, 32, 32}.
+When you right click on the minimap, you must add an alert. Use the `AddIndicator ()` function & `GetTextureScreenPos()` function. The alert sprite sheet rectangle is {32, 32, 32, 32}.
   #### **Test TODO 2 & 3** 
   You can add indicators directly on the minimap with the right click like this:
   
@@ -525,11 +525,11 @@ Also placed correctly the alpha mask drawing.
 	SDL_SetRenderTarget(app->render->renderer, NULL);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgxNjAzMDQ3MSwtNTY4Mjc0NTk4LDk1MD
-gzMDQ2NCw3NTM0ODEzMzgsLTc4MTgzODMxNyw2MjkxODA0OTYs
-LTkwMjMyMDM2MCwtMTUyMjEyNjEyNSwtNDgzNDk2OTAyLDEzOD
-A2MjUyNjAsMTc3NDk3OTI3MCwtMTExNDQ4MTc1LDE1NDU4ODI4
-MzksLTE4ODQ4Mzg3NzksODUzNDE1OTE1LC0yMzE5MTAzNDAsLT
-ExNDM5MzU3NTksLTc2NDIzNjA3MiwtMTY4NTY0Nzg3OCwzOTUz
-NzQ1NDJdfQ==
+eyJoaXN0b3J5IjpbMzY2MDIzMjMsLTU2ODI3NDU5OCw5NTA4Mz
+A0NjQsNzUzNDgxMzM4LC03ODE4MzgzMTcsNjI5MTgwNDk2LC05
+MDIzMjAzNjAsLTE1MjIxMjYxMjUsLTQ4MzQ5NjkwMiwxMzgwNj
+I1MjYwLDE3NzQ5NzkyNzAsLTExMTQ0ODE3NSwxNTQ1ODgyODM5
+LC0xODg0ODM4Nzc5LDg1MzQxNTkxNSwtMjMxOTEwMzQwLC0xMT
+QzOTM1NzU5LC03NjQyMzYwNzIsLTE2ODU2NDc4NzgsMzk1Mzc0
+NTQyXX0=
 -->
