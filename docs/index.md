@@ -402,7 +402,7 @@ SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode beco
 
 ### TODO 1: Complete MapToMinimap()
 
-#### **Explicaition** 
+#### **Explication** 
 
  Transfrom Map Coordinates to Minimap Pixel Cordinates. Very similar to the MapToWorldF function on M_Map.
  
@@ -418,7 +418,7 @@ fPoint Minimap::MapToMinimap(const float x, const float y)
 
 ### TODO 2: Complete MinimapToMap()
 
-#### **Explicaition** 
+#### **Explication** 
 
 Knowing how to transform  Map coordinates to  Minimap Cordinates,  complete the inverse function.
 
@@ -438,7 +438,7 @@ fPoint Minimap::MinimapToMap(const float x, const float y)
 ```
 ### TODO 3: Add an alert (Ping) by clicking over minimap 
 
-#### **Explicaition** 
+#### **Explication** 
 When you click on the minimap, you must add an alert. Use the AddIndicator () function. 
 The alert sprite sheet rectangle is {32, 32, 32, 32}.
   #### **Test** 
@@ -460,7 +460,7 @@ if (app->input->GetMouseButton(3) == KEY_DOWN)
 ```
 ### TODO 4:   Transform the Minimap into a Focused on Player Minimap.
 
-#### **Explicaition** 
+#### **Explication** 
 
  When interaction_type == NO_TYPE, update the variable texture_pos so that the player stays in the center of the minimap as in the "Focused on the Player" minimap type.  The pointer that contains the player is target_to_follow.
 
@@ -488,7 +488,7 @@ switch (interaction_type)
 
 ### TODO 5: Draw Camera Area Borders & Apply Alpha Mask 
 
-#### **Explicaition** 
+#### **Explication** 
 Within `UpdateFinalTexture()` you must find the correct location to draw the camera area borders on minimap. 
 Also placed correctly the alpha mask drawing. 
 
@@ -518,11 +518,11 @@ Also placed correctly the alpha mask drawing.
 	SDL_SetRenderTarget(app->render->renderer, NULL);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExOTg2ODkwNDEsLTE1MjIxMjYxMjUsLT
-Q4MzQ5NjkwMiwxMzgwNjI1MjYwLDE3NzQ5NzkyNzAsLTExMTQ0
-ODE3NSwxNTQ1ODgyODM5LC0xODg0ODM4Nzc5LDg1MzQxNTkxNS
-wtMjMxOTEwMzQwLC0xMTQzOTM1NzU5LC03NjQyMzYwNzIsLTE2
-ODU2NDc4NzgsMzk1Mzc0NTQyLC05NDc0NzQ1MzQsNDY3MDgzND
-UzLC0xOTI0NzUwNDU5LC01OTg1Mjc2ODksMTI2MjgyMTkxMSwt
-MTkzMDE4Mzk2N119
+eyJoaXN0b3J5IjpbLTkwMjMyMDM2MCwtMTUyMjEyNjEyNSwtND
+gzNDk2OTAyLDEzODA2MjUyNjAsMTc3NDk3OTI3MCwtMTExNDQ4
+MTc1LDE1NDU4ODI4MzksLTE4ODQ4Mzg3NzksODUzNDE1OTE1LC
+0yMzE5MTAzNDAsLTExNDM5MzU3NTksLTc2NDIzNjA3MiwtMTY4
+NTY0Nzg3OCwzOTUzNzQ1NDIsLTk0NzQ3NDUzNCw0NjcwODM0NT
+MsLTE5MjQ3NTA0NTksLTU5ODUyNzY4OSwxMjYyODIxOTExLC0x
+OTMwMTgzOTY3XX0=
 -->
