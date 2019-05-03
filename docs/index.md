@@ -6,7 +6,7 @@ I am [Alejandro Gamarra Niño](https://www.linkedin.com/in/alejandro-a-gamarra-n
 
 ### What is a minimap?
 
-Minimap is an UI element of the HUD usually located in a corner of the screen. It shows an abstract, from the bird's eye perspective view of the playfield where the gameplay is being played on a smaller scale. Its main objective is to help the player orientate and help them successfully navigate the environment to reach points of interest and objectives.
+Minimap is an UI element of the HUD usually located in a corner of the screen. It shows an abstract view of the playfield where the gameplay is being played on a smaller scale. Its main objective is to help the player orientate and help them successfully navigate the environment to reach points of interest and objectives.
 
 ![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/lol.png)
 
@@ -536,11 +536,11 @@ Also placed correctly the alpha mask drawing.
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NzMyNjc0NSwzNjYwMjMyMywtNTY4Mj
-c0NTk4LDk1MDgzMDQ2NCw3NTM0ODEzMzgsLTc4MTgzODMxNyw2
-MjkxODA0OTYsLTkwMjMyMDM2MCwtMTUyMjEyNjEyNSwtNDgzND
-k2OTAyLDEzODA2MjUyNjAsMTc3NDk3OTI3MCwtMTExNDQ4MTc1
-LDE1NDU4ODI4MzksLTE4ODQ4Mzg3NzksODUzNDE1OTE1LC0yMz
-E5MTAzNDAsLTExNDM5MzU3NTksLTc2NDIzNjA3MiwtMTY4NTY0
-Nzg3OF19
+eyJoaXN0b3J5IjpbMTk3MTIwNDM3MCwtMTU3MzI2NzQ1LDM2Nj
+AyMzIzLC01NjgyNzQ1OTgsOTUwODMwNDY0LDc1MzQ4MTMzOCwt
+NzgxODM4MzE3LDYyOTE4MDQ5NiwtOTAyMzIwMzYwLC0xNTIyMT
+I2MTI1LC00ODM0OTY5MDIsMTM4MDYyNTI2MCwxNzc0OTc5Mjcw
+LC0xMTE0NDgxNzUsMTU0NTg4MjgzOSwtMTg4NDgzODc3OSw4NT
+M0MTU5MTUsLTIzMTkxMDM0MCwtMTE0MzkzNTc1OSwtNzY0MjM2
+MDcyXX0=
 -->
