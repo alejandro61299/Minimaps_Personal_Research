@@ -494,18 +494,34 @@ Also placed correctly the alpha mask drawing.
 
  - To draw the camera, use app-> render-> DrawQuad() , he `fPoint
    camera->camera_pos` (current position of the camera in the world) ,`camera->screen_section.w`   & `camera->screen_section.h`
+ - To draw alpha mask use SDL_RenderCopy
 
  
  #### **Solution** 
 ```cpp
+// Draw minimap camera rect =================================================
 
+	pos = texture_pos + WorldToMinimap(camera->camera_pos.x, camera->camera_pos.y) ;
+
+	SDL_Rect camera_rect = { pos.x , pos.y, camera->screen_section.w * aspect_ratio_x ,  camera->screen_section.h * aspect_ratio_y };
+	app->render->DrawQuad(camera_rect, 255, 255, 255, 255, false, false);
+
+	// Draw alpha mask texture  =================================================
+	if (shape_type == SHAPE_TYPE::CIRCLE)
+	{
+		SDL_RenderCopy(app->render->renderer, alpha_mask_texture, NULL, NULL);
+	}
+
+	// Reset render target ======================================================
+
+	SDL_SetRenderTarget(app->render->renderer, NULL);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM0NjUyNDg5NywtNDgzNDk2OTAyLDEzOD
-A2MjUyNjAsMTc3NDk3OTI3MCwtMTExNDQ4MTc1LDE1NDU4ODI4
-MzksLTE4ODQ4Mzg3NzksODUzNDE1OTE1LC0yMzE5MTAzNDAsLT
-ExNDM5MzU3NTksLTc2NDIzNjA3MiwtMTY4NTY0Nzg3OCwzOTUz
-NzQ1NDIsLTk0NzQ3NDUzNCw0NjcwODM0NTMsLTE5MjQ3NTA0NT
-ksLTU5ODUyNzY4OSwxMjYyODIxOTExLC0xOTMwMTgzOTY3LDkw
-ODY2MDg1OV19
+eyJoaXN0b3J5IjpbODAxNDIwMjUwLC00ODM0OTY5MDIsMTM4MD
+YyNTI2MCwxNzc0OTc5MjcwLC0xMTE0NDgxNzUsMTU0NTg4Mjgz
+OSwtMTg4NDgzODc3OSw4NTM0MTU5MTUsLTIzMTkxMDM0MCwtMT
+E0MzkzNTc1OSwtNzY0MjM2MDcyLC0xNjg1NjQ3ODc4LDM5NTM3
+NDU0MiwtOTQ3NDc0NTM0LDQ2NzA4MzQ1MywtMTkyNDc1MDQ1OS
+wtNTk4NTI3Njg5LDEyNjI4MjE5MTEsLTE5MzAxODM5NjcsOTA4
+NjYwODU5XX0=
 -->
