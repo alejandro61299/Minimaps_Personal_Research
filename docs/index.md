@@ -489,6 +489,11 @@ switch (interaction_type)
 ### TODO 5: Draw Camera Area Borders & Apply Alpha Mask 
 
 #### **Explicaition** 
+Within `UpdateFinalTexture()` you must find the correct location to draw the camera area borders on minimap. 
+
+	// To draw the camera, use app-> render-> DrawQuad() ,
+	// the fPoint camera-> camera_pos (current position of the camera in the world) &
+	// camera->screen_section.w / camera->screen_section.h
 
  Transfrom map coordinates to Minimap Pixel Cordinates. Very similar to the MapToWorldF function on M_Map.
  
@@ -497,7 +502,7 @@ switch (interaction_type)
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzc2MzIxODM1LC00ODM0OTY5MDIsMTM4MD
+eyJoaXN0b3J5IjpbNzAzNTU0NTY5LC00ODM0OTY5MDIsMTM4MD
 YyNTI2MCwxNzc0OTc5MjcwLC0xMTE0NDgxNzUsMTU0NTg4Mjgz
 OSwtMTg4NDgzODc3OSw4NTM0MTU5MTUsLTIzMTkxMDM0MCwtMT
 E0MzkzNTc1OSwtNzY0MjM2MDcyLC0xNjg1NjQ3ODc4LDM5NTM3
