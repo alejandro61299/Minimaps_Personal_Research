@@ -458,15 +458,32 @@ if (app->input->GetMouseButton(3) == KEY_DOWN)
 }
 
 ```
-### TODO 4:   Transform the minimap into a Focused on Player Minimap.
+### TODO 4:   Transform the Minimap into a Focused on Player Minimap.
 
 #### **Explicaition** 
 
  When interaction_type == NO_TYPE, update the variable texture_pos so that the player stays in the center of the minimap as in the "Focused on the Player" minimap type.  The pointer that contains the player is target_to_follow.
+
+  #### **Test** 
  
  #### **Solution** 
 ```cpp
-texture_pos = fPoint(minimap_rect.w * .5f, minimap_rect.h * .5f) - MapToMinimap(target_to_follow->map_pos.x, target_to_follow->map_pos.y);
+switch (interaction_type)
+	{
+	case INTERACTION_TYPE::NO_TYPE:
+
+		texture_pos = fPoint(minimap_rect.w * .5f, minimap_rect.h * .5f) - MapToMinimap(target_to_follow->map_pos.x, target_to_follow->map_pos.y);
+		camera_target_pos = camera->camera_pos;
+		camera->MoveToObject(dt, target_to_follow);         // Caemra movement ----------
+		break;
+
+	case INTERACTION_TYPE::MOUSE_DRAG:
+
+		MouseDragInput(dt);
+		camera->MoveToScreenPoint(dt, camera_target_pos);	// Caemra movement ----------
+
+		break;
+	}
 
 ```
 ### TODO 5: Complete MinimapToMap()
@@ -479,7 +496,7 @@ texture_pos = fPoint(minimap_rect.w * .5f, minimap_rect.h * .5f) - MapToMinimap(
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAwNzI0MTg3OSwxMzgwNjI1MjYwLDE3Nz
+eyJoaXN0b3J5IjpbLTQ4MzQ5NjkwMiwxMzgwNjI1MjYwLDE3Nz
 Q5NzkyNzAsLTExMTQ0ODE3NSwxNTQ1ODgyODM5LC0xODg0ODM4
 Nzc5LDg1MzQxNTkxNSwtMjMxOTEwMzQwLC0xMTQzOTM1NzU5LC
 03NjQyMzYwNzIsLTE2ODU2NDc4NzgsMzk1Mzc0NTQyLC05NDc0
