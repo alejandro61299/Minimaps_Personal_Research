@@ -81,8 +81,8 @@ As we can verify each video game  genre has a distinctive position on the screen
 
 After seeing the theory, let's start with the practical part. I'm going to teach you how to program an **isometric** mini-map from 0 using only SDL with a renderer initialized with [Opengles2](https://es.wikipedia.org/wiki/OpenGL_ES) . The final result will be a mini-map that can:
 
-- Change easbetween **Focused on Player**  or  **Whole world**.
-- Change its shape between **rectangular** or **circular**.
+- Switch between **Focused on Player**  or  **Whole world**.
+- Switch its shape between **rectangular** or **circular**.
 - Create **indicators** with icons such as points of interest, positIons  & warnings by **clicking** over the minimap or world.
 - Move the camera using the **mouse drag**.
 
@@ -536,11 +536,11 @@ Also placed correctly the alpha mask drawing.
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzYwODYwNzg1LDE5NzEyMDQzNzAsLTE1Nz
-MyNjc0NSwzNjYwMjMyMywtNTY4Mjc0NTk4LDk1MDgzMDQ2NCw3
-NTM0ODEzMzgsLTc4MTgzODMxNyw2MjkxODA0OTYsLTkwMjMyMD
-M2MCwtMTUyMjEyNjEyNSwtNDgzNDk2OTAyLDEzODA2MjUyNjAs
-MTc3NDk3OTI3MCwtMTExNDQ4MTc1LDE1NDU4ODI4MzksLTE4OD
-Q4Mzg3NzksODUzNDE1OTE1LC0yMzE5MTAzNDAsLTExNDM5MzU3
-NTldfQ==
+eyJoaXN0b3J5IjpbNzU4MDM1NDIsMTk3MTIwNDM3MCwtMTU3Mz
+I2NzQ1LDM2NjAyMzIzLC01NjgyNzQ1OTgsOTUwODMwNDY0LDc1
+MzQ4MTMzOCwtNzgxODM4MzE3LDYyOTE4MDQ5NiwtOTAyMzIwMz
+YwLC0xNTIyMTI2MTI1LC00ODM0OTY5MDIsMTM4MDYyNTI2MCwx
+Nzc0OTc5MjcwLC0xMTE0NDgxNzUsMTU0NTg4MjgzOSwtMTg4ND
+gzODc3OSw4NTM0MTU5MTUsLTIzMTkxMDM0MCwtMTE0MzkzNTc1
+OV19
 -->
