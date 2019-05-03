@@ -404,7 +404,7 @@ SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode beco
 
 #### **Explication** 
 
- Transfrom Map Coordinates to Minimap Pixel Cordinates. Very similar to the `MapToWorldF()` function on M_Map.
+ Transform Map Coordinates to Minimap Pixel Coordinates. Very similar to the `MapToWorldF()` function on M_Map.
  
 #### **Test** 
 The texture of the minimap will be well generated and you will be able to see it but it will be static. You will also see the position indicator of the player and you can even add alerts by clicking on the map.
@@ -536,11 +536,11 @@ Also placed correctly the alpha mask drawing.
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk5NDYzNjI4NiwxMjc1NjU3MDIyLDc1OD
-AzNTQyLDE5NzEyMDQzNzAsLTE1NzMyNjc0NSwzNjYwMjMyMywt
-NTY4Mjc0NTk4LDk1MDgzMDQ2NCw3NTM0ODEzMzgsLTc4MTgzOD
-MxNyw2MjkxODA0OTYsLTkwMjMyMDM2MCwtMTUyMjEyNjEyNSwt
-NDgzNDk2OTAyLDEzODA2MjUyNjAsMTc3NDk3OTI3MCwtMTExND
-Q4MTc1LDE1NDU4ODI4MzksLTE4ODQ4Mzg3NzksODUzNDE1OTE1
-XX0=
+eyJoaXN0b3J5IjpbLTk4NTE4MTksMTI3NTY1NzAyMiw3NTgwMz
+U0MiwxOTcxMjA0MzcwLC0xNTczMjY3NDUsMzY2MDIzMjMsLTU2
+ODI3NDU5OCw5NTA4MzA0NjQsNzUzNDgxMzM4LC03ODE4MzgzMT
+csNjI5MTgwNDk2LC05MDIzMjAzNjAsLTE1MjIxMjYxMjUsLTQ4
+MzQ5NjkwMiwxMzgwNjI1MjYwLDE3NzQ5NzkyNzAsLTExMTQ0OD
+E3NSwxNTQ1ODgyODM5LC0xODg0ODM4Nzc5LDg1MzQxNTkxNV19
+
 -->
