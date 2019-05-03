@@ -486,7 +486,8 @@ switch (interaction_type)
 	}
 
 ```
-### TODO 5: Apply Alpha Mask & Draw
+### TODO 5: Draw Camera Area Borders & Apply Alpha Mask 
+
 #### **Explicaition** 
 
  Transfrom map coordinates to Minimap Pixel Cordinates. Very similar to the MapToWorldF function on M_Map.
@@ -496,11 +497,11 @@ switch (interaction_type)
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIzMjM0NDExNiwtNDgzNDk2OTAyLDEzOD
-A2MjUyNjAsMTc3NDk3OTI3MCwtMTExNDQ4MTc1LDE1NDU4ODI4
-MzksLTE4ODQ4Mzg3NzksODUzNDE1OTE1LC0yMzE5MTAzNDAsLT
-ExNDM5MzU3NTksLTc2NDIzNjA3MiwtMTY4NTY0Nzg3OCwzOTUz
-NzQ1NDIsLTk0NzQ3NDUzNCw0NjcwODM0NTMsLTE5MjQ3NTA0NT
-ksLTU5ODUyNzY4OSwxMjYyODIxOTExLC0xOTMwMTgzOTY3LDkw
-ODY2MDg1OV19
+eyJoaXN0b3J5IjpbNzc2MzIxODM1LC00ODM0OTY5MDIsMTM4MD
+YyNTI2MCwxNzc0OTc5MjcwLC0xMTE0NDgxNzUsMTU0NTg4Mjgz
+OSwtMTg4NDgzODc3OSw4NTM0MTU5MTUsLTIzMTkxMDM0MCwtMT
+E0MzkzNTc1OSwtNzY0MjM2MDcyLC0xNjg1NjQ3ODc4LDM5NTM3
+NDU0MiwtOTQ3NDc0NTM0LDQ2NzA4MzQ1MywtMTkyNDc1MDQ1OS
+wtNTk4NTI3Njg5LDEyNjI4MjE5MTEsLTE5MzAxODM5NjcsOTA4
+NjYwODU5XX0=
 -->
