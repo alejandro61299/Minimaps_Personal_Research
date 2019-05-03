@@ -490,10 +490,9 @@ switch (interaction_type)
 
 #### **Explicaition** 
 Within `UpdateFinalTexture()` you must find the correct location to draw the camera area borders on minimap. 
+Also placed correctly the alpha mask drawing. 
 
-	// To draw the camera, use app-> render-> DrawQuad() ,
-	// the fPoint camera-> camera_pos (current position of the camera in the world) &
-	// camera->screen_section.w / camera->screen_section.h
+To draw the camera, use app-> render-> DrawQuad() , he `fPoint camera->camera_pos` (current position of the camera in the world) & camera->screen_section.w / camera->screen_section.h
 
  Transfrom map coordinates to Minimap Pixel Cordinates. Very similar to the MapToWorldF function on M_Map.
  
@@ -502,11 +501,11 @@ Within `UpdateFinalTexture()` you must find the correct location to draw the cam
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzAzNTU0NTY5LC00ODM0OTY5MDIsMTM4MD
-YyNTI2MCwxNzc0OTc5MjcwLC0xMTE0NDgxNzUsMTU0NTg4Mjgz
-OSwtMTg4NDgzODc3OSw4NTM0MTU5MTUsLTIzMTkxMDM0MCwtMT
-E0MzkzNTc1OSwtNzY0MjM2MDcyLC0xNjg1NjQ3ODc4LDM5NTM3
-NDU0MiwtOTQ3NDc0NTM0LDQ2NzA4MzQ1MywtMTkyNDc1MDQ1OS
-wtNTk4NTI3Njg5LDEyNjI4MjE5MTEsLTE5MzAxODM5NjcsOTA4
-NjYwODU5XX0=
+eyJoaXN0b3J5IjpbLTIxMDM5NTkxNjEsLTQ4MzQ5NjkwMiwxMz
+gwNjI1MjYwLDE3NzQ5NzkyNzAsLTExMTQ0ODE3NSwxNTQ1ODgy
+ODM5LC0xODg0ODM4Nzc5LDg1MzQxNTkxNSwtMjMxOTEwMzQwLC
+0xMTQzOTM1NzU5LC03NjQyMzYwNzIsLTE2ODU2NDc4NzgsMzk1
+Mzc0NTQyLC05NDc0NzQ1MzQsNDY3MDgzNDUzLC0xOTI0NzUwND
+U5LC01OTg1Mjc2ODksMTI2MjgyMTkxMSwtMTkzMDE4Mzk2Nyw5
+MDg2NjA4NTldfQ==
 -->
