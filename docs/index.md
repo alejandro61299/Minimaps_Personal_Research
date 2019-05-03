@@ -440,7 +440,7 @@ fPoint Minimap::MinimapToMap(const float x, const float y)
 #### **Explication** 
 When you click on the minimap, you must add an alert. Use the AddIndicator () function. 
 The alert sprite sheet rectangle is {32, 32, 32, 32}.
-  #### **Test** 
+  #### **Test TODO 2 & 3** 
   
  #### **Solution** 
 ```cpp
@@ -517,7 +517,7 @@ Also placed correctly the alpha mask drawing.
 	SDL_SetRenderTarget(app->render->renderer, NULL);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzU4ODMxNTAxLC03ODE4MzgzMTcsNjI5MT
+eyJoaXN0b3J5IjpbNzUzNDgxMzM4LC03ODE4MzgzMTcsNjI5MT
 gwNDk2LC05MDIzMjAzNjAsLTE1MjIxMjYxMjUsLTQ4MzQ5Njkw
 MiwxMzgwNjI1MjYwLDE3NzQ5NzkyNzAsLTExMTQ0ODE3NSwxNT
 Q1ODgyODM5LC0xODg0ODM4Nzc5LDg1MzQxNTkxNSwtMjMxOTEw
