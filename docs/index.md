@@ -528,12 +528,15 @@ Also placed correctly the alpha mask drawing.
 ```
 
 ## Improvements
+
 - Adapt this class so that it is an element of the UI and can be used in the UI factory
 - The included map is small so its drawing does not consume much. With larger maps (as in open worlds) you can implement quadtrees and dictate the texture in chunks
 - Add your own class of entities as targets of the minimap or of an indicator.
-- 
+- Add animations to indicators, labels, etc.
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk1MzI2NTAwNywzNjYwMjMyMywtNTY4Mj
+eyJoaXN0b3J5IjpbLTE1NzMyNjc0NSwzNjYwMjMyMywtNTY4Mj
 c0NTk4LDk1MDgzMDQ2NCw3NTM0ODEzMzgsLTc4MTgzODMxNyw2
 MjkxODA0OTYsLTkwMjMyMDM2MCwtMTUyMjEyNjEyNSwtNDgzND
 k2OTAyLDEzODA2MjUyNjAsMTc3NDk3OTI3MCwtMTExNDQ4MTc1
