@@ -486,7 +486,7 @@ switch (interaction_type)
 	}
 
 ```
-### TODO 5: Complete MinimapToMap()
+### TODO 5: Apply Alpha Mask & Draw
 #### **Explicaition** 
 
  Transfrom map coordinates to Minimap Pixel Cordinates. Very similar to the MapToWorldF function on M_Map.
@@ -496,11 +496,11 @@ switch (interaction_type)
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ4MzQ5NjkwMiwxMzgwNjI1MjYwLDE3Nz
-Q5NzkyNzAsLTExMTQ0ODE3NSwxNTQ1ODgyODM5LC0xODg0ODM4
-Nzc5LDg1MzQxNTkxNSwtMjMxOTEwMzQwLC0xMTQzOTM1NzU5LC
-03NjQyMzYwNzIsLTE2ODU2NDc4NzgsMzk1Mzc0NTQyLC05NDc0
-NzQ1MzQsNDY3MDgzNDUzLC0xOTI0NzUwNDU5LC01OTg1Mjc2OD
-ksMTI2MjgyMTkxMSwtMTkzMDE4Mzk2Nyw5MDg2NjA4NTksLTEy
-MTYyNjcxNjFdfQ==
+eyJoaXN0b3J5IjpbMTIzMjM0NDExNiwtNDgzNDk2OTAyLDEzOD
+A2MjUyNjAsMTc3NDk3OTI3MCwtMTExNDQ4MTc1LDE1NDU4ODI4
+MzksLTE4ODQ4Mzg3NzksODUzNDE1OTE1LC0yMzE5MTAzNDAsLT
+ExNDM5MzU3NTksLTc2NDIzNjA3MiwtMTY4NTY0Nzg3OCwzOTUz
+NzQ1NDIsLTk0NzQ3NDUzNCw0NjcwODM0NTMsLTE5MjQ3NTA0NT
+ksLTU5ODUyNzY4OSwxMjYyODIxOTExLC0xOTMwMTgzOTY3LDkw
+ODY2MDg1OV19
 -->
