@@ -400,12 +400,128 @@ SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode beco
 
 ## TODO'S & Solutions
 
+### TODO 1: Complete MapToMinimap()
+
+#### **Explicaition** 
+
+ Transfrom Map Coordinates to Minimap Pixel Cordinates. Very similar to the MapToWorldF function on M_Map.
+ 
+  #### **Test** 
+  
+ #### **Solution** 
+```cpp
+fPoint Minimap::MapToMinimap(const float x, const float y)
+{
+	return fPoint((x - y) * minimap_tile_width * 0.5f + x_offset, (x + y) * minimap_tile_height * 0.5f);
+}
+```
+
+### TODO 2: Complete MinimapToMap()
+
+#### **Explicaition** 
+
+Knowing how to transform  Map coordinates to  Minimap Cordinates,  complete the inverse function.
+
+  #### **Test** 
+  
+ #### **Solution** 
+```cpp
+fPoint Minimap::MinimapToMap(const float x, const float y) 
+{
+	float half_width = minimap_tile_width * .5f;
+	float half_height = minimap_tile_height * .5f;
+
+	float x_mod = x - x_offset;
+
+	return fPoint((x_mod / half_width + y / half_height) * .5f, (y / half_height - x_mod / half_width) * .5f);
+}
+```
+### TODO 3: Add an alert (Ping) by clicking over minimap 
+
+#### **Explicaition** 
+When you click on the minimap, you must add an alert. Use the AddIndicator () function. 
+The alert sprite sheet rectangle is {32, 32, 32, 32}.
+  #### **Test** 
+  
+ #### **Solution** 
+```cpp
+if (app->input->GetMouseButton(3) == KEY_DOWN)
+{
+	if (SDL_PointInRect(&mouse_point, &minimap_rect))
+	{
+		AddIndicator(MinimapToMap(mouse_point.x - GetTextureScreenPos().x, mouse_point.y - GetTextureScreenPos().y), { 32, 32, 32, 32 });
+	}
+	else
+	{
+		AddIndicator(app->map->ScreenToMapF(mouse_point.x + camera->rect.x, mouse_point.y + camera->rect.y), { 32, 32, 32, 32 });
+	}
+}
+
+```
+### TODO 4:   Transform the Minimap into a Focused on Player Minimap.
+
+#### **Explicaition** 
+
+ When interaction_type == NO_TYPE, update the variable texture_pos so that the player stays in the center of the minimap as in the "Focused on the Player" minimap type.  The pointer that contains the player is target_to_follow.
+
+  #### **Test** 
+ 
+ #### **Solution** 
+```cpp
+switch (interaction_type)
+	{
+	case INTERACTION_TYPE::NO_TYPE:
+
+		texture_pos = fPoint(minimap_rect.w * .5f, minimap_rect.h * .5f) - MapToMinimap(target_to_follow->map_pos.x, target_to_follow->map_pos.y);
+		camera_target_pos = camera->camera_pos;
+		camera->MoveToObject(dt, target_to_follow);         // Caemra movement ----------
+		break;
+
+	case INTERACTION_TYPE::MOUSE_DRAG:
+
+		MouseDragInput(dt);
+		camera->MoveToScreenPoint(dt, camera_target_pos);	// Caemra movement ----------
+
+		break;
+	}
+
+```
+### TODO 5: Draw Camera Area Borders & Apply Alpha Mask 
+
+#### **Explicaition** 
+Within `UpdateFinalTexture()` you must find the correct location to draw the camera area borders on minimap. 
+Also placed correctly the alpha mask drawing. 
+
+ - To draw the camera, use app-> render-> DrawQuad() , he `fPoint
+   camera->camera_pos` (current position of the camera in the world) ,`camera->screen_section.w`   & `camera->screen_section.h`
+ - To draw alpha mask use SDL_RenderCopy
+
+ 
+ #### **Solution** 
+```cpp
+// Draw minimap camera rect =================================================
+
+	pos = texture_pos + WorldToMinimap(camera->camera_pos.x, camera->camera_pos.y) ;
+
+	SDL_Rect camera_rect = { pos.x , pos.y, camera->screen_section.w * aspect_ratio_x ,  camera->screen_section.h * aspect_ratio_y };
+	app->render->DrawQuad(camera_rect, 255, 255, 255, 255, false, false);
+
+	// Draw alpha mask texture  =================================================
+	if (shape_type == SHAPE_TYPE::CIRCLE)
+	{
+		SDL_RenderCopy(app->render->renderer, alpha_mask_texture, NULL, NULL);
+	}
+
+	// Reset render target ======================================================
+
+	SDL_SetRenderTarget(app->render->renderer, NULL);
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc3NDk3OTI3MCwtMTExNDQ4MTc1LDE1ND
-U4ODI4MzksLTE4ODQ4Mzg3NzksODUzNDE1OTE1LC0yMzE5MTAz
-NDAsLTExNDM5MzU3NTksLTc2NDIzNjA3MiwtMTY4NTY0Nzg3OC
-wzOTUzNzQ1NDIsLTk0NzQ3NDUzNCw0NjcwODM0NTMsLTE5MjQ3
-NTA0NTksLTU5ODUyNzY4OSwxMjYyODIxOTExLC0xOTMwMTgzOT
-Y3LDkwODY2MDg1OSwtMTIxNjI2NzE2MSwxODY0ODkzOTcwLDE5
-ODk5MDA1OTZdfQ==
+eyJoaXN0b3J5IjpbODAxNDIwMjUwLC00ODM0OTY5MDIsMTM4MD
+YyNTI2MCwxNzc0OTc5MjcwLC0xMTE0NDgxNzUsMTU0NTg4Mjgz
+OSwtMTg4NDgzODc3OSw4NTM0MTU5MTUsLTIzMTkxMDM0MCwtMT
+E0MzkzNTc1OSwtNzY0MjM2MDcyLC0xNjg1NjQ3ODc4LDM5NTM3
+NDU0MiwtOTQ3NDc0NTM0LDQ2NzA4MzQ1MywtMTkyNDc1MDQ1OS
+wtNTk4NTI3Njg5LDEyNjI4MjE5MTEsLTE5MzAxODM5NjcsOTA4
+NjYwODU5XX0=
 -->
