@@ -398,7 +398,7 @@ SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode beco
 - [Following the Little Dotted Line ( Video )](https://www.youtube.com/watch?v=FzOCkXsyIqo)
 
 
-## TODO'S & ww
+## TODO'S & Solutions
 
 ### TODO 1: Complete MapToMinimap()wwww
 
@@ -407,7 +407,7 @@ SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode beco
  Transfrom Map Coordinates to Minimap Pixel Cordinates. Very similar to the MapToWorldF function on M_Map.
  
   #### **Test** 
-The texture of the minimap will be well generated and you will be able to see it but will be static . You can also see the indicator of the player's position and you can even add alerts by clicking on the map.
+The texture of the minimap will be well generated and you will be able to see it but it will be static. You will also see the position indicator of the player and you can even add alerts by clicking on the map.
   
  #### **Solution** 
 ```cpp
@@ -520,7 +520,7 @@ Also placed correctly the alpha mask drawing.
 	SDL_SetRenderTarget(app->render->renderer, NULL);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI1MDA5NjgzNSw3NTM0ODEzMzgsLTc4MT
+eyJoaXN0b3J5IjpbMTg3MTcwMDAxMCw3NTM0ODEzMzgsLTc4MT
 gzODMxNyw2MjkxODA0OTYsLTkwMjMyMDM2MCwtMTUyMjEyNjEy
 NSwtNDgzNDk2OTAyLDEzODA2MjUyNjAsMTc3NDk3OTI3MCwtMT
 ExNDQ4MTc1LDE1NDU4ODI4MzksLTE4ODQ4Mzg3NzksODUzNDE1
