@@ -424,7 +424,7 @@ fPoint Minimap::MapToMinimap(const float x, const float y)
 
 #### **Explication** 
 
-Knowing how to transform  Map coordinates to  Minimap Cordinates,  complete the inverse function.
+Knowing how to transform  Map coordinates to  Minimap Coordinates,  complete the inverse function.
 
 #### **Solution** 
 ```cpp
@@ -536,11 +536,11 @@ Also placed correctly the alpha mask drawing.
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk4NTE4MTksMTI3NTY1NzAyMiw3NTgwMz
-U0MiwxOTcxMjA0MzcwLC0xNTczMjY3NDUsMzY2MDIzMjMsLTU2
-ODI3NDU5OCw5NTA4MzA0NjQsNzUzNDgxMzM4LC03ODE4MzgzMT
-csNjI5MTgwNDk2LC05MDIzMjAzNjAsLTE1MjIxMjYxMjUsLTQ4
-MzQ5NjkwMiwxMzgwNjI1MjYwLDE3NzQ5NzkyNzAsLTExMTQ0OD
-E3NSwxNTQ1ODgyODM5LC0xODg0ODM4Nzc5LDg1MzQxNTkxNV19
+eyJoaXN0b3J5IjpbNzczOTA3Njg4LC05ODUxODE5LDEyNzU2NT
+cwMjIsNzU4MDM1NDIsMTk3MTIwNDM3MCwtMTU3MzI2NzQ1LDM2
+NjAyMzIzLC01NjgyNzQ1OTgsOTUwODMwNDY0LDc1MzQ4MTMzOC
+wtNzgxODM4MzE3LDYyOTE4MDQ5NiwtOTAyMzIwMzYwLC0xNTIy
+MTI2MTI1LC00ODM0OTY5MDIsMTM4MDYyNTI2MCwxNzc0OTc5Mj
+cwLC0xMTE0NDgxNzUsMTU0NTg4MjgzOSwtMTg4NDgzODc3OV19
 
 -->
