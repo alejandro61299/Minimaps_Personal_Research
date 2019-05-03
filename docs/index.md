@@ -492,20 +492,20 @@ switch (interaction_type)
 Within `UpdateFinalTexture()` you must find the correct location to draw the camera area borders on minimap. 
 Also placed correctly the alpha mask drawing. 
 
-To draw the camera, use app-> render-> DrawQuad() , he `fPoint camera->camera_pos` (current position of the camera in the world) & camera->screen_section.w / camera->screen_section.h
+ - To draw the camera, use app-> render-> DrawQuad() , he `fPoint
+   camera->camera_pos` (current position of the camera in the world) ,`camera->screen_section.w`   & `camera->screen_section.h`
 
- Transfrom map coordinates to Minimap Pixel Cordinates. Very similar to the MapToWorldF function on M_Map.
  
  #### **Solution** 
 ```cpp
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMDM5NTkxNjEsLTQ4MzQ5NjkwMiwxMz
-gwNjI1MjYwLDE3NzQ5NzkyNzAsLTExMTQ0ODE3NSwxNTQ1ODgy
-ODM5LC0xODg0ODM4Nzc5LDg1MzQxNTkxNSwtMjMxOTEwMzQwLC
-0xMTQzOTM1NzU5LC03NjQyMzYwNzIsLTE2ODU2NDc4NzgsMzk1
-Mzc0NTQyLC05NDc0NzQ1MzQsNDY3MDgzNDUzLC0xOTI0NzUwND
-U5LC01OTg1Mjc2ODksMTI2MjgyMTkxMSwtMTkzMDE4Mzk2Nyw5
-MDg2NjA4NTldfQ==
+eyJoaXN0b3J5IjpbMTM0NjUyNDg5NywtNDgzNDk2OTAyLDEzOD
+A2MjUyNjAsMTc3NDk3OTI3MCwtMTExNDQ4MTc1LDE1NDU4ODI4
+MzksLTE4ODQ4Mzg3NzksODUzNDE1OTE1LC0yMzE5MTAzNDAsLT
+ExNDM5MzU3NTksLTc2NDIzNjA3MiwtMTY4NTY0Nzg3OCwzOTUz
+NzQ1NDIsLTk0NzQ3NDUzNCw0NjcwODM0NTMsLTE5MjQ3NTA0NT
+ksLTU5ODUyNzY4OSwxMjYyODIxOTExLC0xOTMwMTgzOTY3LDkw
+ODY2MDg1OV19
 -->
