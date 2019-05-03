@@ -10,7 +10,7 @@ Minimap is an UI element of the HUD usually located in a corner of the screen. I
 
 ![enter image description here](https://raw.githubusercontent.com/alejandro61299/Minimaps_Personal_Research/master/docs/web_images/lol.png)
 
-### When is a minimap necessary?
+### When is a minimap necessary? / Introduction to the problem
 
 This question has a different answer depending on the genre and the pillars of the video game but in general the main problems that make the minimap a necessity are:
 
@@ -24,7 +24,7 @@ This question has a different answer depending on the genre and the pillars of t
 
 In order to solve these problems **one of the several options** is to implement a minimap. Other options are in-game elements like arrows or the famous compas buts this elements are not compatible with most genres.
 
-### Minimap types 
+### Minimap types / Different approaches
 
 Mini maps can be classified by many of their attributes as their **perspective** (Orthogonal, Isometric, 3D) or their **shape** (Rectangular, Circular) but the two most common types are:
 
@@ -58,7 +58,7 @@ This mini map type functions as a miniaturized world map. We can see them in Spo
 -   **Mouse drag**: Change the map  segment using mouse drag.
 -   **Change rotation mode**: It allows to iterate between fixed map in the north or rotation
 
-### Where should we place the minimap?
+### Where should we place the minimap? / Different approaches
 
 You may be thinking, does the position of the minimap matter? The truth is that yes, it affects above all in fast-paced games such as **First Person Shooters** where you usually put the minimap on the left. This is because our western culture tends to [pay more attention to the left part of the screen](http://www.useit.com/alertbox/horizontal-attention.html).
 
@@ -536,11 +536,11 @@ Also placed correctly the alpha mask drawing.
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzU4MDM1NDIsMTk3MTIwNDM3MCwtMTU3Mz
-I2NzQ1LDM2NjAyMzIzLC01NjgyNzQ1OTgsOTUwODMwNDY0LDc1
-MzQ4MTMzOCwtNzgxODM4MzE3LDYyOTE4MDQ5NiwtOTAyMzIwMz
-YwLC0xNTIyMTI2MTI1LC00ODM0OTY5MDIsMTM4MDYyNTI2MCwx
-Nzc0OTc5MjcwLC0xMTE0NDgxNzUsMTU0NTg4MjgzOSwtMTg4ND
-gzODc3OSw4NTM0MTU5MTUsLTIzMTkxMDM0MCwtMTE0MzkzNTc1
-OV19
+eyJoaXN0b3J5IjpbMTI3NTY1NzAyMiw3NTgwMzU0MiwxOTcxMj
+A0MzcwLC0xNTczMjY3NDUsMzY2MDIzMjMsLTU2ODI3NDU5OCw5
+NTA4MzA0NjQsNzUzNDgxMzM4LC03ODE4MzgzMTcsNjI5MTgwND
+k2LC05MDIzMjAzNjAsLTE1MjIxMjYxMjUsLTQ4MzQ5NjkwMiwx
+MzgwNjI1MjYwLDE3NzQ5NzkyNzAsLTExMTQ0ODE3NSwxNTQ1OD
+gyODM5LC0xODg0ODM4Nzc5LDg1MzQxNTkxNSwtMjMxOTEwMzQw
+XX0=
 -->
