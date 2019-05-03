@@ -526,12 +526,16 @@ Also placed correctly the alpha mask drawing.
 
 	SDL_SetRenderTarget(app->render->renderer, NULL);
 ```
+
+## Improvements
+- Adapt this class so that it is an element of the UI and can be used in the UI factory
+- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMTM3MTM2MDksMzY2MDIzMjMsLTU2OD
-I3NDU5OCw5NTA4MzA0NjQsNzUzNDgxMzM4LC03ODE4MzgzMTcs
-NjI5MTgwNDk2LC05MDIzMjAzNjAsLTE1MjIxMjYxMjUsLTQ4Mz
-Q5NjkwMiwxMzgwNjI1MjYwLDE3NzQ5NzkyNzAsLTExMTQ0ODE3
-NSwxNTQ1ODgyODM5LC0xODg0ODM4Nzc5LDg1MzQxNTkxNSwtMj
-MxOTEwMzQwLC0xMTQzOTM1NzU5LC03NjQyMzYwNzIsLTE2ODU2
-NDc4NzhdfQ==
+eyJoaXN0b3J5IjpbLTYxOTE3NTIxNiwzNjYwMjMyMywtNTY4Mj
+c0NTk4LDk1MDgzMDQ2NCw3NTM0ODEzMzgsLTc4MTgzODMxNyw2
+MjkxODA0OTYsLTkwMjMyMDM2MCwtMTUyMjEyNjEyNSwtNDgzND
+k2OTAyLDEzODA2MjUyNjAsMTc3NDk3OTI3MCwtMTExNDQ4MTc1
+LDE1NDU4ODI4MzksLTE4ODQ4Mzg3NzksODUzNDE1OTE1LC0yMz
+E5MTAzNDAsLTExNDM5MzU3NTksLTc2NDIzNjA3MiwtMTY4NTY0
+Nzg3OF19
 -->
