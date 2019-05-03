@@ -498,7 +498,7 @@ switch (interaction_type)
 Within `UpdateFinalTexture()` you must find the correct location to draw the camera area borders on minimap. 
 Also placed correctly the alpha mask drawing. 
 
- - To draw the camera, use app-> render-> DrawQuad() , he `fPoint
+ - To draw the camera, use app-> render-> DrawQuad() , the `fPoint
    camera->camera_pos` (current position of the camera in the world) ,`camera->screen_section.w`   & `camera->screen_section.h`
  - To draw alpha mask use SDL_RenderCopy
  
@@ -536,11 +536,11 @@ Also placed correctly the alpha mask drawing.
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzczOTA3Njg4LC05ODUxODE5LDEyNzU2NT
-cwMjIsNzU4MDM1NDIsMTk3MTIwNDM3MCwtMTU3MzI2NzQ1LDM2
-NjAyMzIzLC01NjgyNzQ1OTgsOTUwODMwNDY0LDc1MzQ4MTMzOC
-wtNzgxODM4MzE3LDYyOTE4MDQ5NiwtOTAyMzIwMzYwLC0xNTIy
-MTI2MTI1LC00ODM0OTY5MDIsMTM4MDYyNTI2MCwxNzc0OTc5Mj
-cwLC0xMTE0NDgxNzUsMTU0NTg4MjgzOSwtMTg4NDgzODc3OV19
+eyJoaXN0b3J5IjpbMTIzMTA4MjQ0Miw3NzM5MDc2ODgsLTk4NT
+E4MTksMTI3NTY1NzAyMiw3NTgwMzU0MiwxOTcxMjA0MzcwLC0x
+NTczMjY3NDUsMzY2MDIzMjMsLTU2ODI3NDU5OCw5NTA4MzA0Nj
+QsNzUzNDgxMzM4LC03ODE4MzgzMTcsNjI5MTgwNDk2LC05MDIz
+MjAzNjAsLTE1MjIxMjYxMjUsLTQ4MzQ5NjkwMiwxMzgwNjI1Mj
+YwLDE3NzQ5NzkyNzAsLTExMTQ0ODE3NSwxNTQ1ODgyODM5XX0=
 
 -->
