@@ -466,6 +466,7 @@ if (app->input->GetMouseButton(3) == KEY_DOWN)
  When interaction_type == NO_TYPE, update the variable texture_pos so that the player stays in the center of the minimap as in the "Focused on the Player" minimap type.  The pointer that contains the player is target_to_follow.
 
   #### **Test** 
+ You will see the player focused on the minimap and the texture will move:
  
  #### **Solution** 
 ```cpp
@@ -520,11 +521,11 @@ Also placed correctly the alpha mask drawing.
 	SDL_SetRenderTarget(app->render->renderer, NULL);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg3MTcwMDAxMCw3NTM0ODEzMzgsLTc4MT
-gzODMxNyw2MjkxODA0OTYsLTkwMjMyMDM2MCwtMTUyMjEyNjEy
-NSwtNDgzNDk2OTAyLDEzODA2MjUyNjAsMTc3NDk3OTI3MCwtMT
-ExNDQ4MTc1LDE1NDU4ODI4MzksLTE4ODQ4Mzg3NzksODUzNDE1
-OTE1LC0yMzE5MTAzNDAsLTExNDM5MzU3NTksLTc2NDIzNjA3Mi
-wtMTY4NTY0Nzg3OCwzOTUzNzQ1NDIsLTk0NzQ3NDUzNCw0Njcw
-ODM0NTNdfQ==
+eyJoaXN0b3J5IjpbOTUwODMwNDY0LDc1MzQ4MTMzOCwtNzgxOD
+M4MzE3LDYyOTE4MDQ5NiwtOTAyMzIwMzYwLC0xNTIyMTI2MTI1
+LC00ODM0OTY5MDIsMTM4MDYyNTI2MCwxNzc0OTc5MjcwLC0xMT
+E0NDgxNzUsMTU0NTg4MjgzOSwtMTg4NDgzODc3OSw4NTM0MTU5
+MTUsLTIzMTkxMDM0MCwtMTE0MzkzNTc1OSwtNzY0MjM2MDcyLC
+0xNjg1NjQ3ODc4LDM5NTM3NDU0MiwtOTQ3NDc0NTM0LDQ2NzA4
+MzQ1M119
 -->
