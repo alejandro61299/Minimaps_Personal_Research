@@ -400,13 +400,14 @@ SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode beco
 
 ## TODO'S & Solutions
 
-### TODO 1: Complete MapToMinimap()
+### TODO 1: Complete MapToMinimap()wwww
 
-#### **Explicaition** 
+#### **Explication** 
 
  Transfrom Map Coordinates to Minimap Pixel Cordinates. Very similar to the MapToWorldF function on M_Map.
  
   #### **Test** 
+The texture of the minimap will be well generated and you will be able to see it but it will be static. You will also see the position indicator of the player and you can even add alerts by clicking on the map.
   
  #### **Solution** 
 ```cpp
@@ -418,12 +419,10 @@ fPoint Minimap::MapToMinimap(const float x, const float y)
 
 ### TODO 2: Complete MinimapToMap()
 
-#### **Explicaition** 
+#### **Explication** 
 
 Knowing how to transform  Map coordinates to  Minimap Cordinates,  complete the inverse function.
 
-  #### **Test** 
-  
  #### **Solution** 
 ```cpp
 fPoint Minimap::MinimapToMap(const float x, const float y) 
@@ -438,10 +437,12 @@ fPoint Minimap::MinimapToMap(const float x, const float y)
 ```
 ### TODO 3: Add an alert (Ping) by clicking over minimap 
 
-#### **Explicaition** 
-When you click on the minimap, you must add an alert. Use the AddIndicator () function. 
+#### **Explication** 
+When you right click on the minimap, you must add an alert. Use the AddIndicator () function. 
 The alert sprite sheet rectangle is {32, 32, 32, 32}.
-  #### **Test** 
+
+  #### **Test TODO 2 & 3** 
+  You can add indicators directly on the minimap with the right click like this:
   
  #### **Solution** 
 ```cpp
@@ -460,20 +461,21 @@ if (app->input->GetMouseButton(3) == KEY_DOWN)
 ```
 ### TODO 4:   Transform the Minimap into a Focused on Player Minimap.
 
-#### **Explicaition** 
+#### **Explication** 
 
  When interaction_type == NO_TYPE, update the variable texture_pos so that the player stays in the center of the minimap as in the "Focused on the Player" minimap type.  The pointer that contains the player is target_to_follow.
 
   #### **Test** 
+ You will see the player focused on the minimap and the texture will move:
  
  #### **Solution** 
 ```cpp
 switch (interaction_type)
 	{
 	case INTERACTION_TYPE::NO_TYPE:
-
-		texture_pos = fPoint(minimap_rect.w * .5f, minimap_rect.h * .5f) - MapToMinimap(target_to_follow->map_pos.x, target_to_follow->map_pos.y);
-		camera_target_pos = camera->camera_pos;
+         // here
+        texture_pos = fPoint(minimap_rect.w * .5f, minimap_rect.h * .5f) - MapToMinimap(target_to_follow->map_pos.x, target_to_follow->map_pos.y); 
+		camera_target_pos = camera->camera_pos; 
 		camera->MoveToObject(dt, target_to_follow);         // Caemra movement ----------
 		break;
 
@@ -486,9 +488,10 @@ switch (interaction_type)
 	}
 
 ```
+
 ### TODO 5: Draw Camera Area Borders & Apply Alpha Mask 
 
-#### **Explicaition** 
+#### **Explication** 
 Within `UpdateFinalTexture()` you must find the correct location to draw the camera area borders on minimap. 
 Also placed correctly the alpha mask drawing. 
 
@@ -518,11 +521,11 @@ Also placed correctly the alpha mask drawing.
 	SDL_SetRenderTarget(app->render->renderer, NULL);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MjIxMjYxMjUsLTQ4MzQ5NjkwMiwxMz
-gwNjI1MjYwLDE3NzQ5NzkyNzAsLTExMTQ0ODE3NSwxNTQ1ODgy
-ODM5LC0xODg0ODM4Nzc5LDg1MzQxNTkxNSwtMjMxOTEwMzQwLC
-0xMTQzOTM1NzU5LC03NjQyMzYwNzIsLTE2ODU2NDc4NzgsMzk1
-Mzc0NTQyLC05NDc0NzQ1MzQsNDY3MDgzNDUzLC0xOTI0NzUwND
-U5LC01OTg1Mjc2ODksMTI2MjgyMTkxMSwtMTkzMDE4Mzk2Nyw5
-MDg2NjA4NTldfQ==
+eyJoaXN0b3J5IjpbOTUwODMwNDY0LDc1MzQ4MTMzOCwtNzgxOD
+M4MzE3LDYyOTE4MDQ5NiwtOTAyMzIwMzYwLC0xNTIyMTI2MTI1
+LC00ODM0OTY5MDIsMTM4MDYyNTI2MCwxNzc0OTc5MjcwLC0xMT
+E0NDgxNzUsMTU0NTg4MjgzOSwtMTg4NDgzODc3OSw4NTM0MTU5
+MTUsLTIzMTkxMDM0MCwtMTE0MzkzNTc1OSwtNzY0MjM2MDcyLC
+0xNjg1NjQ3ODc4LDM5NTM3NDU0MiwtOTQ3NDc0NTM0LDQ2NzA4
+MzQ1M119
 -->
