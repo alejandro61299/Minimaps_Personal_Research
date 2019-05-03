@@ -439,9 +439,7 @@ fPoint Minimap::MinimapToMap(const float x, const float y)
 ### TODO 3: Add an alert (Ping) by clicking over minimap 
 
 #### **Explication** 
-When you right click on the minimap, you must add an alert. Use the AddIndicator () function. 
-The alert sprite sheet rectangle is {32, 32, 32, 32}.
-
+When you right click on the minimap, you must add an alert. Use the AddIndicator () function &  use GetTextureScreenPos() function. The alert sprite sheet rectangle is {32, 32, 32, 32}.
   #### **Test TODO 2 & 3** 
   You can add indicators directly on the minimap with the right click like this:
   
@@ -527,11 +525,11 @@ Also placed correctly the alpha mask drawing.
 	SDL_SetRenderTarget(app->render->renderer, NULL);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU2ODI3NDU5OCw5NTA4MzA0NjQsNzUzND
-gxMzM4LC03ODE4MzgzMTcsNjI5MTgwNDk2LC05MDIzMjAzNjAs
-LTE1MjIxMjYxMjUsLTQ4MzQ5NjkwMiwxMzgwNjI1MjYwLDE3Nz
-Q5NzkyNzAsLTExMTQ0ODE3NSwxNTQ1ODgyODM5LC0xODg0ODM4
-Nzc5LDg1MzQxNTkxNSwtMjMxOTEwMzQwLC0xMTQzOTM1NzU5LC
-03NjQyMzYwNzIsLTE2ODU2NDc4NzgsMzk1Mzc0NTQyLC05NDc0
-NzQ1MzRdfQ==
+eyJoaXN0b3J5IjpbMTgxNjAzMDQ3MSwtNTY4Mjc0NTk4LDk1MD
+gzMDQ2NCw3NTM0ODEzMzgsLTc4MTgzODMxNyw2MjkxODA0OTYs
+LTkwMjMyMDM2MCwtMTUyMjEyNjEyNSwtNDgzNDk2OTAyLDEzOD
+A2MjUyNjAsMTc3NDk3OTI3MCwtMTExNDQ4MTc1LDE1NDU4ODI4
+MzksLTE4ODQ4Mzg3NzksODUzNDE1OTE1LC0yMzE5MTAzNDAsLT
+ExNDM5MzU3NTksLTc2NDIzNjA3MiwtMTY4NTY0Nzg3OCwzOTUz
+NzQ1NDJdfQ==
 -->
