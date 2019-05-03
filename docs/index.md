@@ -484,8 +484,8 @@ switch (interaction_type)
 
 		break;
 	}
-
 ```
+
 ### TODO 5: Draw Camera Area Borders & Apply Alpha Mask 
 
 #### **Explicaition** 
@@ -518,11 +518,11 @@ Also placed correctly the alpha mask drawing.
 	SDL_SetRenderTarget(app->render->renderer, NULL);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MjIxMjYxMjUsLTQ4MzQ5NjkwMiwxMz
-gwNjI1MjYwLDE3NzQ5NzkyNzAsLTExMTQ0ODE3NSwxNTQ1ODgy
-ODM5LC0xODg0ODM4Nzc5LDg1MzQxNTkxNSwtMjMxOTEwMzQwLC
-0xMTQzOTM1NzU5LC03NjQyMzYwNzIsLTE2ODU2NDc4NzgsMzk1
-Mzc0NTQyLC05NDc0NzQ1MzQsNDY3MDgzNDUzLC0xOTI0NzUwND
-U5LC01OTg1Mjc2ODksMTI2MjgyMTkxMSwtMTkzMDE4Mzk2Nyw5
-MDg2NjA4NTldfQ==
+eyJoaXN0b3J5IjpbLTExOTg2ODkwNDEsLTE1MjIxMjYxMjUsLT
+Q4MzQ5NjkwMiwxMzgwNjI1MjYwLDE3NzQ5NzkyNzAsLTExMTQ0
+ODE3NSwxNTQ1ODgyODM5LC0xODg0ODM4Nzc5LDg1MzQxNTkxNS
+wtMjMxOTEwMzQwLC0xMTQzOTM1NzU5LC03NjQyMzYwNzIsLTE2
+ODU2NDc4NzgsMzk1Mzc0NTQyLC05NDc0NzQ1MzQsNDY3MDgzND
+UzLC0xOTI0NzUwNDU5LC01OTg1Mjc2ODksMTI2MjgyMTkxMSwt
+MTkzMDE4Mzk2N119
 -->
