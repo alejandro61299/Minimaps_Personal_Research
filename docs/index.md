@@ -462,7 +462,7 @@ if (app->input->GetMouseButton(3) == KEY_DOWN)
 
 #### **Explicaition** 
 
-  When interaction_Update the variable texture_pos so that the player stays in the center of the minimap as in the "Focused on the Player" minimap type.  The pointer that contains the player is target_to_follow
+ When interaction_type == NO_TYPE, update the variable texture_pos so that the player stays in the center of the minimap as in the "Focused on the Player" minimap type.  The pointer that contains the player is target_to_follow.
  
  #### **Solution** 
 ```cpp
@@ -479,11 +479,11 @@ texture_pos = fPoint(minimap_rect.w * .5f, minimap_rect.h * .5f) - MapToMinimap(
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NjAwOTExMzMsMTM4MDYyNTI2MCwxNz
-c0OTc5MjcwLC0xMTE0NDgxNzUsMTU0NTg4MjgzOSwtMTg4NDgz
-ODc3OSw4NTM0MTU5MTUsLTIzMTkxMDM0MCwtMTE0MzkzNTc1OS
-wtNzY0MjM2MDcyLC0xNjg1NjQ3ODc4LDM5NTM3NDU0MiwtOTQ3
-NDc0NTM0LDQ2NzA4MzQ1MywtMTkyNDc1MDQ1OSwtNTk4NTI3Nj
-g5LDEyNjI4MjE5MTEsLTE5MzAxODM5NjcsOTA4NjYwODU5LC0x
-MjE2MjY3MTYxXX0=
+eyJoaXN0b3J5IjpbMTAwNzI0MTg3OSwxMzgwNjI1MjYwLDE3Nz
+Q5NzkyNzAsLTExMTQ0ODE3NSwxNTQ1ODgyODM5LC0xODg0ODM4
+Nzc5LDg1MzQxNTkxNSwtMjMxOTEwMzQwLC0xMTQzOTM1NzU5LC
+03NjQyMzYwNzIsLTE2ODU2NDc4NzgsMzk1Mzc0NTQyLC05NDc0
+NzQ1MzQsNDY3MDgzNDUzLC0xOTI0NzUwNDU5LC01OTg1Mjc2OD
+ksMTI2MjgyMTkxMSwtMTkzMDE4Mzk2Nyw5MDg2NjA4NTksLTEy
+MTYyNjcxNjFdfQ==
 -->
