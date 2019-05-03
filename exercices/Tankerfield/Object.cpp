@@ -79,7 +79,7 @@ void Object::SetDamage(float damage)
 
 void Object::CalculateDrawVariables()
 {
-	pos_screen = app->map->MapToScreenF(map_pos);
+	pos_screen = app->map->MapToWorldF(map_pos);
 
 	if (curr_anim != nullptr) {
 		frame = curr_anim->GetFrame(angle);

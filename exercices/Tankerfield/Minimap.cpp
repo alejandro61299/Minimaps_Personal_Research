@@ -98,20 +98,15 @@ bool Minimap::PreUpdate()
 	SDL_Point mouse_point;
 	app->input->GetMousePosition(mouse_point.x, mouse_point.y);
 
+	// TODO 3: When you click on the minimap, you must add an alert. Use the AddIndicator () function. 
+	// The alert sprite sheet rectangle is {32, 32, 32, 32}.
+
 	if (app->input->GetMouseButton(3) == KEY_DOWN)
 	{
-		if (SDL_PointInRect(&mouse_point, &minimap_rect))
-		{
-			// TODO 3: When you click on the minimap, you must add an alert. Use the AddIndicator () function. 
-			// The alert sprite sheet rectangle is {32, 32, 32, 32}.
-
-			/*AddIndicator(MinimapToMap(mouse_point.x - GetTextureScreenPos().x, mouse_point.y - GetTextureScreenPos().y), { 32, 32, 32, 32 });*/
-		}
-		else
+		if (!SDL_PointInRect(&mouse_point, &minimap_rect))
 		{
 			AddIndicator(app->map->ScreenToMapF(mouse_point.x + camera->rect.x, mouse_point.y + camera->rect.y), { 32, 32, 32, 32 });
 		}
-
 	}
 
 	// Reset indicators ------------------------------------
@@ -129,16 +124,14 @@ bool Minimap::PreUpdate()
 
 bool Minimap::Update(float dt)
 {
-	// Update input & camera ===================================
+	// TODO 4:  When interaction_type == NO_TYPE, update the variable texture_pos so that the player stays in the center of the minimap as in the "Focused on the Player" minimap type. 
+	// The pointer that contains the player is target_to_follow.
+
+	// Update texture pos, input & camera ===================================
 
 	switch (interaction_type)
 	{
 	case INTERACTION_TYPE::NO_TYPE:
-
-		// TODO 4: Update the variable texture_pos so that the player stays in the center of the minimap as in the "Focused on the Player" minimap type. 
-		// The pointer that contains the player is target_to_follow
-
-		/*texture_pos = fPoint(minimap_rect.w * .5f, minimap_rect.h * .5f) - MapToMinimap(target_to_follow->map_pos.x, target_to_follow->map_pos.y);*/
 
 		camera_target_pos = camera->camera_pos;
 		camera->MoveToObject(dt, target_to_follow);         // Caemra movement ----------
@@ -197,7 +190,7 @@ bool Minimap::PostUpdate(float dt)
 void Minimap::UpdateFinalTexture()
 {
 	// TODO 5:: Within this function you must find the correct location to draw 
-	// the camera and the alpha mask texture. 
+	// the camera borders on minimap and the alpha mask texture. 
 
 	// To draw the camera, use app-> render-> DrawQuad() ,
 	// the fPoint camera-> camera_pos (current position of the camera in the world) &
@@ -237,19 +230,6 @@ void Minimap::UpdateFinalTexture()
 			app->render->DrawQuad(section_to_print, 255, 0, 0, 255, true, false);
 		}
 	}
-
-	// Draw minimap camera rect =================================================
-
-	//pos = texture_pos + WorldToMinimap(camera->camera_pos.x, camera->camera_pos.y) ;
-
-	//SDL_Rect camera_rect = { pos.x , pos.y, camera->screen_section.w * aspect_ratio_x ,  camera->screen_section.h * aspect_ratio_y };
-	//app->render->DrawQuad(camera_rect, 255, 255, 255, 255, false, false);
-
-	//// Draw alpha mask texture  =================================================
-	//if (shape_type == SHAPE_TYPE::CIRCLE)
-	//{
-	//	SDL_RenderCopy(app->render->renderer, alpha_mask_texture, NULL, NULL);
-	//}
 
 	// Reset render target ======================================================
 
@@ -422,25 +402,17 @@ void Minimap::MouseDragInput(float dt)
 // - Map Coordinates to Minimap Pixels Coordinate   
 fPoint Minimap::MapToMinimap(const float x, const float y)
 {
-	// TODO 1: Transfrom map coordinates to Minimap Pixel Cordinates
-	// Very similar to the MapToWorld function on M_Map
+	// TODO 1: Complete MapToMinimap()
+	// Transfrom Map Coordinates to Minimap Pixel Cordinates
+	// Very similar to the MapToWorldF function on M_Map
 
-	//return fPoint((x - y) * minimap_tile_width * 0.5f + x_offset, (x + y) * minimap_tile_height * 0.5f);
 	return fPoint();
 }
 
 // - Minimap Pixel Coordinate to Map Coordinates
 fPoint Minimap::MinimapToMap(const float x, const float y) 
 {
-	// TODO 2: Knowing how to transform coordinates of the map to coordinates of the mini map,
-	// complete the function to go from coordinates of the minimap to coordinates of the map
-
-	//float half_width = minimap_tile_width * .5f;
-	//float half_height = minimap_tile_height * .5f;
-
-	//float x_mod = x - x_offset;
-
-	//return fPoint((x_mod / half_width + y / half_height) * .5f, (y / half_height - x_mod / half_width) * .5f);
+	// TODO 2: Knowing how to transform  Map coordinates to  Minimap Cordinates,  complete the inverse function.
 
 	return fPoint();
 }

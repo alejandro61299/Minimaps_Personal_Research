@@ -82,7 +82,7 @@ bool M_Render::Awake(pugi::xml_node& config)
 		camera_aux = new Camera();
 		camera_aux->rect.w = app->win->screen_surface->w;
 		camera_aux->rect.h = app->win->screen_surface->h;
-		fPoint tank_1_pos_screen = app->map->MapToScreenF(app->scene->player->map_pos);
+		fPoint tank_1_pos_screen = app->map->MapToWorldF(app->scene->player->map_pos);
 		camera_aux->rect.x = tank_1_pos_screen.x - camera_aux->rect.w*0.5f; //Magic numbres to pos the camera with the player in center
 		camera_aux->rect.y = tank_1_pos_screen.y + camera_aux->rect.h + 40; //Magic numbres to pos the camera with the player in center
 		camera_aux->screen_section = {
@@ -358,13 +358,13 @@ bool M_Render::DrawIsometricQuad(float x, float y, float w, float h, SDL_Color c
 	fPoint point_1, point_2, point_3, point_4;
 
 	// top_left 
-	point_1 = app->map->MapToScreenF({x, y});
+	point_1 = app->map->MapToWorldF({x, y});
 	// top_right
-	point_2 = app->map->MapToScreenF({x + w, y});
+	point_2 = app->map->MapToWorldF({x + w, y});
 	// bot_right
-	point_3 = app->map->MapToScreenF({x + w, y + h});
+	point_3 = app->map->MapToWorldF({x + w, y + h});
 	// bot_left
-	point_4 = app->map->MapToScreenF({x, y + h});
+	point_4 = app->map->MapToWorldF({x, y + h});
 
 
     SDL_Rect rect_tile{
@@ -388,8 +388,8 @@ void M_Render::DrawIsometricLine(fPoint point_1, fPoint point_2, SDL_Color color
 {
 	fPoint p_1, p_2;
 
-	p_1 = app->map->MapToScreenF(point_1);
-	p_2 = app->map->MapToScreenF(point_2);
+	p_1 = app->map->MapToWorldF(point_1);
+	p_2 = app->map->MapToWorldF(point_2);
 
 	app->render->DrawLineSplitScreen(p_1.x, p_1.y, p_2.x, p_2.y, color.r, color.g, color.b, color.a, camera);
 }
