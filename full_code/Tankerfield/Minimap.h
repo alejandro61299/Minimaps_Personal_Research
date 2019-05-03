@@ -34,7 +34,8 @@ class Minimap_Indicator
 {
 public:
 
-	Minimap_Indicator(const fPoint map_pos, const SDL_Rect icon_rect = { 0,0,0,0 }, const SDL_Color color = { 0,0,0,0 }, Object*  target = nullptr);
+	Minimap_Indicator(const fPoint map_pos, const SDL_Rect icon_rect = { 0,0,0,0 },
+	const SDL_Color color = { 0,0,0,0 }, Object*  target = nullptr);
 
 	void Destroy();
 
@@ -87,7 +88,7 @@ public:
 
 	fPoint  GetTextureScreenPos();
 
-	// Mesures transformations methods ==========================
+	// Units transformations methods ==========================
 
 	fPoint	MapToMinimap(const float x, const float y);
 

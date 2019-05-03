@@ -123,14 +123,12 @@ bool Minimap::Update(float dt)
 {
 	// Update input & camera ===================================
 
-	fPoint offset;
-
 	switch (interaction_type)
 	{
 	case INTERACTION_TYPE::NO_TYPE:
-
-		offset = MapToMinimap(target_to_follow->map_pos.x, target_to_follow->map_pos.y);
-		texture_pos = fPoint(minimap_rect.w * .5f, minimap_rect.h * .5f) - MapToMinimap(target_to_follow->map_pos.x, target_to_follow->map_pos.y);
+		// THIS LINE ==================
+		texture_pos = fPoint(minimap_rect.w * .5f, minimap_rect.h * .5f) - MapToMinimap(target_to_follow->map_pos.x, target_to_follow->map_pos.y); 
+		//=============================
 		camera->MoveToObject(dt, target_to_follow);         // Caemra movement ----------
 		camera_target_pos = camera->camera_pos;
 		break;
@@ -220,7 +218,7 @@ void Minimap::UpdateFinalTexture()
 			app->render->DrawQuad(section_to_print, 255, 0, 0, 255, true, false);
 		}
 	}
-
+	// After draw minimap indicators
 	// Draw minimap camera rect =================================================
 
 	pos = texture_pos + WorldToMinimap(camera->camera_pos.x, camera->camera_pos.y) ;
