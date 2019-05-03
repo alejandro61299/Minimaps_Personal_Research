@@ -423,7 +423,7 @@ fPoint Minimap::MapToMinimap(const float x, const float y)
 Knowing how to transform  Map coordinates to  Minimap Cordinates,  complete the inverse function.
 
   #### **Test** 
-  
+  Now the texture of the minimap will be well generated and you will be able to see it. You can also see the indicator of the player's position and you can even add alerts by clicking on the map.
   
  #### **Solution** 
 ```cpp
@@ -519,11 +519,11 @@ Also placed correctly the alpha mask drawing.
 	SDL_SetRenderTarget(app->render->renderer, NULL);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjI5MTgwNDk2LC05MDIzMjAzNjAsLTE1Mj
-IxMjYxMjUsLTQ4MzQ5NjkwMiwxMzgwNjI1MjYwLDE3NzQ5Nzky
-NzAsLTExMTQ0ODE3NSwxNTQ1ODgyODM5LC0xODg0ODM4Nzc5LD
-g1MzQxNTkxNSwtMjMxOTEwMzQwLC0xMTQzOTM1NzU5LC03NjQy
-MzYwNzIsLTE2ODU2NDc4NzgsMzk1Mzc0NTQyLC05NDc0NzQ1Mz
-QsNDY3MDgzNDUzLC0xOTI0NzUwNDU5LC01OTg1Mjc2ODksMTI2
-MjgyMTkxMV19
+eyJoaXN0b3J5IjpbLTc4MTgzODMxNyw2MjkxODA0OTYsLTkwMj
+MyMDM2MCwtMTUyMjEyNjEyNSwtNDgzNDk2OTAyLDEzODA2MjUy
+NjAsMTc3NDk3OTI3MCwtMTExNDQ4MTc1LDE1NDU4ODI4MzksLT
+E4ODQ4Mzg3NzksODUzNDE1OTE1LC0yMzE5MTAzNDAsLTExNDM5
+MzU3NTksLTc2NDIzNjA3MiwtMTY4NTY0Nzg3OCwzOTUzNzQ1ND
+IsLTk0NzQ3NDUzNCw0NjcwODM0NTMsLTE5MjQ3NTA0NTksLTU5
+ODUyNzY4OV19
 -->
