@@ -404,12 +404,15 @@ SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode beco
 
 #### **Explication** 
 
- Transfrom Map Coordinates to Minimap Pixel Cordinates. Very similar to the MapToWorldF function on M_Map.
+ Transfrom Map Coordinates to Minimap Pixel Cordinates. Very similar to the `MapToWorldF()` function on M_Map.
  
-  #### **Test** 
+#### **Test** 
 The texture of the minimap will be well generated and you will be able to see it but it will be static. You will also see the position indicator of the player and you can even add alerts by clicking on the map.
   
- #### **Solution** 
+  ![enter image description here](https://github.com/alejandro61299/Minimaps_Personal_Research/blob/master/docs/web_images/test1.gif?raw=true)
+
+#### **Solution** 
+
 ```cpp
 fPoint Minimap::MapToMinimap(const float x, const float y)
 {
@@ -423,7 +426,7 @@ fPoint Minimap::MapToMinimap(const float x, const float y)
 
 Knowing how to transform  Map coordinates to  Minimap Cordinates,  complete the inverse function.
 
- #### **Solution** 
+#### **Solution** 
 ```cpp
 fPoint Minimap::MinimapToMap(const float x, const float y) 
 {
@@ -438,13 +441,12 @@ fPoint Minimap::MinimapToMap(const float x, const float y)
 ### TODO 3: Add an alert (Ping) by clicking over minimap 
 
 #### **Explication** 
-When you right click on the minimap, you must add an alert. Use the AddIndicator () function. 
-The alert sprite sheet rectangle is {32, 32, 32, 32}.
-
-  #### **Test TODO 2 & 3** 
+When you right click on the minimap, you must add an alert. Use the `AddIndicator ()` function & `GetTextureScreenPos()` function. The alert sprite sheet rectangle is {32, 32, 32, 32}.
+#### **Test TODO 2&3**  
   You can add indicators directly on the minimap with the right click like this:
   
- #### **Solution** 
+  ![enter image description here](https://github.com/alejandro61299/Minimaps_Personal_Research/blob/master/docs/web_images/test2_3.gif?raw=true)
+#### **Solution** 
 ```cpp
 if (app->input->GetMouseButton(3) == KEY_DOWN)
 {
@@ -465,10 +467,11 @@ if (app->input->GetMouseButton(3) == KEY_DOWN)
 
  When interaction_type == NO_TYPE, update the variable texture_pos so that the player stays in the center of the minimap as in the "Focused on the Player" minimap type.  The pointer that contains the player is target_to_follow.
 
-  #### **Test** 
+#### **Test** 
  You will see the player focused on the minimap and the texture will move:
  
- #### **Solution** 
+ ![enter image description here](https://github.com/alejandro61299/Minimaps_Personal_Research/blob/master/docs/web_images/test4.gif?raw=true)
+#### **Solution**  
 ```cpp
 switch (interaction_type)
 	{
@@ -498,9 +501,12 @@ Also placed correctly the alpha mask drawing.
  - To draw the camera, use app-> render-> DrawQuad() , he `fPoint
    camera->camera_pos` (current position of the camera in the world) ,`camera->screen_section.w`   & `camera->screen_section.h`
  - To draw alpha mask use SDL_RenderCopy
-
  
- #### **Solution** 
+#### **Test** 
+ You will see that your minimap now has a circular shape! Oh, and the rectangle of the camera will also have appeared. You can use debug mode F1 and F2 without any problem.
+ 
+ ![enter image description here](https://github.com/alejandro61299/Minimaps_Personal_Research/blob/master/docs/web_images/test5.gif?raw=true)
+#### **Solution** 
 ```cpp
 // After minimap indicators
 // Draw minimap camera rect =================================================
@@ -520,12 +526,21 @@ Also placed correctly the alpha mask drawing.
 
 	SDL_SetRenderTarget(app->render->renderer, NULL);
 ```
+
+## Improvements
+
+- Adapt this class so that it is an element of the UI and can be used in the UI factory
+- The included map is small so its drawing does not consume much. With larger maps (as in open worlds) you can implement quadtrees and dictate the texture in chunks
+- Add your own class of entities as targets of the minimap or of an indicator.
+- Add animations to indicators, labels, etc.
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTUwODMwNDY0LDc1MzQ4MTMzOCwtNzgxOD
-M4MzE3LDYyOTE4MDQ5NiwtOTAyMzIwMzYwLC0xNTIyMTI2MTI1
-LC00ODM0OTY5MDIsMTM4MDYyNTI2MCwxNzc0OTc5MjcwLC0xMT
-E0NDgxNzUsMTU0NTg4MjgzOSwtMTg4NDgzODc3OSw4NTM0MTU5
-MTUsLTIzMTkxMDM0MCwtMTE0MzkzNTc1OSwtNzY0MjM2MDcyLC
-0xNjg1NjQ3ODc4LDM5NTM3NDU0MiwtOTQ3NDc0NTM0LDQ2NzA4
-MzQ1M119
+eyJoaXN0b3J5IjpbLTE1NzMyNjc0NSwzNjYwMjMyMywtNTY4Mj
+c0NTk4LDk1MDgzMDQ2NCw3NTM0ODEzMzgsLTc4MTgzODMxNyw2
+MjkxODA0OTYsLTkwMjMyMDM2MCwtMTUyMjEyNjEyNSwtNDgzND
+k2OTAyLDEzODA2MjUyNjAsMTc3NDk3OTI3MCwtMTExNDQ4MTc1
+LDE1NDU4ODI4MzksLTE4ODQ4Mzg3NzksODUzNDE1OTE1LC0yMz
+E5MTAzNDAsLTExNDM5MzU3NTksLTc2NDIzNjA3MiwtMTY4NTY0
+Nzg3OF19
 -->
