@@ -408,6 +408,7 @@ SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode beco
  
   #### **Test** 
 The texture of the minimap will be well generated and you will be able to see it but it will be static. You will also see the position indicator of the player and you can even add alerts by clicking on the map.
+  
   ![enter image description here](https://github.com/alejandro61299/Minimaps_Personal_Research/blob/master/docs/web_images/test1.gif?raw=true)
  #### **Solution** 
 ```cpp
@@ -443,6 +444,7 @@ The alert sprite sheet rectangle is {32, 32, 32, 32}.
 
   #### **Test TODO 2 & 3** 
   You can add indicators directly on the minimap with the right click like this:
+  
   ![enter image description here](https://github.com/alejandro61299/Minimaps_Personal_Research/blob/master/docs/web_images/test2_3.gif?raw=true)
  #### **Solution** 
 ```cpp
@@ -499,8 +501,10 @@ Also placed correctly the alpha mask drawing.
  - To draw the camera, use app-> render-> DrawQuad() , he `fPoint
    camera->camera_pos` (current position of the camera in the world) ,`camera->screen_section.w`   & `camera->screen_section.h`
  - To draw alpha mask use SDL_RenderCopy
-
+ - 
+  #### **Test** 
  
+ ![enter image description here](https://github.com/alejandro61299/Minimaps_Personal_Research/blob/master/docs/web_images/test5.gif?raw=true)
  #### **Solution** 
 ```cpp
 // After minimap indicators
@@ -522,11 +526,11 @@ Also placed correctly the alpha mask drawing.
 	SDL_SetRenderTarget(app->render->renderer, NULL);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTAyNzY1MTM3LDk1MDgzMDQ2NCw3NTM0OD
-EzMzgsLTc4MTgzODMxNyw2MjkxODA0OTYsLTkwMjMyMDM2MCwt
-MTUyMjEyNjEyNSwtNDgzNDk2OTAyLDEzODA2MjUyNjAsMTc3ND
-k3OTI3MCwtMTExNDQ4MTc1LDE1NDU4ODI4MzksLTE4ODQ4Mzg3
-NzksODUzNDE1OTE1LC0yMzE5MTAzNDAsLTExNDM5MzU3NTksLT
-c2NDIzNjA3MiwtMTY4NTY0Nzg3OCwzOTUzNzQ1NDIsLTk0NzQ3
-NDUzNF19
+eyJoaXN0b3J5IjpbLTg1MzkyMzUzOSw5NTA4MzA0NjQsNzUzND
+gxMzM4LC03ODE4MzgzMTcsNjI5MTgwNDk2LC05MDIzMjAzNjAs
+LTE1MjIxMjYxMjUsLTQ4MzQ5NjkwMiwxMzgwNjI1MjYwLDE3Nz
+Q5NzkyNzAsLTExMTQ0ODE3NSwxNTQ1ODgyODM5LC0xODg0ODM4
+Nzc5LDg1MzQxNTkxNSwtMjMxOTEwMzQwLC0xMTQzOTM1NzU5LC
+03NjQyMzYwNzIsLTE2ODU2NDc4NzgsMzk1Mzc0NTQyLC05NDc0
+NzQ1MzRdfQ==
 -->
