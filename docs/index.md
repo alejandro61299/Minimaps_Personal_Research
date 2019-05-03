@@ -424,6 +424,7 @@ Knowing how to transform  Map coordinates to  Minimap Cordinates,  complete the 
 
   #### **Test** 
   
+  
  #### **Solution** 
 ```cpp
 fPoint Minimap::MinimapToMap(const float x, const float y) 
@@ -518,11 +519,11 @@ Also placed correctly the alpha mask drawing.
 	SDL_SetRenderTarget(app->render->renderer, NULL);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI5MTcxMTA3MCwtOTAyMzIwMzYwLC0xNT
-IyMTI2MTI1LC00ODM0OTY5MDIsMTM4MDYyNTI2MCwxNzc0OTc5
-MjcwLC0xMTE0NDgxNzUsMTU0NTg4MjgzOSwtMTg4NDgzODc3OS
-w4NTM0MTU5MTUsLTIzMTkxMDM0MCwtMTE0MzkzNTc1OSwtNzY0
-MjM2MDcyLC0xNjg1NjQ3ODc4LDM5NTM3NDU0MiwtOTQ3NDc0NT
-M0LDQ2NzA4MzQ1MywtMTkyNDc1MDQ1OSwtNTk4NTI3Njg5LDEy
-NjI4MjE5MTFdfQ==
+eyJoaXN0b3J5IjpbNjI5MTgwNDk2LC05MDIzMjAzNjAsLTE1Mj
+IxMjYxMjUsLTQ4MzQ5NjkwMiwxMzgwNjI1MjYwLDE3NzQ5Nzky
+NzAsLTExMTQ0ODE3NSwxNTQ1ODgyODM5LC0xODg0ODM4Nzc5LD
+g1MzQxNTkxNSwtMjMxOTEwMzQwLC0xMTQzOTM1NzU5LC03NjQy
+MzYwNzIsLTE2ODU2NDc4NzgsMzk1Mzc0NTQyLC05NDc0NzQ1Mz
+QsNDY3MDgzNDUzLC0xOTI0NzUwNDU5LC01OTg1Mjc2ODksMTI2
+MjgyMTkxMV19
 -->
