@@ -470,9 +470,9 @@ if (app->input->GetMouseButton(3) == KEY_DOWN)
 switch (interaction_type)
 	{
 	case INTERACTION_TYPE::NO_TYPE:
-
-		texture_pos = fPoint(minimap_rect.w * .5f, minimap_rect.h * .5f) - MapToMinimap(target_to_follow->map_pos.x, target_to_follow->map_pos.y);
-		camera_target_pos = camera->camera_pos;
+ 
+        texture_pos = fPoint(minimap_rect.w * .5f, minimap_rect.h * .5f) - MapToMinimap(target_to_follow->map_pos.x, target_to_follow->map_pos.y); 
+		camera_target_pos = camera->camera_pos; 
 		camera->MoveToObject(dt, target_to_follow);         // Caemra movement ----------
 		break;
 
@@ -483,6 +483,7 @@ switch (interaction_type)
 
 		break;
 	}
+}
 ```
 
 ### TODO 5: Draw Camera Area Borders & Apply Alpha Mask 
@@ -517,11 +518,11 @@ Also placed correctly the alpha mask drawing.
 	SDL_SetRenderTarget(app->render->renderer, NULL);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzUzNDgxMzM4LC03ODE4MzgzMTcsNjI5MT
-gwNDk2LC05MDIzMjAzNjAsLTE1MjIxMjYxMjUsLTQ4MzQ5Njkw
-MiwxMzgwNjI1MjYwLDE3NzQ5NzkyNzAsLTExMTQ0ODE3NSwxNT
-Q1ODgyODM5LC0xODg0ODM4Nzc5LDg1MzQxNTkxNSwtMjMxOTEw
-MzQwLC0xMTQzOTM1NzU5LC03NjQyMzYwNzIsLTE2ODU2NDc4Nz
-gsMzk1Mzc0NTQyLC05NDc0NzQ1MzQsNDY3MDgzNDUzLC0xOTI0
-NzUwNDU5XX0=
+eyJoaXN0b3J5IjpbNTYwNDE4ODc1LDc1MzQ4MTMzOCwtNzgxOD
+M4MzE3LDYyOTE4MDQ5NiwtOTAyMzIwMzYwLC0xNTIyMTI2MTI1
+LC00ODM0OTY5MDIsMTM4MDYyNTI2MCwxNzc0OTc5MjcwLC0xMT
+E0NDgxNzUsMTU0NTg4MjgzOSwtMTg4NDgzODc3OSw4NTM0MTU5
+MTUsLTIzMTkxMDM0MCwtMTE0MzkzNTc1OSwtNzY0MjM2MDcyLC
+0xNjg1NjQ3ODc4LDM5NTM3NDU0MiwtOTQ3NDc0NTM0LDQ2NzA4
+MzQ1M119
 -->
