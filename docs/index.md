@@ -406,11 +406,13 @@ SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode beco
 
  Transfrom Map Coordinates to Minimap Pixel Cordinates. Very similar to the `MapToWorldF()` function on M_Map.
  
-  #### **Test** 
+#### **Test** 
 The texture of the minimap will be well generated and you will be able to see it but it will be static. You will also see the position indicator of the player and you can even add alerts by clicking on the map.
   
   ![enter image description here](https://github.com/alejandro61299/Minimaps_Personal_Research/blob/master/docs/web_images/test1.gif?raw=true)
- #### **Solution** 
+
+#### **Solution** 
+
 ```cpp
 fPoint Minimap::MapToMinimap(const float x, const float y)
 {
@@ -424,7 +426,7 @@ fPoint Minimap::MapToMinimap(const float x, const float y)
 
 Knowing how to transform  Map coordinates to  Minimap Cordinates,  complete the inverse function.
 
- #### **Solution** 
+#### **Solution** 
 ```cpp
 fPoint Minimap::MinimapToMap(const float x, const float y) 
 {
@@ -440,11 +442,11 @@ fPoint Minimap::MinimapToMap(const float x, const float y)
 
 #### **Explication** 
 When you right click on the minimap, you must add an alert. Use the `AddIndicator ()` function & `GetTextureScreenPos()` function. The alert sprite sheet rectangle is {32, 32, 32, 32}.
-  #### **Test TODO 2 & 3** 
+#### **Test TODO 2&3**  
   You can add indicators directly on the minimap with the right click like this:
   
   ![enter image description here](https://github.com/alejandro61299/Minimaps_Personal_Research/blob/master/docs/web_images/test2_3.gif?raw=true)
- #### **Solution** 
+#### **Solution** 
 ```cpp
 if (app->input->GetMouseButton(3) == KEY_DOWN)
 {
@@ -465,11 +467,11 @@ if (app->input->GetMouseButton(3) == KEY_DOWN)
 
  When interaction_type == NO_TYPE, update the variable texture_pos so that the player stays in the center of the minimap as in the "Focused on the Player" minimap type.  The pointer that contains the player is target_to_follow.
 
-  #### **Test** 
+#### **Test** 
  You will see the player focused on the minimap and the texture will move:
  
  ![enter image description here](https://github.com/alejandro61299/Minimaps_Personal_Research/blob/master/docs/web_images/test4.gif?raw=true)
- #### **Solution** 
+#### **Solution**  
 ```cpp
 switch (interaction_type)
 	{
@@ -500,11 +502,11 @@ Also placed correctly the alpha mask drawing.
    camera->camera_pos` (current position of the camera in the world) ,`camera->screen_section.w`   & `camera->screen_section.h`
  - To draw alpha mask use SDL_RenderCopy
  
-  #### **Test** 
+#### **Test** 
  You will see that your minimap now has a circular shape! Oh, and the rectangle of the camera will also have appeared. You can use debug mode F1 and F2 without any problem.
  
  ![enter image description here](https://github.com/alejandro61299/Minimaps_Personal_Research/blob/master/docs/web_images/test5.gif?raw=true)
- #### **Solution** 
+#### **Solution** 
 ```cpp
 // After minimap indicators
 // Draw minimap camera rect =================================================
@@ -525,11 +527,11 @@ Also placed correctly the alpha mask drawing.
 	SDL_SetRenderTarget(app->render->renderer, NULL);
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzY2MDIzMjMsLTU2ODI3NDU5OCw5NTA4Mz
-A0NjQsNzUzNDgxMzM4LC03ODE4MzgzMTcsNjI5MTgwNDk2LC05
-MDIzMjAzNjAsLTE1MjIxMjYxMjUsLTQ4MzQ5NjkwMiwxMzgwNj
-I1MjYwLDE3NzQ5NzkyNzAsLTExMTQ0ODE3NSwxNTQ1ODgyODM5
-LC0xODg0ODM4Nzc5LDg1MzQxNTkxNSwtMjMxOTEwMzQwLC0xMT
-QzOTM1NzU5LC03NjQyMzYwNzIsLTE2ODU2NDc4NzgsMzk1Mzc0
-NTQyXX0=
+eyJoaXN0b3J5IjpbLTEzMTM3MTM2MDksMzY2MDIzMjMsLTU2OD
+I3NDU5OCw5NTA4MzA0NjQsNzUzNDgxMzM4LC03ODE4MzgzMTcs
+NjI5MTgwNDk2LC05MDIzMjAzNjAsLTE1MjIxMjYxMjUsLTQ4Mz
+Q5NjkwMiwxMzgwNjI1MjYwLDE3NzQ5NzkyNzAsLTExMTQ0ODE3
+NSwxNTQ1ODgyODM5LC0xODg0ODM4Nzc5LDg1MzQxNTkxNSwtMj
+MxOTEwMzQwLC0xMTQzOTM1NzU5LC03NjQyMzYwNzIsLTE2ODU2
+NDc4NzhdfQ==
 -->
