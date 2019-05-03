@@ -400,7 +400,7 @@ SDL_SetTextureBlendMode(alpha_mask_texture, blend_mode); // This belnd mode beco
 
 ## TODO'S & Solutions
 
-### TODO 1: Complete MapToMinimap()wwww
+### TODO 1: Complete MapToMinimap()
 
 #### **Explication** 
 
@@ -536,11 +536,11 @@ Also placed correctly the alpha mask drawing.
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3NTY1NzAyMiw3NTgwMzU0MiwxOTcxMj
-A0MzcwLC0xNTczMjY3NDUsMzY2MDIzMjMsLTU2ODI3NDU5OCw5
-NTA4MzA0NjQsNzUzNDgxMzM4LC03ODE4MzgzMTcsNjI5MTgwND
-k2LC05MDIzMjAzNjAsLTE1MjIxMjYxMjUsLTQ4MzQ5NjkwMiwx
-MzgwNjI1MjYwLDE3NzQ5NzkyNzAsLTExMTQ0ODE3NSwxNTQ1OD
-gyODM5LC0xODg0ODM4Nzc5LDg1MzQxNTkxNSwtMjMxOTEwMzQw
+eyJoaXN0b3J5IjpbMTk5NDYzNjI4NiwxMjc1NjU3MDIyLDc1OD
+AzNTQyLDE5NzEyMDQzNzAsLTE1NzMyNjc0NSwzNjYwMjMyMywt
+NTY4Mjc0NTk4LDk1MDgzMDQ2NCw3NTM0ODEzMzgsLTc4MTgzOD
+MxNyw2MjkxODA0OTYsLTkwMjMyMDM2MCwtMTUyMjEyNjEyNSwt
+NDgzNDk2OTAyLDEzODA2MjUyNjAsMTc3NDk3OTI3MCwtMTExND
+Q4MTc1LDE1NDU4ODI4MzksLTE4ODQ4Mzg3NzksODUzNDE1OTE1
 XX0=
 -->
