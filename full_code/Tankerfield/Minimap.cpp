@@ -364,12 +364,11 @@ void Minimap::MouseDragInput(float dt)
 
 	if (app->input->GetMouseButton(1) == KEY_REPEAT)
 	{
-
-		float half_camera_w = camera->rect.w *aspect_ratio_x * 0.5f;
-		float half_camera_h = camera->rect.h *aspect_ratio_y * 0.5f;
-
 		if (allow_interaction)
 		{
+			float half_camera_w = camera->rect.w *aspect_ratio_x * 0.5f;
+			float half_camera_h = camera->rect.h *aspect_ratio_y * 0.5f;
+
 			if (x - half_camera_w < minimap_rect.x)
 			{
 				x = minimap_rect.x + half_camera_w;
